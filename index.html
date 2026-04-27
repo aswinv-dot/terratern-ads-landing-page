@@ -3,355 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Germany Opportunity Card (Chancenkarte) for Indian IT professionals. No job offer needed. 99.7% visa approval rate, 7-day processing, €45K+ salary. Free eligibility check.">
 <title>Germany Opportunity Card for IT Professionals | TerraTern</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#00215c;--blue:#255cc1;--sky:#9acbfd;--gold:#f1c819;
-  --white:#ffffff;--bg:#f0f6ff;--bg2:#e6f0ff;--text:#0a1a3a;--muted:#4a6080;
-  --border:rgba(37,92,193,0.15);--shadow:0 4px 24px rgba(0,33,92,0.10);
-  --shadow-lg:0 12px 48px rgba(0,33,92,0.16);--ff:'Poppins',sans-serif;
-}
+:root{--navy:#00215c;--blue:#255cc1;--gold:#f1c819;--white:#fff;--bg:#f0f6ff;--muted:#4a6080;--border:rgba(37,92,193,0.15);--ff:'Poppins',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;}
+body{background:var(--bg);color:#0a1a3a;font-family:var(--ff);overflow-x:hidden;}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 20px rgba(0,0,0,0.18);}
-.nav-logo img{height:44px;width:150px;display:block;object-fit:contain;}
-.nav-logo-text{color:#fff;font-weight:800;font-size:1.1rem;}
-.nav-logo-text span{color:var(--gold);}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gold);}
-.nav-right{display:flex;align-items:center;gap:16px;}
-.nav-phone{display:flex;align-items:center;gap:7px;color:var(--gold);font-weight:600;font-size:0.85rem;text-decoration:none;}
-.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:9px 20px;border-radius:6px;font-family:var(--ff);font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
-.nav-cta:hover{background:#ffd426;transform:translateY(-1px);}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 16px rgba(0,0,0,.2);}
+.nav-brand{color:#fff;font-weight:800;font-size:1.05rem;}
+.nav-brand span{color:var(--gold);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.nav-phone{color:var(--gold);font-weight:600;font-size:0.8rem;text-decoration:none;}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:8px 18px;border-radius:6px;font-family:var(--ff);font-weight:700;font-size:0.8rem;cursor:pointer;}
 
-/* ── HERO ── */
-.hero-wrap{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 55%,#1248a8 100%);padding-top:68px;position:relative;overflow:hidden;}
-.hero-wrap::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
-.hero-circle1{position:absolute;right:-100px;top:-60px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(154,203,253,0.13) 0%,transparent 68%);pointer-events:none;}
-.hero-circle2{position:absolute;left:-80px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(241,200,25,0.09) 0%,transparent 68%);pointer-events:none;}
-.hero{max-width:1200px;margin:0 auto;padding:56px 40px 64px;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center;position:relative;z-index:1;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(241,200,25,0.18);border:1px solid rgba(241,200,25,0.45);border-radius:100px;padding:5px 14px;font-size:0.68rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
-.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse 1.8s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
-.hero h1{font-size:clamp(2rem,3.6vw,3rem);font-weight:800;line-height:1.13;color:var(--white);letter-spacing:-0.02em;margin-bottom:18px;}
-.hero h1 em{font-style:normal;color:var(--gold);}
-.hero-sub{font-size:0.97rem;color:rgba(255,255,255,0.74);max-width:500px;margin-bottom:32px;font-weight:400;line-height:1.72;}
-.hero-stats{display:flex;flex-wrap:wrap;}
-.hero-stat{padding:14px 24px;border-right:1px solid rgba(255,255,255,0.12);}
-.hero-stat:first-child{padding-left:0;}
-.hero-stat:last-child{border:none;}
-.hero-stat-num{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;}
-.hero-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.58);margin-top:3px;font-weight:500;}
-.hero-stats-mobile{display:none;justify-content:center;align-items:center;height:90px;margin-bottom:28px;}
-@keyframes fadeInStat{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-.stat-carousel-num{font-size:2rem;font-weight:800;color:var(--gold);line-height:1;text-align:center;}
-.stat-carousel-label{font-size:0.75rem;color:rgba(255,255,255,0.65);margin-top:5px;font-weight:500;text-align:center;}
+/* HERO */
+.hero-wrap{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 60%,#1248a8 100%);padding-top:62px;}
+.hero{max-width:1100px;margin:0 auto;padding:52px 32px 60px;display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,200,25,.15);border:1px solid rgba(241,200,25,.4);border-radius:100px;padding:4px 12px;font-size:0.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+h1{font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:800;line-height:1.13;color:#fff;letter-spacing:-.02em;margin-bottom:14px;}
+h1 em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:.9rem;color:rgba(255,255,255,.72);margin-bottom:28px;line-height:1.7;}
+.stats{display:flex;}
+.stat{padding:12px 20px;border-right:1px solid rgba(255,255,255,.12);}
+.stat:first-child{padding-left:0;}
+.stat:last-child{border:none;}
+.stat-n{font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;}
+.stat-l{font-size:.65rem;color:rgba(255,255,255,.55);margin-top:2px;}
 
-/* ── HERO FORM ── */
-.form-card{background:var(--white);border-radius:16px;padding:28px 24px 22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;}
-.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--sky));}
-.form-card h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.form-card>p{font-size:0.76rem;color:var(--muted);margin-bottom:16px;}
-.form-group{margin-bottom:11px;}
-.form-group label{display:block;font-size:0.68rem;font-weight:600;color:var(--navy);margin-bottom:4px;letter-spacing:0.05em;text-transform:uppercase;}
-.form-group input,.form-group select{width:100%;background:#f5f9ff;border:1.5px solid var(--border);border-radius:7px;padding:10px 13px;color:var(--text);font-family:var(--ff);font-size:0.86rem;outline:none;transition:border-color 0.2s;appearance:none;}
-.form-group input::placeholder{color:#aab8cc;}
-.form-group input:focus,.form-group select:focus{border-color:var(--blue);}
-.sel-wrap{position:relative;}
-.sel-wrap::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--blue);pointer-events:none;font-size:0.78rem;}
-.form-btn{width:100%;background:var(--blue);color:var(--white);border:none;padding:13px;border-radius:8px;font-family:var(--ff);font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:6px;transition:all 0.2s;}
-.form-btn:hover{background:var(--navy);transform:translateY(-1px);}
-.form-trust{text-align:center;font-size:0.66rem;color:var(--muted);margin-top:9px;}
-.form-trust strong{color:var(--blue);}
+/* EXPERT ROTATOR */
+.expert-rotator{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#f0f6ff,#e6f0ff);border:1.5px solid rgba(37,92,193,.18);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+.er-photo-wrap{position:relative;flex-shrink:0;}
+.er-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(37,92,193,.2);display:block;}
+.er-initials{width:52px;height:52px;border-radius:50%;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;border:2px solid rgba(37,92,193,.2);}
+.er-badge{position:absolute;bottom:-4px;right:-4px;background:var(--gold);color:var(--navy);font-size:.48rem;font-weight:800;letter-spacing:.04em;padding:2px 5px;border-radius:100px;white-space:nowrap;}
+.er-info{flex:1;min-width:0;}
+.er-label{font-size:.6rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1px;}
+.er-name{font-size:.9rem;font-weight:800;color:var(--navy);margin-bottom:1px;transition:opacity .4s;}
+.er-spec{font-size:.67rem;color:var(--muted);line-height:1.4;transition:opacity .4s;}
+.er-dots{display:flex;gap:4px;margin-top:5px;}
+.er-dot{width:5px;height:5px;border-radius:50%;background:rgba(37,92,193,.2);transition:background .3s;}
+.er-dot.active{background:var(--blue);}
+.er-fade{opacity:0;}
 
-/* ── ALUMNI SCROLLER ── */
-.alumni-strip{background:var(--white);border-top:3px solid var(--gold);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;position:relative;}
-.alumni-strip::before,.alumni-strip::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
-.alumni-strip::before{left:0;background:linear-gradient(to right,var(--white),transparent);}
-.alumni-strip::after{right:0;background:linear-gradient(to left,var(--white),transparent);}
-.scroller-label{text-align:center;font-size:0.7rem;font-weight:700;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;}
-.scroller-track{display:flex;gap:16px;width:max-content;animation:scroll-left 32s linear infinite;}
-.scroller-track:hover{animation-play-state:paused;}
-@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-.person-card{display:flex;flex-direction:column;align-items:center;background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:14px 16px 12px;min-width:118px;cursor:default;flex-shrink:0;transition:box-shadow 0.2s,border-color 0.2s;}
-.person-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.3);}
-.person-avatar{width:72px;height:72px;border-radius:12px;overflow:hidden;margin-bottom:9px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:var(--white);flex-shrink:0;}
-.person-name{font-size:0.75rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:4px;}
-.person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
-@media(max-width:600px){.scroller-track{animation:none;}.scroller-track .person-card:nth-child(n+11){display:none;}}
+/* FORM */
+.form-card{background:#fff;border-radius:14px;padding:24px 22px 20px;box-shadow:0 12px 48px rgba(0,33,92,.18);position:relative;overflow:hidden;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--blue),#9acbfd);}
+.form-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.form-card>p{font-size:.72rem;color:var(--muted);margin-bottom:14px;}
+.fg{margin-bottom:9px;}
+.fg label{display:block;font-size:.62rem;font-weight:700;color:var(--navy);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;}
+.fg input,.fg select{width:100%;background:#f5f9ff;border:1.5px solid var(--border);border-radius:6px;padding:9px 11px;font-family:var(--ff);font-size:.83rem;color:#0a1a3a;outline:none;appearance:none;}
+.fg input:focus,.fg select:focus{border-color:var(--blue);}
+.sw{position:relative;}
+.sw::after{content:'▾';position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--blue);pointer-events:none;font-size:.72rem;}
+.form-btn{width:100%;background:var(--blue);color:#fff;border:none;padding:12px;border-radius:7px;font-family:var(--ff);font-size:.88rem;font-weight:700;cursor:pointer;margin-top:5px;transition:all .2s;}
+.form-btn:hover{background:var(--navy);}
+.trust{text-align:center;font-size:.62rem;color:var(--muted);margin-top:8px;}
+.trust strong{color:var(--blue);}
 
-/* ── SHARED SECTION UTILS ── */
-section{padding:80px 40px;}
-.container{max-width:1200px;margin:0 auto;}
-.section-tag{display:inline-block;background:rgba(37,92,193,0.08);border:1px solid rgba(37,92,193,0.18);color:var(--blue);font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px;}
-.section-title{font-size:clamp(1.55rem,2.7vw,2.3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.16;color:var(--navy);margin-bottom:12px;}
-.section-title em{font-style:normal;color:var(--blue);}
-.section-sub{font-size:0.93rem;color:var(--muted);max-width:560px;line-height:1.72;font-weight:400;}
-.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s,transform 0.6s;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-.bg-white{background:var(--white);}
-.bg-light{background:var(--bg);}
-.bg-soft{background:var(--bg2);}
+/* ALUMNI STRIP */
+.alumni-strip{background:#fff;border-top:3px solid var(--gold);padding:16px 0;overflow:hidden;position:relative;}
+.alumni-strip::before,.alumni-strip::after{content:'';position:absolute;top:0;bottom:0;width:70px;z-index:2;}
+.alumni-strip::before{left:0;background:linear-gradient(to right,#fff,transparent);}
+.alumni-strip::after{right:0;background:linear-gradient(to left,#fff,transparent);}
+.strip-label{text-align:center;font-size:.65rem;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
+.track{display:flex;gap:12px;width:max-content;animation:scroll 28s linear infinite;}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.pc{display:flex;flex-direction:column;align-items:center;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:10px 14px;min-width:100px;flex-shrink:0;}
+.av{width:52px;height:52px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:6px;}
+.pn{font-size:.68rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.pd{font-size:.6rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,.08);border-radius:100px;padding:2px 7px;}
 
-/* ── ELIGIBILITY ── */
-.elig-list{margin-top:40px;display:flex;flex-direction:column;gap:0;}
-.elig-row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);}
+/* SECTIONS */
+section{padding:64px 32px;}
+.container{max-width:1100px;margin:0 auto;}
+.stag{display:inline-block;background:rgba(37,92,193,.08);border:1px solid rgba(37,92,193,.18);color:var(--blue);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;letter-spacing:-.02em;line-height:1.18;color:var(--navy);margin-bottom:10px;}
+h2 em{font-style:normal;color:var(--blue);}
+.sub{font-size:.88rem;color:var(--muted);max-width:520px;line-height:1.7;}
+
+/* ELIGIBILITY */
+.elig-list{margin-top:32px;}
+.elig-row{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}
 .elig-row:first-child{border-top:1px solid var(--border);}
-.elig-icon{width:44px;height:44px;background:rgba(37,92,193,0.07);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-.elig-body h4{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.elig-body p{font-size:0.8rem;color:var(--muted);line-height:1.55;}
-.elig-pts{font-size:0.7rem;font-weight:700;background:rgba(37,92,193,0.09);color:var(--blue);border-radius:6px;padding:5px 12px;white-space:nowrap;flex-shrink:0;}
-.elig-pts.mandatory{background:rgba(241,200,25,0.15);color:#8a6d00;}
+.ei{width:38px;height:38px;background:rgba(37,92,193,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.elig-row h4{font-size:.84rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.elig-row p{font-size:.74rem;color:var(--muted);line-height:1.5;}
+.pts{font-size:.65rem;font-weight:700;background:rgba(37,92,193,.09);color:var(--blue);border-radius:5px;padding:4px 10px;white-space:nowrap;flex-shrink:0;}
+.pts.m{background:rgba(241,200,25,.15);color:#8a6d00;}
 
-/* ── NOT FOR YOU ── */
-.notfor-section{background:var(--white);padding:80px 0;}
-.notfor-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
-.notfor-header{text-align:center;margin-bottom:48px;}
-.notfor-split{display:grid;grid-template-columns:1fr 1fr;min-height:360px;}
-.notfor-half{padding:48px 52px;}
-.notfor-half.bad{background:#fff5f5;}
-.notfor-half.good{background:linear-gradient(140deg,var(--navy),#0f3585);}
-.notfor-half h4{font-size:1rem;font-weight:800;margin-bottom:20px;}
-.notfor-half.bad h4{color:#991b1b;}
-.notfor-half.good h4{color:var(--gold);}
-.notfor-items{display:flex;flex-direction:column;gap:14px;}
-.notfor-item{display:flex;gap:12px;align-items:flex-start;font-size:0.85rem;line-height:1.55;}
-.notfor-half.bad .notfor-item{color:#7f1d1d;}
-.notfor-half.good .notfor-item{color:rgba(255,255,255,0.88);}
-.notfor-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;flex-shrink:0;margin-top:2px;}
-.notfor-half.bad .notfor-dot{background:#fecaca;color:#991b1b;}
-.notfor-half.good .notfor-dot{background:rgba(241,200,25,0.2);color:var(--gold);}
+/* NOT FOR YOU */
+.nf-wrap{background:#fff;padding:64px 0 0;}
+.nf-inner{max-width:1100px;margin:0 auto;padding:0 32px;}
+.nf-split{display:grid;grid-template-columns:1fr 1fr;}
+.nf-half{padding:40px 44px;}
+.nf-half.bad{background:#fff5f5;}
+.nf-half.good{background:linear-gradient(140deg,var(--navy),#0f3585);}
+.nf-half h4{font-size:.95rem;font-weight:800;margin-bottom:16px;}
+.nf-half.bad h4{color:#991b1b;}
+.nf-half.good h4{color:var(--gold);}
+.nf-items{display:flex;flex-direction:column;gap:11px;}
+.nf-item{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;line-height:1.5;}
+.nf-half.bad .nf-item{color:#7f1d1d;}
+.nf-half.good .nf-item{color:rgba(255,255,255,.85);}
+.nf-dot{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;flex-shrink:0;margin-top:2px;}
+.nf-half.bad .nf-dot{background:#fecaca;color:#991b1b;}
+.nf-half.good .nf-dot{background:rgba(241,200,25,.2);color:var(--gold);}
 
-/* ── WHAT HAPPENS NEXT ── */
-.next-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:var(--white);}
-.next-step{padding:28px 24px;border-right:1px solid var(--border);position:relative;}
-.next-step:last-child{border-right:none;}
-.next-step::before{content:attr(data-n);position:absolute;top:20px;right:20px;font-size:2.5rem;font-weight:900;color:rgba(37,92,193,0.06);line-height:1;}
-.next-step-tag{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
-.next-step h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
-.next-step p{font-size:0.78rem;color:var(--muted);line-height:1.58;}
+/* WHY GERMANY */
+.why-layout{display:grid;grid-template-columns:1fr 1fr;margin-top:32px;}
+.why-left{background:linear-gradient(140deg,var(--navy),#0f3585);padding:36px 32px;border-radius:14px 0 0 14px;display:flex;flex-direction:column;justify-content:center;}
+.big-n{font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1;}
+.why-left h3{font-size:.93rem;font-weight:700;color:#fff;margin:6px 0 8px;}
+.why-left p{font-size:.8rem;color:rgba(255,255,255,.68);line-height:1.65;}
+.path{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);}
+.path-l{font-size:.62rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.path-s{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:.7rem;color:rgba(255,255,255,.68);}
+.path-s em{color:var(--gold);font-style:normal;margin:0 3px;}
+.why-right{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--border);border-left:none;border-radius:0 14px 14px 0;overflow:hidden;}
+.wc{padding:18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
+.wc:nth-child(2n){border-right:none;}
+.wc:nth-last-child(-n+2){border-bottom:none;}
+.wc .wi{font-size:1.2rem;margin-bottom:4px;}
+.wc h4{font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.wc p{font-size:.71rem;color:var(--muted);line-height:1.5;}
 
-/* ── WHY GERMANY — compressed two-column ── */
-.why-layout{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.why-left{background:linear-gradient(140deg,var(--navy),#0f3585);padding:44px 40px;display:flex;flex-direction:column;justify-content:center;border-radius:14px 0 0 14px;}
-.why-left .big-num{font-size:3rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-0.03em;}
-.why-left h3{font-size:1rem;font-weight:700;color:var(--white);margin:8px 0 10px;}
-.why-left p{font-size:0.83rem;color:rgba(255,255,255,0.7);line-height:1.68;}
-.why-path{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);}
-.why-path-label{font-size:0.68rem;color:rgba(255,255,255,0.42);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
-.why-path-steps{display:flex;gap:0;align-items:center;flex-wrap:wrap;gap:4px;}
-.why-path-steps span{font-size:0.74rem;color:rgba(255,255,255,0.7);}
-.why-path-steps em{color:var(--gold);font-style:normal;margin:0 4px;}
-.why-right{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:0 14px 14px 0;overflow:hidden;border:1.5px solid var(--border);border-left:none;}
-.why-cell{padding:20px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);transition:background 0.2s;}
-.why-cell:hover{background:var(--bg2);}
-.why-cell:nth-child(2n){border-right:none;}
-.why-cell:nth-last-child(-n+2){border-bottom:none;}
-.why-cell-icon{font-size:1.3rem;margin-bottom:6px;}
-.why-cell h4{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.why-cell p{font-size:0.74rem;color:var(--muted);line-height:1.52;}
+/* SALARY */
+.sal-layout{display:grid;grid-template-columns:1fr 1fr;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,33,92,.1);margin-top:40px;}
+.sal-col{}
+.sal-head{padding:16px 24px;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+.sal-col.in .sal-head{background:#fff0f0;color:#991b1b;}
+.sal-col.de .sal-head{background:linear-gradient(135deg,var(--navy),#1248a8);color:var(--gold);}
+.sal-row{padding:12px 24px;border-top:1px solid var(--border);font-size:.8rem;}
+.sal-col.in .sal-row{background:#fff;color:#7f1d1d;}
+.sal-col.de .sal-row{background:#f0fdf4;color:#065f46;font-weight:600;}
+.sal-row-note{display:block;font-size:.63rem;color:var(--muted);font-weight:400;margin-top:1px;}
+.sal-col.de .sal-row-note{color:#4d7c68;}
+.sal-foot{grid-column:span 2;background:linear-gradient(135deg,var(--navy),#0a3080);padding:14px 24px;text-align:center;color:rgba(255,255,255,.8);font-size:.79rem;}
+.sal-foot strong{color:var(--gold);}
 
-/* ── SALARY COMPARISON ── */
-.salary-layout{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
-.sal-col{padding:0;}
-.sal-col-head{padding:20px 28px;font-size:0.82rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;}
-.sal-col.india .sal-col-head{background:#fff0f0;color:#991b1b;}
-.sal-col.germany .sal-col-head{background:linear-gradient(135deg,var(--navy),#1248a8);color:var(--gold);}
-.sal-row{padding:16px 28px;border-top:1px solid var(--border);font-size:0.84rem;}
-.sal-col.india .sal-row{background:#fff;color:#7f1d1d;}
-.sal-col.germany .sal-row{background:#f0fdf4;color:#065f46;font-weight:600;}
-.sal-row-note{display:block;font-size:0.67rem;color:var(--muted);font-weight:400;margin-top:2px;}
-.sal-col.germany .sal-row-note{color:#4d7c68;}
-.sal-footer{grid-column:span 2;background:linear-gradient(135deg,var(--navy),#0a3080);padding:18px 28px;text-align:center;color:rgba(255,255,255,0.82);font-size:0.83rem;}
-.sal-footer strong{color:var(--gold);}
+/* PROGRAM — 2 col grid */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+.pc-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:20px 18px;}
+.pc-num{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.pc-step{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;}
+.pc-card h4{font-size:.86rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.pc-list{list-style:none;}
+.pc-list li{font-size:.74rem;color:var(--muted);padding:4px 0;display:flex;gap:7px;border-bottom:1px solid var(--border);}
+.pc-list li:last-child{border:none;}
+.pc-list li::before{content:'✓';color:var(--blue);font-size:.64rem;margin-top:2px;flex-shrink:0;font-weight:700;}
 
-/* ── CITIES — compact 2-col ── */
-.cities-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
-.city-card{background:var(--white);border-left:3px solid var(--blue);padding:16px 18px;border-radius:0 8px 8px 0;transition:all 0.2s;display:flex;gap:12px;align-items:flex-start;}
-.city-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
-.city-left{}
-.city-name{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:1px;}
-.city-tag{font-size:0.63rem;font-weight:600;color:var(--blue);display:block;margin-bottom:5px;}
-.city-card p{font-size:0.76rem;color:var(--muted);line-height:1.5;}
-
-/* ── MISTAKES — clean card grid ── */
-.mistakes-grid{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.mistake-card{border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;}
-.mistake-card.bad{background:#fff5f5;border:1.5px solid #fecaca;}
-.mistake-card.good{background:#f0fdf4;border:1.5px solid #bbf7d0;}
-.mistake-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0;margin-top:2px;}
-.mistake-card.bad .mistake-icon{background:#fecaca;color:#991b1b;}
-.mistake-card.good .mistake-icon{background:#bbf7d0;color:#065f46;}
-.mistake-card h5{font-size:0.86rem;font-weight:700;margin-bottom:5px;}
-.mistake-card.bad h5{color:#991b1b;}
-.mistake-card.good h5{color:#065f46;}
-.mistake-card p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
-
-/* ── PROGRAM ── */
-.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-.prog-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px 20px;transition:all 0.2s;position:relative;}
-.prog-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.28);}
-.prog-num{width:30px;height:30px;border-radius:50%;background:var(--blue);color:var(--white);font-size:0.74rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
-.prog-step{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:8px;}
-.prog-card h4{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
-.prog-list{list-style:none;}
-.prog-list li{font-size:0.78rem;color:var(--muted);padding:5px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid var(--border);}
-.prog-list li:last-child{border:none;}
-.prog-list li::before{content:'✓';color:var(--blue);font-size:0.68rem;margin-top:2px;flex-shrink:0;font-weight:700;}
-
-/* ── EXPERTS STRIP ── */
-.experts-strip{background:var(--navy);padding:28px 0;overflow:hidden;position:relative;}
-.experts-strip::before,.experts-strip::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;}
-.experts-strip::before{left:0;background:linear-gradient(to right,var(--navy),transparent);}
-.experts-strip::after{right:0;background:linear-gradient(to left,var(--navy),transparent);}
-.experts-label{text-align:center;font-size:0.7rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px;}
-.experts-track{display:flex;gap:20px;width:max-content;animation:scroll-left 38s linear infinite;}
-.experts-track:hover{animation-play-state:paused;}
-@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-.expert-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px 22px;min-width:280px;flex-shrink:0;transition:all 0.25s;cursor:default;}
-.expert-card:hover{background:rgba(255,255,255,0.11);border-color:rgba(241,200,25,0.4);}
-.expert-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--white);flex-shrink:0;border:2px solid rgba(241,200,25,0.4);}
-.expert-name{font-size:0.9rem;font-weight:700;color:var(--white);margin-bottom:2px;}
-.expert-yrs{font-size:0.7rem;font-weight:700;color:var(--gold);margin-bottom:4px;}
-.expert-spec{font-size:0.7rem;color:rgba(255,255,255,0.55);line-height:1.4;}
-.expert-badge{display:inline-block;background:rgba(241,200,25,0.15);border:1px solid rgba(241,200,25,0.35);color:var(--gold);font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle;}
-
-/* ── TIMELINE — simplified 3-step ── */
-.timeline-simple{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
-.tl-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px 20px;position:relative;overflow:hidden;}
-.tl-card::before{content:attr(data-n);position:absolute;top:12px;right:16px;font-size:3rem;font-weight:900;color:rgba(37,92,193,0.05);line-height:1;}
-.tl-card-phase{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:6px;}
-.tl-card h4{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
-.tl-card-duration{display:inline-block;background:rgba(37,92,193,0.08);color:var(--blue);font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+/* TIMELINE */
+.tl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;}
+.tl-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:20px 18px;position:relative;overflow:hidden;}
+.tl-card::before{content:attr(data-n);position:absolute;top:10px;right:14px;font-size:2.5rem;font-weight:900;color:rgba(37,92,193,.05);line-height:1;}
+.tl-phase{font-size:.58rem;font-weight:700;color:var(--blue);letter-spacing:.09em;text-transform:uppercase;margin-bottom:5px;}
+.tl-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.tl-dur{display:inline-block;background:rgba(37,92,193,.08);color:var(--blue);font-size:.63rem;font-weight:700;padding:2px 9px;border-radius:100px;margin-bottom:9px;}
 .tl-card ul{list-style:none;}
-.tl-card ul li{font-size:0.78rem;color:var(--muted);padding:4px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.tl-card ul li{font-size:.74rem;color:var(--muted);padding:3px 0;display:flex;gap:7px;border-bottom:1px solid var(--border);}
 .tl-card ul li:last-child{border:none;}
-.tl-card ul li::before{content:'→';color:var(--blue);font-size:0.7rem;margin-top:2px;flex-shrink:0;}
+.tl-card ul li::before{content:'→';color:var(--blue);font-size:.65rem;flex-shrink:0;margin-top:2px;}
 
-/* ── FAQ ── */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:40px;}
-.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;}
-.faq-q{width:100%;background:none;border:none;color:var(--navy);font-family:var(--ff);font-size:0.86rem;font-weight:600;text-align:left;padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background 0.2s;}
-.faq-q:hover{background:var(--bg);}
-.faq-arrow{width:21px;height:21px;background:rgba(37,92,193,0.09);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0;color:var(--blue);transition:transform 0.3s,background 0.2s;font-weight:700;}
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:32px;}
+.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:9px;overflow:hidden;}
+.faq-q{width:100%;background:none;border:none;color:var(--navy);font-family:var(--ff);font-size:.82rem;font-weight:600;text-align:left;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.faq-arrow{width:19px;height:19px;background:rgba(37,92,193,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;flex-shrink:0;color:var(--blue);transition:transform .3s,background .2s;font-weight:700;}
 .faq-item.open .faq-arrow{transform:rotate(45deg);background:var(--blue);color:#fff;}
-.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.35s;font-size:0.81rem;color:var(--muted);line-height:1.7;}
-.faq-item.open .faq-a{max-height:280px;padding:0 18px 16px;}
+.faq-a{padding:0 16px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;font-size:.77rem;color:var(--muted);line-height:1.68;}
+.faq-item.open .faq-a{max-height:240px;padding:0 16px 14px;}
 
-/* ── CTA ── */
-.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 60%,var(--blue) 100%);padding:88px 40px;text-align:center;position:relative;overflow:hidden;}
-.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(154,203,253,0.08) 0%,transparent 65%);pointer-events:none;}
-.cta-section .section-tag{background:rgba(241,200,25,0.15);border-color:rgba(241,200,25,0.3);color:var(--gold);}
-.cta-section h2{font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.02em;color:var(--white);margin-bottom:12px;position:relative;}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--navy),#0a3080 60%,var(--blue));padding:72px 32px;text-align:center;}
+.cta-section .stag{background:rgba(241,200,25,.15);border-color:rgba(241,200,25,.3);color:var(--gold);}
+.cta-section h2{color:#fff;margin-bottom:10px;}
 .cta-section h2 span{color:var(--gold);}
-.cta-section>div>p{color:rgba(255,255,255,1);font-size:0.93rem;max-width:460px;margin:0 auto 32px;position:relative;}
-.cta-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:15px 40px;border-radius:8px;font-family:var(--ff);font-weight:700;font-size:0.97rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;position:relative;}
-.cta-btn:hover{background:#ffd426;transform:translateY(-2px);box-shadow:0 8px 32px rgba(241,200,25,0.32);}
-.cta-phone{margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.5);position:relative;}
-.cta-phone a{color:var(--sky);text-decoration:none;font-weight:600;}
+.cta-section>div>p{color:rgba(255,255,255,.85);font-size:.88rem;max-width:420px;margin:0 auto 26px;}
+.cta-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:13px 36px;border-radius:7px;font-family:var(--ff);font-weight:700;font-size:.92rem;border:none;cursor:pointer;transition:all .2s;}
+.cta-btn:hover{background:#ffd426;transform:translateY(-2px);}
+.cta-phone{margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.5);}
+.cta-phone a{color:#9acbfd;text-decoration:none;font-weight:600;}
 
-/* ── FOOTER ── */
-footer{background:var(--white);border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
-.footer-logo-img{height:34px;width:auto;}
-.footer-text{font-size:0.72rem;color:var(--muted);line-height:1.6;}
-.footer-links{display:flex;gap:18px;}
-.footer-links a{font-size:0.72rem;color:var(--muted);text-decoration:none;}
+/* FOOTER */
+footer{background:#fff;border-top:1px solid var(--border);padding:22px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-weight:800;font-size:.92rem;color:var(--navy);}
+.footer-brand span{color:var(--gold);}
+.footer-text{font-size:.68rem;color:var(--muted);line-height:1.55;}
+.footer-links{display:flex;gap:16px;}
+.footer-links a{font-size:.68rem;color:var(--muted);text-decoration:none;}
 .footer-links a:hover{color:var(--blue);}
-.scroll-to-top{position:fixed;bottom:30px;right:30px;width:40px;height:40px;background:var(--blue);color:white;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all 0.3s;z-index:100;font-size:1.2rem;box-shadow:0 4px 12px rgba(37,92,193,0.3);}
-.scroll-to-top.active{opacity:1;visibility:visible;}
-.scroll-to-top:hover{background:var(--navy);transform:translateY(-3px);}
 
-/* ── POPUP ── */
-.popup-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,33,92,0.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
-.popup-overlay.active{opacity:1;pointer-events:all;}
-.popup-box{background:var(--white);border-radius:20px;overflow:hidden;width:100%;max-width:780px;display:grid;grid-template-columns:320px 1fr;box-shadow:0 32px 80px rgba(0,33,92,0.28);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;}
-.popup-overlay.active .popup-box{transform:translateY(0) scale(1);}
-.popup-close{position:absolute;top:14px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,0.12);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s;}
-.popup-close:hover{background:rgba(0,0,0,0.28);}
-.popup-left{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--navy),#0a3080);min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;}
-.popup-story-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.88;}
-.popup-story-img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(160deg,#0a3080,#255cc1);}
-.popup-left-overlay{position:relative;z-index:2;background:linear-gradient(to top,rgba(0,33,92,0.95) 0%,rgba(0,33,92,0.4) 60%,transparent 100%);padding:24px 20px 22px;}
-.popup-visa-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-size:0.64rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:10px;}
-.popup-testimonial-text{font-size:0.85rem;font-weight:500;color:#fff;line-height:1.55;font-style:italic;margin-bottom:10px;}
-.popup-testimonial-author{font-size:0.72rem;font-weight:700;color:var(--sky);}
-.popup-testimonial-dest{font-size:0.68rem;color:rgba(255,255,255,0.55);margin-top:1px;}
-.popup-right{padding:32px 28px 28px;display:flex;flex-direction:column;}
-.popup-right h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.25;}
-.popup-right>p{font-size:0.78rem;color:var(--muted);margin-bottom:18px;}
-.popup-form-group{margin-bottom:10px;}
-.popup-form-group label{display:block;font-size:0.66rem;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:0.05em;text-transform:uppercase;}
-.popup-form-group input,.popup-form-group select{width:100%;background:#f5f9ff;border:1.5px solid var(--border);border-radius:7px;padding:9px 12px;color:var(--text);font-family:var(--ff);font-size:0.84rem;outline:none;transition:border-color 0.2s;appearance:none;}
-.popup-form-group input::placeholder{color:#aab8cc;}
-.popup-form-group input:focus,.popup-form-group select:focus{border-color:var(--blue);}
-.popup-sel-wrap{position:relative;}
-.popup-sel-wrap::after{content:'▾';position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--blue);pointer-events:none;font-size:0.75rem;}
-.popup-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:12px;border-radius:8px;font-family:var(--ff);font-size:0.9rem;font-weight:700;cursor:pointer;margin-top:6px;transition:all 0.2s;}
-.popup-submit:hover{background:var(--navy);transform:translateY(-1px);}
-.popup-skip{text-align:center;font-size:0.68rem;color:var(--muted);margin-top:10px;cursor:pointer;text-decoration:underline;}
-.popup-skip:hover{color:var(--navy);}
+.scroll-top{position:fixed;bottom:24px;right:24px;width:36px;height:36px;background:var(--blue);color:#fff;border:none;border-radius:50%;cursor:pointer;opacity:0;visibility:hidden;transition:all .3s;z-index:100;font-size:1rem;box-shadow:0 4px 12px rgba(37,92,193,.3);}
+.scroll-top.active{opacity:1;visibility:visible;}
 
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
+.bg-white{background:#fff;}
+.bg-light{background:var(--bg);}
+.bg-soft{background:#e6f0ff;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:40px 20px 48px;}
   .why-layout{grid-template-columns:1fr;}
   .why-left{border-radius:14px 14px 0 0;}
   .why-right{border-radius:0 0 14px 14px;border-left:1.5px solid var(--border);border-top:none;}
-  .salary-layout{grid-template-columns:1fr;}
-  .sal-footer{grid-column:span 1;}
-  .program-grid{grid-template-columns:1fr 1fr;}
-  .cities-grid{grid-template-columns:1fr;}
-  .timeline-simple{grid-template-columns:1fr;}
-  .faq-grid{grid-template-columns:1fr;}
-  .next-strip{grid-template-columns:1fr 1fr;}
-  .next-step:nth-child(2){border-right:none;}
-  .next-step:nth-child(3){border-top:1px solid var(--border);}
-  .notfor-split{grid-template-columns:1fr;}
-  nav{padding:0 20px;}
-  .nav-links{display:none;}
-  .nav-cta{display:none;}
-  section{padding:56px 24px;}
-  .notfor-section{padding:56px 0;}
-  footer{justify-content:center;text-align:center;}
+  .sal-layout{grid-template-columns:1fr;}
+  .sal-foot{grid-column:span 1;}
+  .prog-grid,.tl-grid,.faq-grid{grid-template-columns:1fr;}
+  .nf-split{grid-template-columns:1fr;max-width:1100px;margin:0 auto;border-radius:12px;overflow:hidden;}
+  .nf-half{padding:28px 20px;}
+  .nf-wrap{padding-left:16px;padding-right:16px;}
+  section{padding:48px 20px;}
+  .nf-inner{padding:0 20px;}
+  footer{flex-direction:column;text-align:center;}
 }
 @media(max-width:600px){
-  .hero{padding:40px 16px 36px;gap:24px;}
-  .hero-stats{display:none;}
-  .hero-stats-mobile{display:flex;}
-  .hero h1{font-size:1.75rem;}
-  .hero-sub{font-size:0.88rem;}
-  .program-grid,.timeline-simple{grid-template-columns:1fr;}
-  .why-right{grid-template-columns:1fr;}
-  .why-cell:nth-child(odd){border-right:none;}
-  .next-strip{grid-template-columns:1fr;}
-  .next-step{border-right:none;border-top:1px solid var(--border);}
-  .next-step:first-child{border-top:none;}
-  .mistakes-layout{grid-template-columns:1fr;}
-  .mistakes-spine{display:none;}
-  .mistakes-grid{grid-template-columns:1fr;}
-  .notfor-half{padding:32px 24px;}
-  nav{padding:0 14px;height:60px;}
-  .nav-links,.nav-cta{display:none;}
-  section{padding:48px 16px;}
-  .notfor-section{padding:48px 0;}
-  .notfor-inner{padding:0 16px;}
-  footer{flex-direction:column;padding:24px 16px;}
-  .footer-links{justify-content:center;}
-  .scroll-to-top{bottom:18px;right:18px;width:36px;height:36px;font-size:1rem;}
-  .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
-  .popup-left{min-height:180px;}
-  .popup-close{background:rgba(0,0,0,0.35);}
-  .salary-layout{overflow-x:auto;}
-  .alumni-strip{padding:16px 20px;}
+  .stats{flex-wrap:wrap;}
+  .stat{padding:10px 14px;}
+  h1{font-size:1.65rem;}
+  .nf-half{padding:28px 20px;}
 }
 </style>
 </head>
@@ -359,22 +235,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <img src="logo.png" alt="TerraTern" onerror="this.style.display='none';document.getElementById('ntl').style.display='block'">
-    <span id="ntl" style="display:none;" class="nav-logo-text">Terra<span>Tern</span></span>
+  <div class="nav-brand">
+    <img src="logo.png" alt="TerraTern" style="height:38px;width:auto;display:block;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span style="display:none;">Terra<span style="color:var(--gold)">Tern</span></span>
   </div>
-  <ul class="nav-links">
-    <li><a href="#eligibility">Eligibility</a></li>
-    <li><a href="#program">Program</a></li>
-    <li><a href="#germany">Why Germany</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
   <div class="nav-right">
-    <a class="nav-phone" href="tel:+918064124242">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
-      +91 80641 24242
-    </a>
-    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consult</button>
+    <a class="nav-phone" href="tel:+918064124242">+91 80641 24242</a>
+    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
   </div>
 </nav>
 
@@ -382,384 +249,182 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
 <!-- HERO -->
 <div class="hero-wrap">
-  <div class="hero-circle1"></div><div class="hero-circle2"></div>
   <div class="hero">
     <div>
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Germany Opportunity Card · IT Professionals</div>
-      <h1>Move to Germany.<br><em>No Job Offer Needed.</em><br>Start Your Career in Europe.</h1>
-      <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter Europe without a job offer, search on arrival, and build your future from Day 1.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">2,400+</div><div class="hero-stat-label">Candidates placed</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">€45K+</div><div class="hero-stat-label">Avg IT entry salary</div></div>
-      </div>
-      <div class="hero-stats-mobile" id="mobileStats">
-        <div>
-          <div class="stat-carousel-num" id="statNum">99.7%</div>
-          <div class="stat-carousel-label" id="statLabel">Visa approval rate</div>
-        </div>
+      <div class="hero-badge"><span class="dot"></span>Germany Opportunity Card · IT Professionals</div>
+      <h1>Move to Germany.<br><em>No Job Offer Needed.</em></h1>
+      <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter Europe, search on arrival, and build your future from Day 1.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">99.7%</div><div class="stat-l">Visa approval rate</div></div>
+        <div class="stat"><div class="stat-n">7 Days</div><div class="stat-l">Avg. visa timeline</div></div>
+        <div class="stat"><div class="stat-n">2,400+</div><div class="stat-l">Candidates placed</div></div>
+        <div class="stat"><div class="stat-n">€45K+</div><div class="stat-l">Avg IT entry salary</div></div>
       </div>
     </div>
     <div class="form-card" id="lead-form">
-      <h3>Check Your Eligibility — Free</h3>
-      <p>Get a personalised assessment from our certified immigration expert within 24 hours.</p>
-      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@gmail.com"></div>
-      <div class="form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
-      <div class="form-group">
-        <label>Highest Education</label>
-        <div class="sel-wrap"><select><option value="" disabled selected>Select level</option><option>Diploma</option><option>Under Graduate (B.Tech / BCA / BSc)</option><option>Post Graduate (M.Tech / MCA / MBA)</option><option>Doctorate (PhD)</option></select></div>
+      <!-- Rotating expert advisor -->
+      <div class="expert-rotator" id="expertRotator">
+        <div class="er-photo-wrap">
+          <img class="er-photo" id="erPhoto" src="expert-noor.jpg" alt="Noor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="er-initials" id="erInitials" style="display:none;background:linear-gradient(135deg,#7c3aed,#4c1d95);">NO</div>
+          <span class="er-badge">✓ Certified</span>
+        </div>
+        <div class="er-info">
+          <div class="er-label">Free Consultation from</div>
+          <div class="er-name" id="erName">Noor</div>
+          <div class="er-spec" id="erSpec">Certified Immigration Advisor for Germany Opportunity Card</div>
+          <div class="er-dots">
+            <span class="er-dot active" data-i="0"></span>
+            <span class="er-dot" data-i="1"></span>
+            <span class="er-dot" data-i="2"></span>
+            <span class="er-dot" data-i="3"></span>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Total Work Experience</label>
-        <div class="sel-wrap"><select id="work-exp"><option value="" disabled selected>Select experience</option><option>Less than 1 Year</option><option>1 Year</option><option>2 Years</option><option>3 Years</option><option>4 Years</option><option>5 Years</option><option>6 Years</option><option>7 or More Years</option></select></div>
-      </div>
-      <button class="form-btn" id="submit-btn">👉 Check My Eligibility — Free →</button>
-      <div class="form-trust">🔒 No spam · Free consultation · <strong>Trusted by 2,400+ IT professionals</strong></div>
+      <h3>Book Your Free Consultation</h3>
+      <p>Speak 1:1 with a certified advisor — we'll assess your profile and map your Germany journey in 30 minutes.</p>
+      <div class="fg"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="you@gmail.com"></div>
+      <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="fg"><label>Education</label><div class="sw"><select><option value="" disabled selected>Select level</option><option>Diploma</option><option>Under Graduate</option><option>Post Graduate</option><option>Doctorate (PhD)</option></select></div></div>
+      <div class="fg"><label>Work Experience</label><div class="sw"><select><option value="" disabled selected>Select experience</option><option>Less than 1 Year</option><option>1–2 Years</option><option>3–5 Years</option><option>6+ Years</option></select></div></div>
+      <button class="form-btn" id="submit-btn">📞 Book My Free Consultation →</button>
+      <div class="trust">🔒 No spam · No obligation · <strong>Expert calls back within 24 hrs</strong></div>
     </div>
   </div>
 </div>
 
-<!-- ALUMNI SCROLLER — social proof right after the form -->
+<!-- ALUMNI STRIP -->
 <div class="alumni-strip">
-  <div class="scroller-label">2,400+ Alumni Now Working in Germany 🇩🇪</div>
-  <div class="scroller-track">
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#4f8ef7,#255cc1);">AK</div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f97b6b,#c0392b);">PR</div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#43c6ac,#1a7a5e);">SK</div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f7c948,#d4960a);">NM</div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">RV</div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#34d399,#065f46);">DS</div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#60a5fa,#1e40af);">KP</div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#fb923c,#9a3412);">AM</div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#38bdf8,#0369a1);">VR</div><div class="person-name">Vikram R.</div><div class="person-dest">📍 Düsseldorf</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f472b6,#9d174d);">SN</div><div class="person-name">Sneha N.</div><div class="person-dest">📍 Frankfurt</div></div>
+  <div class="strip-label">2,400+ Alumni Now Working in Germany 🇩🇪</div>
+  <div class="track">
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#4f8ef7,#255cc1);">AK</div><div class="pn">Arjun K.</div><div class="pd">📍 Berlin</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#f97b6b,#c0392b);">PR</div><div class="pn">Priya R.</div><div class="pd">📍 Munich</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#43c6ac,#1a7a5e);">SK</div><div class="pn">Siddharth K.</div><div class="pd">📍 Frankfurt</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#f7c948,#d4960a);">NM</div><div class="pn">Nisha M.</div><div class="pd">📍 Hamburg</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">RV</div><div class="pn">Rohit V.</div><div class="pd">📍 Berlin</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#34d399,#065f46);">DS</div><div class="pn">Deepika S.</div><div class="pd">📍 Stuttgart</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#60a5fa,#1e40af);">KP</div><div class="pn">Karthik P.</div><div class="pd">📍 Munich</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#fb923c,#9a3412);">AM</div><div class="pn">Ananya M.</div><div class="pd">📍 Cologne</div></div>
     <!-- dupe -->
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#4f8ef7,#255cc1);">AK</div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f97b6b,#c0392b);">PR</div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#43c6ac,#1a7a5e);">SK</div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f7c948,#d4960a);">NM</div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">RV</div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#34d399,#065f46);">DS</div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#60a5fa,#1e40af);">KP</div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#fb923c,#9a3412);">AM</div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#38bdf8,#0369a1);">VR</div><div class="person-name">Vikram R.</div><div class="person-dest">📍 Düsseldorf</div></div>
-    <div class="person-card"><div class="person-avatar" style="background:linear-gradient(135deg,#f472b6,#9d174d);">SN</div><div class="person-name">Sneha N.</div><div class="person-dest">📍 Frankfurt</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#4f8ef7,#255cc1);">AK</div><div class="pn">Arjun K.</div><div class="pd">📍 Berlin</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#f97b6b,#c0392b);">PR</div><div class="pn">Priya R.</div><div class="pd">📍 Munich</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#43c6ac,#1a7a5e);">SK</div><div class="pn">Siddharth K.</div><div class="pd">📍 Frankfurt</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#f7c948,#d4960a);">NM</div><div class="pn">Nisha M.</div><div class="pd">📍 Hamburg</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">RV</div><div class="pn">Rohit V.</div><div class="pd">📍 Berlin</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#34d399,#065f46);">DS</div><div class="pn">Deepika S.</div><div class="pd">📍 Stuttgart</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#60a5fa,#1e40af);">KP</div><div class="pn">Karthik P.</div><div class="pd">📍 Munich</div></div>
+    <div class="pc"><div class="av" style="background:linear-gradient(135deg,#fb923c,#9a3412);">AM</div><div class="pn">Ananya M.</div><div class="pd">📍 Cologne</div></div>
   </div>
 </div>
 
 <!-- ELIGIBILITY -->
 <section class="bg-white" id="eligibility">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Eligibility Check</div>
-    <h2 class="section-title">You May Qualify If You Tick<br><em>Any of These Boxes</em></h2>
-    <p class="section-sub">Germany's Opportunity Card works on a points system. IT professionals have one of the highest eligibility rates of any profession — here's exactly what counts.</p>
-  </div>
-  <div class="elig-list fade-up">
-    <div class="elig-row"><div class="elig-icon">🎓</div><div class="elig-body"><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or an IT Diploma from a recognised Indian institution qualifies. Higher qualifications (Masters, PhD) earn more points. We handle credential evaluation and recognition.</p></div><span class="elig-pts">Up to +4 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">💼</div><div class="elig-body"><h4>Minimum 2 Years Professional Experience</h4><p>Full-time or freelance IT experience in your field earned in the last 7 years counts. The more relevant your experience, the higher you score. We help you document and present it correctly.</p></div><span class="elig-pts">Up to +3 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">🌐</div><div class="elig-body"><h4>English or German Proficiency</h4><p>B2 English or A1 German strengthens your application and earns language points. Our 100+ mock tests help you achieve the required certification — online or in-person.</p></div><span class="elig-pts">Up to +3 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">📅</div><div class="elig-body"><h4>Age Between 24 and 44</h4><p>Applicants aged 24–35 earn the maximum bonus points; those up to 44 still qualify for age-based points. If you're in this bracket in IT, you're in one of the strongest eligibility windows possible.</p></div><span class="elig-pts">+1 to +2 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">🏦</div><div class="elig-body"><h4>Blocked Account — Proof of Funds</h4><p>~€12,500 in a German blocked account (Sperrkonto) required. TerraTern guides you through the entire setup and RBI-compliant transfer process.</p></div><span class="elig-pts mandatory">Mandatory</span></div>
-    <div class="elig-row"><div class="elig-icon">✅</div><div class="elig-body"><h4>Clean Background &amp; Health Insurance</h4><p>A clean police clearance certificate and valid travel insurance are baseline requirements — standard for the vast majority of applicants we work with.</p></div><span class="elig-pts mandatory">Mandatory</span></div>
+  <div class="stag">Eligibility</div>
+  <h2>You May Qualify If You Tick<br><em>Any of These Boxes</em></h2>
+  <p class="sub">Germany's Opportunity Card uses a points system. IT professionals have among the highest eligibility rates of any profession.</p>
+  <div class="elig-list">
+    <div class="elig-row"><div class="ei">🎓</div><div><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or IT Diploma from a recognised Indian institution. We handle credential evaluation.</p></div><span class="pts">Up to +4 pts</span></div>
+    <div class="elig-row"><div class="ei">💼</div><div><h4>Minimum 2 Years Professional Experience</h4><p>Full-time or freelance IT experience in the last 7 years. We help you document and present it correctly.</p></div><span class="pts">Up to +3 pts</span></div>
+    <div class="elig-row"><div class="ei">🌐</div><div><h4>English B2 or German A1 Proficiency</h4><p>Our 100+ mock tests help you achieve the required certification — online or in-person.</p></div><span class="pts">Up to +3 pts</span></div>
+    <div class="elig-row"><div class="ei">📅</div><div><h4>Age Between 24 and 44</h4><p>Ages 24–35 earn maximum bonus points; up to 44 still qualifies. IT professionals in this window have the strongest eligibility.</p></div><span class="pts">+1 to +2 pts</span></div>
+    <div class="elig-row"><div class="ei">🏦</div><div><h4>Blocked Account (~€12,500)</h4><p>TerraTern guides you through Sperrkonto setup and RBI-compliant transfer. Money is yours — released monthly after landing.</p></div><span class="pts m">Mandatory</span></div>
+    <div class="elig-row"><div class="ei">✅</div><div><h4>Clean Background &amp; Travel Insurance</h4><p>Police clearance + valid health/travel insurance. Standard for the vast majority of applicants we work with.</p></div><span class="pts m">Mandatory</span></div>
   </div>
 </div>
 </section>
 
-<!-- WHO THIS IS NOT FOR -->
-<div class="notfor-section">
-  <div class="notfor-inner">
-    <div class="fade-up notfor-header">
-      <div class="section-tag">Right Fit Check</div>
-      <h2 class="section-title">This Opportunity Is <em>Not for Everyone</em></h2>
-      <p class="section-sub" style="margin:0 auto;">We keep our success rate high by being honest upfront. 30 seconds of honesty here saves months of wasted effort.</p>
-    </div>
-  </div>
-  <div class="notfor-split fade-up">
-    <div class="notfor-half bad">
-      <h4>❌ Not for you if...</h4>
-      <div class="notfor-items">
-        <div class="notfor-item"><span class="notfor-dot">✗</span><span>You have less than 2 years of IT work experience</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✗</span><span>You're not planning to actually relocate within 6–8 months</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✗</span><span>You can't maintain a blocked account (~€12,500 / ~₹11.2L)</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✗</span><span>You want someone else to do it for you with zero effort on your part</span></div>
-      </div>
-    </div>
-    <div class="notfor-half good">
-      <h4>✅ Built for you if...</h4>
-      <div class="notfor-items">
-        <div class="notfor-item"><span class="notfor-dot">✓</span><span>You're an IT professional — B.Tech, BE, BCA, MCA, BSc IT or equivalent</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✓</span><span>You want to enter Germany first and find your job locally on arrival</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✓</span><span>You're serious about building a long-term international career in Europe</span></div>
-        <div class="notfor-item"><span class="notfor-dot">✓</span><span>You want an expert-led process — not DIY guesswork with German bureaucracy</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- WHY GERMANY — compressed -->
+<!-- WHY GERMANY -->
 <section class="bg-light" id="germany">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Why Germany</div>
-    <h2 class="section-title">Europe's Tech Powerhouse.<br><em>Built for IT Talent from India.</em></h2>
-    <p class="section-sub">Not just a visa — a career launchpad. Strong salaries, worker protections, free healthcare, and a tech sector actively recruiting Indian professionals.</p>
-  </div>
-  <div class="why-layout fade-up">
+  <div class="stag">Why Germany</div>
+  <h2>Europe's Tech Powerhouse.<br><em>Built for Indian IT Talent.</em></h2>
+  <p class="sub">Strong salaries, worker protections, free healthcare, and a tech sector actively recruiting Indian professionals.</p>
+  <div class="why-layout">
     <div class="why-left">
-      <div class="big-num">€45K–€120K</div>
+      <div class="big-n">€45K–€120K</div>
       <h3>IT Salary Range Across Experience Levels</h3>
-      <p>Entry-level roles start at €45,000/year, scaling to €120,000 for senior specialists. Add 30 mandatory paid leave days and statutory health insurance from Day 1 — the financial transformation is real.</p>
-      <div class="why-path">
-        <div class="why-path-label">Path to permanent residency</div>
-        <div class="why-path-steps">
-          <span>Chancenkarte</span><em>→</em>
-          <span>Work visa</span><em>→</em>
-          <span>PR in 4 yrs</span><em>→</em>
-          <span style="color:var(--gold);font-weight:700;">EU citizen</span>
-        </div>
+      <p>Entry-level starts at €45,000/year, scaling to €120,000 for senior specialists — plus 30 mandatory paid leave days and statutory health insurance from Day 1.</p>
+      <div class="path">
+        <div class="path-l">Path to permanent residency</div>
+        <div class="path-s"><span>Chancenkarte</span><em>→</em><span>Work visa</span><em>→</em><span>PR in 4 yrs</span><em>→</em><span style="color:var(--gold);font-weight:700;">EU citizen</span></div>
       </div>
     </div>
     <div class="why-right">
-      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>World's 4th Largest Economy</h4><p>SAP, Siemens, BMW, Bosch — global giants with massive IT hiring pipelines across all tech stacks.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🗣️</div><h4>English-First Tech Scene</h4><p>Berlin, Munich, Hamburg and Frankfurt operate almost entirely in English in tech. No German needed in your first year.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🏥</div><h4>Free Healthcare From Day 1</h4><p>Statutory GKV health insurance covers you and your family from your first day of employment.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🎓</div><h4>Free University for Your Kids</h4><p>Germany's public universities are tuition-free. World-class education at zero cost — a huge win for Indian families.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>Schengen Travel — 26 Countries</h4><p>Weekend trips to Paris, Prague, Amsterdam, Vienna. With a German permit, Europe is your backyard.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🍛</div><h4>Thriving Indian Community</h4><p>Indian restaurants, Diwali celebrations, cricket clubs, and WhatsApp groups in every major German city.</p></div>
+      <div class="wc"><div class="wi">🌍</div><h4>World's 4th Largest Economy</h4><p>SAP, Siemens, BMW, Bosch — global giants with massive IT hiring pipelines.</p></div>
+      <div class="wc"><div class="wi">🗣️</div><h4>English-First Tech Scene</h4><p>Berlin, Munich, Hamburg operate almost entirely in English in tech. No German needed in Year 1.</p></div>
+      <div class="wc"><div class="wi">🏥</div><h4>Free Healthcare From Day 1</h4><p>Statutory GKV health insurance covers you and your family from your first day of employment.</p></div>
+      <div class="wc"><div class="wi">🎓</div><h4>Free University for Your Kids</h4><p>Germany's public universities are tuition-free — world-class education at zero cost.</p></div>
+      <div class="wc"><div class="wi">🌍</div><h4>Schengen — 26 Countries</h4><p>Weekend trips to Paris, Prague, Amsterdam. With a German permit, Europe is your backyard.</p></div>
+      <div class="wc"><div class="wi">🍛</div><h4>Thriving Indian Community</h4><p>Indian restaurants, Diwali, cricket clubs, and WhatsApp groups in every major German city.</p></div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- SALARY COMPARISON -->
+<!-- SALARY -->
 <section class="bg-white">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">The Real Numbers</div>
-    <h2 class="section-title">India vs Germany —<br><em>What Changes After You Move</em></h2>
-    <p class="section-sub">What most IT professionals experience in the first year after relocating. The INR-to-EUR shift is life-changing.</p>
-  </div>
-  <div class="salary-layout fade-up">
-    <div class="sal-col india">
-      <div class="sal-col-head">🇮🇳 India — Today</div>
+  <div class="stag">The Real Numbers</div>
+  <h2>India vs Germany —<br><em>What Changes After You Move</em></h2>
+  <p class="sub">What most IT professionals experience in the first year after relocating.</p>
+  <div class="sal-layout">
+    <div class="sal-col in">
+      <div class="sal-head">🇮🇳 India — Today</div>
       <div class="sal-row">₹6–15 LPA average IT salary<span class="sal-row-note">Most mid-level engineers</span></div>
       <div class="sal-row">₹20K–₹50K monthly savings<span class="sal-row-note">After cost of living</span></div>
       <div class="sal-row">10–12 hour workdays<span class="sal-row-note">Across most IT companies</span></div>
       <div class="sal-row">12–21 days leave per year<span class="sal-row-note">Varies by company</span></div>
-      <div class="sal-row">Competing against 350K+ engineers<span class="sal-row-note">Extremely crowded market</span></div>
     </div>
-    <div class="sal-col germany">
-      <div class="sal-col-head">🇩🇪 Germany — After Moving</div>
+    <div class="sal-col de">
+      <div class="sal-head">🇩🇪 Germany — After Moving</div>
       <div class="sal-row">€45K–€120K annual salary<span class="sal-row-note">Entry to senior levels</span></div>
       <div class="sal-row">₹4L+ monthly savings equivalent<span class="sal-row-note">After German living costs</span></div>
       <div class="sal-row">Strict 8-hour workdays<span class="sal-row-note">Protected by employment law</span></div>
       <div class="sal-row">30 paid leave days — mandatory<span class="sal-row-note">Statutory minimum for all</span></div>
-      <div class="sal-row">350,000+ IT roles unfilled<span class="sal-row-note">Germany is recruiting you</span></div>
     </div>
-    <div class="sal-footer">Higher earnings + stronger currency + real work-life balance = <strong>faster wealth-building than almost anywhere else for Indian IT professionals.</strong></div>
-  </div>
-</div>
-</section>
-
-<!-- BEST CITIES — trimmed to compact 2-col -->
-<section class="bg-light">
-<div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Where to Land</div>
-    <h2 class="section-title">Best Cities for<br><em>Indian IT Professionals</em></h2>
-    <p class="section-sub">Each city has a distinct tech identity. Here's the quick guide — pick your stack, pick your city.</p>
-  </div>
-  <div class="cities-grid fade-up">
-    <div class="city-card"><div class="city-left"><div class="city-name">Berlin</div><span class="city-tag">🏙️ Startup Capital</span><p>Zalando, N26, Delivery Hero. English is the office language. Multicultural, affordable, welcoming to newcomers.</p></div></div>
-    <div class="city-card"><div class="city-left"><div class="city-name">Munich</div><span class="city-tag">🏔️ Enterprise IT Hub</span><p>SAP, BMW, Siemens. Highest IT salaries in Europe, large established Indian community.</p></div></div>
-    <div class="city-card"><div class="city-left"><div class="city-name">Frankfurt</div><span class="city-tag">🏦 FinTech Powerhouse</span><p>Europe's financial centre. Deutsche Bank tech, FinTech unicorns. Prime for cloud and cybersecurity profiles.</p></div></div>
-    <div class="city-card"><div class="city-left"><div class="city-name">Hamburg</div><span class="city-tag">🚢 Digital Commerce</span><p>Xing, Adobe, major e-commerce companies. Excellent quality of life and strong English-speaking professional scene.</p></div></div>
-    <div class="city-card"><div class="city-left"><div class="city-name">Stuttgart</div><span class="city-tag">🚗 Automotive Software</span><p>Mercedes-Benz and Porsche software arms. Ideal for embedded systems, IoT, and automotive software profiles.</p></div></div>
-    <div class="city-card"><div class="city-left"><div class="city-name">Cologne / Düsseldorf</div><span class="city-tag">📡 Media &amp; Telecom</span><p>Deutsche Telekom and major media groups drive tech hiring. Lower cost of living with strong Indian diaspora.</p></div></div>
-  </div>
-</div>
-</section>
-
-<!-- MISTAKES -->
-<section class="bg-soft">
-<div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Why Applicants Fail</div>
-    <h2 class="section-title">5 Mistakes That Get IT Professionals<br><em>Rejected — And How We Prevent Each One</em></h2>
-    <p class="section-sub">Every week we see eligible candidates get rejected for avoidable reasons. These are the patterns — and exactly how TerraTern fixes them.</p>
-  </div>
-  <div class="mistakes-grid fade-up">
-    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Wrong or incomplete documentation</h5><p>Missing or improperly formatted documents cause instant rejection — no second chances at the consulate window.</p></div></div>
-    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Complete documentation, zero errors</h5><p>Our exhaustive checklist and expert review ensures nothing reaches the consulate with a mistake or missing piece.</p></div></div>
-
-    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Incorrect points calculation</h5><p>Candidates assume they qualify, fall short on the actual scoring sheet, and waste months preparing the wrong application.</p></div></div>
-    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Exact score calculated on first call</h5><p>Your Chancenkarte points are computed on your very first consultation. We find gaps — and tell you how to close them before filing.</p></div></div>
-
-    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Non-German CV format</h5><p>German employers expect a specific CV structure. Most Indian candidates get this wrong and receive zero callbacks.</p></div></div>
-    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>German-standard CV + LinkedIn rebuild</h5><p>Every candidate gets a Germany-ready CV and profile optimised for German employers before job search begins.</p></div></div>
-
-    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Weak job search strategy</h5><p>Randomly applying on LinkedIn doesn't work in Germany. Recruiter relationships and local platforms are what get results.</p></div></div>
-    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Recruiter network + structured approach</h5><p>Direct recruiter introductions, German job portal access, and hands-on application support until offer letter in hand.</p></div></div>
-
-    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Delaying language preparation</h5><p>Even basic German (A1) significantly boosts employability. Most candidates start far too late and miss the opportunity.</p></div></div>
-    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Language training starts from Week 1</h5><p>A1–B1 German batches run online and in Bangalore in parallel with documentation — 100+ mock tests included.</p></div></div>
+    <div class="sal-foot">Higher earnings + stronger currency + real work-life balance = <strong>faster wealth-building than almost anywhere else for Indian IT professionals.</strong></div>
   </div>
 </div>
 </section>
 
 <!-- PROGRAM -->
-<section class="bg-white" id="program">
+<section class="bg-soft" id="program">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Our Complete Program</div>
-    <h2 class="section-title">Everything Covered.<br><em>Nothing Left to Chance.</em></h2>
-    <p class="section-sub">From first eligibility check to your first salary credit in Germany — TerraTern walks every step with you. End-to-end, no hand-offs, no surprises.</p>
-  </div>
-  <div class="program-grid fade-up">
-    <div class="prog-card"><div class="prog-num">01</div><div class="prog-step">Roadmap Session</div><h4>Certified Immigration Expert Consult</h4><ul class="prog-list"><li>1:1 eligibility assessment with a Germany-certified expert</li><li>Points calculation and gap analysis for your profile</li><li>Custom timeline and strategy for your situation</li><li>All questions answered — zero sales pressure</li><li>Recorded session sent to you post-call</li></ul></div>
-    <div class="prog-card"><div class="prog-num">02</div><div class="prog-step">Document Preparation</div><h4>End-to-End Document Support</h4><ul class="prog-list"><li>Degree, experience, and credential evaluation guidance</li><li>Translation and notarisation support</li><li>Blocked account setup and fund transfer assistance</li><li>Travel insurance and health coverage documentation</li><li>Zero-error checklist — nothing gets missed</li></ul></div>
-    <div class="prog-card"><div class="prog-num">03</div><div class="prog-step">Visa Filing</div><h4>Precision Visa Application Filing</h4><ul class="prog-list"><li>Consulate-ready application package by experts</li><li>Slot booking support — VFS / consulate appointments</li><li>Mock interview preparation and practice</li><li>99.7% receive visa within 7 days of filing</li><li>Real-time status tracking and follow-up</li></ul></div>
-    <div class="prog-card"><div class="prog-num">04</div><div class="prog-step">Language Training</div><h4>German Language — Online &amp; Offline</h4><ul class="prog-list"><li>A1 to B1 German — online batches and Bangalore centre</li><li>100+ mock tests for IELTS, PTE, TOEFL, and Goethe</li><li>German for the workplace — job-specific vocabulary</li><li>Live practice with CELTA-certified trainers</li><li>Flexible weekend and evening batches available</li></ul></div>
-    <div class="prog-card"><div class="prog-num">05</div><div class="prog-step">Job Search Assistance</div><h4>Germany Job Search — Before &amp; After Visa</h4><ul class="prog-list"><li>CV and LinkedIn optimised for German employers</li><li>Direct introductions to our Germany recruiter network</li><li>Job portal access — Indeed DE, StepStone, LinkedIn DE</li><li>Job search support continues after visa approval</li><li>Support ends only when you have a signed offer letter</li></ul></div>
-    <div class="prog-card"><div class="prog-num">06</div><div class="prog-step">Post-Landing Support</div><h4>Arrival &amp; Settling-In Assistance</h4><ul class="prog-list"><li>City registration (Anmeldung) walkthrough on arrival</li><li>German bank account, SIM, and health insurance setup</li><li>Accommodation research before you land</li><li>Community connect with Indians in your city</li><li>WhatsApp support group with TerraTern alumni</li></ul></div>
+  <div class="stag">Our Complete Program</div>
+  <h2>Everything Covered.<br><em>Nothing Left to Chance.</em></h2>
+  <p class="sub">From eligibility check to your first salary in Germany — end-to-end, no hand-offs, no surprises.</p>
+  <div class="prog-grid">
+    <div class="pc-card"><div class="pc-num">01</div><div class="pc-step">Roadmap Session</div><h4>Certified Expert Consult</h4><ul class="pc-list"><li>1:1 eligibility assessment &amp; exact points score</li><li>Gap analysis and custom timeline</li><li>Recorded and sent to you post-call</li></ul></div>
+    <div class="pc-card"><div class="pc-num">02</div><div class="pc-step">Document Prep</div><h4>End-to-End Document Support</h4><ul class="pc-list"><li>Credential evaluation, translation &amp; notarisation</li><li>Blocked account setup &amp; fund transfer</li><li>Zero-error checklist — nothing gets missed</li></ul></div>
+    <div class="pc-card"><div class="pc-num">03</div><div class="pc-step">Visa Filing</div><h4>Precision Visa Application</h4><ul class="pc-list"><li>Consulate-ready application by experts</li><li>VFS / consulate slot booking support</li><li>99.7% receive visa within 7 days</li></ul></div>
+    <div class="pc-card"><div class="pc-num">04</div><div class="pc-step">Language Training</div><h4>German — Online &amp; Offline</h4><ul class="pc-list"><li>A1 to B1 German, online and Bangalore centre</li><li>100+ mock tests (IELTS, PTE, TOEFL, Goethe)</li><li>Flexible weekend and evening batches</li></ul></div>
+    <div class="pc-card"><div class="pc-num">05</div><div class="pc-step">Job Search</div><h4>Germany Job Search Support</h4><ul class="pc-list"><li>German-standard CV + LinkedIn rebuild</li><li>Direct recruiter network introductions</li><li>Support continues until signed offer letter</li></ul></div>
+    <div class="pc-card"><div class="pc-num">06</div><div class="pc-step">Post-Landing</div><h4>Arrival &amp; Settling-In</h4><ul class="pc-list"><li>Anmeldung, bank, SIM &amp; health insurance</li><li>Accommodation research before you land</li><li>WhatsApp alumni support community</li></ul></div>
   </div>
 </div>
 </section>
 
-<!-- EXPERTS STRIP -->
-<div class="experts-strip">
-  <div class="experts-label">Meet the Certified Experts</div>
-  <div class="experts-track">
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NO</div>
-      <div class="expert-info">
-        <div class="expert-name">Noor <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">6+ Years Experience</div>
-        <div class="expert-spec">Chancenkarte · Work Visas · EU Blue Card</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">KU</div>
-      <div class="expert-info">
-        <div class="expert-name">Kumar <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">4+ Years Experience</div>
-        <div class="expert-spec">IT Profiles · Credential Evaluation</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#be185d,#831843);">RI</div>
-      <div class="expert-info">
-        <div class="expert-name">Ritika <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">5+ Years Experience</div>
-        <div class="expert-spec">Family Reunification · Language Guidance</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#065f46,#047857);">CH</div>
-      <div class="expert-info">
-        <div class="expert-name">Christu <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">5+ Years Experience</div>
-        <div class="expert-spec">Job Search Strategy · Post-Landing</div>
-      </div>
-    </div>
-    <!-- dupe for loop -->
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NO</div>
-      <div class="expert-info">
-        <div class="expert-name">Noor <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">6+ Years Experience</div>
-        <div class="expert-spec">Chancenkarte · Work Visas · EU Blue Card</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#0369a1,#0c4a6e);">KU</div>
-      <div class="expert-info">
-        <div class="expert-name">Kumar <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">4+ Years Experience</div>
-        <div class="expert-spec">IT Profiles · Credential Evaluation</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#be185d,#831843);">RI</div>
-      <div class="expert-info">
-        <div class="expert-name">Ritika <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">5+ Years Experience</div>
-        <div class="expert-spec">Family Reunification · Language Guidance</div>
-      </div>
-    </div>
-    <div class="expert-card">
-      <div class="expert-avatar" style="background:linear-gradient(135deg,#065f46,#047857);">CH</div>
-      <div class="expert-info">
-        <div class="expert-name">Christu <span class="expert-badge">Certified</span></div>
-        <div class="expert-yrs">5+ Years Experience</div>
-        <div class="expert-spec">Job Search Strategy · Post-Landing</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TIMELINE — simplified 3-phase cards -->
+<!-- TIMELINE -->
 <section class="bg-light">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Your Timeline</div>
-    <h2 class="section-title">From First Consult to<br><em>Landing in Germany</em></h2>
-    <p class="section-sub">Most TerraTern candidates are working in Germany within 4–6 months of their first call.</p>
-  </div>
-  <div class="timeline-simple fade-up">
+  <div class="stag">Your Timeline</div>
+  <h2>From First Consult to<br><em>Landing in Germany</em></h2>
+  <p class="sub">Most TerraTern candidates are working in Germany within 4–6 months of their first call.</p>
+  <div class="tl-grid">
     <div class="tl-card" data-n="1">
-      <div class="tl-card-phase">Phase 1</div>
-      <h4>Assess &amp; Prepare</h4>
-      <div class="tl-card-duration">Weeks 1–6</div>
-      <ul>
-        <li>Free eligibility consult + exact points score</li>
-        <li>Document checklist, translations &amp; notarisation</li>
-        <li>A1 German language training begins</li>
-        <li>Blocked account (Sperrkonto) setup</li>
-      </ul>
+      <div class="tl-phase">Phase 1</div><h4>Assess &amp; Prepare</h4><div class="tl-dur">Weeks 1–6</div>
+      <ul><li>Free eligibility consult + exact points score</li><li>Documents, translations &amp; blocked account setup</li><li>German language training begins</li></ul>
     </div>
     <div class="tl-card" data-n="2">
-      <div class="tl-card-phase">Phase 2</div>
-      <h4>Apply &amp; Get Visa</h4>
-      <div class="tl-card-duration">Weeks 7–12</div>
-      <ul>
-        <li>Consulate-ready application filed by experts</li>
-        <li>VFS / consulate slot booked</li>
-        <li>Average visa decision: 7 days</li>
-        <li>CV + LinkedIn rebuilt for German market</li>
-      </ul>
+      <div class="tl-phase">Phase 2</div><h4>Apply &amp; Get Visa</h4><div class="tl-dur">Weeks 7–12</div>
+      <ul><li>Consulate-ready application filed by experts</li><li>Average visa decision: 7 days</li><li>CV + LinkedIn rebuilt for German market</li></ul>
     </div>
     <div class="tl-card" data-n="3">
-      <div class="tl-card-phase">Phase 3</div>
-      <h4>Land &amp; Start Working</h4>
-      <div class="tl-card-duration">Months 4–7</div>
-      <ul>
-        <li>Anmeldung, bank account &amp; health insurance</li>
-        <li>Active job search with recruiter introductions</li>
-        <li>Support until signed employment contract</li>
-        <li>Alumni community connect on arrival</li>
-      </ul>
+      <div class="tl-phase">Phase 3</div><h4>Land &amp; Start Working</h4><div class="tl-dur">Months 4–7</div>
+      <ul><li>Anmeldung, bank account &amp; health insurance</li><li>Active job search with recruiter introductions</li><li>Support until signed employment contract</li></ul>
     </div>
-  </div>
-</div>
-</section>
-
-<!-- WHAT HAPPENS AFTER YOU SUBMIT -->
-<section class="bg-white">
-<div class="container">
-  <div class="fade-up">
-    <div class="section-tag">After You Apply</div>
-    <h2 class="section-title">What Happens After<br><em>You Submit Your Details</em></h2>
-    <p class="section-sub">No black holes. Here's exactly what happens from the moment you submit — step by step.</p>
-  </div>
-  <div class="next-strip fade-up">
-    <div class="next-step" data-n="01"><div class="next-step-tag">Within 24 hours</div><h4>Expert Calls You Back</h4><p>A certified immigration expert calls to evaluate your profile in detail. No bots, no scripts.</p></div>
-    <div class="next-step" data-n="02"><div class="next-step-tag">On the call</div><h4>Your Exact Points Score</h4><p>We calculate your Chancenkarte score live and tell you exactly what's missing — if anything.</p></div>
-    <div class="next-step" data-n="03"><div class="next-step-tag">Post-call</div><h4>Clear Germany Roadmap</h4><p>Step-by-step plan — documents, timeline, milestones — tailored specifically to your profile. Recorded and sent to you.</p></div>
-    <div class="next-step" data-n="04"><div class="next-step-tag">Zero pressure</div><h4>You Decide What's Next</h4><p>No follow-up spam. No sales tactics. You choose whether to move forward, in your own time.</p></div>
   </div>
 </div>
 </section>
@@ -767,100 +432,89 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <div class="fade-up">
-      <div class="section-tag">Start Your Germany Journey</div>
-      <h2>Your Germany IT Career<br><span>Starts With One Free Call.</span></h2>
-      <p>Our certified immigration experts have helped 2,400+ Indian IT professionals make this move. Free, obligation-free, 30 minutes.</p>
-      <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">👉 Check My Eligibility — Free →</button>
-      <div class="cta-phone">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
-    </div>
+    <div class="stag">Book Your Free Consultation</div>
+    <h2>30 Minutes With an Expert.<br><span>A Roadmap for Your Germany Move.</span></h2>
+    <p>Your certified advisor will assess your profile, calculate your Chancenkarte score, and give you a clear next step — free, no obligation.</p>
+    <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">📞 Book My Free Consultation →</button>
+    <div class="cta-phone">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
   </div>
 </section>
 
-<!-- FAQ — pushed to bottom -->
+<!-- FAQ -->
 <section class="bg-soft" id="faq">
 <div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Frequently Asked Questions</div>
-    <h2 class="section-title">Questions IT Professionals<br><em>Ask Us Most</em></h2>
-    <p class="section-sub">Can't find your question? Our experts respond within 24 hours on WhatsApp: <strong>+91 80641 24242</strong></p>
-  </div>
-  <div class="faq-grid fade-up">
-    <div class="faq-item"><button class="faq-q">Do I need a job offer to apply? <span class="faq-arrow">+</span></button><div class="faq-a">No — this is the Chancenkarte's biggest advantage. Unlike a traditional work visa, you enter Germany without a prior job offer. You get up to 1 year after arrival to find employment. Our job search support starts even before you land.</div></div>
-    <div class="faq-item"><button class="faq-q">What minimum points score do I need? <span class="faq-arrow">+</span></button><div class="faq-a">You need a minimum of 6 points out of 10. IT professionals with a recognised degree and 2+ years of experience typically score 6–8 points. We calculate your exact score in the free consultation — most IT applicants we assess already qualify.</div></div>
-    <div class="faq-item"><button class="faq-q">How much is the blocked account and how does it work? <span class="faq-arrow">+</span></button><div class="faq-a">You need approximately €12,500 (~₹11.2 lakhs) in a German blocked account (Sperrkonto) as proof of funds. The money is yours — it's released to you monthly after you land. TerraTern assists with setup through banking partners and RBI-compliant transfers.</div></div>
-    <div class="faq-item"><button class="faq-q">Do I need to know German to apply or find a job? <span class="faq-arrow">+</span></button><div class="faq-a">For the visa, A1 German or B2 English is beneficial but not always mandatory. Most IT companies in Berlin and startup hubs work entirely in English. A2–B1 German significantly boosts your employability and salary — which is why we start language training from Week 1.</div></div>
-    <div class="faq-item"><button class="faq-q">What is the 99.7% visa success rate based on? <span class="faq-arrow">+</span></button><div class="faq-a">Based on 2,400+ applicants processed through TerraTern. Our rate is driven by complete documentation, expert-led review, and zero compromise on preparation quality. The rare 0.3% involved incomplete information from applicants or consulate policy changes outside our control.</div></div>
-    <div class="faq-item"><button class="faq-q">Can I bring my spouse and children? <span class="faq-arrow">+</span></button><div class="faq-a">Yes — immediate family can apply for family reunification once you have secured employment and stable income in Germany. Some spouses may also qualify independently. We assess all family scenarios in the free consultation.</div></div>
-    <div class="faq-item"><button class="faq-q">Does job search support continue after visa approval? <span class="faq-arrow">+</span></button><div class="faq-a">Yes. Our support does not stop at visa approval — it continues until you have a signed employment contract. Full access to our recruiter network, CV support, and job portal guidance. We consider the job done only when you're employed.</div></div>
-    <div class="faq-item"><button class="faq-q">Is language training online or in-person? <span class="faq-arrow">+</span></button><div class="faq-a">Both. We run live online German and English classes around your work schedule, and our Bangalore centre offers in-person batches. All 100+ mock tests are accessible digitally from anywhere in India. Candidates outside Bangalore use our fully online track with identical results.</div></div>
+  <div class="stag">FAQ</div>
+  <h2>Questions IT Professionals<br><em>Ask Us Most</em></h2>
+  <p class="sub" style="margin-bottom:0;">Can't find your answer? WhatsApp us: <strong>+91 80641 24242</strong></p>
+  <div class="faq-grid">
+    <div class="faq-item"><button class="faq-q">Do I need a job offer to apply? <span class="faq-arrow">+</span></button><div class="faq-a">No — the Chancenkarte's biggest advantage. You enter Germany without a prior job offer and get up to 1 year to find employment. Our job search support starts before you even land.</div></div>
+    <div class="faq-item"><button class="faq-q">What minimum points score do I need? <span class="faq-arrow">+</span></button><div class="faq-a">A minimum of 6 out of 10 points. IT professionals with a recognised degree and 2+ years experience typically score 6–8. We calculate your exact score in the free consultation.</div></div>
+    <div class="faq-item"><button class="faq-q">How does the blocked account work? <span class="faq-arrow">+</span></button><div class="faq-a">~€12,500 (~₹11.2L) in a German Sperrkonto as proof of funds. The money is yours — released to you monthly after landing. We handle setup and RBI-compliant transfer.</div></div>
+    <div class="faq-item"><button class="faq-q">Do I need German to apply or find a job? <span class="faq-arrow">+</span></button><div class="faq-a">For visa, A1 German or B2 English is helpful but not always mandatory. Most Berlin tech companies work entirely in English. We start German training from Week 1 to maximise your employability.</div></div>
+    <div class="faq-item"><button class="faq-q">Can I bring my spouse and children? <span class="faq-arrow">+</span></button><div class="faq-a">Yes — immediate family can apply for family reunification once you have stable income in Germany. Some spouses may also qualify independently. We assess all family scenarios on the free call.</div></div>
+    <div class="faq-item"><button class="faq-q">Does job search support end at visa approval? <span class="faq-arrow">+</span></button><div class="faq-a">No. Our support continues until you have a signed employment contract — full recruiter network access, CV support, and job portal guidance. We consider the job done only when you're employed.</div></div>
   </div>
 </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
-  <div>
-    <img src="logo.png" alt="TerraTern" class="footer-logo-img" onerror="this.style.display='none';document.getElementById('ftl').style.display='block'">
-    <span id="ftl" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
-  </div>
+  <div class="footer-brand">Terra<span>Tern</span></div>
   <div class="footer-text">
-    <strong style="color:var(--navy);">TerraTern Private Limited</strong><br>
-    4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102<br>
+    <strong>TerraTern Private Limited</strong> · 4th Floor, HustleHub 1901, 19th Main Road, HSR Layout, Bangalore 560102<br>
     © 2026 TerraTern Private Limited. All rights reserved.
   </div>
   <div class="footer-links">
     <a href="tel:+918064124242">+91 80641 24242</a>
-    <a href="https://terratern.com/terms-and-condition/" target="_blank" rel="noopener">Terms &amp; Conditions</a>
-    <a href="https://terratern.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+    <a href="https://terratern.com/terms-and-condition/" target="_blank">Terms</a>
+    <a href="https://terratern.com/privacy-policy/" target="_blank">Privacy</a>
   </div>
 </footer>
 
-<button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
-
-<!-- EXIT POPUP -->
-<div class="popup-overlay" id="exitPopup">
-  <div class="popup-box">
-    <button class="popup-close" id="popupClose" aria-label="Close">✕</button>
-    <div class="popup-left">
-      <img src="story-01.jpg" alt="Visa success story" class="popup-story-img" onerror="this.style.display='none';document.getElementById('pip').style.display='flex'">
-      <div id="pip" class="popup-story-img-placeholder" style="display:none;">🛂</div>
-      <div class="popup-left-overlay">
-        <div class="popup-visa-badge">✅ Visa Approved in 6 Days</div>
-        <div class="popup-testimonial-text">"I applied in October, got my visa stamp in 6 days, and landed my first German IT job within 3 weeks of arriving. TerraTern handled everything — I just had to show up."</div>
-        <div class="popup-testimonial-author">Karthik Prasad</div>
-        <div class="popup-testimonial-dest">Software Engineer · Now in Munich 🇩🇪</div>
-      </div>
-    </div>
-    <div class="popup-right">
-      <h3>Wait — Check If You Qualify<br>Before You Go</h3>
-      <p>Takes 30 seconds. Our expert will call you back within 24 hours.</p>
-      <div class="popup-form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar" id="p-name"></div>
-      <div class="popup-form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210" id="p-phone"></div>
-      <div class="popup-form-group"><label>Email Address</label><input type="email" placeholder="you@gmail.com" id="p-email"></div>
-      <div class="popup-form-group"><label>Highest Education</label><div class="popup-sel-wrap"><select id="popup-education"><option value="" disabled selected>Select level</option><option>Diploma</option><option>Under Graduate</option><option>Post Graduate</option><option>Doctorate (PhD)</option></select></div></div>
-      <div class="popup-form-group"><label>Work Experience</label><div class="popup-sel-wrap"><select id="popup-experience"><option value="" disabled selected>Select experience</option><option>Less than 1 Year</option><option>1 Year</option><option>2 Years</option><option>3 Years</option><option>4 Years</option><option>5 Years</option><option>6 Years</option><option>7 or More Years</option></select></div></div>
-      <button class="popup-submit" id="popup-submit-btn">Check My Eligibility — Free →</button>
-      <div class="popup-skip" id="popupSkip">No thanks, I'll figure it out myself</div>
-    </div>
-  </div>
-</div>
+<button class="scroll-top" id="stt">↑</button>
 
 <script>
-// Mobile stats carousel
-const stats=[{n:'99.7%',l:'Visa approval rate'},{n:'7 Days',l:'Avg. visa timeline'},{n:'€45K+',l:'Avg IT entry salary'}];
-let si=0;
-setInterval(()=>{
-  si=(si+1)%stats.length;
-  const sn=document.getElementById('statNum'),sl=document.getElementById('statLabel');
-  sn.style.animation='none';sl.style.animation='none';
-  setTimeout(()=>{sn.textContent=stats[si].n;sl.textContent=stats[si].l;sn.style.animation='fadeInStat 0.4s ease';sl.style.animation='fadeInStat 0.4s ease';},50);
-},3000);
+// Expert rotator
+const experts=[
+  {name:'Noor',spec:'Certified Immigration Advisor for Germany Opportunity Card',img:'expert-noor.jpg',initials:'NO',bg:'linear-gradient(135deg,#7c3aed,#4c1d95)'},
+  {name:'Kumar',spec:'Certified Immigration Advisor for Germany Opportunity Card',img:'expert-kumar.jpg',initials:'KU',bg:'linear-gradient(135deg,#0369a1,#0c4a6e)'},
+  {name:'Ritika',spec:'Certified Immigration Advisor for Germany Opportunity Card',img:'expert-ritika.jpg',initials:'RI',bg:'linear-gradient(135deg,#be185d,#831843)'},
+  {name:'Christu',spec:'Certified Immigration Advisor for Germany Opportunity Card',img:'expert-christu.jpg',initials:'CH',bg:'linear-gradient(135deg,#065f46,#047857)'},
+];
+let ei=0;
+function switchExpert(idx){
+  const p=document.getElementById('erPhoto'),
+        ini=document.getElementById('erInitials'),
+        nm=document.getElementById('erName'),
+        sp=document.getElementById('erSpec'),
+        ex=experts[idx];
+  // fade out
+  p.style.opacity='0';ini.style.opacity='0';nm.style.opacity='0';sp.style.opacity='0';
+  setTimeout(()=>{
+    nm.textContent=ex.name;
+    sp.textContent=ex.spec;
+    p.src=ex.img;
+    p.style.display='block';
+    ini.style.display='none';
+    p.onerror=function(){this.style.display='none';ini.style.display='flex';ini.textContent=ex.initials;ini.style.background=ex.bg;ini.style.opacity='1';};
+    p.onload=function(){this.style.opacity='1';};
+    ini.style.opacity='1';
+    nm.style.opacity='1';sp.style.opacity='1';
+    // dots
+    document.querySelectorAll('.er-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+  },300);
+}
+setInterval(()=>{ei=(ei+1)%experts.length;switchExpert(ei);},10000);
+document.querySelectorAll('.er-dot').forEach(d=>{
+  d.addEventListener('click',()=>{ei=+d.dataset.i;switchExpert(ei);});
+});
 
-// Scroll to top
-const stb=document.getElementById('scrollTopBtn');
-window.addEventListener('scroll',()=>stb.classList.toggle('active',window.pageYOffset>300));
-stb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const stt=document.getElementById('stt');
+window.addEventListener('scroll',()=>stt.classList.toggle('active',scrollY>300));
+stt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 // FAQ
 document.querySelectorAll('.faq-q').forEach(b=>{
@@ -871,30 +525,12 @@ document.querySelectorAll('.faq-q').forEach(b=>{
   });
 });
 
-// Fade observer
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-// Main form submit
+// Form submit
 document.getElementById('submit-btn').addEventListener('click',()=>{
   const ins=document.querySelectorAll('.form-card input,.form-card select');
-  let ok=true;ins.forEach(i=>{if(!i.value){i.style.borderColor='#dc2626';ok=false;}else i.style.borderColor='';});
+  let ok=true;
+  ins.forEach(i=>{if(!i.value){i.style.borderColor='#dc2626';ok=false;}else i.style.borderColor='';});
   if(ok){const b=document.getElementById('submit-btn');b.textContent="✓ Submitted! We'll reach you within 24 hrs.";b.style.background='#16a34a';}
-});
-
-// Popup
-const pop=document.getElementById('exitPopup');let shown=false;
-function showP(){if(shown)return;shown=true;pop.classList.add('active');document.body.style.overflow='hidden';}
-function hideP(){pop.classList.remove('active');document.body.style.overflow='';}
-if(window.innerWidth>768)document.addEventListener('mouseleave',e=>{if(e.clientY<=8)showP();});
-else setTimeout(showP,20000);
-document.getElementById('popupClose').addEventListener('click',hideP);
-document.getElementById('popupSkip').addEventListener('click',hideP);
-pop.addEventListener('click',e=>{if(e.target===pop)hideP();});
-document.getElementById('popup-submit-btn').addEventListener('click',()=>{
-  const fs=[document.getElementById('p-name'),document.getElementById('p-phone'),document.getElementById('p-email'),document.getElementById('popup-education'),document.getElementById('popup-experience')];
-  let ok=true;fs.forEach(f=>{if(!f.value){f.style.borderColor='#dc2626';ok=false;}else f.style.borderColor='';});
-  if(ok){const b=document.getElementById('popup-submit-btn');b.textContent="✓ Got it! We'll call you within 24 hrs.";b.style.background='#16a34a';setTimeout(hideP,2400);}
 });
 </script>
 </body>

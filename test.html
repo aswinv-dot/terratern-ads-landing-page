@@ -87,6 +87,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .person-avatar{width:72px;height:72px;border-radius:12px;overflow:hidden;margin-bottom:9px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:var(--white);flex-shrink:0;}
 .person-name{font-size:0.75rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:4px;}
 .person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
+@media(max-width:600px){.scroller-track{animation:none;}.scroller-track .person-card:nth-child(n+11){display:none;}}
 
 /* ── SHARED SECTION UTILS ── */
 section{padding:80px 40px;}
@@ -101,7 +102,7 @@ section{padding:80px 40px;}
 .bg-light{background:var(--bg);}
 .bg-soft{background:var(--bg2);}
 
-/* ── ELIGIBILITY — horizontal bar list ── */
+/* ── ELIGIBILITY ── */
 .elig-list{margin-top:40px;display:flex;flex-direction:column;gap:0;}
 .elig-row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);}
 .elig-row:first-child{border-top:1px solid var(--border);}
@@ -111,7 +112,7 @@ section{padding:80px 40px;}
 .elig-pts{font-size:0.7rem;font-weight:700;background:rgba(37,92,193,0.09);color:var(--blue);border-radius:6px;padding:5px 12px;white-space:nowrap;flex-shrink:0;}
 .elig-pts.mandatory{background:rgba(241,200,25,0.15);color:#8a6d00;}
 
-/* ── NOT FOR YOU — full-bleed two-tone ── */
+/* ── NOT FOR YOU ── */
 .notfor-section{background:var(--white);padding:80px 0;}
 .notfor-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
 .notfor-header{text-align:center;margin-bottom:48px;}
@@ -130,7 +131,7 @@ section{padding:80px 40px;}
 .notfor-half.bad .notfor-dot{background:#fecaca;color:#991b1b;}
 .notfor-half.good .notfor-dot{background:rgba(241,200,25,0.2);color:var(--gold);}
 
-/* ── WHAT HAPPENS NEXT — horizontal numbered strip ── */
+/* ── WHAT HAPPENS NEXT ── */
 .next-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:var(--white);}
 .next-step{padding:28px 24px;border-right:1px solid var(--border);position:relative;}
 .next-step:last-child{border-right:none;}
@@ -139,22 +140,27 @@ section{padding:80px 40px;}
 .next-step h4{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
 .next-step p{font-size:0.78rem;color:var(--muted);line-height:1.58;}
 
-/* ── WHY GERMANY — editorial asymmetric ── */
-.why-layout{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.why-left{background:linear-gradient(140deg,var(--navy),#0f3585);padding:52px 48px;display:flex;flex-direction:column;justify-content:center;border-radius:14px 0 0 14px;}
-.why-left .big-num{font-size:3.5rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-0.03em;}
-.why-left h3{font-size:1.1rem;font-weight:700;color:var(--white);margin:10px 0 12px;}
-.why-left p{font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.72;}
+/* ── WHY GERMANY — compressed two-column ── */
+.why-layout{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.why-left{background:linear-gradient(140deg,var(--navy),#0f3585);padding:44px 40px;display:flex;flex-direction:column;justify-content:center;border-radius:14px 0 0 14px;}
+.why-left .big-num{font-size:3rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-0.03em;}
+.why-left h3{font-size:1rem;font-weight:700;color:var(--white);margin:8px 0 10px;}
+.why-left p{font-size:0.83rem;color:rgba(255,255,255,0.7);line-height:1.68;}
+.why-path{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.12);}
+.why-path-label{font-size:0.68rem;color:rgba(255,255,255,0.42);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;}
+.why-path-steps{display:flex;gap:0;align-items:center;flex-wrap:wrap;gap:4px;}
+.why-path-steps span{font-size:0.74rem;color:rgba(255,255,255,0.7);}
+.why-path-steps em{color:var(--gold);font-style:normal;margin:0 4px;}
 .why-right{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:0 14px 14px 0;overflow:hidden;border:1.5px solid var(--border);border-left:none;}
-.why-cell{padding:24px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);transition:background 0.2s;}
+.why-cell{padding:20px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);transition:background 0.2s;}
 .why-cell:hover{background:var(--bg2);}
 .why-cell:nth-child(2n){border-right:none;}
 .why-cell:nth-last-child(-n+2){border-bottom:none;}
-.why-cell-icon{font-size:1.4rem;margin-bottom:8px;}
-.why-cell h4{font-size:0.86rem;font-weight:700;color:var(--navy);margin-bottom:5px;}
-.why-cell p{font-size:0.77rem;color:var(--muted);line-height:1.55;}
+.why-cell-icon{font-size:1.3rem;margin-bottom:6px;}
+.why-cell h4{font-size:0.82rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.why-cell p{font-size:0.74rem;color:var(--muted);line-height:1.52;}
 
-/* ── SALARY COMPARISON — side by side ── */
+/* ── SALARY COMPARISON ── */
 .salary-layout{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
 .sal-col{padding:0;}
 .sal-col-head{padding:20px 28px;font-size:0.82rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;}
@@ -168,53 +174,27 @@ section{padding:80px 40px;}
 .sal-footer{grid-column:span 2;background:linear-gradient(135deg,var(--navy),#0a3080);padding:18px 28px;text-align:center;color:rgba(255,255,255,0.82);font-size:0.83rem;}
 .sal-footer strong{color:var(--gold);}
 
-/* ── IT CITIES — horizontal cards ── */
-.it-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;margin-top:40px;margin-bottom:40px;background:var(--white);}
-.it-stat{padding:20px;border-right:1px solid var(--border);text-align:center;}
-.it-stat:last-child{border-right:none;}
-.it-stat-num{font-size:1.9rem;font-weight:800;color:var(--blue);line-height:1;}
-.it-stat-label{font-size:0.7rem;color:var(--muted);margin-top:4px;}
-.cities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.city-card{background:var(--white);border-left:3px solid var(--blue);padding:18px 20px;border-radius:0 10px 10px 0;transition:all 0.2s;}
+/* ── CITIES — compact 2-col ── */
+.cities-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
+.city-card{background:var(--white);border-left:3px solid var(--blue);padding:16px 18px;border-radius:0 8px 8px 0;transition:all 0.2s;display:flex;gap:12px;align-items:flex-start;}
 .city-card:hover{box-shadow:var(--shadow);transform:translateX(3px);}
-.city-name{font-size:0.97rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
-.city-tag{font-size:0.65rem;font-weight:600;color:var(--blue);margin-bottom:8px;display:block;}
-.city-card p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
+.city-left{}
+.city-name{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:1px;}
+.city-tag{font-size:0.63rem;font-weight:600;color:var(--blue);display:block;margin-bottom:5px;}
+.city-card p{font-size:0.76rem;color:var(--muted);line-height:1.5;}
 
-/* ── WOW FACTORS — masonry-ish alternating ── */
-.wow-layout{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.wow-card{padding:22px 20px;border-radius:12px;transition:transform 0.2s,box-shadow 0.2s;}
-.wow-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
-.wow-card.light{background:var(--white);border:1.5px solid var(--border);}
-.wow-card.dark{background:linear-gradient(135deg,var(--navy),#1248a8);}
-.wow-card.gold{background:linear-gradient(135deg,#7c5f00,#b38c00);}
-.wow-card.teal{background:linear-gradient(135deg,#064e3b,#065f46);}
-.wow-emoji{font-size:1.6rem;margin-bottom:10px;}
-.wow-card h4{font-size:0.86rem;font-weight:700;margin-bottom:5px;}
-.wow-card.light h4{color:var(--navy);}
-.wow-card.dark h4,.wow-card.gold h4,.wow-card.teal h4{color:var(--white);}
-.wow-card p{font-size:0.76rem;line-height:1.55;}
-.wow-card.light p{color:var(--muted);}
-.wow-card.dark p,.wow-card.gold p,.wow-card.teal p{color:rgba(255,255,255,0.7);}
-
-/* ── MISTAKES — timeline style ── */
-.mistakes-layout{margin-top:48px;display:grid;grid-template-columns:1fr 56px 1fr;gap:0;align-items:start;}
-.mistakes-col{display:flex;flex-direction:column;gap:0;}
-.mistake-item{padding:20px 0;border-bottom:1px solid var(--border);}
-.mistake-item:first-child{padding-top:0;}
-.mistake-item:last-child{border-bottom:none;}
-.mistake-item.bad h5{font-size:0.84rem;font-weight:700;color:#991b1b;margin-bottom:4px;}
-.mistake-item.good h5{font-size:0.84rem;font-weight:700;color:#065f46;margin-bottom:4px;}
-.mistake-item p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
-.mistakes-spine{display:flex;flex-direction:column;align-items:center;padding-top:2px;gap:0;}
-.spine-node{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;flex-shrink:0;z-index:1;}
-.spine-node.bad{background:#fecaca;color:#991b1b;}
-.spine-node.good{background:#bbf7d0;color:#065f46;}
-.spine-line{flex:1;width:2px;background:var(--border);min-height:20px;}
-.mistakes-headers{display:contents;}
-.mis-head{padding:0 0 20px;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;}
-.mis-head.bad{color:#991b1b;}
-.mis-head.good{color:#065f46;}
+/* ── MISTAKES — clean card grid ── */
+.mistakes-grid{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.mistake-card{border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;}
+.mistake-card.bad{background:#fff5f5;border:1.5px solid #fecaca;}
+.mistake-card.good{background:#f0fdf4;border:1.5px solid #bbf7d0;}
+.mistake-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;flex-shrink:0;margin-top:2px;}
+.mistake-card.bad .mistake-icon{background:#fecaca;color:#991b1b;}
+.mistake-card.good .mistake-icon{background:#bbf7d0;color:#065f46;}
+.mistake-card h5{font-size:0.86rem;font-weight:700;margin-bottom:5px;}
+.mistake-card.bad h5{color:#991b1b;}
+.mistake-card.good h5{color:#065f46;}
+.mistake-card p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
 
 /* ── PROGRAM ── */
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
@@ -228,15 +208,6 @@ section{padding:80px 40px;}
 .prog-list li:last-child{border:none;}
 .prog-list li::before{content:'✓';color:var(--blue);font-size:0.68rem;margin-top:2px;flex-shrink:0;font-weight:700;}
 
-/* ── TIMELINE — horizontal ── */
-.timeline-h{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;position:relative;}
-.timeline-h::before{content:'';position:absolute;top:20px;left:calc(100%/6);right:calc(100%/6);height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));z-index:0;}
-.tl-step{padding:0 20px;position:relative;z-index:1;}
-.tl-dot{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-size:0.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 0 0 6px var(--bg);}
-.tl-step h4{font-size:0.85rem;font-weight:700;color:var(--navy);margin-bottom:6px;text-align:center;}
-.tl-week{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:6px;}
-.tl-step p{font-size:0.76rem;color:var(--muted);line-height:1.58;text-align:center;}
-
 /* ── EXPERTS STRIP ── */
 .experts-strip{background:var(--navy);padding:28px 0;overflow:hidden;position:relative;}
 .experts-strip::before,.experts-strip::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;}
@@ -245,14 +216,26 @@ section{padding:80px 40px;}
 .experts-label{text-align:center;font-size:0.7rem;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px;}
 .experts-track{display:flex;gap:20px;width:max-content;animation:scroll-left 38s linear infinite;}
 .experts-track:hover{animation-play-state:paused;}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .expert-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px 22px;min-width:280px;flex-shrink:0;transition:all 0.25s;cursor:default;}
 .expert-card:hover{background:rgba(255,255,255,0.11);border-color:rgba(241,200,25,0.4);}
 .expert-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--white);flex-shrink:0;border:2px solid rgba(241,200,25,0.4);}
-.expert-info{}
 .expert-name{font-size:0.9rem;font-weight:700;color:var(--white);margin-bottom:2px;}
 .expert-yrs{font-size:0.7rem;font-weight:700;color:var(--gold);margin-bottom:4px;}
 .expert-spec{font-size:0.7rem;color:rgba(255,255,255,0.55);line-height:1.4;}
 .expert-badge{display:inline-block;background:rgba(241,200,25,0.15);border:1px solid rgba(241,200,25,0.35);color:var(--gold);font-size:0.55rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:100px;margin-left:6px;vertical-align:middle;}
+
+/* ── TIMELINE — simplified 3-step ── */
+.timeline-simple{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.tl-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px 20px;position:relative;overflow:hidden;}
+.tl-card::before{content:attr(data-n);position:absolute;top:12px;right:16px;font-size:3rem;font-weight:900;color:rgba(37,92,193,0.05);line-height:1;}
+.tl-card-phase{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:6px;}
+.tl-card h4{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.tl-card-duration{display:inline-block;background:rgba(37,92,193,0.08);color:var(--blue);font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.tl-card ul{list-style:none;}
+.tl-card ul li{font-size:0.78rem;color:var(--muted);padding:4px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid var(--border);}
+.tl-card ul li:last-child{border:none;}
+.tl-card ul li::before{content:'→';color:var(--blue);font-size:0.7rem;margin-top:2px;flex-shrink:0;}
 
 /* ── FAQ ── */
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:40px;}
@@ -270,7 +253,7 @@ section{padding:80px 40px;}
 .cta-section .section-tag{background:rgba(241,200,25,0.15);border-color:rgba(241,200,25,0.3);color:var(--gold);}
 .cta-section h2{font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.02em;color:var(--white);margin-bottom:12px;position:relative;}
 .cta-section h2 span{color:var(--gold);}
-.cta-section>div>p{color:rgba(255,255,255,0.85);font-size:0.93rem;max-width:460px;margin:0 auto 32px;position:relative;}
+.cta-section>div>p{color:rgba(255,255,255,1);font-size:0.93rem;max-width:460px;margin:0 auto 32px;position:relative;}
 .cta-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:15px 40px;border-radius:8px;font-family:var(--ff);font-weight:700;font-size:0.97rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;position:relative;}
 .cta-btn:hover{background:#ffd426;transform:translateY(-2px);box-shadow:0 8px 32px rgba(241,200,25,0.32);}
 .cta-phone{margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.5);position:relative;}
@@ -326,13 +309,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .salary-layout{grid-template-columns:1fr;}
   .sal-footer{grid-column:span 1;}
   .program-grid{grid-template-columns:1fr 1fr;}
-  .it-stats-row{grid-template-columns:1fr 1fr;}
-  .it-stat:nth-child(2){border-right:none;}
-  .it-stat:nth-child(3){border-top:1px solid var(--border);}
-  .cities-grid{grid-template-columns:1fr 1fr;}
-  .wow-layout{grid-template-columns:1fr 1fr;}
-  .timeline-h{grid-template-columns:1fr 1fr;}
-  .timeline-h::before{display:none;}
+  .cities-grid{grid-template-columns:1fr;}
+  .timeline-simple{grid-template-columns:1fr;}
   .faq-grid{grid-template-columns:1fr;}
   .next-strip{grid-template-columns:1fr 1fr;}
   .next-step:nth-child(2){border-right:none;}
@@ -351,9 +329,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .hero-stats-mobile{display:flex;}
   .hero h1{font-size:1.75rem;}
   .hero-sub{font-size:0.88rem;}
-  .program-grid,.cities-grid,.wow-layout,.timeline-h,.it-stats-row{grid-template-columns:1fr;}
-  .it-stat{border-right:none;border-top:1px solid var(--border);}
-  .it-stat:first-child{border-top:none;}
+  .program-grid,.timeline-simple{grid-template-columns:1fr;}
   .why-right{grid-template-columns:1fr;}
   .why-cell:nth-child(odd){border-right:none;}
   .next-strip{grid-template-columns:1fr;}
@@ -361,6 +337,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .next-step:first-child{border-top:none;}
   .mistakes-layout{grid-template-columns:1fr;}
   .mistakes-spine{display:none;}
+  .mistakes-grid{grid-template-columns:1fr;}
   .notfor-half{padding:32px 24px;}
   nav{padding:0 14px;height:60px;}
   .nav-links,.nav-cta{display:none;}
@@ -374,6 +351,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .popup-left{min-height:180px;}
   .popup-close{background:rgba(0,0,0,0.35);}
   .salary-layout{overflow-x:auto;}
+  .alumni-strip{padding:16px 20px;}
 }
 </style>
 </head>
@@ -471,7 +449,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   </div>
 </div>
 
-<!-- ELIGIBILITY — list layout -->
+<!-- ELIGIBILITY -->
 <section class="bg-white" id="eligibility">
 <div class="container">
   <div class="fade-up">
@@ -480,17 +458,17 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <p class="section-sub">Germany's Opportunity Card works on a points system. IT professionals have one of the highest eligibility rates of any profession — here's exactly what counts.</p>
   </div>
   <div class="elig-list fade-up">
-    <div class="elig-row"><div class="elig-icon">🎓</div><div class="elig-body"><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or an IT Diploma from a recognised Indian institution qualifies. We handle credential evaluation and recognition.</p></div><span class="elig-pts">+2 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">💼</div><div class="elig-body"><h4>Minimum 2 Years Work Experience</h4><p>Full-time, freelance, or startup IT experience earned in the last 7 years counts. We help you document and present it correctly for the German consulate.</p></div><span class="elig-pts">+1 to +2 Points</span></div>
-    <div class="elig-row"><div class="elig-icon">🌐</div><div class="elig-body"><h4>English or German Proficiency</h4><p>B2 English or A1 German strengthens your application. Our 100+ mock tests help you achieve the required certification — online or in-person.</p></div><span class="elig-pts">+1 Point</span></div>
-    <div class="elig-row"><div class="elig-icon">📅</div><div class="elig-body"><h4>Age Between 18 and 35</h4><p>Younger applicants earn additional bonus points. If you're 18–35 in IT, you're in one of the strongest eligibility brackets possible.</p></div><span class="elig-pts">+1 Point</span></div>
+    <div class="elig-row"><div class="elig-icon">🎓</div><div class="elig-body"><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or an IT Diploma from a recognised Indian institution qualifies. Higher qualifications (Masters, PhD) earn more points. We handle credential evaluation and recognition.</p></div><span class="elig-pts">Up to +4 Points</span></div>
+    <div class="elig-row"><div class="elig-icon">💼</div><div class="elig-body"><h4>Minimum 2 Years Professional Experience</h4><p>Full-time or freelance IT experience in your field earned in the last 7 years counts. The more relevant your experience, the higher you score. We help you document and present it correctly.</p></div><span class="elig-pts">Up to +3 Points</span></div>
+    <div class="elig-row"><div class="elig-icon">🌐</div><div class="elig-body"><h4>English or German Proficiency</h4><p>B2 English or A1 German strengthens your application and earns language points. Our 100+ mock tests help you achieve the required certification — online or in-person.</p></div><span class="elig-pts">Up to +3 Points</span></div>
+    <div class="elig-row"><div class="elig-icon">📅</div><div class="elig-body"><h4>Age Between 24 and 44</h4><p>Applicants aged 24–35 earn the maximum bonus points; those up to 44 still qualify for age-based points. If you're in this bracket in IT, you're in one of the strongest eligibility windows possible.</p></div><span class="elig-pts">+1 to +2 Points</span></div>
     <div class="elig-row"><div class="elig-icon">🏦</div><div class="elig-body"><h4>Blocked Account — Proof of Funds</h4><p>~€12,500 in a German blocked account (Sperrkonto) required. TerraTern guides you through the entire setup and RBI-compliant transfer process.</p></div><span class="elig-pts mandatory">Mandatory</span></div>
     <div class="elig-row"><div class="elig-icon">✅</div><div class="elig-body"><h4>Clean Background &amp; Health Insurance</h4><p>A clean police clearance certificate and valid travel insurance are baseline requirements — standard for the vast majority of applicants we work with.</p></div><span class="elig-pts mandatory">Mandatory</span></div>
   </div>
 </div>
 </section>
 
-<!-- WHO THIS IS NOT FOR — full-bleed two-tone -->
+<!-- WHO THIS IS NOT FOR -->
 <div class="notfor-section">
   <div class="notfor-inner">
     <div class="fade-up notfor-header">
@@ -521,38 +499,35 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   </div>
 </div>
 
-<!-- WHY GERMANY — editorial asymmetric layout -->
+<!-- WHY GERMANY — compressed -->
 <section class="bg-light" id="germany">
 <div class="container">
   <div class="fade-up">
     <div class="section-tag">Why Germany</div>
     <h2 class="section-title">Europe's Tech Powerhouse.<br><em>Built for IT Talent from India.</em></h2>
-    <p class="section-sub">Not just a visa destination — a career launchpad with strong worker protections, free healthcare, and a booming tech sector actively recruiting Indian professionals.</p>
+    <p class="section-sub">Not just a visa — a career launchpad. Strong salaries, worker protections, free healthcare, and a tech sector actively recruiting Indian professionals.</p>
   </div>
   <div class="why-layout fade-up">
     <div class="why-left">
       <div class="big-num">€45K–€120K</div>
       <h3>IT Salary Range Across Experience Levels</h3>
-      <p>Entry-level IT roles start at €45,000/year, scaling to €120,000 for senior specialists. Combine that with 30 mandatory paid leave days, statutory health insurance from Day 1, and strong employment law — the financial transformation is real.</p>
-      <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.12);">
-        <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Path to permanent residency</div>
-        <div style="display:flex;gap:0;align-items:center;">
-          <span style="font-size:0.76rem;color:rgba(255,255,255,0.7);">Chancenkarte</span>
-          <span style="margin:0 8px;color:var(--gold);">→</span>
-          <span style="font-size:0.76rem;color:rgba(255,255,255,0.7);">Work visa</span>
-          <span style="margin:0 8px;color:var(--gold);">→</span>
-          <span style="font-size:0.76rem;color:rgba(255,255,255,0.7);">PR in 4 yrs</span>
-          <span style="margin:0 8px;color:var(--gold);">→</span>
-          <span style="font-size:0.76rem;color:var(--gold);font-weight:700;">EU citizen</span>
+      <p>Entry-level roles start at €45,000/year, scaling to €120,000 for senior specialists. Add 30 mandatory paid leave days and statutory health insurance from Day 1 — the financial transformation is real.</p>
+      <div class="why-path">
+        <div class="why-path-label">Path to permanent residency</div>
+        <div class="why-path-steps">
+          <span>Chancenkarte</span><em>→</em>
+          <span>Work visa</span><em>→</em>
+          <span>PR in 4 yrs</span><em>→</em>
+          <span style="color:var(--gold);font-weight:700;">EU citizen</span>
         </div>
       </div>
     </div>
     <div class="why-right">
-      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>World's 4th Largest Economy</h4><p>SAP, Siemens, BMW, Bosch, Deutsche Telekom — global giants with massive IT hiring pipelines across all tech stacks.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🗣️</div><h4>English-First Tech Ecosystem</h4><p>Berlin, Munich, Hamburg, Frankfurt operate almost entirely in English in tech. No German needed in your first year.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🎓</div><h4>Free University for Your Kids</h4><p>Germany's public universities are tuition-free. World-class education at zero cost — one of the biggest wins for Indian families.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🏥</div><h4>Free Healthcare From Day 1</h4><p>Employed in Germany? You and your family are covered under statutory GKV health insurance from day one.</p></div>
-      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>Travel 26 Schengen Countries</h4><p>Weekend trips to Paris, Prague, Amsterdam, Vienna. With a German permit, Europe is your backyard.</p></div>
+      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>World's 4th Largest Economy</h4><p>SAP, Siemens, BMW, Bosch — global giants with massive IT hiring pipelines across all tech stacks.</p></div>
+      <div class="why-cell"><div class="why-cell-icon">🗣️</div><h4>English-First Tech Scene</h4><p>Berlin, Munich, Hamburg and Frankfurt operate almost entirely in English in tech. No German needed in your first year.</p></div>
+      <div class="why-cell"><div class="why-cell-icon">🏥</div><h4>Free Healthcare From Day 1</h4><p>Statutory GKV health insurance covers you and your family from your first day of employment.</p></div>
+      <div class="why-cell"><div class="why-cell-icon">🎓</div><h4>Free University for Your Kids</h4><p>Germany's public universities are tuition-free. World-class education at zero cost — a huge win for Indian families.</p></div>
+      <div class="why-cell"><div class="why-cell-icon">🌍</div><h4>Schengen Travel — 26 Countries</h4><p>Weekend trips to Paris, Prague, Amsterdam, Vienna. With a German permit, Europe is your backyard.</p></div>
       <div class="why-cell"><div class="why-cell-icon">🍛</div><h4>Thriving Indian Community</h4><p>Indian restaurants, Diwali celebrations, cricket clubs, and WhatsApp groups in every major German city.</p></div>
     </div>
   </div>
@@ -571,15 +546,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <div class="sal-col india">
       <div class="sal-col-head">🇮🇳 India — Today</div>
       <div class="sal-row">₹6–15 LPA average IT salary<span class="sal-row-note">Most mid-level engineers</span></div>
-      <div class="sal-row">₹50K–₹1L monthly savings<span class="sal-row-note">After cost of living</span></div>
-      <div class="sal-row">10–12 hour workdays<span class="sal-row-note">Especially in startups</span></div>
+      <div class="sal-row">₹20K–₹50K monthly savings<span class="sal-row-note">After cost of living</span></div>
+      <div class="sal-row">10–12 hour workdays<span class="sal-row-note">Across most IT companies</span></div>
       <div class="sal-row">12–21 days leave per year<span class="sal-row-note">Varies by company</span></div>
       <div class="sal-row">Competing against 350K+ engineers<span class="sal-row-note">Extremely crowded market</span></div>
     </div>
     <div class="sal-col germany">
       <div class="sal-col-head">🇩🇪 Germany — After Moving</div>
       <div class="sal-row">€45K–€120K annual salary<span class="sal-row-note">Entry to senior levels</span></div>
-      <div class="sal-row">₹6–10L monthly savings equivalent<span class="sal-row-note">After German living costs</span></div>
+      <div class="sal-row">₹4L+ monthly savings equivalent<span class="sal-row-note">After German living costs</span></div>
       <div class="sal-row">Strict 8-hour workdays<span class="sal-row-note">Protected by employment law</span></div>
       <div class="sal-row">30 paid leave days — mandatory<span class="sal-row-note">Statutory minimum for all</span></div>
       <div class="sal-row">350,000+ IT roles unfilled<span class="sal-row-note">Germany is recruiting you</span></div>
@@ -589,56 +564,26 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 </div>
 </section>
 
-<!-- IT IN GERMANY -->
+<!-- BEST CITIES — trimmed to compact 2-col -->
 <section class="bg-light">
 <div class="container">
   <div class="fade-up">
-    <div class="section-tag">IT Industry in Germany</div>
-    <h2 class="section-title">Germany Is Actively Recruiting<br><em>Indian IT Professionals Right Now</em></h2>
-    <p class="section-sub">Over 350,000 IT positions sit unfilled across Germany. The Opportunity Card was created specifically to fast-track international tech talent.</p>
+    <div class="section-tag">Where to Land</div>
+    <h2 class="section-title">Best Cities for<br><em>Indian IT Professionals</em></h2>
+    <p class="section-sub">Each city has a distinct tech identity. Here's the quick guide — pick your stack, pick your city.</p>
   </div>
-  <div class="it-stats-row fade-up">
-    <div class="it-stat"><div class="it-stat-num">350K+</div><div class="it-stat-label">Open IT Vacancies</div></div>
-    <div class="it-stat"><div class="it-stat-num">€63B</div><div class="it-stat-label">German Tech Industry Revenue</div></div>
-    <div class="it-stat"><div class="it-stat-num">1,100+</div><div class="it-stat-label">Active Startups in Berlin</div></div>
-    <div class="it-stat"><div class="it-stat-num">3×</div><div class="it-stat-label">IT Hiring Growth Since 2020</div></div>
-  </div>
-  <div class="fade-up">
-    <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:18px;">Best Cities for Indian IT Professionals</h3>
-    <div class="cities-grid">
-      <div class="city-card"><div class="city-name">Berlin</div><span class="city-tag">🏙️ Startup Capital of Europe</span><p>Home to Zalando, N26, Delivery Hero. English is the office language in most tech firms. Multicultural, affordable, very welcoming.</p></div>
-      <div class="city-card"><div class="city-name">Munich</div><span class="city-tag">🏔️ Enterprise IT Hub</span><p>SAP, BMW, Siemens, Allianz — enterprise tech at scale. Highest IT salaries in Europe, large established Indian community.</p></div>
-      <div class="city-card"><div class="city-name">Hamburg</div><span class="city-tag">🚢 Digital Commerce Capital</span><p>Xing, Adobe, and major e-commerce companies. Excellent quality of life and a strong English-speaking professional scene.</p></div>
-      <div class="city-card"><div class="city-name">Frankfurt</div><span class="city-tag">🏦 FinTech Powerhouse</span><p>Europe's financial centre. Deutsche Bank tech, FinTech unicorns, cybersecurity firms. Prime for FinTech and cloud professionals.</p></div>
-      <div class="city-card"><div class="city-name">Stuttgart</div><span class="city-tag">🚗 Automotive Software Hub</span><p>Mercedes-Benz and Porsche engineering and software arms. Ideal for embedded systems, IoT, and automotive software profiles.</p></div>
-      <div class="city-card"><div class="city-name">Cologne / Düsseldorf</div><span class="city-tag">📡 Media &amp; Telecom Tech</span><p>Deutsche Telekom and major media groups drive tech hiring. Lower cost of living than Munich with strong Indian diaspora.</p></div>
-    </div>
+  <div class="cities-grid fade-up">
+    <div class="city-card"><div class="city-left"><div class="city-name">Berlin</div><span class="city-tag">🏙️ Startup Capital</span><p>Zalando, N26, Delivery Hero. English is the office language. Multicultural, affordable, welcoming to newcomers.</p></div></div>
+    <div class="city-card"><div class="city-left"><div class="city-name">Munich</div><span class="city-tag">🏔️ Enterprise IT Hub</span><p>SAP, BMW, Siemens. Highest IT salaries in Europe, large established Indian community.</p></div></div>
+    <div class="city-card"><div class="city-left"><div class="city-name">Frankfurt</div><span class="city-tag">🏦 FinTech Powerhouse</span><p>Europe's financial centre. Deutsche Bank tech, FinTech unicorns. Prime for cloud and cybersecurity profiles.</p></div></div>
+    <div class="city-card"><div class="city-left"><div class="city-name">Hamburg</div><span class="city-tag">🚢 Digital Commerce</span><p>Xing, Adobe, major e-commerce companies. Excellent quality of life and strong English-speaking professional scene.</p></div></div>
+    <div class="city-card"><div class="city-left"><div class="city-name">Stuttgart</div><span class="city-tag">🚗 Automotive Software</span><p>Mercedes-Benz and Porsche software arms. Ideal for embedded systems, IoT, and automotive software profiles.</p></div></div>
+    <div class="city-card"><div class="city-left"><div class="city-name">Cologne / Düsseldorf</div><span class="city-tag">📡 Media &amp; Telecom</span><p>Deutsche Telekom and major media groups drive tech hiring. Lower cost of living with strong Indian diaspora.</p></div></div>
   </div>
 </div>
 </section>
 
-<!-- WOW FACTORS — varied color cards -->
-<section class="bg-white">
-<div class="container">
-  <div class="fade-up">
-    <div class="section-tag">Life in Germany</div>
-    <h2 class="section-title">What Indian IT Professionals<br><em>Love After Landing</em></h2>
-    <p class="section-sub">Thousands of our candidates share these moments. The shift is real — and it's always the good kind.</p>
-  </div>
-  <div class="wow-layout fade-up">
-    <div class="wow-card dark"><div class="wow-emoji">💸</div><h4>Savings That Stack Fast</h4><p>Most IT pros save ₹6–10L equivalent per month even after all living costs. The INR-to-EUR shift is transformational.</p></div>
-    <div class="wow-card light"><div class="wow-emoji">🕔</div><h4>Work-Life Balance — Actually Real</h4><p>30 mandatory paid days off. No messages after 5 PM. Weekends are genuinely yours — German culture, not just policy.</p></div>
-    <div class="wow-card gold"><div class="wow-emoji">🌍</div><h4>Travel 26 Countries Freely</h4><p>Weekend trips to Paris, Prague, Amsterdam, Vienna. A German permit makes Europe your backyard.</p></div>
-    <div class="wow-card light"><div class="wow-emoji">🏥</div><h4>Free Healthcare From Day 1</h4><p>Statutory health insurance covers you and your family from your first day of employment. Zero out-of-pocket bills.</p></div>
-    <div class="wow-card light"><div class="wow-emoji">🚂</div><h4>World-Class Public Transport</h4><p>No traffic, no autos. Deutsche Bahn connects every city. Most IT pros ditch car ownership within a year.</p></div>
-    <div class="wow-card teal"><div class="wow-emoji">📚</div><h4>Free Education for Your Kids</h4><p>Public schools are free, safe, and world-ranked. German university tuition? €0. Your children's future is secured.</p></div>
-    <div class="wow-card light"><div class="wow-emoji">🍛</div><h4>Thriving Indian Community</h4><p>Indian restaurants, Diwali events, cricket clubs, and WhatsApp groups in every major German city.</p></div>
-    <div class="wow-card light"><div class="wow-emoji">🌿</div><h4>Clean Air, Clean Life</h4><p>Germans drink tap water. Open your window without a mask. Run every morning. Your health thanks you within weeks.</p></div>
-  </div>
-</div>
-</section>
-
-<!-- MISTAKES — spine layout -->
+<!-- MISTAKES -->
 <section class="bg-soft">
 <div class="container">
   <div class="fade-up">
@@ -646,31 +591,21 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <h2 class="section-title">5 Mistakes That Get IT Professionals<br><em>Rejected — And How We Prevent Each One</em></h2>
     <p class="section-sub">Every week we see eligible candidates get rejected for avoidable reasons. These are the patterns — and exactly how TerraTern fixes them.</p>
   </div>
-  <div class="mistakes-layout fade-up" style="margin-top:40px;">
-    <div class="mistakes-col">
-      <div class="mis-head bad">Common mistakes</div>
-      <div class="mistake-item bad"><h5>Wrong or incomplete documentation</h5><p>Missing or improperly formatted documents cause instant rejection — no second chances at the consulate window.</p></div>
-      <div class="mistake-item bad"><h5>Incorrect points calculation</h5><p>Candidates assume they qualify, fall short on the actual scoring sheet, and waste months preparing the wrong application.</p></div>
-      <div class="mistake-item bad"><h5>Non-German CV format</h5><p>German employers expect a specific CV structure. Most Indian candidates get this wrong and receive zero callbacks.</p></div>
-      <div class="mistake-item bad"><h5>Weak job search strategy</h5><p>Randomly applying on LinkedIn doesn't work in Germany. Recruiter relationships and local platforms are what get results.</p></div>
-      <div class="mistake-item bad"><h5>Delaying language preparation</h5><p>Even basic German (A1) significantly boosts employability. Most candidates start far too late and miss the opportunity.</p></div>
-    </div>
-    <div class="mistakes-spine">
-      <div style="height:52px;"></div>
-      <div class="spine-node bad">✗</div><div class="spine-line"></div>
-      <div class="spine-node bad">✗</div><div class="spine-line"></div>
-      <div class="spine-node bad">✗</div><div class="spine-line"></div>
-      <div class="spine-node bad">✗</div><div class="spine-line"></div>
-      <div class="spine-node bad">✗</div>
-    </div>
-    <div class="mistakes-col">
-      <div class="mis-head good">How TerraTern fixes it</div>
-      <div class="mistake-item good"><h5>Complete documentation, zero errors</h5><p>Our exhaustive checklist and expert review ensures nothing reaches the consulate with a mistake or missing piece.</p></div>
-      <div class="mistake-item good"><h5>Exact score calculated on first call</h5><p>Your Chancenkarte points are computed on your very first consultation. We find gaps — and tell you how to close them before filing.</p></div>
-      <div class="mistake-item good"><h5>German-standard CV + LinkedIn rebuild</h5><p>Every candidate gets a Germany-ready CV and profile optimised for German employers before job search begins.</p></div>
-      <div class="mistake-item good"><h5>Recruiter network + structured approach</h5><p>Direct recruiter introductions, German job portal access, and hands-on application support until offer letter in hand.</p></div>
-      <div class="mistake-item good"><h5>Language training starts from Week 1</h5><p>A1–B1 German batches run online and in Bangalore in parallel with documentation — 100+ mock tests included.</p></div>
-    </div>
+  <div class="mistakes-grid fade-up">
+    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Wrong or incomplete documentation</h5><p>Missing or improperly formatted documents cause instant rejection — no second chances at the consulate window.</p></div></div>
+    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Complete documentation, zero errors</h5><p>Our exhaustive checklist and expert review ensures nothing reaches the consulate with a mistake or missing piece.</p></div></div>
+
+    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Incorrect points calculation</h5><p>Candidates assume they qualify, fall short on the actual scoring sheet, and waste months preparing the wrong application.</p></div></div>
+    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Exact score calculated on first call</h5><p>Your Chancenkarte points are computed on your very first consultation. We find gaps — and tell you how to close them before filing.</p></div></div>
+
+    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Non-German CV format</h5><p>German employers expect a specific CV structure. Most Indian candidates get this wrong and receive zero callbacks.</p></div></div>
+    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>German-standard CV + LinkedIn rebuild</h5><p>Every candidate gets a Germany-ready CV and profile optimised for German employers before job search begins.</p></div></div>
+
+    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Weak job search strategy</h5><p>Randomly applying on LinkedIn doesn't work in Germany. Recruiter relationships and local platforms are what get results.</p></div></div>
+    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Recruiter network + structured approach</h5><p>Direct recruiter introductions, German job portal access, and hands-on application support until offer letter in hand.</p></div></div>
+
+    <div class="mistake-card bad"><div class="mistake-icon">✗</div><div><h5>Delaying language preparation</h5><p>Even basic German (A1) significantly boosts employability. Most candidates start far too late and miss the opportunity.</p></div></div>
+    <div class="mistake-card good"><div class="mistake-icon">✓</div><div><h5>Language training starts from Week 1</h5><p>A1–B1 German batches run online and in Bangalore in parallel with documentation — 100+ mock tests included.</p></div></div>
   </div>
 </div>
 </section>
@@ -694,11 +629,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 </div>
 </section>
 
-<!-- EXPERTS STRIP — between program and timeline, earns trust before timeline commitment -->
+<!-- EXPERTS STRIP -->
 <div class="experts-strip">
-  <div class="experts-label">Meet the Certified Experts Behind Your Application 🛂</div>
+  <div class="experts-label">Meet the Certified Experts</div>
   <div class="experts-track">
-    <!-- Set A -->
     <div class="expert-card">
       <div class="expert-avatar" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NO</div>
       <div class="expert-info">
@@ -767,21 +701,48 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   </div>
 </div>
 
-<!-- TIMELINE — horizontal dots -->
+<!-- TIMELINE — simplified 3-phase cards -->
 <section class="bg-light">
 <div class="container">
   <div class="fade-up">
     <div class="section-tag">Your Timeline</div>
     <h2 class="section-title">From First Consult to<br><em>Landing in Germany</em></h2>
-    <p class="section-sub">A typical TerraTern candidate is working in Germany within 4–6 months of their first call. Here's the journey step by step.</p>
+    <p class="section-sub">Most TerraTern candidates are working in Germany within 4–6 months of their first call.</p>
   </div>
-  <div class="timeline-h fade-up">
-    <div class="tl-step"><div class="tl-dot">1</div><div class="tl-week">Week 1–2</div><h4>Free Eligibility Consult</h4><p>Certified expert call, exact points score, gap analysis, and personalised roadmap. No fees — just clarity.</p></div>
-    <div class="tl-step"><div class="tl-dot">2</div><div class="tl-week">Week 3–6</div><h4>Documents + Language</h4><p>Degrees, experience letters, translations, notarised copies — plus A1 German begins in parallel.</p></div>
-    <div class="tl-step"><div class="tl-dot">3</div><div class="tl-week">Week 7–10</div><h4>Blocked Account + Visa</h4><p>Sperrkonto set up, funds transferred via RBI-compliant channels. Visa filed. Average approval: 7 days.</p></div>
-    <div class="tl-step"><div class="tl-dot">4</div><div class="tl-week">Week 12–20</div><h4>Job Search Begins</h4><p>CV built, recruiter introductions, applications submitted. Job hunting continues even after you land.</p></div>
-    <div class="tl-step"><div class="tl-dot">5</div><div class="tl-week">Month 4–6</div><h4>Land in Germany</h4><p>Anmeldung, bank, health insurance, accommodation — all handled with you. You never navigate alone.</p></div>
-    <div class="tl-step"><div class="tl-dot">6</div><div class="tl-week">Month 5–7</div><h4>First Day at Work</h4><p>Offer signed, onboarding done. Your Germany IT career has officially started. Alumni group is waiting.</p></div>
+  <div class="timeline-simple fade-up">
+    <div class="tl-card" data-n="1">
+      <div class="tl-card-phase">Phase 1</div>
+      <h4>Assess &amp; Prepare</h4>
+      <div class="tl-card-duration">Weeks 1–6</div>
+      <ul>
+        <li>Free eligibility consult + exact points score</li>
+        <li>Document checklist, translations &amp; notarisation</li>
+        <li>A1 German language training begins</li>
+        <li>Blocked account (Sperrkonto) setup</li>
+      </ul>
+    </div>
+    <div class="tl-card" data-n="2">
+      <div class="tl-card-phase">Phase 2</div>
+      <h4>Apply &amp; Get Visa</h4>
+      <div class="tl-card-duration">Weeks 7–12</div>
+      <ul>
+        <li>Consulate-ready application filed by experts</li>
+        <li>VFS / consulate slot booked</li>
+        <li>Average visa decision: 7 days</li>
+        <li>CV + LinkedIn rebuilt for German market</li>
+      </ul>
+    </div>
+    <div class="tl-card" data-n="3">
+      <div class="tl-card-phase">Phase 3</div>
+      <h4>Land &amp; Start Working</h4>
+      <div class="tl-card-duration">Months 4–7</div>
+      <ul>
+        <li>Anmeldung, bank account &amp; health insurance</li>
+        <li>Active job search with recruiter introductions</li>
+        <li>Support until signed employment contract</li>
+        <li>Alumni community connect on arrival</li>
+      </ul>
+    </div>
   </div>
 </div>
 </section>
@@ -803,7 +764,20 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 </div>
 </section>
 
-<!-- FAQ -->
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">Start Your Germany Journey</div>
+      <h2>Your Germany IT Career<br><span>Starts With One Free Call.</span></h2>
+      <p>Our certified immigration experts have helped 2,400+ Indian IT professionals make this move. Free, obligation-free, 30 minutes.</p>
+      <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">👉 Check My Eligibility — Free →</button>
+      <div class="cta-phone">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — pushed to bottom -->
 <section class="bg-soft" id="faq">
 <div class="container">
   <div class="fade-up">
@@ -824,19 +798,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-tag">Start Your Germany Journey</div>
-      <h2>Your Germany IT Career<br><span>Starts With One Free Call.</span></h2>
-      <p>Our certified immigration experts have helped 2,400+ Indian IT professionals make this move. Free, obligation-free, 30 minutes.</p>
-      <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">👉 Check My Eligibility — Free →</button>
-      <div class="cta-phone">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div>
@@ -844,13 +805,14 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <span id="ftl" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
   </div>
   <div class="footer-text">
-    <strong style="color:var(--navy);">TerraTern Pvt Ltd</strong><br>
+    <strong style="color:var(--navy);">TerraTern Private Limited</strong><br>
     4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102<br>
-    © 2025 TerraTern. All rights reserved. Immigration consulting — not a law firm. Results vary per individual profile.
+    © 2026 TerraTern Private Limited. All rights reserved.
   </div>
   <div class="footer-links">
     <a href="tel:+918064124242">+91 80641 24242</a>
-    <a href="#">Privacy Policy</a>
+    <a href="https://terratern.com/terms-and-condition/" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+    <a href="https://terratern.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
   </div>
 </footer>
 
@@ -886,7 +848,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
 <script>
 // Mobile stats carousel
-const stats=[{n:'99.7%',l:'Visa approval rate'},{n:'7 Days',l:'Avg. visa timeline'},{n:'2,400+',l:'Candidates placed'},{n:'€45K+',l:'Avg IT entry salary'}];
+const stats=[{n:'99.7%',l:'Visa approval rate'},{n:'7 Days',l:'Avg. visa timeline'},{n:'€45K+',l:'Avg IT entry salary'}];
 let si=0;
 setInterval(()=>{
   si=(si+1)%stats.length;

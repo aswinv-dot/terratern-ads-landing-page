@@ -346,7 +346,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
     <!-- LEFT PANEL -->
     <div>
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Germany Opportunity Card · IT Professionals</div>
+      <!-- Bonus banner replaces the badge -->
+      <div class="hero-bonus" style="margin-bottom:20px;">
+        <div class="hero-bonus-icon">🎁</div>
+        <div>
+          <div class="hero-bonus-title">₹40,000 in Bonuses Today</div>
+          <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹35,000)<br>✓ Expert Consultation (₹5,000)</div>
+          <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
+        </div>
+      </div>
       <h1>Move to Germany.<br><em>No Job Offer Needed.</em><br>Start Your Career in Germany.</h1>
       <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
 
@@ -357,16 +365,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         <div class="hero-stat"><div class="hero-stat-num">2,400+</div><div class="hero-stat-label">Candidates placed</div></div>
         <div class="hero-stat"><div class="hero-stat-num">€45K+</div><div class="hero-stat-label">Avg IT entry salary</div></div>
       </div>
-
-      <!-- Bonus banner — left panel for all screen sizes -->
-      <div class="hero-bonus">
-        <div class="hero-bonus-icon">🎁</div>
-        <div>
-          <div class="hero-bonus-title">₹40,000 in Bonuses Today</div>
-          <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹35,000)<br>✓ Expert Consultation (₹5,000)</div>
-          <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
-        </div>
-      </div>
     </div>
 
     <!-- RIGHT PANEL — form only -->
@@ -374,14 +372,14 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <!-- Expert rotator -->
       <div class="er-wrap">
         <div class="er-avatar-wrap">
-          <img class="er-photo" id="erPhoto" src="expert-1.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
-          <div class="er-initials" id="erInitials" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NF</div>
+          <img class="er-photo" id="erPhoto" src="expert-noor-zaiba.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
+          <div class="er-initials" id="erInitials" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NZ</div>
           <span class="er-badge">✓ Certified</span>
         </div>
         <div class="er-info">
           <div class="er-sup">Consultation from</div>
-          <div class="er-name" id="erName">Noor Fatima</div>
-          <div class="er-spec" id="erSpec">Germany Immigration Specialist, 6 yrs</div>
+          <div class="er-name" id="erName">Noor Zaiba</div>
+          <div class="er-spec" id="erSpec">Certified Immigration Advisor, 5 yrs</div>
           <div class="er-dots">
             <span class="er-dot active" data-i="0"></span>
             <span class="er-dot" data-i="1"></span>
@@ -690,9 +688,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <script>
 // ── EXPERT ROTATOR ──
 const experts = [
-  { name:'Noor Fatima',    spec:'Germany Immigration Specialist, 6 yrs', img:'expert-1.jpg', initials:'NF', bg:'linear-gradient(135deg,#7c3aed,#4c1d95)' },
-  { name:'Kiran Mehta',    spec:'Chancenkarte Advisor, 5 yrs',           img:'expert-2.jpg', initials:'KM', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
-  { name:'Ritika Shah',    spec:'EU Visa Consultant, 7 yrs',              img:'expert-3.jpg', initials:'RS', bg:'linear-gradient(135deg,#be185d,#831843)' },
+  { name:'Noor Zaiba', spec:'Certified Immigration Advisor, 5 yrs', img:'expert-noor-zaiba.jpg', initials:'NZ', bg:'linear-gradient(135deg,#7c3aed,#4c1d95)' },
+  { name:'Ritika',     spec:'Certified Immigration Advisor, 4 yrs', img:'expert-ritika.jpg',     initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
+  { name:'Kumar',      spec:'Certified Immigration Advisor, 6 yrs', img:'expert-kumar.jpg',      initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
 ];
 let ei = 0;
 function switchExpert(idx) {

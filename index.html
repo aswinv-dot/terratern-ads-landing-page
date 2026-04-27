@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Germany Opportunity Card for IT Professionals | TerraTern</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -108,12 +109,30 @@ nav{
   max-width:500px;margin-bottom:32px;
   font-weight:400;line-height:1.72;
 }
+
+/* HERO STATS - Desktop */
 .hero-stats{display:flex;flex-wrap:wrap;}
 .hero-stat{padding:14px 24px;border-right:1px solid rgba(255,255,255,0.12);}
 .hero-stat:first-child{padding-left:0;}
 .hero-stat:last-child{border:none;}
 .hero-stat-num{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;}
 .hero-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.58);margin-top:3px;font-weight:500;}
+
+/* Mobile hero stats - carousel */
+.hero-stats-mobile{
+  display:none;justify-content:center;align-items:center;
+  height:110px;gap:20px;margin-bottom:32px;
+}
+.hero-stats-mobile.active{display:flex;}
+.stat-carousel{
+  text-align:center;animation:fadeInStat 0.4s ease;
+}
+@keyframes fadeInStat{
+  from{opacity:0;transform:scale(0.95);}
+  to{opacity:1;transform:scale(1);}
+}
+.stat-carousel-num{font-size:2rem;font-weight:800;color:var(--gold);line-height:1;}
+.stat-carousel-label{font-size:0.75rem;color:rgba(255,255,255,0.65);margin-top:6px;font-weight:500;}
 
 /* FORM */
 .form-card{
@@ -454,17 +473,39 @@ section{padding:80px 40px;}
 
 /* FOOTER */
 footer{
-  background:var(--navy);
-  border-top:1px solid rgba(255,255,255,0.07);
+  background:var(--white);
+  border-top:1px solid var(--border);
   padding:28px 40px;
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:14px;
 }
 .footer-logo-img{height:34px;width:auto;}
-.footer-text{font-size:0.72rem;color:rgba(255,255,255,0.42);line-height:1.6;}
+.footer-text{font-size:0.72rem;color:var(--muted);line-height:1.6;}
 .footer-links{display:flex;gap:18px;}
-.footer-links a{font-size:0.72rem;color:rgba(255,255,255,0.48);text-decoration:none;}
-.footer-links a:hover{color:var(--sky);}
+.footer-links a{font-size:0.72rem;color:var(--muted);text-decoration:none;}
+.footer-links a:hover{color:var(--blue);}
+
+/* SCROLL TO TOP BUTTON */
+.scroll-to-top{
+  position:fixed;bottom:30px;right:30px;
+  width:40px;height:40px;
+  background:var(--blue);color:white;
+  border:none;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  opacity:0;visibility:hidden;
+  transition:all 0.3s ease;
+  z-index:100;
+  font-size:1.2rem;
+  box-shadow:0 4px 12px rgba(37,92,193,0.3);
+}
+.scroll-to-top.active{
+  opacity:1;visibility:visible;
+}
+.scroll-to-top:hover{
+  background:var(--navy);
+  transform:translateY(-3px);
+}
 
 /* FADE */
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s,transform 0.6s;}
@@ -481,16 +522,45 @@ footer{
   .why-card.hero-card{grid-column:span 2;}
   nav{padding:0 20px;}
   .nav-links{display:none;}
+  .nav-cta{display:none;}
   section{padding:56px 24px;}
   .trust-band{padding:18px 16px;}
   .trust-item{padding:7px 14px;}
+  footer{justify-content:center;text-align:center;}
 }
+
 @media(max-width:600px){
   .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
-  .hero-stats{flex-direction:column;gap:10px;}
-  .hero-stat{padding:0;border:none;}
-  footer{flex-direction:column;text-align:center;}
+  
+  /* MOBILE NAV */
+  nav{padding:0 16px;height:64px;}
+  .nav-logo img{height:40px;}
+  .nav-right{gap:12px;}
+  .nav-phone{font-size:0.78rem;}
+  
+  /* MOBILE HERO */
+  .hero{padding:44px 16px 40px;gap:28px;}
+  .hero-stats{display:none;}
+  .hero-stats-mobile{display:flex;}
+  .hero h1{font-size:clamp(1.5rem,2.5vw,2rem);}
+  .hero-sub{font-size:0.88rem;margin-bottom:28px;}
+  
+  /* MOBILE FORM */
+  .form-card{padding:20px 16px 16px;}
+  .form-card h3{font-size:0.95rem;}
+  .form-group{margin-bottom:9px;}
+  .form-group input,.form-group select{padding:8px 10px;font-size:0.82rem;}
+  .form-btn{padding:11px;font-size:0.88rem;}
+  
+  section{padding:48px 16px;}
+  .section-title{font-size:clamp(1.25rem,2vw,1.6rem);}
+  
+  footer{flex-direction:column;gap:12px;}
+  .footer-text{text-align:center;}
+  .footer-links{justify-content:center;}
+  
+  .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
 }
 
 /* ── EXIT POPUP ── */
@@ -654,7 +724,7 @@ footer{
   <div class="nav-right">
     <a class="nav-phone" href="tel:+918064124242">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
-      +91 80641 24242
+      <span class="nav-phone-text">+91 80641 24242</span>
     </a>
     <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consult</button>
   </div>
@@ -669,11 +739,21 @@ footer{
       <div class="hero-badge"><span class="hero-badge-dot"></span>Germany Opportunity Card · IT Professionals</div>
       <h1>Move to Germany.<br><em>No Job Offer Needed.</em><br>Start Your Career in Germany.</h1>
       <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter Europe without a job offer, search on arrival, and build your future from Day 1.</p>
+      
+      <!-- Desktop stats -->
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
         <div class="hero-stat"><div class="hero-stat-num">2,400+</div><div class="hero-stat-label">Candidates placed</div></div>
         <div class="hero-stat"><div class="hero-stat-num">€45K+</div><div class="hero-stat-label">Avg IT entry salary</div></div>
+      </div>
+
+      <!-- Mobile carousel stats -->
+      <div class="hero-stats-mobile" id="mobileStatsCarousel">
+        <div class="stat-carousel">
+          <div class="stat-carousel-num" id="statNum">99.7%</div>
+          <div class="stat-carousel-label" id="statLabel">Visa approval rate</div>
+        </div>
       </div>
     </div>
     <div class="form-card" id="lead-form">
@@ -1215,10 +1295,10 @@ footer{
   <div>
     <img src="logo.png" alt="TerraTern" class="footer-logo-img"
       onerror="this.style.display='none';document.getElementById('footer-text-logo').style.display='block'">
-    <span id="footer-text-logo" style="display:none;color:#fff;font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
+    <span id="footer-text-logo" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
   </div>
   <div class="footer-text">
-    <strong style="color:rgba(255,255,255,0.65);">TerraTern Pvt Ltd</strong><br>
+    <strong style="color:var(--navy);">TerraTern Pvt Ltd</strong><br>
     4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102<br>
     © 2025 TerraTern. All rights reserved. Immigration consulting — not a law firm. Results vary per individual profile.
   </div>
@@ -1227,6 +1307,9 @@ footer{
     <a href="#">Privacy Policy</a>
   </div>
 </footer>
+
+<!-- SCROLL TO TOP BUTTON -->
+<button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
 <!-- EXIT / TIMED POPUP -->
 <div class="popup-overlay" id="exitPopup">
@@ -1302,6 +1385,50 @@ footer{
 </div>
 
 <script>
+// ── MOBILE STATS CAROUSEL ──
+const statsData = [
+  { num: '99.7%', label: 'Visa approval rate' },
+  { num: '7 Days', label: 'Avg. visa timeline' },
+  { num: '2,400+', label: 'Candidates placed' },
+  { num: '€45K+', label: 'Avg IT entry salary' }
+];
+let currentStatIndex = 0;
+
+function rotateStats() {
+  const statNum = document.getElementById('statNum');
+  const statLabel = document.getElementById('statLabel');
+  
+  statNum.style.animation = 'none';
+  statLabel.style.animation = 'none';
+  
+  setTimeout(() => {
+    currentStatIndex = (currentStatIndex + 1) % statsData.length;
+    statNum.textContent = statsData[currentStatIndex].num;
+    statLabel.textContent = statsData[currentStatIndex].label;
+    
+    statNum.style.animation = 'fadeInStat 0.4s ease';
+    statLabel.style.animation = 'fadeInStat 0.4s ease';
+  }, 50);
+}
+
+setInterval(rotateStats, 3000);
+
+// ── SCROLL TO TOP ──
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollTopBtn.classList.add('active');
+  } else {
+    scrollTopBtn.classList.remove('active');
+  }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── FAQ TOGGLE ──
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -1311,11 +1438,13 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// ── FADE UP OBSERVER ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
+// ── MAIN FORM SUBMIT ──
 document.getElementById('submit-btn').addEventListener('click', () => {
   const inputs = document.querySelectorAll('.form-card input, .form-card select');
   let valid = true;
@@ -1346,7 +1475,6 @@ function closePopup() {
   document.body.style.overflow = '';
 }
 
-// Desktop: exit intent (mouse leaves top of viewport)
 const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
 
 if (!isMobile) {
@@ -1354,16 +1482,14 @@ if (!isMobile) {
     if (e.clientY <= 8) showPopup();
   });
 } else {
-  // Mobile: show after 20 seconds
   setTimeout(showPopup, 20000);
 }
 
-// Close handlers
 document.getElementById('popupClose').addEventListener('click', closePopup);
 document.getElementById('popupSkip').addEventListener('click', closePopup);
 popup.addEventListener('click', (e) => { if (e.target === popup) closePopup(); });
 
-// Popup form submit
+// ── POPUP FORM SUBMIT ──
 document.getElementById('popup-submit-btn').addEventListener('click', () => {
   const fields = [
     document.getElementById('p-name'),

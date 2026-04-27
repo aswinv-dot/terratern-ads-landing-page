@@ -80,8 +80,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .sel-wrap::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--blue);pointer-events:none;font-size:0.78rem;}
 .form-btn{width:100%;background:var(--blue);color:var(--white);border:none;padding:13px;border-radius:8px;font-family:var(--ff);font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:6px;transition:all 0.2s;}
 .form-btn:hover{background:var(--navy);transform:translateY(-1px);}
-.form-trust{text-align:center;font-size:0.66rem;color:var(--muted);margin-top:9px;}
+.form-trust{text-align:center;font-size:0.66rem;color:var(--muted);margin-top:6px;}
 .form-trust strong{color:var(--blue);}
+.form-slots{text-align:center;font-size:0.72rem;font-weight:700;color:#dc2626;margin-top:8px;letter-spacing:0.01em;}
 
 /* Expert rotator */
 .er-wrap{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#f0f6ff,#e6f0ff);border:1.5px solid rgba(37,92,193,.18);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
@@ -97,7 +98,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .er-dot{width:5px;height:5px;border-radius:50%;background:rgba(37,92,193,.2);transition:background .3s;cursor:pointer;}
 .er-dot.active{background:var(--blue);}
 
-/* SCROLLER STRIP */
+/* ALUMNI SCROLLER STRIP */
 .scroller-strip{background:var(--white);border-top:3px solid var(--gold);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;position:relative;}
 .scroller-strip::before,.scroller-strip::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
 .scroller-strip::before{left:0;background:linear-gradient(to right,var(--white),transparent);}
@@ -112,6 +113,64 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .person-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
 .person-name{font-size:0.75rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:4px;}
 .person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
+
+/* HERO BG ALUMNI SCROLLER */
+.hero-alumni-bg{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:160px;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+/* Fade mask: top fades to transparent, right side (near form) fades out strongly */
+.hero-alumni-bg::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom, rgba(0,33,92,1) 0%, rgba(0,33,92,0) 38%),
+    linear-gradient(to right, rgba(0,33,92,0.15) 0%, rgba(0,33,92,0.15) 45%, rgba(0,33,92,0.72) 72%, rgba(0,33,92,1) 88%);
+  z-index:2;
+}
+.hero-alumni-label{
+  position:absolute;top:10px;left:50%;
+  transform:translateX(-50%);
+  font-size:0.6rem;font-weight:700;
+  color:rgba(255,255,255,0.35);
+  letter-spacing:0.14em;text-transform:uppercase;
+  z-index:3;white-space:nowrap;
+}
+.hero-alumni-track{
+  display:flex;gap:14px;
+  width:max-content;
+  animation:scroll-left 38s linear infinite;
+  padding:32px 0 14px;
+  opacity:0.72;
+}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* Hero alumni cards — compact, translucent for dark bg */
+.ha-card{
+  display:flex;flex-direction:column;align-items:center;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:12px;
+  padding:10px 14px 9px;
+  min-width:100px;
+  flex-shrink:0;
+}
+.ha-avatar{
+  width:52px;height:52px;border-radius:9px;
+  overflow:hidden;margin-bottom:7px;
+  border:1.5px solid rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;font-weight:800;color:#fff;
+  flex-shrink:0;background:#4a6080;
+}
+.ha-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.ha-name{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.9);text-align:center;margin-bottom:3px;}
+.ha-dest{font-size:0.58rem;font-weight:600;color:var(--sky);white-space:nowrap;}
+
 
 /* SECTIONS */
 section{padding:80px 40px;}
@@ -283,8 +342,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .nav-phone{font-size:0.78rem;}
 
   /* Mobile hero — fix badge hidden under nav */
-  .hero-wrap{padding-top:60px;}
+  .hero-wrap{padding-top:60px;padding-bottom:0;}
   .hero{padding:28px 16px 40px;gap:24px;}
+  .hero-alumni-bg{display:none;}
+  .hero-sub-desktop{display:none;}
+  /* Mobile order: bonus first, then h1, then stats, then form */
+  .hero > div:first-child{display:flex;flex-direction:column;}
+  .hero > div:first-child .hero-bonus{order:1;}
+  .hero > div:first-child h1{order:2;}
+  .hero > div:first-child .hero-stats{order:3;}
 
   /* Hide desktop stats on mobile */
   .hero-stats{display:none;}
@@ -346,7 +412,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
     <!-- LEFT PANEL -->
     <div>
-      <!-- Bonus banner replaces the badge -->
+      <!-- Bonus banner -->
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-icon">🎁</div>
         <div>
@@ -355,8 +421,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
           <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
         </div>
       </div>
-      <h1>Move to Germany.<br><em>No Job Offer Needed.</em><br>Start Your Career in Germany.</h1>
-      <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
+      <h1>Get your Germany Opportunity Card in just <em>7 Days</em> — No Job Offer Needed to Land in Germany.</h1>
+      <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
 
       <!-- Desktop stats -->
       <div class="hero-stats">
@@ -423,18 +489,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
           </select>
         </div>
       </div>
-      <button class="form-btn" id="submit-btn">📞 Get My ₹40,000 Bonus →</button>
-      <div class="form-trust">🔒 No spam · Free consultation · <strong>Trusted by 2,400+ IT professionals</strong></div>
+      <button class="form-btn" id="submit-btn">📞 Book My Slot →</button>
+      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week</div>
+      <div class="form-trust">🔒 No spam · <strong>Trusted by 2,400+ IT professionals</strong></div>
     </div>
 
-  </div>
-</div>
+  </div><!-- end .hero grid -->
+</div><!-- end .hero-wrap -->
 
-<!-- SCROLLER -->
+<!-- ALUMNI SCROLLER -->
 <div class="scroller-strip">
   <div class="scroller-label">Meet the Alumni 🇩🇪</div>
   <div class="scroller-track">
-    <!-- Set A -->
     <div class="person-card"><div class="person-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
@@ -445,7 +511,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <div class="person-card"><div class="person-avatar"><img src="alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <!-- Set B duplicate for seamless loop -->
+    <!-- Set B — duplicate for seamless loop -->
     <div class="person-card"><div class="person-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
     <div class="person-card"><div class="person-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
@@ -716,6 +782,10 @@ setInterval(() => { ei = (ei + 1) % experts.length; switchExpert(ei); }, 10000);
 document.querySelectorAll('.er-dot').forEach(d => {
   d.addEventListener('click', () => { ei = +d.dataset.i; switchExpert(ei); });
 });
+
+// ── RANDOM SLOTS COUNT (4–18, random each load) ──
+const slots = Math.floor(Math.random() * 15) + 4; // 4 to 18
+document.getElementById('slotsCount').textContent = slots;
 
 // ── BONUS TIMER — 7 minutes countdown, resets each visit ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;

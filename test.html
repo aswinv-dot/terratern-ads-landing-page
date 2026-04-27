@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Germany Opportunity Card for IT Professionals | TerraTern</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -84,7 +85,7 @@ h2 em{font-style:normal;color:var(--blue);}
 .pts.m{background:rgba(241,200,25,.15);color:#8a6d00;}
 
 /* NOT FOR YOU */
-.nf-wrap{background:#fff;}
+.nf-wrap{background:#fff;padding:64px 0 0;}
 .nf-inner{max-width:1100px;margin:0 auto;padding:0 32px;}
 .nf-split{display:grid;grid-template-columns:1fr 1fr;}
 .nf-half{padding:40px 44px;}
@@ -200,8 +201,9 @@ footer{background:#fff;border-top:1px solid var(--border);padding:22px 32px;disp
   .sal-layout{grid-template-columns:1fr;}
   .sal-foot{grid-column:span 1;}
   .prog-grid,.tl-grid,.faq-grid{grid-template-columns:1fr;}
-  .nf-split{grid-template-columns:1fr;}
-  nav{padding:0 16px;}
+  .nf-split{grid-template-columns:1fr;max-width:1100px;margin:0 auto;border-radius:12px;overflow:hidden;}
+  .nf-half{padding:28px 20px;}
+  .nf-wrap{padding-left:16px;padding-right:16px;}
   section{padding:48px 20px;}
   .nf-inner{padding:0 20px;}
   footer{flex-direction:column;text-align:center;}
@@ -218,10 +220,13 @@ footer{background:#fff;border-top:1px solid var(--border);padding:22px 32px;disp
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">Terra<span>Tern</span></div>
+  <div class="nav-brand">
+    <img src="logo.png" alt="TerraTern" style="height:38px;width:auto;display:block;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span style="display:none;">Terra<span style="color:var(--gold)">Tern</span></span>
+  </div>
   <div class="nav-right">
     <a class="nav-phone" href="tel:+918064124242">+91 80641 24242</a>
-    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consult</button>
+    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
   </div>
 </nav>
 
@@ -242,8 +247,8 @@ footer{background:#fff;border-top:1px solid var(--border);padding:22px 32px;disp
       </div>
     </div>
     <div class="form-card" id="lead-form">
-      <h3>Check Your Eligibility — Free</h3>
-      <p>Personalised assessment from a certified expert within 24 hours.</p>
+      <h3>Check Your Eligibility in just 30 Seconds</h3>
+      <p>Personalised assessment from a certified expert.</p>
       <div class="fg"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
       <div class="fg"><label>Email</label><input type="email" placeholder="you@gmail.com"></div>
       <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="+91 98765 43210"></div>

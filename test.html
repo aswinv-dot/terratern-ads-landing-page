@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .nav-cta:hover{background:#ffd426;transform:translateY(-1px);}
 
 /* HERO */
-.hero-wrap{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 55%,#1248a8 100%);padding-top:68px;position:relative;overflow:hidden;padding-bottom:160px;}
+.hero-wrap{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 55%,#1248a8 100%);padding-top:68px;position:relative;overflow:hidden;}
 .hero-wrap::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
 .hero-circle1{position:absolute;right:-100px;top:-60px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(154,203,253,0.13) 0%,transparent 68%);pointer-events:none;}
 .hero-circle2{position:absolute;left:-80px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(241,200,25,0.09) 0%,transparent 68%);pointer-events:none;}
@@ -80,8 +80,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .sel-wrap::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--blue);pointer-events:none;font-size:0.78rem;}
 .form-btn{width:100%;background:var(--blue);color:var(--white);border:none;padding:13px;border-radius:8px;font-family:var(--ff);font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:6px;transition:all 0.2s;}
 .form-btn:hover{background:var(--navy);transform:translateY(-1px);}
-.form-trust{text-align:center;font-size:0.66rem;color:var(--muted);margin-top:9px;}
+.form-trust{text-align:center;font-size:0.66rem;color:var(--muted);margin-top:6px;}
 .form-trust strong{color:var(--blue);}
+.form-slots{text-align:center;font-size:0.72rem;font-weight:700;color:#dc2626;margin-top:8px;letter-spacing:0.01em;}
 
 /* Expert rotator */
 .er-wrap{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#f0f6ff,#e6f0ff);border:1.5px solid rgba(37,92,193,.18);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
@@ -325,9 +326,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .nav-phone{font-size:0.78rem;}
 
   /* Mobile hero — fix badge hidden under nav */
-  .hero-wrap{padding-top:60px;padding-bottom:40px;}
+  .hero-wrap{padding-top:60px;padding-bottom:0;}
   .hero{padding:28px 16px 40px;gap:24px;}
   .hero-alumni-bg{display:none;}
+  .hero-sub-desktop{display:none;}
+  /* Mobile order: bonus first, then h1, then stats, then form */
+  .hero > div:first-child{display:flex;flex-direction:column;}
+  .hero > div:first-child .hero-bonus{order:1;}
+  .hero > div:first-child h1{order:2;}
+  .hero > div:first-child .hero-stats{order:3;}
 
   /* Hide desktop stats on mobile */
   .hero-stats{display:none;}
@@ -389,7 +396,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
     <!-- LEFT PANEL -->
     <div>
-      <!-- Bonus banner replaces the badge -->
+      <!-- Bonus banner -->
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-icon">🎁</div>
         <div>
@@ -398,8 +405,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
           <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
         </div>
       </div>
-      <h1>Move to Germany.<br><em>No Job Offer Needed.</em><br>Start Your Career in Germany.</h1>
-      <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
+      <h1>Get your Germany Opportunity Card in just <em>7 Days</em> — No Job Offer Needed to Land in Germany.</h1>
+      <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
 
       <!-- Desktop stats -->
       <div class="hero-stats">
@@ -466,40 +473,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
           </select>
         </div>
       </div>
-      <button class="form-btn" id="submit-btn">📞 Get My ₹40,000 Bonus →</button>
-      <div class="form-trust">🔒 No spam · Free consultation · <strong>Trusted by 2,400+ IT professionals</strong></div>
+      <button class="form-btn" id="submit-btn">📞 Book My Slot →</button>
+      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week</div>
+      <div class="form-trust">🔒 No spam · <strong>Trusted by 2,400+ IT professionals</strong></div>
     </div>
 
   </div><!-- end .hero grid -->
-
-  <!-- ALUMNI BG SCROLLER — floats at bottom of hero -->
-  <div class="hero-alumni-bg">
-    <div class="hero-alumni-label">Meet the Alumni 🇩🇪 · 2,400+ Now Working in Germany</div>
-    <div class="hero-alumni-track">
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='#255cc1'"></div><div class="ha-name">Arjun K.</div><div class="ha-dest">📍 Berlin</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='#c0392b'"></div><div class="ha-name">Priya R.</div><div class="ha-dest">📍 Munich</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='#1a7a5e'"></div><div class="ha-name">Siddharth K.</div><div class="ha-dest">📍 Frankfurt</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='#d4960a'"></div><div class="ha-name">Nisha M.</div><div class="ha-dest">📍 Hamburg</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='#6d28d9'"></div><div class="ha-name">Rohit V.</div><div class="ha-dest">📍 Berlin</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='#065f46'"></div><div class="ha-name">Deepika S.</div><div class="ha-dest">📍 Stuttgart</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='#1e40af'"></div><div class="ha-name">Karthik P.</div><div class="ha-dest">📍 Munich</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='#9a3412'"></div><div class="ha-name">Ananya M.</div><div class="ha-dest">📍 Cologne</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='#0369a1'"></div><div class="ha-name">Vaishnavi P.</div><div class="ha-dest">📍 Düsseldorf</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='#9d174d'"></div><div class="ha-name">Sophia P.</div><div class="ha-dest">📍 Frankfurt</div></div>
-      <!-- duplicate set for seamless loop -->
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='#255cc1'"></div><div class="ha-name">Arjun K.</div><div class="ha-dest">📍 Berlin</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='#c0392b'"></div><div class="ha-name">Priya R.</div><div class="ha-dest">📍 Munich</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='#1a7a5e'"></div><div class="ha-name">Siddharth K.</div><div class="ha-dest">📍 Frankfurt</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='#d4960a'"></div><div class="ha-name">Nisha M.</div><div class="ha-dest">📍 Hamburg</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='#6d28d9'"></div><div class="ha-name">Rohit V.</div><div class="ha-dest">📍 Berlin</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='#065f46'"></div><div class="ha-name">Deepika S.</div><div class="ha-dest">📍 Stuttgart</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='#1e40af'"></div><div class="ha-name">Karthik P.</div><div class="ha-dest">📍 Munich</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='#9a3412'"></div><div class="ha-name">Ananya M.</div><div class="ha-dest">📍 Cologne</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='#0369a1'"></div><div class="ha-name">Vaishnavi P.</div><div class="ha-dest">📍 Düsseldorf</div></div>
-      <div class="ha-card"><div class="ha-avatar"><img src="alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='#9d174d'"></div><div class="ha-name">Sophia P.</div><div class="ha-dest">📍 Frankfurt</div></div>
-    </div>
-  </div>
-
 </div><!-- end .hero-wrap -->
 
 <!-- ELIGIBILITY -->
@@ -759,6 +738,10 @@ setInterval(() => { ei = (ei + 1) % experts.length; switchExpert(ei); }, 10000);
 document.querySelectorAll('.er-dot').forEach(d => {
   d.addEventListener('click', () => { ei = +d.dataset.i; switchExpert(ei); });
 });
+
+// ── RANDOM SLOTS COUNT (4–18, random each load) ──
+const slots = Math.floor(Math.random() * 15) + 4; // 4 to 18
+document.getElementById('slotsCount').textContent = slots;
 
 // ── BONUS TIMER — 7 minutes countdown, resets each visit ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;

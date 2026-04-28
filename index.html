@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Germany Opportunity Card (Chancenkarte) for Indian IT professionals. No job offer needed. 99.7% visa approval rate, 7-day processing, €45K+ salary. Free eligibility check.">
 <title>Germany Opportunity Card for IT Professionals | TerraTern</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -332,7 +332,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 }
 
 @media(max-width:600px){
-  .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities{grid-template-columns:1fr;}
+  .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
 
   /* Mobile nav */
@@ -384,7 +384,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
 <nav>
   <div class="nav-logo">
-    <img src="logo.png" alt="TerraTern" onerror="this.style.display='none';document.getElementById('nav-text-logo').style.display='block'">
+    <img src="assets/images/logo.png" alt="TerraTern" onerror="this.style.display='none';document.getElementById('nav-text-logo').style.display='block'">
     <span id="nav-text-logo" style="display:none;" class="nav-logo-text">Terra<span>Tern</span></span>
   </div>
   <ul class="nav-links">
@@ -438,12 +438,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <!-- Expert rotator -->
       <div class="er-wrap">
         <div class="er-avatar-wrap">
-          <img class="er-photo" id="erPhoto" src="expert-noor-zaiba.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
+          <img class="er-photo" id="erPhoto" src="assets/images/experts/expert-noor-zaiba.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
           <div class="er-initials" id="erInitials" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NZ</div>
           <span class="er-badge">✓ Certified</span>
         </div>
         <div class="er-info">
-          <div class="er-sup">Consultation from</div>
+          <div class="er-sup">Your expert today</div>
           <div class="er-name" id="erName">Noor Zaiba</div>
           <div class="er-spec" id="erSpec">Certified Immigration Advisor, 5 yrs</div>
           <div class="er-dots">
@@ -454,8 +454,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         </div>
       </div>
 
-      <h3>Book Your Consultation</h3>
-      <p>Get your exact visa score — free, in 30 minutes.</p>
+      <h3>Register for a Free Expert Consultation</h3>
       <div class="form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
       <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@gmail.com"></div>
       <div class="form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
@@ -464,12 +463,12 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         <div class="sel-wrap">
           <select>
             <option value="" disabled selected>Select education level</option>
-            <option>10th Grade (SSLC)</option>
-            <option>12th Grade (HSC)</option>
+            <option>10th Grade</option>
+            <option>12th Grade</option>
             <option>Diploma</option>
-            <option>Under Graduate (B.Tech / BCA / BSc)</option>
-            <option>Post Graduate (M.Tech / MCA / MSc / MBA)</option>
-            <option>Doctorate (PhD)</option>
+            <option>Under Graduate</option>
+            <option>Post Graduate</option>
+            <option>Doctorate</option>
           </select>
         </div>
       </div>
@@ -485,13 +484,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
             <option>4 Years</option>
             <option>5 Years</option>
             <option>6 Years</option>
-            <option>7 or More Years</option>
+            <option>7 Years or More</option>
           </select>
         </div>
       </div>
       <button class="form-btn" id="submit-btn">📞 Book My Slot →</button>
-      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week</div>
-      <div class="form-trust">🔒 No spam · <strong>Trusted by 2,400+ IT professionals</strong></div>
+      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week — <strong>filling fast</strong></div>
+      <div class="form-trust">🔒 Free · No spam · <strong>2,400+ Indians already in Germany via TerraTern</strong></div>
     </div>
 
   </div><!-- end .hero grid -->
@@ -501,27 +500,27 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <div class="scroller-strip">
   <div class="scroller-label">Meet the Alumni 🇩🇪</div>
   <div class="scroller-track">
-    <div class="person-card"><div class="person-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='linear-gradient(135deg,#f7c948,#d4960a)'"></div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='linear-gradient(135deg,#a78bfa,#6d28d9)'"></div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='linear-gradient(135deg,#34d399,#065f46)'"></div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='linear-gradient(135deg,#60a5fa,#1e40af)'"></div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='linear-gradient(135deg,#f7c948,#d4960a)'"></div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='linear-gradient(135deg,#a78bfa,#6d28d9)'"></div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='linear-gradient(135deg,#34d399,#065f46)'"></div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='linear-gradient(135deg,#60a5fa,#1e40af)'"></div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
     <!-- Set B — duplicate for seamless loop -->
-    <div class="person-card"><div class="person-avatar"><img src="alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='linear-gradient(135deg,#f7c948,#d4960a)'"></div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='linear-gradient(135deg,#a78bfa,#6d28d9)'"></div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='linear-gradient(135deg,#34d399,#065f46)'"></div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='linear-gradient(135deg,#60a5fa,#1e40af)'"></div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
-    <div class="person-card"><div class="person-avatar"><img src="alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-nisha-m.jpg" alt="Nisha M." onerror="this.parentElement.textContent='NM';this.parentElement.style.background='linear-gradient(135deg,#f7c948,#d4960a)'"></div><div class="person-name">Nisha M.</div><div class="person-dest">📍 Hamburg</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-rohit-v.jpg" alt="Rohit V." onerror="this.parentElement.textContent='RV';this.parentElement.style.background='linear-gradient(135deg,#a78bfa,#6d28d9)'"></div><div class="person-name">Rohit V.</div><div class="person-dest">📍 Berlin</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-deepika-s.jpg" alt="Deepika S." onerror="this.parentElement.textContent='DS';this.parentElement.style.background='linear-gradient(135deg,#34d399,#065f46)'"></div><div class="person-name">Deepika S.</div><div class="person-dest">📍 Stuttgart</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-karthik-p.jpg" alt="Karthik P." onerror="this.parentElement.textContent='KP';this.parentElement.style.background='linear-gradient(135deg,#60a5fa,#1e40af)'"></div><div class="person-name">Karthik P.</div><div class="person-dest">📍 Munich</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
+    <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
   </div>
 </div>
 
@@ -532,6 +531,11 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <div class="section-tag">Eligibility Check</div>
     <h2 class="section-title">You May Qualify If You Tick<br><em>Any of These Boxes</em></h2>
     <p class="section-sub">Germany's Opportunity Card works on a points system. IT professionals have one of the highest eligibility rates of any profession — here's exactly what counts.</p>
+    <!-- Cialdini: Commitment & Consistency — small yes before the big yes -->
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 18px;margin-top:20px;cursor:pointer;" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">
+      <span style="font-size:1.1rem;">🤔</span>
+      <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">Do you tick even <em style="color:var(--blue);font-style:normal;">one</em> of these? You likely already qualify. <span style="color:var(--blue);text-decoration:underline;cursor:pointer;">Check your score free →</span></span>
+    </div>
   </div>
   <div class="elig-grid">
     <div class="elig-card fade-up"><div class="elig-icon">🎓</div><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or an IT Diploma from a recognised Indian institution qualifies. We handle credential evaluation and recognition.</p><span class="elig-pts">+2 Points</span></div>
@@ -676,10 +680,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   <div class="container">
     <div class="fade-up">
       <div class="section-tag">Start Your Germany Journey</div>
-      <h2>Your Germany IT Career<br><span>Starts With One Free Call.</span></h2>
-      <p>Our certified immigration experts have helped 2,400+ Indian IT professionals make this move. Your assessment is free, obligation-free, and takes just 30 minutes.</p>
-      <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Check My Eligibility — Free →</button>
-      <div class="cta-phone">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
+      <!-- Cialdini: Scarcity + Authority in CTA -->
+      <h2>2,400 Indians Already Made the Move.<br><span>Will You Be Next?</span></h2>
+      <p>Our certified immigration advisors have a 99.7% visa approval rate. Your free eligibility call takes 30 minutes and could change the next 30 years of your life.</p>
+      <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">📞 Book My Slot — Free →</button>
+      <!-- Cialdini: Scarcity below CTA -->
+      <div style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.6);position:relative;">🔴 Only <span id="ctaSlotsCount"></span> consultation slots left this week</div>
+      <div class="cta-phone" style="margin-top:10px;">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
     </div>
   </div>
 </section>
@@ -687,7 +694,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <!-- FOOTER -->
 <footer>
   <div>
-    <img src="logo.png" alt="TerraTern" class="footer-logo-img" onerror="this.style.display='none';document.getElementById('footer-text-logo').style.display='block'">
+    <img src="assets/images/logo.png" alt="TerraTern" class="footer-logo-img" onerror="this.style.display='none';document.getElementById('footer-text-logo').style.display='block'">
     <span id="footer-text-logo" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
   </div>
   <div class="footer-text">
@@ -708,14 +715,46 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <div class="popup-overlay" id="exitPopup">
   <div class="popup-box">
     <button class="popup-close" id="popupClose" aria-label="Close">✕</button>
-    <div class="popup-left">
-      <img src="story-01.jpg" alt="Visa success story" class="popup-story-img" onerror="this.style.display='none';document.getElementById('popup-img-placeholder').style.display='flex'">
-      <div id="popup-img-placeholder" class="popup-story-img-placeholder" style="display:none;">🛂</div>
-      <div class="popup-left-overlay">
-        <div class="popup-visa-badge">✅ Visa Approved in 6 Days</div>
-        <div class="popup-testimonial-text">"I applied in October, got my visa stamp in 6 days, and landed my first German IT job within 3 weeks of arriving. TerraTern handled everything — I just had to show up."</div>
-        <div class="popup-testimonial-author">Karthik Prasad</div>
-        <div class="popup-testimonial-dest">Software Engineer · Now in Munich 🇩🇪</div>
+    <div class="popup-left" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 28px;background:linear-gradient(160deg,var(--navy) 0%,#0a3080 100%);">
+      <!-- Expert display — mirrors lead form style -->
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="position:relative;display:inline-block;margin-bottom:16px;">
+          <img id="popupErPhoto" src="assets/images/experts/expert-noor-zaiba.jpg" alt="Expert"
+            style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);display:block;"
+            onerror="this.style.display='none';document.getElementById('popupErInitials').style.display='flex'">
+          <div id="popupErInitials"
+            style="display:none;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#4c1d95);align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;border:3px solid rgba(255,255,255,0.2);">NZ</div>
+          <span style="position:absolute;bottom:4px;right:4px;background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:800;letter-spacing:0.05em;padding:3px 8px;border-radius:100px;white-space:nowrap;">✓ Certified</span>
+        </div>
+        <div style="font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Your expert today</div>
+        <div id="popupErName" style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;">Noor Zaiba</div>
+        <div id="popupErSpec" style="font-size:0.75rem;color:rgba(255,255,255,0.65);margin-bottom:16px;">British Council Certified · 5 yrs</div>
+        <!-- Dots -->
+        <div style="display:flex;justify-content:center;gap:6px;" id="popupErDots">
+          <span class="popup-er-dot active" data-i="0" style="width:6px;height:6px;border-radius:50%;background:var(--gold);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
+          <span class="popup-er-dot" data-i="1" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
+          <span class="popup-er-dot" data-i="2" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
+        </div>
+      </div>
+      <!-- What you get -->
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;width:100%;">
+        <div style="font-size:0.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">What you get — Free</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>1:1 session with a certified immigration advisor
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Your personalised Germany immigration roadmap
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Exact visa score + eligibility breakdown
+          </div>
+        </div>
+      </div>
+      <!-- Rating -->
+      <div style="margin-top:20px;text-align:center;">
+        <div style="font-size:1rem;color:var(--gold);letter-spacing:2px;">★★★★★</div>
+        <div style="font-size:0.68rem;color:rgba(255,255,255,0.5);margin-top:4px;">4.9/5 · 1,000+ Google Reviews</div>
       </div>
     </div>
     <div class="popup-right">
@@ -729,8 +768,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         <div class="popup-sel-wrap">
           <select id="popup-education">
             <option value="" disabled selected>Select level</option>
-            <option>10th Grade (SSLC)</option><option>12th Grade (HSC)</option><option>Diploma</option>
-            <option>Under Graduate</option><option>Post Graduate</option><option>Doctorate (PhD)</option>
+            <option>10th Grade</option><option>12th Grade</option><option>Diploma</option>
+            <option>Under Graduate</option><option>Post Graduate</option><option>Doctorate</option>
           </select>
         </div>
       </div>
@@ -741,7 +780,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
             <option value="" disabled selected>Select experience</option>
             <option>Less than 1 Year</option><option>1 Year</option><option>2 Years</option>
             <option>3 Years</option><option>4 Years</option><option>5 Years</option>
-            <option>6 Years</option><option>7 or More Years</option>
+            <option>6 Years</option><option>7 Years or More</option>
           </select>
         </div>
       </div>
@@ -754,9 +793,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 <script>
 // ── EXPERT ROTATOR ──
 const experts = [
-  { name:'Noor Zaiba', spec:'Certified Immigration Advisor, 5 yrs', img:'expert-noor-zaiba.jpg', initials:'NZ', bg:'linear-gradient(135deg,#7c3aed,#4c1d95)' },
-  { name:'Ritika',     spec:'Certified Immigration Advisor, 4 yrs', img:'expert-ritika.jpg',     initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
-  { name:'Kumar',      spec:'Certified Immigration Advisor, 6 yrs', img:'expert-kumar.jpg',      initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
+  { name:'Noor Zaiba', spec:'Certified Immigration Advisor, 5 yrs', img:'assets/images/experts/expert-noor-zaiba.jpg', initials:'NZ', bg:'linear-gradient(135deg,#7c3aed,#4c1d95)' },
+  { name:'Ritika',     spec:'Certified Immigration Advisor, 4 yrs', img:'assets/images/experts/expert-ritika.jpg',     initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
+  { name:'Kumar',      spec:'Certified Immigration Advisor, 6 yrs', img:'assets/images/experts/expert-kumar.jpg',      initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
 ];
 let ei = 0;
 function switchExpert(idx) {
@@ -784,8 +823,9 @@ document.querySelectorAll('.er-dot').forEach(d => {
 });
 
 // ── RANDOM SLOTS COUNT (4–18, random each load) ──
-const slots = Math.floor(Math.random() * 15) + 4; // 4 to 18
+const slots = Math.floor(Math.random() * 15) + 4;
 document.getElementById('slotsCount').textContent = slots;
+document.getElementById('ctaSlotsCount').textContent = slots;
 
 // ── BONUS TIMER — 7 minutes countdown, resets each visit ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;
@@ -841,6 +881,34 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     btn.style.background = '#16a34a';
   }
 });
+
+// ── POPUP EXPERT ROTATOR (synced to same experts array) ──
+function switchPopupExpert(idx) {
+  const ex = experts[idx];
+  const photo = document.getElementById('popupErPhoto');
+  const ini = document.getElementById('popupErInitials');
+  const nm = document.getElementById('popupErName');
+  const sp = document.getElementById('popupErSpec');
+  nm.style.opacity = '0'; sp.style.opacity = '0';
+  setTimeout(() => {
+    nm.textContent = ex.name;
+    sp.textContent = 'British Council Certified · ' + ex.spec.split(', ')[1];
+    photo.src = ex.img; photo.style.display = 'block'; ini.style.display = 'none';
+    photo.onerror = function() {
+      this.style.display = 'none';
+      ini.style.display = 'flex'; ini.textContent = ex.initials;
+      ini.style.background = ex.bg;
+    };
+    nm.style.opacity = '1'; sp.style.opacity = '1';
+    document.querySelectorAll('.popup-er-dot').forEach((d,i) => {
+      d.style.background = i === idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)';
+    });
+  }, 280);
+}
+document.querySelectorAll('.popup-er-dot').forEach(d => {
+  d.addEventListener('click', () => switchPopupExpert(+d.dataset.i));
+});
+setInterval(() => switchPopupExpert(ei), 10000);
 
 // ── POPUP ──
 const popup = document.getElementById('exitPopup');

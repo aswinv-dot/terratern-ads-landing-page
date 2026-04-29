@@ -868,8 +868,10 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
 // ── API CONFIG ──
-const API_URL  = 'https://backend.terratern.in/api/common-lead-gen';
-const AUTH_TOKEN = 'Basic ' + btoa('someone:adminQWE');
+// Requests go to /api/submit (same-origin Vercel proxy) which
+// forwards server-side to the backend — avoids CORS entirely.
+const API_URL  = '/api/submit';
+const AUTH_TOKEN = ''; // Auth is handled server-side in the proxy
 const SERVICE_ID = '2';
 
 // Parse UTM params from URL
@@ -917,8 +919,7 @@ async function submitLead(data, btn, successText) {
     const res = await fetch(API_URL, {
       method:  'POST',
       headers: {
-        'Content-Type':  'application/json',
-        'Authorization': AUTH_TOKEN,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     });

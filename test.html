@@ -455,13 +455,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       </div>
 
       <h3>Register for a Free Expert Consultation</h3>
-      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@gmail.com"></div>
-      <div class="form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="form-group"><label>Full Name</label><input type="text" id="f-name" placeholder="Rajesh Kumar"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="you@gmail.com"></div>
+      <div class="form-group"><label>WhatsApp Number</label><input type="tel" id="f-mobile" placeholder="+91 98765 43210"></div>
       <div class="form-group">
         <label>Highest Level of Education</label>
         <div class="sel-wrap">
-          <select>
+          <select id="f-education">
             <option value="" disabled selected>Select education level</option>
             <option>10th Grade</option>
             <option>12th Grade</option>
@@ -475,7 +475,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <div class="form-group">
         <label>Total Work Experience</label>
         <div class="sel-wrap">
-          <select>
+          <select id="f-experience">
             <option value="" disabled selected>Select years of experience</option>
             <option>Less than 1 Year</option>
             <option>1 Year</option>
@@ -867,19 +867,91 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
+// ── API CONFIG ──
+const API_URL  = 'https://backend.terratern.in/api/common-lead-gen';
+const AUTH_TOKEN = 'Basic ' + btoa('admin:adminQWE');
+const SERVICE_ID = '2';
+
+// Parse UTM params from URL
+function getUTM(key) {
+  return new URLSearchParams(window.location.search).get(key) || '';
+}
+
+// Split mobile into country_code + number
+function parseMobile(raw) {
+  const cleaned = raw.replace(/\s/g, '');
+  if (cleaned.startsWith('+')) {
+    const match = cleaned.match(/^(\+\d{1,3})(\d+)$/);
+    if (match) return { country_code: match[1], mobile: match[2] };
+  }
+  return { country_code: '+91', mobile: cleaned.replace(/^\+91/, '') };
+}
+
+async function submitLead(data, btn, successText) {
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  const { country_code, mobile } = parseMobile(data.mobile);
+  const payload = {
+    form_data: {
+      name:                  data.name,
+      email:                 data.email,
+      mobile:                mobile,
+      country_code:          country_code,
+      service_application_id: SERVICE_ID,
+      utm_source:            getUTM('utm_source'),
+      utm_medium:            getUTM('utm_medium'),
+      utm_adset:             getUTM('utm_adset'),
+      utm_campaign:          getUTM('utm_campaign'),
+      work_experience:       data.work_experience,
+      education:             data.education,
+    }
+  };
+  try {
+    const res = await fetch(API_URL, {
+      method:  'POST',
+      headers: {
+        'Content-Type':  'application/json',
+        'Authorization': AUTH_TOKEN,
+      },
+      body: JSON.stringify(payload),
+    });
+    if (res.ok) {
+      btn.textContent = successText;
+      btn.style.background = '#16a34a';
+      btn.style.color = '#fff';
+    } else {
+      throw new Error('Server error ' + res.status);
+    }
+  } catch (err) {
+    console.error('Lead submission failed:', err);
+    btn.textContent = '⚠ Something went wrong. Call us: +91 80641 24242';
+    btn.style.background = '#dc2626';
+    btn.style.color = '#fff';
+    btn.disabled = false;
+  }
+}
+
 // ── MAIN FORM SUBMIT ──
 document.getElementById('submit-btn').addEventListener('click', () => {
-  const inputs = document.querySelectorAll('.form-card input, .form-card select');
+  const name       = document.getElementById('f-name');
+  const email      = document.getElementById('f-email');
+  const mobile     = document.getElementById('f-mobile');
+  const education  = document.getElementById('f-education');
+  const experience = document.getElementById('f-experience');
+  const fields = [name, email, mobile, education, experience];
   let valid = true;
-  inputs.forEach(inp => {
-    if (!inp.value) { inp.style.borderColor = '#dc2626'; valid = false; }
-    else { inp.style.borderColor = ''; }
+  fields.forEach(f => {
+    if (!f.value.trim()) { f.style.borderColor = '#dc2626'; valid = false; }
+    else { f.style.borderColor = ''; }
   });
-  if (valid) {
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = "✓ Submitted! We'll reach you within 24 hrs.";
-    btn.style.background = '#16a34a';
-  }
+  if (!valid) return;
+  submitLead({
+    name:            name.value.trim(),
+    email:           email.value.trim(),
+    mobile:          mobile.value.trim(),
+    education:       education.value,
+    work_experience: experience.value,
+  }, document.getElementById('submit-btn'), "✓ Booked! We'll reach you within 24 hrs.");
 });
 
 // ── POPUP EXPERT ROTATOR (synced to same experts array) ──
@@ -924,16 +996,30 @@ if (!isMobile) {
 document.getElementById('popupClose').addEventListener('click', closePopup);
 document.getElementById('popupSkip').addEventListener('click', closePopup);
 popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+
+// ── POPUP FORM SUBMIT ──
 document.getElementById('popup-submit-btn').addEventListener('click', () => {
-  const fields = ['p-name','p-phone','p-email','popup-education','popup-experience'].map(id => document.getElementById(id));
+  const pName  = document.getElementById('p-name');
+  const pPhone = document.getElementById('p-phone');
+  const pEmail = document.getElementById('p-email');
+  const pEdu   = document.getElementById('popup-education');
+  const pExp   = document.getElementById('popup-experience');
+  const fields = [pName, pPhone, pEmail, pEdu, pExp];
   let valid = true;
-  fields.forEach(f => { if (!f.value) { f.style.borderColor = '#dc2626'; valid = false; } else { f.style.borderColor = ''; } });
-  if (valid) {
-    const btn = document.getElementById('popup-submit-btn');
-    btn.textContent = "✓ Got it! We'll call you within 24 hrs.";
-    btn.style.background = '#16a34a';
-    setTimeout(closePopup, 2400);
-  }
+  fields.forEach(f => {
+    if (!f.value.trim()) { f.style.borderColor = '#dc2626'; valid = false; }
+    else { f.style.borderColor = ''; }
+  });
+  if (!valid) return;
+  const btn = document.getElementById('popup-submit-btn');
+  submitLead({
+    name:            pName.value.trim(),
+    email:           pEmail.value.trim(),
+    mobile:          pPhone.value.trim(),
+    education:       pEdu.value,
+    work_experience: pExp.value,
+  }, btn, "✓ Got it! We'll call you within 24 hrs.");
+  setTimeout(() => { if (btn.style.background === 'rgb(22, 163, 74)') closePopup(); }, 2400);
 });
 </script>
 </body>

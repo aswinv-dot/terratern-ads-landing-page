@@ -893,17 +893,17 @@ async function submitLead(data, btn, successText) {
   const { country_code, mobile } = parseMobile(data.mobile);
   const payload = {
     form_data: {
-      name:                  data.name,
-      email:                 data.email,
-      mobile:                mobile,
-      country_code:          country_code,
+      name:                   data.name,
+      email:                  data.email,
+      mobile:                 mobile,
+      country_code:           country_code,
       service_application_id: SERVICE_ID,
-      utm_source:            getUTM('utm_source'),
-      utm_medium:            getUTM('utm_medium'),
-      utm_adset:             getUTM('utm_adset'),
-      utm_campaign:          getUTM('utm_campaign'),
-      work_experience:       data.work_experience,
-      education:             data.education,
+      utm_source:             getUTM('utm_source'),
+      utm_medium:             getUTM('utm_medium'),
+      utm_adset:              getUTM('utm_adset'),
+      utm_campaign:           getUTM('utm_campaign'),
+      work_experience:        data.work_experience,
+      education:              data.education,
     }
   };
   try {
@@ -915,12 +915,17 @@ async function submitLead(data, btn, successText) {
       },
       body: JSON.stringify(payload),
     });
+    let responseText = '';
+    try { responseText = await res.text(); } catch(e) {}
+    console.log('API status:', res.status, '| body:', responseText);
     if (res.ok) {
       btn.textContent = successText;
       btn.style.background = '#16a34a';
       btn.style.color = '#fff';
     } else {
-      throw new Error('Server error ' + res.status);
+      // Show actual server error in console for debugging
+      console.error('API error response:', res.status, responseText);
+      throw new Error('Server error ' + res.status + ': ' + responseText);
     }
   } catch (err) {
     console.error('Lead submission failed:', err);

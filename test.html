@@ -906,7 +906,14 @@ async function submitLead(data, btn, successText) {
       education:              data.education,
     }
   };
+
+  console.group('🚀 TerraTern Lead Submission');
+  console.log('📍 Endpoint:', API_URL);
+  console.log('📦 Payload:', JSON.stringify(payload, null, 2));
+  console.log('🔐 Auth header present:', !!AUTH_TOKEN);
+
   try {
+    console.log('⏳ Sending request...');
     const res = await fetch(API_URL, {
       method:  'POST',
       headers: {
@@ -915,20 +922,36 @@ async function submitLead(data, btn, successText) {
       },
       body: JSON.stringify(payload),
     });
-    let responseText = '';
-    try { responseText = await res.text(); } catch(e) {}
-    console.log('API status:', res.status, '| body:', responseText);
+
+    console.log('📡 Response status:', res.status, res.statusText);
+    console.log('📡 Response headers:');
+    res.headers.forEach((val, key) => console.log(`   ${key}: ${val}`));
+
+    let responseBody = '';
+    try {
+      responseBody = await res.text();
+      console.log('📩 Response body:', responseBody);
+      // Try parse as JSON for cleaner display
+      try { console.log('📩 Parsed JSON:', JSON.parse(responseBody)); } catch(e) {}
+    } catch(e) {
+      console.warn('⚠ Could not read response body:', e);
+    }
+
     if (res.ok) {
+      console.log('✅ Success!');
+      console.groupEnd();
       btn.textContent = successText;
       btn.style.background = '#16a34a';
       btn.style.color = '#fff';
     } else {
-      // Show actual server error in console for debugging
-      console.error('API error response:', res.status, responseText);
-      throw new Error('Server error ' + res.status + ': ' + responseText);
+      console.error('❌ Server returned error:', res.status, responseBody);
+      console.groupEnd();
+      throw new Error('Server error ' + res.status + ': ' + responseBody);
     }
   } catch (err) {
-    console.error('Lead submission failed:', err);
+    console.error('💥 Fetch failed (likely CORS or network):', err.name, err.message);
+    console.error('Full error:', err);
+    console.groupEnd();
     btn.textContent = '⚠ Something went wrong. Call us: +91 80641 24242';
     btn.style.background = '#dc2626';
     btn.style.color = '#fff';

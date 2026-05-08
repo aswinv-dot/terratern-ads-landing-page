@@ -868,9 +868,7 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
 // ── API CONFIG ──
-const API_URL    = 'https://backend.terratern.in/api-lead/common-lead-gen';
-const AUTH_TOKEN = 'Basic ' + btoa('someone:adminQWE');
-const SERVICE_ID = '2';
+const API_URL    = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
 
 // Parse UTM params from URL
 function getUTM(key) {
@@ -910,7 +908,6 @@ async function submitLead(data, btn, successText) {
   console.group('🚀 TerraTern Lead Submission');
   console.log('📍 Endpoint:', API_URL);
   console.log('📦 Payload:', JSON.stringify(payload, null, 2));
-  console.log('🔐 Auth header present:', !!AUTH_TOKEN);
 
   try {
     console.log('⏳ Sending request...');
@@ -918,7 +915,6 @@ async function submitLead(data, btn, successText) {
       method:  'POST',
       headers: {
         'Content-Type':  'application/json',
-        'Authorization': AUTH_TOKEN,
       },
       body: JSON.stringify(payload),
     });

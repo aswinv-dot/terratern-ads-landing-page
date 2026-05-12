@@ -42,23 +42,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .hero-circle1{position:absolute;right:-100px;top:-60px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(154,203,253,0.13) 0%,transparent 68%);pointer-events:none;}
 .hero-circle2{position:absolute;left:-80px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(241,200,25,0.09) 0%,transparent 68%);pointer-events:none;}
 .hero{max-width:1200px;margin:0 auto;padding:56px 40px 64px;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:start;position:relative;z-index:1;}
-
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(241,200,25,0.18);border:1px solid rgba(241,200,25,0.45);border-radius:100px;padding:5px 14px;font-size:0.68rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
-.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse 1.8s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
 .hero h1{font-size:clamp(2rem,3.6vw,3rem);font-weight:800;line-height:1.13;color:var(--white);letter-spacing:-0.02em;margin-bottom:18px;}
 .hero h1 em{font-style:normal;color:var(--gold);}
 .hero-sub{font-size:0.97rem;color:rgba(255,255,255,0.74);max-width:500px;margin-bottom:28px;font-weight:400;line-height:1.72;}
-
-/* Hero stats - desktop only */
 .hero-stats{display:flex;flex-wrap:wrap;margin-bottom:28px;}
 .hero-stat{padding:14px 24px;border-right:1px solid rgba(255,255,255,0.12);}
 .hero-stat:first-child{padding-left:0;}
 .hero-stat:last-child{border:none;}
 .hero-stat-num{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;}
 .hero-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.58);margin-top:3px;font-weight:500;}
-
-/* Bonus banner — in left panel on desktop */
 .hero-bonus{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;border-radius:10px;padding:12px;display:flex;gap:10px;align-items:flex-start;}
 .hero-bonus-icon{font-size:1.3rem;flex-shrink:0;}
 .hero-bonus-title{font-size:.82rem;font-weight:800;color:#92400e;margin-bottom:4px;}
@@ -68,8 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 /* FORM */
 .form-card{background:var(--white);border-radius:16px;padding:28px 24px 22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;}
 .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--sky));}
-.form-card h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.form-card>p{font-size:0.76rem;color:var(--muted);margin-bottom:16px;}
+.form-card h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:14px;}
 .form-group{margin-bottom:11px;}
 .form-group label{display:block;font-size:0.68rem;font-weight:600;color:var(--navy);margin-bottom:4px;letter-spacing:0.05em;text-transform:uppercase;}
 .form-group input,.form-group select{width:100%;background:#f5f9ff;border:1.5px solid var(--border);border-radius:7px;padding:10px 13px;color:var(--text);font-family:var(--ff);font-size:0.86rem;outline:none;transition:border-color 0.2s;appearance:none;}
@@ -98,7 +89,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .er-dot{width:5px;height:5px;border-radius:50%;background:rgba(37,92,193,.2);transition:background .3s;cursor:pointer;}
 .er-dot.active{background:var(--blue);}
 
-/* ALUMNI SCROLLER STRIP */
+/* ALUMNI SCROLLER */
 .scroller-strip{background:var(--white);border-top:3px solid var(--gold);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;position:relative;}
 .scroller-strip::before,.scroller-strip::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
 .scroller-strip::before{left:0;background:linear-gradient(to right,var(--white),transparent);}
@@ -113,64 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .person-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
 .person-name{font-size:0.75rem;font-weight:700;color:var(--navy);text-align:center;margin-bottom:4px;}
 .person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
-
-/* HERO BG ALUMNI SCROLLER */
-.hero-alumni-bg{
-  position:absolute;
-  bottom:0;left:0;right:0;
-  height:160px;
-  overflow:hidden;
-  pointer-events:none;
-  z-index:0;
-}
-/* Fade mask: top fades to transparent, right side (near form) fades out strongly */
-.hero-alumni-bg::before{
-  content:'';
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to bottom, rgba(0,33,92,1) 0%, rgba(0,33,92,0) 38%),
-    linear-gradient(to right, rgba(0,33,92,0.15) 0%, rgba(0,33,92,0.15) 45%, rgba(0,33,92,0.72) 72%, rgba(0,33,92,1) 88%);
-  z-index:2;
-}
-.hero-alumni-label{
-  position:absolute;top:10px;left:50%;
-  transform:translateX(-50%);
-  font-size:0.6rem;font-weight:700;
-  color:rgba(255,255,255,0.35);
-  letter-spacing:0.14em;text-transform:uppercase;
-  z-index:3;white-space:nowrap;
-}
-.hero-alumni-track{
-  display:flex;gap:14px;
-  width:max-content;
-  animation:scroll-left 38s linear infinite;
-  padding:32px 0 14px;
-  opacity:0.72;
-}
-@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
-/* Hero alumni cards — compact, translucent for dark bg */
-.ha-card{
-  display:flex;flex-direction:column;align-items:center;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.14);
-  border-radius:12px;
-  padding:10px 14px 9px;
-  min-width:100px;
-  flex-shrink:0;
-}
-.ha-avatar{
-  width:52px;height:52px;border-radius:9px;
-  overflow:hidden;margin-bottom:7px;
-  border:1.5px solid rgba(255,255,255,0.18);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;font-weight:800;color:#fff;
-  flex-shrink:0;background:#4a6080;
-}
-.ha-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
-.ha-name{font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.9);text-align:center;margin-bottom:3px;}
-.ha-dest{font-size:0.58rem;font-weight:600;color:var(--sky);white-space:nowrap;}
-
 
 /* SECTIONS */
 section{padding:80px 40px;}
@@ -291,14 +224,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 .popup-overlay.active .popup-box{transform:translateY(0) scale(1);}
 .popup-close{position:absolute;top:14px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,0.12);border:none;color:#fff;font-size:1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s;}
 .popup-close:hover{background:rgba(0,0,0,0.28);}
-.popup-left{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--navy),#0a3080);min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;}
-.popup-story-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0.88;}
-.popup-story-img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(160deg,#0a3080,#255cc1);}
-.popup-left-overlay{position:relative;z-index:2;background:linear-gradient(to top,rgba(0,33,92,0.95) 0%,rgba(0,33,92,0.4) 60%,transparent 100%);padding:24px 20px 22px;}
-.popup-visa-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-size:0.64rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:10px;}
-.popup-testimonial-text{font-size:0.85rem;font-weight:500;color:#fff;line-height:1.55;font-style:italic;margin-bottom:10px;}
-.popup-testimonial-author{font-size:0.72rem;font-weight:700;color:var(--sky);}
-.popup-testimonial-dest{font-size:0.68rem;color:rgba(255,255,255,0.55);margin-top:1px;}
 .popup-right{padding:32px 28px 28px;display:flex;flex-direction:column;}
 .popup-right h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.25;}
 .popup-right>p{font-size:0.78rem;color:var(--muted);margin-bottom:18px;}
@@ -330,52 +255,31 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   section{padding:56px 24px;}
   footer{justify-content:center;text-align:center;}
 }
-
 @media(max-width:600px){
-  .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities,.testimonial-grid{grid-template-columns:1fr;}
+  .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
-
-  /* Mobile nav */
   nav{padding:0 16px;height:60px;}
   .nav-logo img{height:36px;}
   .nav-right{gap:10px;}
   .nav-phone{font-size:0.78rem;}
-
-  /* Mobile hero — fix badge hidden under nav */
-  .hero-wrap{padding-top:60px;padding-bottom:0;}
+  .hero-wrap{padding-top:60px;}
   .hero{padding:28px 16px 40px;gap:24px;}
-  .hero-alumni-bg{display:none;}
-  .hero-sub-desktop{display:none;}
-  /* Mobile order: bonus first, then h1, then stats, then form */
-  .hero > div:first-child{display:flex;flex-direction:column;}
-  .hero > div:first-child .hero-bonus{order:1;}
-  .hero > div:first-child h1{order:2;}
-  .hero > div:first-child .hero-stats{order:3;}
-
-  /* Hide desktop stats on mobile */
+  .hero-sub{display:none;}
   .hero-stats{display:none;}
-
   .hero h1{font-size:1.55rem;line-height:1.2;}
-  .hero-sub{font-size:0.88rem;margin-bottom:20px;}
-  .hero-bonus{margin-top:20px;}
-
-  /* Mobile form */
+  .hero-bonus{margin-bottom:16px;}
   .form-card{padding:20px 16px 16px;}
   .form-card h3{font-size:0.95rem;}
   .form-group{margin-bottom:9px;}
   .form-group input,.form-group select{padding:8px 10px;font-size:0.82rem;}
   .form-btn{padding:11px;font-size:0.88rem;}
-
   section{padding:48px 16px;}
   .section-title{font-size:clamp(1.25rem,2vw,1.6rem);}
   footer{flex-direction:column;gap:12px;}
   .footer-text{text-align:center;}
   .footer-links{justify-content:center;}
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
-
-  /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
-  .popup-left{min-height:200px;}
   .popup-close{background:rgba(0,0,0,0.35);}
 }
 </style>
@@ -398,7 +302,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
       <span>+91 80641 24242</span>
     </a>
-    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Free Consult</button>
+    <button class="nav-cta" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">Talk to Experts</button>
   </div>
 </nav>
 
@@ -409,10 +313,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   <div class="hero-circle1"></div>
   <div class="hero-circle2"></div>
   <div class="hero">
-
-    <!-- LEFT PANEL -->
     <div>
-      <!-- Bonus banner -->
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-icon">🎁</div>
         <div>
@@ -422,9 +323,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         </div>
       </div>
       <h1>Get your Germany Opportunity Card in just <em>7 Days</em> — No Job Offer Needed to Land in Germany.</h1>
-      <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
-
-      <!-- Desktop stats -->
+      <p class="hero-sub">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte — enter without a job offer, search on arrival, and build your future from Day 1.</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
@@ -433,35 +332,31 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       </div>
     </div>
 
-    <!-- RIGHT PANEL — form only -->
     <div class="form-card" id="lead-form">
-      <!-- Expert rotator -->
       <div class="er-wrap">
         <div class="er-avatar-wrap">
-          <img class="er-photo" id="erPhoto" src="assets/images/experts/expert-noor-zaiba.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
-          <div class="er-initials" id="erInitials" style="background:linear-gradient(135deg,#7c3aed,#4c1d95);">NZ</div>
+          <img class="er-photo" id="erPhoto" src="assets/images/experts/expert-ritika.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
+          <div class="er-initials" id="erInitials" style="background:linear-gradient(135deg,#be185d,#831843);">RI</div>
           <span class="er-badge">✓ Certified</span>
         </div>
         <div class="er-info">
           <div class="er-sup">Your expert today</div>
-          <div class="er-name" id="erName">Noor Zaiba</div>
-          <div class="er-spec" id="erSpec">Certified Immigration Advisor, 5 yrs</div>
+          <div class="er-name" id="erName">Ritika</div>
+          <div class="er-spec" id="erSpec">Certified Immigration Advisor, 4 yrs</div>
           <div class="er-dots">
             <span class="er-dot active" data-i="0"></span>
             <span class="er-dot" data-i="1"></span>
-            <span class="er-dot" data-i="2"></span>
           </div>
         </div>
       </div>
-
       <h3>Register for a Free Expert Consultation</h3>
-      <div class="form-group"><label>Full Name</label><input type="text" id="f-name" placeholder="Rajesh Kumar"></div>
-      <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="you@gmail.com"></div>
-      <div class="form-group"><label>WhatsApp Number</label><input type="tel" id="f-mobile" placeholder="+91 98765 43210"></div>
+      <div class="form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@gmail.com"></div>
+      <div class="form-group"><label>WhatsApp Number</label><input type="tel" placeholder="+91 98765 43210"></div>
       <div class="form-group">
         <label>Highest Level of Education</label>
         <div class="sel-wrap">
-          <select id="f-education">
+          <select>
             <option value="" disabled selected>Select education level</option>
             <option>10th Grade</option>
             <option>12th Grade</option>
@@ -475,7 +370,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <div class="form-group">
         <label>Total Work Experience</label>
         <div class="sel-wrap">
-          <select id="f-experience">
+          <select>
             <option value="" disabled selected>Select years of experience</option>
             <option>Less than 1 Year</option>
             <option>1 Year</option>
@@ -492,9 +387,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week — <strong>filling fast</strong></div>
       <div class="form-trust">🔒 Free · No spam · <strong>2,400+ Indians already in Germany via TerraTern</strong></div>
     </div>
-
-  </div><!-- end .hero grid -->
-</div><!-- end .hero-wrap -->
+  </div>
+</div>
 
 <!-- ALUMNI SCROLLER -->
 <div class="scroller-strip">
@@ -510,7 +404,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <!-- Set B — duplicate for seamless loop -->
+    <!-- duplicate set B -->
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
@@ -531,10 +425,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <div class="section-tag">Eligibility Check</div>
     <h2 class="section-title">You May Qualify If You Tick<br><em>Any of These Boxes</em></h2>
     <p class="section-sub">Germany's Opportunity Card works on a points system. IT professionals have one of the highest eligibility rates of any profession — here's exactly what counts.</p>
-    <!-- Cialdini: Commitment & Consistency — small yes before the big yes -->
     <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 18px;margin-top:20px;cursor:pointer;" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">
       <span style="font-size:1.1rem;">🤔</span>
-      <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">Do you tick even <em style="color:var(--blue);font-style:normal;">one</em> of these? You likely already qualify. <span style="color:var(--blue);text-decoration:underline;cursor:pointer;">Check your score free →</span></span>
+      <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">Do you tick even <em style="color:var(--blue);font-style:normal;">one</em> of these? You likely already qualify. <span style="color:var(--blue);text-decoration:underline;">Check your score free →</span></span>
     </div>
   </div>
   <div class="elig-grid">
@@ -680,11 +573,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   <div class="container">
     <div class="fade-up">
       <div class="section-tag">Start Your Germany Journey</div>
-      <!-- Cialdini: Scarcity + Authority in CTA -->
-      <h2>2,400 Indians Already Made the Move.<br><span>Will You Be Next?</span></h2>
+      <h2>2,400+ Candidates Already Made the Move.<br><span>Will You Be Next?</span></h2>
       <p>Our certified immigration advisors have a 99.7% visa approval rate. Your free eligibility call takes 30 minutes and could change the next 30 years of your life.</p>
       <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">📞 Book My Slot — Free →</button>
-      <!-- Cialdini: Scarcity below CTA -->
       <div style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.6);position:relative;">🔴 Only <span id="ctaSlotsCount"></span> consultation slots left this week</div>
       <div class="cta-phone" style="margin-top:10px;">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
     </div>
@@ -711,47 +602,33 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 
 <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
 
-<!-- EXIT / TIMED POPUP -->
+<!-- EXIT POPUP -->
 <div class="popup-overlay" id="exitPopup">
   <div class="popup-box">
     <button class="popup-close" id="popupClose" aria-label="Close">✕</button>
     <div class="popup-left" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 28px;background:linear-gradient(160deg,var(--navy) 0%,#0a3080 100%);">
-      <!-- Expert display — mirrors lead form style -->
       <div style="text-align:center;margin-bottom:28px;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
-          <img id="popupErPhoto" src="assets/images/experts/expert-noor-zaiba.jpg" alt="Expert"
-            style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);display:block;"
-            onerror="this.style.display='none';document.getElementById('popupErInitials').style.display='flex'">
-          <div id="popupErInitials"
-            style="display:none;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#4c1d95);align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;border:3px solid rgba(255,255,255,0.2);">NZ</div>
+          <img id="popupErPhoto" src="assets/images/experts/expert-ritika.jpg" alt="Expert" style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);display:block;" onerror="this.style.display='none';document.getElementById('popupErInitials').style.display='flex'">
+          <div id="popupErInitials" style="display:none;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#be185d,#831843);align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;border:3px solid rgba(255,255,255,0.2);">RI</div>
           <span style="position:absolute;bottom:4px;right:4px;background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:800;letter-spacing:0.05em;padding:3px 8px;border-radius:100px;white-space:nowrap;">✓ Certified</span>
         </div>
         <div style="font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Your expert today</div>
-        <div id="popupErName" style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;">Noor Zaiba</div>
-        <div id="popupErSpec" style="font-size:0.75rem;color:rgba(255,255,255,0.65);margin-bottom:16px;">British Council Certified · 5 yrs</div>
-        <!-- Dots -->
-        <div style="display:flex;justify-content:center;gap:6px;" id="popupErDots">
+        <div id="popupErName" style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;">Ritika</div>
+        <div id="popupErSpec" style="font-size:0.75rem;color:rgba(255,255,255,0.65);margin-bottom:16px;">Certified Immigration Advisor · 4 yrs</div>
+        <div style="display:flex;justify-content:center;gap:6px;">
           <span class="popup-er-dot active" data-i="0" style="width:6px;height:6px;border-radius:50%;background:var(--gold);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
           <span class="popup-er-dot" data-i="1" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
-          <span class="popup-er-dot" data-i="2" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
         </div>
       </div>
-      <!-- What you get -->
       <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;width:100%;">
         <div style="font-size:0.68rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">What you get — Free</div>
         <div style="display:flex;flex-direction:column;gap:9px;">
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
-            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>1:1 session with a certified immigration advisor
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
-            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Your personalised Germany immigration roadmap
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);">
-            <span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Exact visa score + eligibility breakdown
-          </div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>1:1 session with a certified immigration advisor</div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Your personalised Germany immigration roadmap</div>
+          <div style="display:flex;align-items:flex-start;gap:9px;font-size:0.8rem;color:rgba(255,255,255,0.85);"><span style="color:var(--gold);font-weight:700;flex-shrink:0;">✓</span>Exact visa score + eligibility breakdown</div>
         </div>
       </div>
-      <!-- Rating -->
       <div style="margin-top:20px;text-align:center;">
         <div style="font-size:1rem;color:var(--gold);letter-spacing:2px;">★★★★★</div>
         <div style="font-size:0.68rem;color:rgba(255,255,255,0.5);margin-top:4px;">4.9/5 · 1,000+ Google Reviews</div>
@@ -791,91 +668,14 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 </div>
 
 <script>
-// ── EXPERT ROTATOR ──
-const experts = [
-  { name:'Noor Zaiba', spec:'Certified Immigration Advisor, 5 yrs', img:'assets/images/experts/expert-noor-zaiba.jpg', initials:'NZ', bg:'linear-gradient(135deg,#7c3aed,#4c1d95)' },
-  { name:'Ritika',     spec:'Certified Immigration Advisor, 4 yrs', img:'assets/images/experts/expert-ritika.jpg',     initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
-  { name:'Kumar',      spec:'Certified Immigration Advisor, 6 yrs', img:'assets/images/experts/expert-kumar.jpg',      initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
-];
-let ei = 0;
-function switchExpert(idx) {
-  const p = document.getElementById('erPhoto'),
-        ini = document.getElementById('erInitials'),
-        nm = document.getElementById('erName'),
-        sp = document.getElementById('erSpec'),
-        ex = experts[idx];
-  nm.style.opacity = '0'; sp.style.opacity = '0';
-  setTimeout(() => {
-    nm.textContent = ex.name; sp.textContent = ex.spec;
-    p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
-    p.onerror = function() {
-      this.style.display = 'none';
-      ini.style.display = 'flex'; ini.textContent = ex.initials;
-      ini.style.background = ex.bg;
-    };
-    nm.style.opacity = '1'; sp.style.opacity = '1';
-    document.querySelectorAll('.er-dot').forEach((d,i) => d.classList.toggle('active', i === idx));
-  }, 280);
-}
-setInterval(() => { ei = (ei + 1) % experts.length; switchExpert(ei); }, 10000);
-document.querySelectorAll('.er-dot').forEach(d => {
-  d.addEventListener('click', () => { ei = +d.dataset.i; switchExpert(ei); });
-});
-
-// ── RANDOM SLOTS COUNT (4–18, random each load) ──
-const slots = Math.floor(Math.random() * 15) + 4;
-document.getElementById('slotsCount').textContent = slots;
-document.getElementById('ctaSlotsCount').textContent = slots;
-
-// ── BONUS TIMER — 7 minutes countdown, resets each visit ──
-let bonusEnd = Date.now() + 7 * 60 * 1000;
-function updateBonusTimer() {
-  const dist = bonusEnd - Date.now();
-  if (dist <= 0) {
-    document.getElementById('timerMins').textContent = '00';
-    document.getElementById('timerSecs').textContent = '00';
-    return;
-  }
-  const m = Math.floor(dist / 60000);
-  const s = Math.floor((dist % 60000) / 1000);
-  document.getElementById('timerMins').textContent = String(m).padStart(2,'0');
-  document.getElementById('timerSecs').textContent = String(s).padStart(2,'0');
-}
-updateBonusTimer();
-setInterval(updateBonusTimer, 1000);
-
-// ── SCROLL TO TOP ──
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', () => {
-  scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
-});
-scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// ── FAQ ──
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-
-// ── FADE UP ──
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
 // ── API CONFIG ──
-const API_URL    = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
+const API_URL    = 'https://backend.terratern.com/api/common-lead-gen';
+const SERVICE_ID = '2';
 
-// Parse UTM params from URL
+// ── HELPERS ──
 function getUTM(key) {
   return new URLSearchParams(window.location.search).get(key) || '';
 }
-
-// Split mobile into country_code + number
 function parseMobile(raw) {
   const cleaned = raw.replace(/\s/g, '');
   if (cleaned.startsWith('+')) {
@@ -885,11 +685,11 @@ function parseMobile(raw) {
   return { country_code: '+91', mobile: cleaned.replace(/^\+91/, '') };
 }
 
+// ── SUBMIT LEAD ──
 async function submitLead(data, btn, successText) {
   btn.disabled = true;
   btn.textContent = 'Submitting...';
   const { country_code, mobile } = parseMobile(data.mobile);
-  const SERVICE_ID=2;
   const payload = {
     form_data: {
       name:                   data.name,
@@ -905,147 +705,158 @@ async function submitLead(data, btn, successText) {
       education:              data.education,
     }
   };
-
-  console.group('🚀 TerraTern Lead Submission');
-  console.log('📍 Endpoint:', API_URL);
-  console.log('📦 Payload:', JSON.stringify(payload, null, 2));
-
+  console.group('TerraTern Lead Submission');
+  console.log('Endpoint:', API_URL);
+  console.log('Payload:', JSON.stringify(payload, null, 2));
   try {
-    console.log('⏳ Sending request...');
     const res = await fetch(API_URL, {
-      method:  'POST',
-      headers: {
-        'Content-Type':  'application/json',
-      },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
-
-    console.log('📡 Response status:', res.status, res.statusText);
-    console.log('📡 Response headers:');
-    res.headers.forEach((val, key) => console.log(`   ${key}: ${val}`));
-
-    let responseBody = '';
-    try {
-      responseBody = await res.text();
-      console.log('📩 Response body:', responseBody);
-      // Try parse as JSON for cleaner display
-      try { console.log('📩 Parsed JSON:', JSON.parse(responseBody)); } catch(e) {}
-    } catch(e) {
-      console.warn('⚠ Could not read response body:', e);
-    }
-
+    const responseText = await res.text();
+    console.log('Status:', res.status, '| Body:', responseText);
+    console.groupEnd();
     if (res.ok) {
-      console.log('✅ Success!');
-      console.groupEnd();
       btn.textContent = successText;
       btn.style.background = '#16a34a';
       btn.style.color = '#fff';
     } else {
-      console.error('❌ Server returned error:', res.status, responseBody);
-      console.groupEnd();
-      throw new Error('Server error ' + res.status + ': ' + responseBody);
+      throw new Error('Server error ' + res.status + ': ' + responseText);
     }
   } catch (err) {
-    console.error('💥 Fetch failed (likely CORS or network):', err.name, err.message);
-    console.error('Full error:', err);
+    console.error('Submission failed:', err.message);
     console.groupEnd();
-    btn.textContent = '⚠ Something went wrong. Call us: +91 80641 24242';
+    btn.textContent = '⚠ Something went wrong. Call: +91 80641 24242';
     btn.style.background = '#dc2626';
     btn.style.color = '#fff';
     btn.disabled = false;
   }
 }
 
+// ── EXPERT ROTATOR ──
+const experts = [
+  { name:'Ritika', spec:'Certified Immigration Advisor, 4 yrs', img:'assets/images/experts/expert-ritika.jpg', initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
+  { name:'Kumar',  spec:'Certified Immigration Advisor, 6 yrs', img:'assets/images/experts/expert-kumar.jpg',  initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
+];
+let ei = 0;
+function switchExpert(idx) {
+  const p = document.getElementById('erPhoto'), ini = document.getElementById('erInitials'),
+        nm = document.getElementById('erName'), sp = document.getElementById('erSpec'), ex = experts[idx];
+  nm.style.opacity = '0'; sp.style.opacity = '0';
+  setTimeout(() => {
+    nm.textContent = ex.name; sp.textContent = ex.spec;
+    p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
+    p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
+    nm.style.opacity = '1'; sp.style.opacity = '1';
+    document.querySelectorAll('.er-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  }, 280);
+}
+setInterval(() => { ei=(ei+1)%experts.length; switchExpert(ei); }, 10000);
+document.querySelectorAll('.er-dot').forEach(d => d.addEventListener('click', () => { ei=+d.dataset.i; switchExpert(ei); }));
+
+// ── POPUP EXPERT ROTATOR ──
+function switchPopupExpert(idx) {
+  const ex = experts[idx];
+  const photo = document.getElementById('popupErPhoto'), ini = document.getElementById('popupErInitials'),
+        nm = document.getElementById('popupErName'), sp = document.getElementById('popupErSpec');
+  nm.style.opacity='0'; sp.style.opacity='0';
+  setTimeout(() => {
+    nm.textContent = ex.name;
+    sp.textContent = 'Certified Immigration Advisor · ' + ex.spec.split(', ')[1];
+    photo.src=ex.img; photo.style.display='block'; ini.style.display='none';
+    photo.onerror=function(){ this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
+    nm.style.opacity='1'; sp.style.opacity='1';
+    document.querySelectorAll('.popup-er-dot').forEach((d,i) => { d.style.background = i===idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)'; });
+  }, 280);
+}
+document.querySelectorAll('.popup-er-dot').forEach(d => d.addEventListener('click', () => switchPopupExpert(+d.dataset.i)));
+setInterval(() => switchPopupExpert(ei), 10000);
+
+// ── SLOTS ──
+const slots = Math.floor(Math.random() * 15) + 4;
+document.getElementById('slotsCount').textContent = slots;
+document.getElementById('ctaSlotsCount').textContent = slots;
+
+// ── BONUS TIMER ──
+let bonusEnd = Date.now() + 7 * 60 * 1000;
+function updateBonusTimer() {
+  const dist = bonusEnd - Date.now();
+  if (dist <= 0) { document.getElementById('timerMins').textContent='00'; document.getElementById('timerSecs').textContent='00'; return; }
+  document.getElementById('timerMins').textContent = String(Math.floor(dist/60000)).padStart(2,'0');
+  document.getElementById('timerSecs').textContent = String(Math.floor((dist%60000)/1000)).padStart(2,'0');
+}
+updateBonusTimer();
+setInterval(updateBonusTimer, 1000);
+
+// ── SCROLL TO TOP ──
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
+scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement, isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── FADE UP ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
 // ── MAIN FORM SUBMIT ──
 document.getElementById('submit-btn').addEventListener('click', () => {
-  const name       = document.getElementById('f-name');
-  const email      = document.getElementById('f-email');
-  const mobile     = document.getElementById('f-mobile');
-  const education  = document.getElementById('f-education');
-  const experience = document.getElementById('f-experience');
-  const fields = [name, email, mobile, education, experience];
+  const inputs = document.querySelectorAll('.form-card input, .form-card select');
   let valid = true;
-  fields.forEach(f => {
-    if (!f.value.trim()) { f.style.borderColor = '#dc2626'; valid = false; }
-    else { f.style.borderColor = ''; }
+  inputs.forEach(inp => {
+    if (!inp.value) { inp.style.borderColor = '#dc2626'; valid = false; }
+    else { inp.style.borderColor = ''; }
   });
   if (!valid) return;
+  const fields = [...inputs];
   submitLead({
-    name:            name.value.trim(),
-    email:           email.value.trim(),
-    mobile:          mobile.value.trim(),
-    education:       education.value,
-    work_experience: experience.value,
+    name:            fields[0].value.trim(),
+    email:           fields[1].value.trim(),
+    mobile:          fields[2].value.trim(),
+    education:       fields[3].value,
+    work_experience: fields[4].value,
   }, document.getElementById('submit-btn'), "✓ Booked! We'll reach you within 24 hrs.");
 });
 
-// ── POPUP EXPERT ROTATOR (synced to same experts array) ──
-function switchPopupExpert(idx) {
-  const ex = experts[idx];
-  const photo = document.getElementById('popupErPhoto');
-  const ini = document.getElementById('popupErInitials');
-  const nm = document.getElementById('popupErName');
-  const sp = document.getElementById('popupErSpec');
-  nm.style.opacity = '0'; sp.style.opacity = '0';
-  setTimeout(() => {
-    nm.textContent = ex.name;
-    sp.textContent = 'British Council Certified · ' + ex.spec.split(', ')[1];
-    photo.src = ex.img; photo.style.display = 'block'; ini.style.display = 'none';
-    photo.onerror = function() {
-      this.style.display = 'none';
-      ini.style.display = 'flex'; ini.textContent = ex.initials;
-      ini.style.background = ex.bg;
-    };
-    nm.style.opacity = '1'; sp.style.opacity = '1';
-    document.querySelectorAll('.popup-er-dot').forEach((d,i) => {
-      d.style.background = i === idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)';
-    });
-  }, 280);
-}
-document.querySelectorAll('.popup-er-dot').forEach(d => {
-  d.addEventListener('click', () => switchPopupExpert(+d.dataset.i));
+// ── POPUP SUBMIT ──
+document.getElementById('popup-submit-btn').addEventListener('click', () => {
+  const name  = document.getElementById('p-name').value.trim();
+  const mobile= document.getElementById('p-phone').value.trim();
+  const email = document.getElementById('p-email').value.trim();
+  const edu   = document.getElementById('popup-education').value;
+  const exp   = document.getElementById('popup-experience').value;
+  let valid = true;
+  [['p-name',name],['p-phone',mobile],['p-email',email],['popup-education',edu],['popup-experience',exp]].forEach(([id,val]) => {
+    const el = document.getElementById(id);
+    if (!val) { el.style.borderColor='#dc2626'; valid=false; } else { el.style.borderColor=''; }
+  });
+  if (!valid) return;
+  submitLead({ name, email, mobile, education: edu, work_experience: exp },
+    document.getElementById('popup-submit-btn'), "✓ Got it! We'll call you within 24 hrs.");
+  setTimeout(closePopup, 2400);
 });
-setInterval(() => switchPopupExpert(ei), 10000);
 
 // ── POPUP ──
 const popup = document.getElementById('exitPopup');
 let popupShown = false;
-function showPopup() { if (popupShown) return; popupShown = true; popup.classList.add('active'); document.body.style.overflow = 'hidden'; }
-function closePopup() { popup.classList.remove('active'); document.body.style.overflow = ''; }
+function showPopup() { if (popupShown) return; popupShown=true; popup.classList.add('active'); document.body.style.overflow='hidden'; }
+function closePopup() { popup.classList.remove('active'); document.body.style.overflow=''; }
 const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
-if (!isMobile) {
-  document.addEventListener('mouseleave', e => { if (e.clientY <= 8) showPopup(); });
-} else {
-  setTimeout(showPopup, 20000);
-}
+if (!isMobile) { document.addEventListener('mouseleave', e => { if (e.clientY<=8) showPopup(); }); }
+else { setTimeout(showPopup, 20000); }
 document.getElementById('popupClose').addEventListener('click', closePopup);
 document.getElementById('popupSkip').addEventListener('click', closePopup);
-popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
-
-// ── POPUP FORM SUBMIT ──
-document.getElementById('popup-submit-btn').addEventListener('click', () => {
-  const pName  = document.getElementById('p-name');
-  const pPhone = document.getElementById('p-phone');
-  const pEmail = document.getElementById('p-email');
-  const pEdu   = document.getElementById('popup-education');
-  const pExp   = document.getElementById('popup-experience');
-  const fields = [pName, pPhone, pEmail, pEdu, pExp];
-  let valid = true;
-  fields.forEach(f => {
-    if (!f.value.trim()) { f.style.borderColor = '#dc2626'; valid = false; }
-    else { f.style.borderColor = ''; }
-  });
-  if (!valid) return;
-  const btn = document.getElementById('popup-submit-btn');
-  submitLead({
-    name:            pName.value.trim(),
-    email:           pEmail.value.trim(),
-    mobile:          pPhone.value.trim(),
-    education:       pEdu.value,
-    work_experience: pExp.value,
-  }, btn, "✓ Got it! We'll call you within 24 hrs.");
-  setTimeout(() => { if (btn.style.background === 'rgb(22, 163, 74)') closePopup(); }, 2400);
-});
+popup.addEventListener('click', e => { if (e.target===popup) closePopup(); });
 </script>
 </body>
 </html>

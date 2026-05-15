@@ -18,13 +18,14 @@
   --shadow:0 4px 24px rgba(0,33,92,0.10);
   --shadow-lg:0 12px 48px rgba(0,33,92,0.16);
   --ff:'Poppins',sans-serif;
+  --px:40px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 20px rgba(0,0,0,0.18);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);padding:0 var(--px);display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 20px rgba(0,0,0,0.18);}
 .nav-logo img{height:44px;width:150px;display:block;object-fit:contain;}
 .nav-logo-text{color:#fff;font-weight:800;font-size:1.1rem;}
 .nav-logo-text span{color:var(--gold);}
@@ -41,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .hero-wrap::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");}
 .hero-circle1{position:absolute;right:-100px;top:-60px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(154,203,253,0.13) 0%,transparent 68%);pointer-events:none;}
 .hero-circle2{position:absolute;left:-80px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(241,200,25,0.09) 0%,transparent 68%);pointer-events:none;}
-.hero{max-width:1200px;margin:0 auto;padding:56px 40px 64px;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:start;position:relative;z-index:1;}
+.hero{max-width:1200px;margin:0 auto;padding:56px var(--px) 64px;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:start;position:relative;z-index:1;}
 
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(241,200,25,0.18);border:1px solid rgba(241,200,25,0.45);border-radius:100px;padding:5px 14px;font-size:0.68rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
 .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse 1.8s ease-in-out infinite;}
@@ -115,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
 
 /* SECTIONS */
-section{padding:80px 40px;}
+section{padding:80px var(--px);}
 .container{max-width:1200px;margin:0 auto;}
 .section-tag{display:inline-block;background:rgba(37,92,193,0.08);border:1px solid rgba(37,92,193,0.18);color:var(--blue);font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px;}
 .section-title{font-size:clamp(1.55rem,2.7vw,2.3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.16;color:var(--navy);margin-bottom:12px;}
@@ -198,7 +199,7 @@ section{padding:80px 40px;}
 .faq-item.open .faq-a{max-height:280px;padding:0 18px 16px;}
 
 /* CTA */
-.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 60%,var(--blue) 100%);padding:80px 40px;text-align:center;position:relative;overflow:hidden;}
+.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#0a3080 60%,var(--blue) 100%);padding:80px var(--px);text-align:center;position:relative;overflow:hidden;}
 .cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(154,203,253,0.1) 0%,transparent 65%);pointer-events:none;}
 .cta-section .section-tag{background:rgba(241,200,25,0.15);border-color:rgba(241,200,25,0.3);color:var(--gold);}
 .cta-section h2{font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.02em;color:var(--white);margin-bottom:12px;position:relative;}
@@ -210,7 +211,7 @@ section{padding:80px 40px;}
 .cta-phone a{color:var(--sky);text-decoration:none;font-weight:600;}
 
 /* FOOTER */
-footer{background:var(--white);border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+footer{background:var(--white);border-top:1px solid var(--border);padding:28px var(--px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
 .footer-logo-img{height:34px;width:auto;}
 .footer-text{font-size:0.72rem;color:var(--muted);line-height:1.6;}
 .footer-links{display:flex;gap:18px;}
@@ -250,20 +251,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 .popup-skip:hover{color:var(--navy);}
 
 /* RESPONSIVE */
-/* Bonus timer badge */
-.bonus-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:#dc2626;color:#fff;
-  font-size:0.72rem;font-weight:800;
-  padding:4px 10px;border-radius:100px;
-  letter-spacing:0.03em;
-}
-.bonus-badge-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:#fff;flex-shrink:0;
-  animation:pulse 1s ease-in-out infinite;
-}
-
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
   .elig-grid,.why-grid,.program-grid,.timeline-grid{grid-template-columns:1fr 1fr;}
@@ -275,21 +262,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   nav{padding:0 20px;}
   .nav-links{display:none;}
   .nav-cta{display:none;}
-  section{padding:56px 24px;}
-  footer{justify-content:center;text-align:center;}
+  section{padding:56px 20px;}
+  footer{justify-content:center;text-align:center;padding:28px 20px;}
 }
 
 @media(max-width:600px){
   .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
 
-  /* Mobile nav */
   nav{padding:0 16px;height:60px;}
   .nav-logo img{height:36px;}
   .nav-right{gap:10px;}
   .nav-phone{font-size:0.78rem;}
-
-  /* Mobile hero */
   .hero-wrap{padding-top:60px;padding-bottom:0;}
   .hero{padding:28px 16px 40px;gap:24px;}
   .hero-sub-desktop{display:none;}
@@ -301,82 +285,21 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   .hero h1{font-size:1.55rem;line-height:1.2;}
   .hero-sub{font-size:0.88rem;margin-bottom:20px;}
   .hero-bonus{margin-top:20px;}
-
-  /* Mobile form */
   .form-card{padding:20px 16px 16px;}
   .form-card h3{font-size:0.95rem;}
   .form-group{margin-bottom:9px;}
   .form-group input,.form-group select{padding:8px 10px;font-size:0.82rem;}
   .form-btn{padding:11px;font-size:0.88rem;}
-
   section{padding:48px 16px;}
   .section-title{font-size:clamp(1.25rem,2vw,1.6rem);}
-  footer{flex-direction:column;gap:12px;}
-  .footer-text{text-align:center;}
-  .footer-links{justify-content:center;}
+  footer{flex-direction:column;gap:12px;padding:24px 16px;}
+  .footer-text{text-align:left;}
+  .footer-links{justify-content:flex-start;}
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
 
   /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
   .popup-close{background:rgba(0,0,0,0.35);}
-
-  /* ── OPTION D: Mobile content blocks ── */
-  /* Strip card affordance from all non-interactive cards */
-  .elig-card,
-  .why-card,
-  .wow-card,
-  .tl-card,
-  .it-stat-card {
-    background:transparent;
-    border:none;
-    border-left:3px solid var(--blue);
-    border-radius:0;
-    box-shadow:none;
-    padding:12px 16px;
-  }
-  /* Remove hover/active effects entirely on touch */
-  .elig-card:hover,
-  .why-card:hover,
-  .wow-card:hover,
-  .tl-card:hover,
-  .it-stat-card:hover {
-    box-shadow:none;
-    border-color:var(--blue);
-    transform:none;
-  }
-  /* Remove the animated bottom bar on elig cards */
-  .elig-card::after { display:none; }
-  /* Remove top bar on timeline cards */
-  .tl-card::before { display:none; }
-  /* Why Germany featured card stays styled - it's visually distinct content not a button */
-  .why-card.hero-card {
-    border:none;
-    border-radius:12px;
-    padding:22px;
-    background:linear-gradient(135deg,var(--navy),#0a3080);
-  }
-  /* WOW cards - center align preserved, left border only */
-  .wow-card {
-    text-align:left;
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-  }
-  .wow-emoji { font-size:1.4rem; margin-bottom:0; flex-shrink:0; margin-top:2px; }
-  /* IT stat cards - inline horizontal layout */
-  .it-stat-card {
-    border-left:3px solid var(--sky);
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .it-stat-num { font-size:1.4rem; }
-  .it-stat-label { font-size:0.72rem; margin-top:0; }
-  /* FAQ items stay as cards - they ARE interactive */
-  .faq-item {
-    border-radius:10px;
-    border:1.5px solid var(--border);
-  }
 }
 </style>
 </head>
@@ -416,9 +339,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         <div>
           <div class="hero-bonus-title">₹40,000 in Bonuses Today</div>
           <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹35,000)<br>✓ Expert Consultation (₹5,000)</div>
-          <div class="hero-bonus-timer">
-            <span class="bonus-badge"><span class="bonus-badge-dot"></span>⏳ <span id="timerMins">07</span>:<span id="timerSecs">00</span> left</span>
-          </div>
+          <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
         </div>
       </div>
       <h1>Get your Germany Opportunity Card in just <em>7 Days</em> No Job Offer Needed to Land in Germany.</h1>
@@ -649,8 +570,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
       <h2>2,400+ Candidates Already Made the Move.<br><span>Will You Be Next?</span></h2>
       <p>Our certified immigration advisors have a 99.7% visa approval rate. Your free eligibility call takes 30 minutes and could change the next 30 years of your life.</p>
       <button class="cta-btn" onclick="document.getElementById('lead-form').scrollIntoView({behavior:'smooth'})">📞 Book My Slot Free →</button>
-      <div style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.6);position:relative;">🔴 Only <span id="ctaSlotsCount"></span> consultation slots left this week</div>
-      <div class="cta-phone" style="margin-top:10px;">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
+      <div class="cta-phone" style="margin-top:16px;">Or call directly: <a href="tel:+918064124242">+91 80641 24242</a></div>
     </div>
   </div>
 </section>
@@ -661,10 +581,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
     <img src="assets/images/logo.png" alt="TerraTern" class="footer-logo-img" onerror="this.style.display='none';document.getElementById('footer-text-logo').style.display='block'">
     <span id="footer-text-logo" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
   </div>
-  <div class="footer-text">
+  <div class="footer-text" style="text-align:left;">
     <strong style="color:var(--navy);">TerraTern Pvt Ltd</strong><br>
     4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102<br>
-    © 2025 TerraTern. All rights reserved. Immigration consulting not a law firm. Results vary per individual profile.
+    © 2025 TerraTern. All rights reserved.
   </div>
   <div class="footer-links">
     <a href="tel:+918064124242">+91 80641 24242</a>

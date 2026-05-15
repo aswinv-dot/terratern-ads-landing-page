@@ -250,6 +250,20 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
 .popup-skip:hover{color:var(--navy);}
 
 /* RESPONSIVE */
+/* Bonus timer badge */
+.bonus-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#dc2626;color:#fff;
+  font-size:0.72rem;font-weight:800;
+  padding:4px 10px;border-radius:100px;
+  letter-spacing:0.03em;
+}
+.bonus-badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#fff;flex-shrink:0;
+  animation:pulse 1s ease-in-out infinite;
+}
+
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
   .elig-grid,.why-grid,.program-grid,.timeline-grid{grid-template-columns:1fr 1fr;}
@@ -305,6 +319,64 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
   /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
   .popup-close{background:rgba(0,0,0,0.35);}
+
+  /* ── OPTION D: Mobile content blocks ── */
+  /* Strip card affordance from all non-interactive cards */
+  .elig-card,
+  .why-card,
+  .wow-card,
+  .tl-card,
+  .it-stat-card {
+    background:transparent;
+    border:none;
+    border-left:3px solid var(--blue);
+    border-radius:0;
+    box-shadow:none;
+    padding:12px 16px;
+  }
+  /* Remove hover/active effects entirely on touch */
+  .elig-card:hover,
+  .why-card:hover,
+  .wow-card:hover,
+  .tl-card:hover,
+  .it-stat-card:hover {
+    box-shadow:none;
+    border-color:var(--blue);
+    transform:none;
+  }
+  /* Remove the animated bottom bar on elig cards */
+  .elig-card::after { display:none; }
+  /* Remove top bar on timeline cards */
+  .tl-card::before { display:none; }
+  /* Why Germany featured card stays styled - it's visually distinct content not a button */
+  .why-card.hero-card {
+    border:none;
+    border-radius:12px;
+    padding:22px;
+    background:linear-gradient(135deg,var(--navy),#0a3080);
+  }
+  /* WOW cards - center align preserved, left border only */
+  .wow-card {
+    text-align:left;
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .wow-emoji { font-size:1.4rem; margin-bottom:0; flex-shrink:0; margin-top:2px; }
+  /* IT stat cards - inline horizontal layout */
+  .it-stat-card {
+    border-left:3px solid var(--sky);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .it-stat-num { font-size:1.4rem; }
+  .it-stat-label { font-size:0.72rem; margin-top:0; }
+  /* FAQ items stay as cards - they ARE interactive */
+  .faq-item {
+    border-radius:10px;
+    border:1.5px solid var(--border);
+  }
 }
 </style>
 </head>
@@ -344,7 +416,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px 4
         <div>
           <div class="hero-bonus-title">₹40,000 in Bonuses Today</div>
           <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹35,000)<br>✓ Expert Consultation (₹5,000)</div>
-          <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
+          <div class="hero-bonus-timer">
+            <span class="bonus-badge"><span class="bonus-badge-dot"></span>⏳ <span id="timerMins">07</span>:<span id="timerSecs">00</span> left</span>
+          </div>
         </div>
       </div>
       <h1>Get your Germany Opportunity Card in just <em>7 Days</em> No Job Offer Needed to Land in Germany.</h1>

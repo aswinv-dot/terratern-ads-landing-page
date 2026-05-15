@@ -697,7 +697,6 @@ document.querySelectorAll('.er-dot').forEach(d => {
 // ── RANDOM SLOTS COUNT (4–18, random each load) ──
 const slots = Math.floor(Math.random() * 15) + 4;
 document.getElementById('slotsCount').textContent = slots;
-document.getElementById('ctaSlotsCount').textContent = slots;
 
 // ── BONUS TIMER 7 minutes countdown, resets each visit ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;

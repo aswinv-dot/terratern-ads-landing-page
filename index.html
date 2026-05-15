@@ -227,14 +227,32 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s,transform 0.6s;}
 .fade-up.visible{opacity:1;transform:translateY(0);}
 
+/* THANK YOU POPUP */
+.ty-overlay{position:fixed;inset:0;z-index:10000;background:rgba(0,33,92,0.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
+.ty-overlay.active{opacity:1;pointer-events:all;}
+.ty-box{background:var(--white);border-radius:20px;padding:40px 36px;max-width:460px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,33,92,0.28);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;}
+.ty-overlay.active .ty-box{transform:translateY(0) scale(1);}
+.ty-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--sky));border-radius:20px 20px 0 0;}
+.ty-icon{font-size:3rem;margin-bottom:16px;}
+.ty-title{font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-0.02em;}
+.ty-msg{font-size:0.92rem;color:var(--muted);line-height:1.65;margin-bottom:20px;}
+.ty-msg strong{color:var(--navy);}
+.ty-divider{height:1px;background:var(--border);margin:20px 0;}
+.ty-sub{font-size:0.85rem;color:var(--muted);margin-bottom:14px;font-weight:500;}
+.ty-cta{display:inline-block;background:var(--blue);color:var(--white);padding:13px 28px;border-radius:8px;font-family:var(--ff);font-weight:700;font-size:0.92rem;text-decoration:none;transition:all 0.2s;margin-bottom:18px;}
+.ty-cta:hover{background:var(--navy);transform:translateY(-1px);}
+.ty-countdown{font-size:0.72rem;color:var(--muted);}
+.ty-countdown strong{color:var(--blue);}
+@media(max-width:600px){.ty-box{padding:28px 20px;}.ty-title{font-size:1.25rem;}}
+
 /* POPUP */
 .popup-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,33,92,0.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
 .popup-overlay.active{opacity:1;pointer-events:all;}
-.popup-box{background:var(--white);border-radius:20px;overflow:hidden;width:100%;max-width:780px;display:grid;grid-template-columns:320px 1fr;box-shadow:0 32px 80px rgba(0,33,92,0.28);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;}
+.popup-box{background:rgba(255,255,255,0.08);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;overflow:hidden;width:100%;max-width:780px;display:grid;grid-template-columns:320px 1fr;box-shadow:0 32px 80px rgba(0,33,92,0.45);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;}
 .popup-overlay.active .popup-box{transform:translateY(0) scale(1);}
-.popup-close{position:absolute;top:14px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,0.12);border:none;color:#fff;font-size:1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s;}
-.popup-close:hover{background:rgba(0,0,0,0.28);}
-.popup-right{padding:32px 28px 28px;display:flex;flex-direction:column;}
+.popup-close{position:absolute;top:14px;right:16px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:#fff;font-size:1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s;}
+.popup-close:hover{background:rgba(255,255,255,0.28);}
+.popup-right{padding:32px 28px 28px;display:flex;flex-direction:column;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);}
 .popup-right h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.25;}
 .popup-right>p{font-size:0.78rem;color:var(--muted);margin-bottom:18px;}
 .popup-form-group{margin-bottom:10px;}
@@ -300,7 +318,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 
   /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
-  .popup-close{background:rgba(0,0,0,0.35);}
+  .popup-close{background:rgba(255,255,255,0.2);}
 }
 </style>
 </head>
@@ -664,7 +682,20 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   </div>
 </div>
 
-<script>
+<!-- THANK YOU POPUP -->
+<div class="ty-overlay" id="tyPopup">
+  <div class="ty-box">
+    <div class="ty-icon">🎉</div>
+    <h2 class="ty-title">You're All Set!</h2>
+    <p class="ty-msg">One of our <strong>certified immigration advisors</strong> will reach out to you shortly.</p>
+    <div class="ty-divider"></div>
+    <p class="ty-sub">Meanwhile, find out if you qualify instantly:</p>
+    <a href="https://cutt.ly/VtVIWef3" target="_blank" class="ty-cta" id="tyCtaBtn">
+      Get Your Free Eligibility Report →
+    </a>
+    <div class="ty-countdown">Redirecting you to our AI Eligibility Checker in <strong><span id="tyCountdown">10</span>s</strong></div>
+  </div>
+</div>
 // ── EXPERT ROTATOR Ritika + Kumar only (Noor Zaiba removed) ──
 const experts = [
   { name:'Ritika', spec:'Certified Immigration Advisor, 4 yrs', img:'assets/images/experts/expert-ritika.jpg', initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
@@ -739,6 +770,33 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
+// ── THANK YOU POPUP ──
+const tyPopup = document.getElementById('tyPopup');
+let tyTimer = null;
+let formSubmitted = false; // blocks exit popup once form is filled
+
+function showThankYou() {
+  closePopup();
+  formSubmitted = true;
+  tyPopup.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  let secs = 10;
+  document.getElementById('tyCountdown').textContent = secs;
+  tyTimer = setInterval(() => {
+    secs--;
+    document.getElementById('tyCountdown').textContent = secs;
+    if (secs <= 0) {
+      clearInterval(tyTimer);
+      window.location.href = 'https://cutt.ly/VtVIWef3';
+    }
+  }, 1000);
+}
+
+// Clicking the CTA also clears the timer (user clicked manually)
+document.getElementById('tyCtaBtn').addEventListener('click', () => {
+  clearInterval(tyTimer);
+});
+
 // ── MAIN FORM SUBMIT ──
 document.getElementById('submit-btn').addEventListener('click', () => {
   const inputs = document.querySelectorAll('.form-card input, .form-card select');
@@ -749,8 +807,9 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   });
   if (valid) {
     const btn = document.getElementById('submit-btn');
-    btn.textContent = "✓ Submitted! We'll reach you within 24 hrs.";
+    btn.textContent = '✓ Submitted!';
     btn.style.background = '#16a34a';
+    setTimeout(showThankYou, 600);
   }
 });
 
@@ -785,7 +844,10 @@ setInterval(() => switchPopupExpert(ei), 10000);
 // ── POPUP ──
 const popup = document.getElementById('exitPopup');
 let popupShown = false;
-function showPopup() { if (popupShown) return; popupShown = true; popup.classList.add('active'); document.body.style.overflow = 'hidden'; }
+function showPopup() {
+  if (popupShown || formSubmitted) return;
+  popupShown = true; popup.classList.add('active'); document.body.style.overflow = 'hidden';
+}
 function closePopup() { popup.classList.remove('active'); document.body.style.overflow = ''; }
 const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
 if (!isMobile) {
@@ -802,9 +864,9 @@ document.getElementById('popup-submit-btn').addEventListener('click', () => {
   fields.forEach(f => { if (!f.value) { f.style.borderColor = '#dc2626'; valid = false; } else { f.style.borderColor = ''; } });
   if (valid) {
     const btn = document.getElementById('popup-submit-btn');
-    btn.textContent = "✓ Got it! We'll call you within 24 hrs.";
+    btn.textContent = '✓ Got it!';
     btn.style.background = '#16a34a';
-    setTimeout(closePopup, 2400);
+    setTimeout(showThankYou, 600);
   }
 });
 </script>

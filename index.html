@@ -229,11 +229,11 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 .fade-up.visible{opacity:1;transform:translateY(0);}
 
 /* THANK YOU POPUP */
-.ty-overlay{position:fixed;inset:0;z-index:10000;background:rgba(0,33,92,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
+.ty-overlay{position:fixed;inset:0;z-index:10000;background:rgba(0,33,92,0.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.35s ease;}
 .ty-overlay.active{opacity:1;pointer-events:all;}
-.ty-box{background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:40px 36px;max-width:460px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,33,92,0.45);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;overflow:hidden;}
+.ty-box{background:rgba(255,255,255,0.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.45);border-radius:20px;padding:40px 36px;max-width:460px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,33,92,0.35),inset 0 1px 0 rgba(255,255,255,0.6);transform:translateY(24px) scale(0.97);transition:transform 0.35s ease;position:relative;overflow:hidden;}
 .ty-overlay.active .ty-box{transform:translateY(0) scale(1);}
-.ty-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--blue),var(--sky));border-radius:0;}
+.ty-box::before{display:none;}
 .ty-icon{font-size:3rem;margin-bottom:16px;}
 .ty-title{font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:10px;letter-spacing:-0.02em;}
 .ty-msg{font-size:0.92rem;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:20px;}

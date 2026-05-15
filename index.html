@@ -116,8 +116,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);paddi
 .person-dest{display:flex;align-items:center;gap:4px;font-size:0.65rem;font-weight:600;color:var(--blue);background:rgba(37,92,193,0.08);border-radius:100px;padding:2px 8px;white-space:nowrap;}
 
 /* SECTIONS */
-section{padding:80px var(--px);}
-.container{max-width:1200px;margin:0 auto;}
+section{padding:80px 0;}
+.container{max-width:1200px;margin:0 auto;padding:0 var(--px);}
 .section-tag{display:inline-block;background:rgba(37,92,193,0.08);border:1px solid rgba(37,92,193,0.18);color:var(--blue);font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px;}
 .section-title{font-size:clamp(1.55rem,2.7vw,2.3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.16;color:var(--navy);margin-bottom:12px;}
 .section-title em{font-style:normal;color:var(--blue);}
@@ -213,7 +213,7 @@ section{padding:80px var(--px);}
 /* FOOTER */
 footer{background:var(--white);border-top:1px solid var(--border);padding:28px var(--px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
 .footer-logo-img{height:34px;width:auto;}
-.footer-text{font-size:0.72rem;color:var(--muted);line-height:1.6;}
+.footer-text{font-size:0.72rem;color:var(--muted);line-height:1.6;text-align:left;}
 .footer-links{display:flex;gap:18px;}
 .footer-links a{font-size:0.72rem;color:var(--muted);text-decoration:none;}
 .footer-links a:hover{color:var(--blue);}
@@ -262,7 +262,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   nav{padding:0 20px;}
   .nav-links{display:none;}
   .nav-cta{display:none;}
-  section{padding:56px 20px;}
+  section{padding:56px 0;}
   footer{justify-content:center;text-align:center;padding:28px 20px;}
 }
 
@@ -290,7 +290,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .form-group{margin-bottom:9px;}
   .form-group input,.form-group select{padding:8px 10px;font-size:0.82rem;}
   .form-btn{padding:11px;font-size:0.88rem;}
-  section{padding:48px 16px;}
+  section{padding:48px 0;}
+  .container{padding:0 16px;}
   .section-title{font-size:clamp(1.25rem,2vw,1.6rem);}
   footer{flex-direction:column;gap:12px;padding:24px 16px;}
   .footer-text{text-align:left;}
@@ -581,7 +582,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <img src="assets/images/logo.png" alt="TerraTern" class="footer-logo-img" onerror="this.style.display='none';document.getElementById('footer-text-logo').style.display='block'">
     <span id="footer-text-logo" style="display:none;color:var(--text);font-weight:800;font-size:0.95rem;">Terra<span style="color:#f1c819">Tern</span></span>
   </div>
-  <div class="footer-text" style="text-align:left;">
+  <div class="footer-text">
     <strong style="color:var(--navy);">TerraTern Pvt Ltd</strong><br>
     4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102<br>
     © 2025 TerraTern. All rights reserved.

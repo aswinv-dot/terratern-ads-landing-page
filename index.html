@@ -325,8 +325,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
 
   /* Popup mobile */
-  .popup-box{grid-template-columns:1fr;max-width:400px;max-height:92vh;overflow-y:auto;}
-  .popup-close{background:rgba(255,255,255,0.2);}
+  .popup-box{grid-template-columns:1fr;max-width:420px;max-height:92vh;overflow-y:auto;}
+  .popup-left{display:none;}
+  .popup-close{background:rgba(0,0,0,0.25);}
+  .popup-right{border-radius:20px;}
 }
 </style>
 </head>
@@ -664,8 +666,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       </div>
     </div>
     <div class="popup-right">
-      <h3>Wait Check If You Qualify<br>Before You Go</h3>
-      <p>Takes 30 seconds. Our expert will call you back within 24 hours.</p>
+      <h3 id="popupHeading">Wait — Check If You Qualify<br>Before You Go</h3>
+      <p id="popupSubtext">Takes 30 seconds. Our expert will call you back within 24 hours.</p>
       <div class="popup-form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar" id="p-name"></div>
       <div class="popup-form-group">
         <label>WhatsApp Number</label>
@@ -891,16 +893,25 @@ setInterval(() => switchPopupExpert(ei), 10000);
 // ── POPUP ──
 const popup = document.getElementById('exitPopup');
 let popupShown = false;
-function showPopup() {
+
+function showPopup(isMobileTimer) {
   if (popupShown || formSubmitted) return;
-  popupShown = true; popup.classList.add('active'); document.body.style.overflow = 'hidden';
+  popupShown = true;
+  // On mobile the popup is timer-triggered, not exit-intent, so change the copy
+  if (isMobileTimer) {
+    document.getElementById('popupHeading').innerHTML = 'One Quick Step<br>Before You Scroll Away';
+    document.getElementById('popupSubtext').textContent = 'Check your eligibility in 30 seconds. Free, no commitment.';
+  }
+  popup.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
 function closePopup() { popup.classList.remove('active'); document.body.style.overflow = ''; }
 const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
 if (!isMobile) {
-  document.addEventListener('mouseleave', e => { if (e.clientY <= 8) showPopup(); });
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 8) showPopup(false); });
 } else {
-  setTimeout(showPopup, 20000);
+  setTimeout(() => showPopup(true), 20000);
 }
 document.getElementById('popupClose').addEventListener('click', closePopup);
 document.getElementById('popupSkip').addEventListener('click', closePopup);

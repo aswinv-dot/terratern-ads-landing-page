@@ -695,7 +695,40 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 const API_URL    = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
 const SERVICE_ID = '2';
 
-function getUTM(key) { return new URLSearchParams(window.location.search).get(key) || ''; }
+const UTM_DEFAULTS = {
+  utm_source:   'Paid',
+  utm_medium:   'fb_landing_page',
+  utm_adset:    'GOC_IT_LP',
+  utm_campaign: 'GOC_IT_LP',
+};
+
+// Set UTM cookies on first visit from URL params, fallback to defaults
+(function setUTMCookies() {
+  const params = new URLSearchParams(window.location.search);
+  const keys = ['utm_source','utm_medium','utm_adset','utm_campaign'];
+  keys.forEach(key => {
+    const val = params.get(key) || UTM_DEFAULTS[key] || '';
+    // Only set if not already cookied (preserve first-touch)
+    if (!getCookie(key)) {
+      setCookie(key, val, 30);
+    }
+  });
+})();
+
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires + ';path=/';
+}
+
+function getCookie(name) {
+  return decodeURIComponent(
+    document.cookie.split('; ').find(r => r.startsWith(name + '='))?.split('=')[1] || ''
+  );
+}
+
+function getUTM(key) {
+  return getCookie(key) || UTM_DEFAULTS[key] || '';
+}
 
 async function submitLead(data) {
   const payload = {

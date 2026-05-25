@@ -293,8 +293,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .hero > div:first-child{display:flex;flex-direction:column;}
   .hero > div:first-child .hero-bonus{order:1;}
   .hero > div:first-child h1{order:2;}
-  .hero > div:first-child .hero-stats{order:3;}
-  .hero-stats{display:none;}
+  .hero > div:first-child .hero-mobile-hook{order:3;}
+  .hero > div:first-child .hero-stats{order:4;}
+  .hero-stats{display:flex;flex-wrap:wrap;}
   .hero h1{font-size:1.55rem;line-height:1.2;}
   .hero-sub{font-size:0.88rem;margin-bottom:20px;}
   .hero-bonus{margin-top:20px;}
@@ -364,9 +365,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
           </div>
         </div>
       </div>
-      <h1>Get your Germany Opportunity Card in just <em>7 Days</em></h1>
+      <h1 style="order:2;">Get your Germany Opportunity Card in just <em>7 Days</em></h1>
       <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte enter without a job offer, search on arrival, and build your future from Day 1.</p>
-      <p class="hero-mobile-hook">No job offer needed · €45K+ IT salaries · PR in 4 years · 99.7% visa success rate</p>
+      <p class="hero-mobile-hook" style="order:3;">No job offer needed · €45K+ IT salaries · PR in 4 years · 99.7% visa success rate</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>

@@ -52,7 +52,7 @@ main{display:block;}
 .hero h1 em{font-style:normal;color:var(--gold);}
 .hero-sub{font-size:0.97rem;color:rgba(255,255,255,0.74);max-width:500px;margin-bottom:28px;font-weight:400;line-height:1.72;}
 
-/* Hero stats - desktop only */
+/* Hero stats */
 .hero-stats{display:flex;flex-wrap:wrap;margin-bottom:28px;}
 .hero-stat{padding:14px 24px;border-right:1px solid rgba(255,255,255,0.12);}
 .hero-stat:first-child{padding-left:0;}
@@ -65,7 +65,13 @@ main{display:block;}
 .hero-bonus-icon{font-size:1.3rem;flex-shrink:0;}
 .hero-bonus-title{font-size:.82rem;font-weight:800;color:#92400e;margin-bottom:4px;}
 .hero-bonus-list{font-size:.74rem;color:#b45309;line-height:1.6;margin-bottom:6px;}
-.hero-bonus-timer{font-size:.68rem;font-weight:700;color:#92400e;}
+.hero-bonus-timer{margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.bonus-timer-label{font-size:0.7rem;font-weight:600;color:#92400e;opacity:0.8;}
+.bonus-timer-display{display:flex;align-items:center;gap:4px;}
+.bonus-timer-block{display:flex;flex-direction:column;align-items:center;background:#92400e;border-radius:6px;padding:5px 10px;min-width:44px;}
+.bonus-timer-block span:first-child{font-size:1.35rem;font-weight:800;color:#fff;line-height:1;letter-spacing:0.02em;}
+.bonus-timer-unit{font-size:0.52rem;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+.bonus-timer-sep{font-size:1.3rem;font-weight:800;color:#92400e;line-height:1;margin-bottom:6px;}
 
 /* FORM */
 .form-card{background:var(--white);border-radius:16px;padding:28px 24px 22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;}
@@ -105,7 +111,7 @@ main{display:block;}
 .er-dot{width:5px;height:5px;border-radius:50%;background:rgba(37,92,193,.2);transition:background .3s;cursor:pointer;}
 .er-dot.active{background:var(--blue);}
 
-/* ALUMNI SCROLLER STRIP */
+/* ALUMNI SCROLLER */
 .scroller-strip{background:var(--white);border-top:3px solid var(--gold);border-bottom:1px solid var(--border);padding:20px 0;overflow:hidden;position:relative;}
 .scroller-strip::before,.scroller-strip::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
 .scroller-strip::before{left:0;background:linear-gradient(to right,var(--white),transparent);}
@@ -141,7 +147,7 @@ section{padding:80px 0;}
 .elig-card p{font-size:0.8rem;color:var(--muted);line-height:1.58;}
 .elig-pts{display:inline-block;margin-top:9px;font-size:0.66rem;font-weight:700;background:rgba(37,92,193,0.09);color:var(--blue);border-radius:4px;padding:3px 9px;letter-spacing:0.04em;}
 
-/* WHY GERMANY */
+/* WHY GERMANY — combined with IT stats */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
 .why-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:22px;transition:all 0.2s;}
 .why-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.28);}
@@ -153,17 +159,11 @@ section{padding:80px 0;}
 .why-card.hero-card p{color:rgba(255,255,255,0.73);}
 .why-big{font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:6px;}
 
-/* IT */
-.it-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;margin-bottom:32px;}
+/* IT stats row — sits inside the combined section */
+.it-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
 .it-stat-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
 .it-stat-num{font-size:1.8rem;font-weight:800;color:var(--blue);line-height:1;}
 .it-stat-label{font-size:0.72rem;color:var(--muted);margin-top:4px;font-weight:500;}
-.it-cities{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.city-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:18px;transition:all 0.2s;}
-.city-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.28);}
-.city-name{font-size:0.97rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
-.city-tag{font-size:0.66rem;font-weight:600;color:var(--blue);margin-bottom:7px;display:block;}
-.city-card p{font-size:0.78rem;color:var(--muted);line-height:1.55;}
 
 /* WOW */
 .wow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;}
@@ -172,18 +172,6 @@ section{padding:80px 0;}
 .wow-emoji{font-size:1.75rem;margin-bottom:9px;}
 .wow-card h4{font-size:0.86rem;font-weight:700;color:var(--navy);margin-bottom:5px;}
 .wow-card p{font-size:0.76rem;color:var(--muted);line-height:1.55;}
-
-/* PROGRAM */
-.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-.prog-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:22px 18px;transition:all 0.2s;}
-.prog-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.28);}
-.prog-num{width:30px;height:30px;border-radius:50%;background:var(--blue);color:var(--white);font-size:0.74rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
-.prog-step{font-size:0.62rem;font-weight:700;color:var(--blue);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:8px;}
-.prog-card h4{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:11px;}
-.prog-list{list-style:none;}
-.prog-list li{font-size:0.78rem;color:var(--muted);padding:5px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid var(--border);}
-.prog-list li:last-child{border:none;}
-.prog-list li::before{content:'✓';color:var(--blue);font-size:0.68rem;margin-top:2px;flex-shrink:0;font-weight:700;}
 
 /* TIMELINE */
 .timeline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
@@ -279,10 +267,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 /* RESPONSIVE */
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
-  .elig-grid,.why-grid,.program-grid,.timeline-grid{grid-template-columns:1fr 1fr;}
+  .elig-grid,.why-grid,.timeline-grid{grid-template-columns:1fr 1fr;}
   .wow-grid{grid-template-columns:1fr 1fr;}
   .it-stats{grid-template-columns:1fr 1fr;}
-  .it-cities{grid-template-columns:1fr 1fr;}
   .faq-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 2;}
   nav{padding:0 20px;}
@@ -293,9 +280,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 }
 
 @media(max-width:600px){
-  .elig-grid,.why-grid,.program-grid,.timeline-grid,.wow-grid,.it-stats,.it-cities,.testimonial-grid{grid-template-columns:1fr;}
+  .elig-grid,.why-grid,.timeline-grid,.wow-grid,.it-stats,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
-
   nav{padding:0 16px;height:60px;}
   .nav-logo img{height:36px;}
   .nav-right{gap:10px;}
@@ -323,7 +309,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .footer-text{text-align:left;}
   .footer-links{justify-content:flex-start;}
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
-
   /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:420px;max-height:92vh;overflow-y:auto;}
   .popup-left{display:none;}
@@ -360,20 +345,24 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   <div class="hero-circle1"></div>
   <div class="hero-circle2"></div>
   <div class="hero">
-
-    <!-- LEFT PANEL -->
     <div>
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-icon">🎁</div>
-        <div>
-          <div class="hero-bonus-title">₹40,000 in Bonuses Today</div>
-          <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹35,000)<br>✓ Expert Consultation (₹5,000)</div>
-          <div class="hero-bonus-timer">Expires in: <span id="timerMins">07</span>m <span id="timerSecs">00</span>s</div>
+        <div style="flex:1;">
+          <div class="hero-bonus-title">₹40,000 Bonus — Claim Today</div>
+          <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹40,000)</div>
+          <div class="hero-bonus-timer">
+            <span class="bonus-timer-label">Offer expires in</span>
+            <span class="bonus-timer-display">
+              <span class="bonus-timer-block"><span id="timerMins">07</span><span class="bonus-timer-unit">min</span></span>
+              <span class="bonus-timer-sep">:</span>
+              <span class="bonus-timer-block"><span id="timerSecs">00</span><span class="bonus-timer-unit">sec</span></span>
+            </span>
+          </div>
         </div>
       </div>
-      <h1>Get your Germany Opportunity Card in just <em>7 Days</em> No Job Offer Needed to Land in Germany.</h1>
+      <h1>Get your Germany Opportunity Card in just <em>7 Days</em></h1>
       <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte enter without a job offer, search on arrival, and build your future from Day 1.</p>
-
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
@@ -382,9 +371,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       </div>
     </div>
 
-    <!-- RIGHT PANEL form only -->
     <div class="form-card" id="lead-form">
-      <!-- Expert rotator Ritika first (Noor Zaiba removed) -->
       <div class="er-wrap">
         <div class="er-avatar-wrap">
           <img class="er-photo" id="erPhoto" src="assets/images/experts/expert-ritika.jpg" alt="Expert" style="object-fit:cover;object-position:top;" onerror="this.style.display='none';document.getElementById('erInitials').style.display='flex'">
@@ -395,13 +382,11 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
           <div class="er-sup">Your expert today</div>
           <div class="er-name" id="erName">Ritika</div>
           <div class="er-spec" id="erSpec">Certified Immigration Advisor, 4 yrs</div>
-          <div class="er-dots">
+          <div class="er-dots" style="display:none;">
             <span class="er-dot active" data-i="0"></span>
-            <span class="er-dot" data-i="1"></span>
           </div>
         </div>
       </div>
-
       <h3>Register for a Free Expert Consultation</h3>
       <div class="form-group"><label>Full Name</label><input type="text" id="f-name" placeholder="Rajesh Kumar"></div>
       <div class="form-group"><label>Email Address</label><input type="email" id="f-email" placeholder="you@gmail.com"></div>
@@ -419,8 +404,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
             <option value="" disabled selected>Select education level</option>
             <option value="10th Grade">10th Grade (SSLC)</option>
             <option value="12th Grade">12th Grade (HSC / Intermediate)</option>
-            <option value="Diploma">Diploma</option>
-            <option value="Under Graduate">Under Graduate (B.Tech / BCA / BSc / BA / BCom)</option>
+            <option value="Under Graduate">Under Graduate (B.Tech / BE / BCA / BSc / BA / BCom)</option>
             <option value="Post Graduate">Post Graduate (M.Tech / MBA / MCA / MSc / MA)</option>
             <option value="Doctorate">Doctorate (PhD)</option>
           </select>
@@ -446,9 +430,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week <strong>filling fast</strong></div>
       <div class="form-trust">🔒 Free · No spam · <strong>2,400+ Indians already in Germany via TerraTern</strong></div>
     </div>
-
-  </div><!-- end .hero grid -->
-</div><!-- end .hero-wrap -->
+  </div>
+</div>
 
 <!-- ALUMNI SCROLLER -->
 <div class="scroller-strip">
@@ -464,7 +447,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <!-- Set B duplicate for seamless loop -->
+    <!-- Set B -->
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
@@ -491,24 +474,25 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     </div>
   </div>
   <div class="elig-grid">
-    <div class="elig-card fade-up"><div class="elig-icon">🎓</div><h4>Recognised IT Degree or Diploma</h4><p>B.Tech, BCA, BSc CS, MCA, or an IT Diploma from a recognised Indian institution qualifies. We handle credential evaluation and recognition.</p><span class="elig-pts">+2 Points</span></div>
+    <div class="elig-card fade-up"><div class="elig-icon">🎓</div><h4>Recognised IT Degree</h4><p>B.Tech, BE, BCA, BSc CS, MCA, or equivalent IT degree from a recognised Indian institution qualifies. We handle credential evaluation and recognition.</p><span class="elig-pts">+2 Points</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">💼</div><h4>Minimum 2 Years Work Experience</h4><p>Full-time, freelance, or startup IT experience earned in the last 7 years counts. We help you document and present it correctly for the German consulate.</p><span class="elig-pts">+1 to +2 Points</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">🌐</div><h4>English or German Proficiency</h4><p>B2 English or A1 German strengthens your application significantly. Our 100+ mock tests help you achieve the required certification online or in-person.</p><span class="elig-pts">+1 Point</span></div>
-    <div class="elig-card fade-up"><div class="elig-icon">📅</div><h4>Age Between 18 and 35</h4><p>Younger applicants earn additional bonus points under the scoring matrix. If you're 18–35 in IT, you're in one of the strongest eligibility brackets.</p><span class="elig-pts">+1 Point</span></div>
+    <div class="elig-card fade-up"><div class="elig-icon">📅</div><h4>Age Under 44</h4><p>Applicants under 44 are eligible under the Opportunity Card scoring matrix. Younger applicants earn additional bonus points — if you're under 35, you're in one of the strongest eligibility brackets.</p><span class="elig-pts">+1 Point</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">🏦</div><h4>Blocked Account Proof of Funds</h4><p>~€12,500 in a German blocked account (Sperrkonto) is required to show financial stability. TerraTern guides you through the entire setup and transfer process.</p><span class="elig-pts">Mandatory</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">✅</div><h4>Clean Background &amp; Health Insurance</h4><p>A clean police clearance certificate and valid travel insurance are baseline requirements both standard for the vast majority of applicants we work with.</p><span class="elig-pts">Mandatory</span></div>
   </div>
 </div>
 </section>
 
-<!-- WHY GERMANY -->
+<!-- WHY GERMANY + IT INDUSTRY (COMBINED) -->
 <section class="bg-light" id="germany">
 <div class="container">
   <div class="fade-up">
     <div class="section-tag">Why Germany</div>
     <h2 class="section-title">Europe's Tech Powerhouse.<br><em>Built for IT Talent from India.</em></h2>
-    <p class="section-sub">Germany isn't just a visa destination it's a career launchpad with strong worker protections, free healthcare, and a booming tech sector actively recruiting Indian professionals.</p>
+    <p class="section-sub">Germany isn't just a visa destination it's a career launchpad with strong worker protections, free healthcare, and a booming tech sector. The German government created the Opportunity Card specifically to fast-track international IT talent into a market with 350,000+ open vacancies, €63B in tech industry revenue, and IT hiring that has grown 3× since 2020.</p>
   </div>
+
   <div class="why-grid fade-up">
     <div class="why-card hero-card"><div class="why-big">€45K – €120K</div><h4>IT Salary Range Across Experience Levels</h4><p>Entry-level IT roles in Germany start at €45,000/year, scaling to €80,000–€120,000 for senior and specialist profiles. Combine that with 30 mandatory paid leave days, statutory health insurance from Day 1, and strong employment law the long-term financial value of this move is transformational for Indian IT professionals.</p></div>
     <div class="why-card"><div class="why-icon">🌍</div><h4>World's 4th Largest Economy</h4><p>Home to SAP, Siemens, BMW, Bosch, and Deutsche Telekom global giants with massive, ongoing IT hiring pipelines across all tech stacks.</p></div>
@@ -516,23 +500,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="why-card"><div class="why-icon">🗣️</div><h4>English-First Startup Ecosystem</h4><p>Berlin, Munich, Hamburg, and Frankfurt operate almost entirely in English in tech. You can work, network, and grow in Germany without German in your first year.</p></div>
     <div class="why-card"><div class="why-icon">🎓</div><h4>Free University for Your Children</h4><p>Germany's public universities are tuition-free. Bring your family and secure world-class education at zero cost one of the most powerful benefits for Indian families.</p></div>
   </div>
-</div>
-</section>
-
-<!-- IT IN GERMANY -->
-<section class="bg-white">
-<div class="container">
-  <div class="fade-up">
-    <div class="section-tag">IT Industry in Germany</div>
-    <h2 class="section-title">Germany Is Actively Recruiting<br><em>Indian IT Professionals Right Now</em></h2>
-    <p class="section-sub">Over 350,000 IT positions sit unfilled across Germany. The Opportunity Card was created specifically by the German government to fast-track international tech talent.</p>
-  </div>
-  <div class="it-stats fade-up">
-    <div class="it-stat-card"><div class="it-stat-num">350K+</div><div class="it-stat-label">Open IT Vacancies in Germany</div></div>
-    <div class="it-stat-card"><div class="it-stat-num">€63B</div><div class="it-stat-label">German Tech Industry Revenue</div></div>
-    <div class="it-stat-card"><div class="it-stat-num">1,100+</div><div class="it-stat-label">Active Startups in Berlin Alone</div></div>
-    <div class="it-stat-card"><div class="it-stat-num">3×</div><div class="it-stat-label">IT Hiring Growth Since 2020</div></div>
-</div>
 </div>
 </section>
 
@@ -569,8 +536,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="tl-card"><div class="tl-week">Week 1–2</div><h4>Free Eligibility Consult + Points Assessment</h4><p>Meet your certified immigration expert. We calculate your exact points score, identify gaps, and build your personalised roadmap. No fees just complete clarity on where you stand.</p></div>
     <div class="tl-card"><div class="tl-week">Week 3–6</div><h4>Document Collection &amp; Credential Evaluation</h4><p>We guide you through gathering degrees, experience letters, translations, and notarised copies. Our exhaustive checklist ensures nothing is missing before filing.</p></div>
     <div class="tl-card"><div class="tl-week">Week 4–8 (Parallel)</div><h4>German Language Training + 100+ Mock Tests</h4><p>While documents are prepared, you begin A1 German training online or at our Bangalore centre. 100+ mock tests fast-track your language certification in parallel.</p></div>
-    <div class="tl-card"><div class="tl-week">Week 7–10</div><h4>Blocked Account Setup + Visa Filing</h4><p>We walk you through opening your Sperrkonto and transferring funds via RBI-compliant channels. Your complete visa package is then filed at the consulate. Average approval: 7 days.</p></div>
-    <div class="tl-card"><div class="tl-week">Week 12–20</div><h4>Visa in Hand → Job Search Begins</h4><p>The moment your visa arrives, job search support kicks in CV builds, recruiter introductions, and application support. You can also job hunt directly from Germany after landing.</p></div>
+    <div class="tl-card"><div class="tl-week">Week 7–10</div><h4>Blocked Account Setup + Visa Filing + Job Search Begins</h4><p>We walk you through opening your Sperrkonto and transferring funds via RBI-compliant channels. Your visa package is filed at the consulate — and job search support kicks in immediately. CV builds, recruiter introductions, and application support start in parallel. Average visa approval: 7 days.</p></div>
+    <div class="tl-card"><div class="tl-week">Week 12–20</div><h4>Visa in Hand — Land in Germany</h4><p>With visa approved, you land in Germany and continue your active job search on the ground. Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you.</p></div>
     <div class="tl-card"><div class="tl-week">Month 4–6</div><h4>Land in Germany · Start Your IT Career</h4><p>Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you. You never navigate Germany alone.</p></div>
   </div>
 </div>
@@ -591,7 +558,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="faq-item"><button class="faq-q">Do I need to know German to apply or find a job? <span class="faq-arrow">+</span></button><div class="faq-a">For the visa, A1 German or B2 English is beneficial but not always mandatory. For job searching, most IT companies in Berlin and other startup hubs work entirely in English. A2–B1 German significantly boosts your employability and salary which is why language training is central to our program.</div></div>
     <div class="faq-item"><button class="faq-q">What is the 99.7% visa success rate based on? <span class="faq-arrow">+</span></button><div class="faq-a">Based on 2,400+ applicants processed through TerraTern. Our rate is driven by complete documentation, expert-led application review, and zero compromise on preparation quality. The rare 0.3% involved incomplete information from applicants or consulate policy changes outside our control.</div></div>
     <div class="faq-item"><button class="faq-q">Can I bring my spouse and children? <span class="faq-arrow">+</span></button><div class="faq-a">Yes immediate family (spouse and children under 18) can apply for family reunification once you have secured employment and a stable income in Germany. Some spouses may also qualify independently. We assess all family scenarios in the free consultation.</div></div>
-    <div class="faq-item"><button class="faq-q">Does job search support continue after visa approval? <span class="faq-arrow">+</span></button><div class="faq-a">Yes. Our job search support does not stop at visa approval it continues until you have a signed employment contract in Germany. You retain full access to our recruiter network, CV support, and job portal guidance. We consider the job done only when you're employed.</div></div>
+    <div class="faq-item"><button class="faq-q">Does job search support continue after visa approval? <span class="faq-arrow">+</span></button><div class="faq-a">Yes. Job search support starts from the moment your visa filing begins, and continues for up to 6 months after landing. You retain full access to our recruiter network, CV support, and job portal guidance throughout. We consider the job done only when you have a signed employment contract in Germany.</div></div>
     <div class="faq-item"><button class="faq-q">Is language training online or in-person? <span class="faq-arrow">+</span></button><div class="faq-a">Both options are available. We run live online German and English classes around your work schedule, and our Bangalore centre offers in-person batches. All 100+ mock tests are accessible digitally from anywhere in India. Candidates outside Bangalore typically use our fully online track with identical results.</div></div>
   </div>
 </div>
@@ -637,19 +604,15 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="popup-left" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px 28px;background:linear-gradient(160deg,var(--navy) 0%,#0a3080 100%);">
       <div style="text-align:center;margin-bottom:28px;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
-          <img id="popupErPhoto" src="assets/images/experts/expert-ritika.jpg" alt="Expert"
-            style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);display:block;"
-            onerror="this.style.display='none';document.getElementById('popupErInitials').style.display='flex'">
-          <div id="popupErInitials"
-            style="display:none;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#be185d,#831843);align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;border:3px solid rgba(255,255,255,0.2);">RI</div>
+          <img id="popupErPhoto" src="assets/images/experts/expert-ritika.jpg" alt="Expert" style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.2);display:block;" onerror="this.style.display='none';document.getElementById('popupErInitials').style.display='flex'">
+          <div id="popupErInitials" style="display:none;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#be185d,#831843);align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;border:3px solid rgba(255,255,255,0.2);">RI</div>
           <span style="position:absolute;bottom:4px;right:4px;background:var(--gold);color:var(--navy);font-size:0.55rem;font-weight:800;letter-spacing:0.05em;padding:3px 8px;border-radius:100px;white-space:nowrap;">✓ Certified</span>
         </div>
         <div style="font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Your expert today</div>
         <div id="popupErName" style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;">Ritika</div>
         <div id="popupErSpec" style="font-size:0.75rem;color:rgba(255,255,255,0.65);margin-bottom:16px;">Certified Immigration Advisor · 4 yrs</div>
-        <div style="display:flex;justify-content:center;gap:6px;">
+        <div style="display:none;">
           <span class="popup-er-dot active" data-i="0" style="width:6px;height:6px;border-radius:50%;background:var(--gold);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
-          <span class="popup-er-dot" data-i="1" style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s;display:inline-block;"></span>
         </div>
       </div>
       <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;width:100%;">
@@ -684,8 +647,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
             <option value="" disabled selected>Select level</option>
             <option value="10th Grade">10th Grade (SSLC)</option>
             <option value="12th Grade">12th Grade (HSC / Intermediate)</option>
-            <option value="Diploma">Diploma</option>
-            <option value="Under Graduate">Under Graduate (B.Tech / BCA / BSc / BA / BCom)</option>
+            <option value="Under Graduate">Under Graduate (B.Tech / BE / BCA / BSc / BA / BCom)</option>
             <option value="Post Graduate">Post Graduate (M.Tech / MBA / MCA / MSc / MA)</option>
             <option value="Doctorate">Doctorate (PhD)</option>
           </select>
@@ -716,76 +678,92 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <p class="ty-msg">One of our <strong>certified immigration advisors</strong> will reach out to you shortly.</p>
     <div class="ty-divider"></div>
     <p class="ty-sub">Meanwhile, find out if you qualify instantly:</p>
-    <a href="https://cutt.ly/VtVIWef3" target="_blank" class="ty-cta" id="tyCtaBtn">
-      Get Your Free Eligibility Report →
-    </a>
+    <a href="https://cutt.ly/VtVIWef3" target="_blank" class="ty-cta" id="tyCtaBtn">Get Your Free Eligibility Report →</a>
     <div class="ty-countdown">Redirecting you to our AI Eligibility Checker in <strong><span id="tyCountdown">10</span>s</strong></div>
   </div>
 </div>
+
 <script>
-// ── EXPERT ROTATOR Ritika + Kumar only (Noor Zaiba removed) ──
+// ── API CONFIG ──
+const API_URL    = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
+const SERVICE_ID = '2';
+
+function getUTM(key) { return new URLSearchParams(window.location.search).get(key) || ''; }
+
+async function submitLead(data) {
+  const payload = {
+    form_data: {
+      name:                   data.name,
+      email:                  data.email,
+      mobile:                 data.mobile,
+      country_code:           '+91',
+      service_application_id: SERVICE_ID,
+      utm_source:             getUTM('utm_source'),
+      utm_medium:             getUTM('utm_medium'),
+      utm_adset:              getUTM('utm_adset'),
+      utm_campaign:           getUTM('utm_campaign'),
+      work_experience:        data.work_experience,
+      education:              data.education,
+    }
+  };
+  console.log('Submitting lead:', JSON.stringify(payload));
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const body = await res.text();
+    console.log('Response:', res.status, body);
+  } catch(err) {
+    console.error('Lead submission error:', err.message);
+  }
+}
+
+// ── EXPERT ROTATOR ──
 const experts = [
   { name:'Ritika', spec:'Certified Immigration Advisor, 4 yrs', img:'assets/images/experts/expert-ritika.jpg', initials:'RI', bg:'linear-gradient(135deg,#be185d,#831843)' },
-  { name:'Kumar',  spec:'Certified Immigration Advisor, 6 yrs', img:'assets/images/experts/expert-kumar.jpg',  initials:'KU', bg:'linear-gradient(135deg,#0369a1,#0c4a6e)' },
 ];
 let ei = 0;
 function switchExpert(idx) {
-  const p = document.getElementById('erPhoto'),
-        ini = document.getElementById('erInitials'),
-        nm = document.getElementById('erName'),
-        sp = document.getElementById('erSpec'),
-        ex = experts[idx];
+  const p = document.getElementById('erPhoto'), ini = document.getElementById('erInitials'),
+        nm = document.getElementById('erName'), sp = document.getElementById('erSpec'), ex = experts[idx];
   nm.style.opacity = '0'; sp.style.opacity = '0';
   setTimeout(() => {
     nm.textContent = ex.name; sp.textContent = ex.spec;
     p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
-    p.onerror = function() {
-      this.style.display = 'none';
-      ini.style.display = 'flex'; ini.textContent = ex.initials;
-      ini.style.background = ex.bg;
-    };
+    p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
     nm.style.opacity = '1'; sp.style.opacity = '1';
-    document.querySelectorAll('.er-dot').forEach((d,i) => d.classList.toggle('active', i === idx));
+    document.querySelectorAll('.er-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
   }, 280);
 }
-setInterval(() => { ei = (ei + 1) % experts.length; switchExpert(ei); }, 10000);
-document.querySelectorAll('.er-dot').forEach(d => {
-  d.addEventListener('click', () => { ei = +d.dataset.i; switchExpert(ei); });
-});
+setInterval(() => { ei=(ei+1)%experts.length; switchExpert(ei); }, 10000);
+document.querySelectorAll('.er-dot').forEach(d => d.addEventListener('click', () => { ei=+d.dataset.i; switchExpert(ei); }));
 
-// ── RANDOM SLOTS COUNT (4–18, random each load) ──
+// ── SLOTS ──
 const slots = Math.floor(Math.random() * 15) + 4;
 document.getElementById('slotsCount').textContent = slots;
 
-// ── BONUS TIMER 7 minutes countdown, resets each visit ──
+// ── BONUS TIMER ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;
 function updateBonusTimer() {
   const dist = bonusEnd - Date.now();
-  if (dist <= 0) {
-    document.getElementById('timerMins').textContent = '00';
-    document.getElementById('timerSecs').textContent = '00';
-    return;
-  }
-  const m = Math.floor(dist / 60000);
-  const s = Math.floor((dist % 60000) / 1000);
-  document.getElementById('timerMins').textContent = String(m).padStart(2,'0');
-  document.getElementById('timerSecs').textContent = String(s).padStart(2,'0');
+  if (dist <= 0) { document.getElementById('timerMins').textContent='00'; document.getElementById('timerSecs').textContent='00'; return; }
+  document.getElementById('timerMins').textContent = String(Math.floor(dist/60000)).padStart(2,'0');
+  document.getElementById('timerSecs').textContent = String(Math.floor((dist%60000)/1000)).padStart(2,'0');
 }
 updateBonusTimer();
 setInterval(updateBonusTimer, 1000);
 
 // ── SCROLL TO TOP ──
 const scrollTopBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', () => {
-  scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
-});
-scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
+scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
 // ── FAQ ──
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isOpen = item.classList.contains('open');
+    const item = btn.parentElement, isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
@@ -800,7 +778,7 @@ document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 // ── THANK YOU POPUP ──
 const tyPopup = document.getElementById('tyPopup');
 let tyTimer = null;
-let formSubmitted = false; // blocks exit popup once form is filled
+let formSubmitted = false;
 
 function showThankYou() {
   closePopup();
@@ -812,82 +790,55 @@ function showThankYou() {
   tyTimer = setInterval(() => {
     secs--;
     document.getElementById('tyCountdown').textContent = secs;
-    if (secs <= 0) {
-      clearInterval(tyTimer);
-      window.location.href = 'https://cutt.ly/VtVIWef3';
-    }
+    if (secs <= 0) { clearInterval(tyTimer); window.location.href = 'https://cutt.ly/VtVIWef3'; }
   }, 1000);
 }
 
-// Clicking the CTA also clears the timer (user clicked manually)
-document.getElementById('tyCtaBtn').addEventListener('click', () => {
-  clearInterval(tyTimer);
-});
+document.getElementById('tyCtaBtn').addEventListener('click', () => clearInterval(tyTimer));
 
 // ── MAIN FORM SUBMIT ──
 document.getElementById('submit-btn').addEventListener('click', () => {
-  const name   = document.getElementById('f-name');
-  const email  = document.getElementById('f-email');
-  const mobile = document.getElementById('f-mobile');
-  const edu    = document.getElementById('f-education');
-  const exp    = document.getElementById('f-exp');
-
+  const name = document.getElementById('f-name'), email = document.getElementById('f-email'),
+        mobile = document.getElementById('f-mobile'), edu = document.getElementById('f-education'),
+        exp = document.getElementById('f-exp');
   let valid = true;
-
-  // reset borders
   [name, email, mobile, edu, exp].forEach(el => el.style.borderColor = '');
   if (mobile.closest('.phone-wrap')) mobile.closest('.phone-wrap').style.borderColor = '';
-
-  // empty check
-  [name, edu, exp].forEach(el => {
-    if (!el.value.trim()) { el.style.borderColor = '#dc2626'; valid = false; }
-  });
-
-  // email validation
+  [name, edu, exp].forEach(el => { if (!el.value.trim()) { el.style.borderColor='#dc2626'; valid=false; } });
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email.value.trim() || !emailRe.test(email.value.trim())) {
-    email.style.borderColor = '#dc2626'; valid = false;
-  }
-
-  // phone validation — exactly 10 digits
-  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) {
-    mobile.closest('.phone-wrap').style.borderColor = '#dc2626'; valid = false;
-  }
-
+  if (!email.value.trim() || !emailRe.test(email.value.trim())) { email.style.borderColor='#dc2626'; valid=false; }
+  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) { mobile.closest('.phone-wrap').style.borderColor='#dc2626'; valid=false; }
   if (valid) {
     const btn = document.getElementById('submit-btn');
     btn.textContent = '✓ Submitted!';
     btn.style.background = '#16a34a';
+    submitLead({
+      name:            name.value.trim(),
+      email:           email.value.trim(),
+      mobile:          mobile.value.trim(),
+      education:       edu.value,
+      work_experience: exp.value,
+    });
     setTimeout(showThankYou, 600);
   }
 });
 
 // ── POPUP EXPERT ROTATOR ──
 function switchPopupExpert(idx) {
-  const ex = experts[idx];
-  const photo = document.getElementById('popupErPhoto');
-  const ini = document.getElementById('popupErInitials');
-  const nm = document.getElementById('popupErName');
-  const sp = document.getElementById('popupErSpec');
-  nm.style.opacity = '0'; sp.style.opacity = '0';
+  const ex = experts[idx], photo = document.getElementById('popupErPhoto'),
+        ini = document.getElementById('popupErInitials'), nm = document.getElementById('popupErName'),
+        sp = document.getElementById('popupErSpec');
+  nm.style.opacity='0'; sp.style.opacity='0';
   setTimeout(() => {
     nm.textContent = ex.name;
     sp.textContent = 'Certified Immigration Advisor · ' + ex.spec.split(', ')[1];
-    photo.src = ex.img; photo.style.display = 'block'; ini.style.display = 'none';
-    photo.onerror = function() {
-      this.style.display = 'none';
-      ini.style.display = 'flex'; ini.textContent = ex.initials;
-      ini.style.background = ex.bg;
-    };
-    nm.style.opacity = '1'; sp.style.opacity = '1';
-    document.querySelectorAll('.popup-er-dot').forEach((d,i) => {
-      d.style.background = i === idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)';
-    });
+    photo.src=ex.img; photo.style.display='block'; ini.style.display='none';
+    photo.onerror=function(){ this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
+    nm.style.opacity='1'; sp.style.opacity='1';
+    document.querySelectorAll('.popup-er-dot').forEach((d,i) => { d.style.background = i===idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)'; });
   }, 280);
 }
-document.querySelectorAll('.popup-er-dot').forEach(d => {
-  d.addEventListener('click', () => switchPopupExpert(+d.dataset.i));
-});
+document.querySelectorAll('.popup-er-dot').forEach(d => d.addEventListener('click', () => switchPopupExpert(+d.dataset.i)));
 setInterval(() => switchPopupExpert(ei), 10000);
 
 // ── POPUP ──
@@ -897,7 +848,6 @@ let popupShown = false;
 function showPopup(isMobileTimer) {
   if (popupShown || formSubmitted) return;
   popupShown = true;
-  // On mobile the popup is timer-triggered, not exit-intent, so change the copy
   if (isMobileTimer) {
     document.getElementById('popupHeading').innerHTML = 'One Quick Step<br>Before You Scroll Away';
     document.getElementById('popupSubtext').textContent = 'Check your eligibility in 30 seconds. Free, no commitment.';
@@ -919,11 +869,18 @@ popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
 document.getElementById('popup-submit-btn').addEventListener('click', () => {
   const fields = ['p-name','p-phone','p-email','popup-education','popup-experience'].map(id => document.getElementById(id));
   let valid = true;
-  fields.forEach(f => { if (!f.value) { f.style.borderColor = '#dc2626'; valid = false; } else { f.style.borderColor = ''; } });
+  fields.forEach(f => { if (!f.value) { f.style.borderColor='#dc2626'; valid=false; } else { f.style.borderColor=''; } });
   if (valid) {
     const btn = document.getElementById('popup-submit-btn');
     btn.textContent = '✓ Got it!';
     btn.style.background = '#16a34a';
+    submitLead({
+      name:            document.getElementById('p-name').value.trim(),
+      email:           document.getElementById('p-email').value.trim(),
+      mobile:          document.getElementById('p-phone').value.trim(),
+      education:       document.getElementById('popup-education').value,
+      work_experience: document.getElementById('popup-experience').value,
+    });
     setTimeout(showThankYou, 600);
   }
 });

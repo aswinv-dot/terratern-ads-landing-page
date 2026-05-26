@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free live webinar on the Germany Opportunity Card by Ritika, Certified Immigration Expert. Learn eligibility, process, and salaries. Book your slot.">
-<title>Germany Opportunity Card — Free Webinar | TerraTern</title>
+<title>Germany Opportunity Card - Free Webinar | TerraTern</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:#e8eef8;color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;}
+body{background:#edf1f9;color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;}
@@ -51,7 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);heigh
 /* ── HERO INNER ── */
 .hero{
   max-width:800px;margin:0 auto;
-  padding:48px 5vw 0;
+  padding:40px 5vw 0;
   position:relative;z-index:1;
 }
 
@@ -73,19 +73,19 @@ h1{
   font-size:clamp(1.8rem,3.2vw,2.7rem);
   font-weight:900;line-height:1.08;color:#fff;
   letter-spacing:-.025em;margin-bottom:14px;
-  max-width:560px;
+  max-width:min(560px,100%);
 }
 h1 em{font-style:italic;color:var(--sky);}
 h1 .gw{font-style:normal;color:var(--gold);}
 
 .hero-sub{
   font-size:.88rem;color:rgba(255,255,255,.58);
-  line-height:1.72;max-width:480px;margin-bottom:0;font-weight:300;
+  line-height:1.72;max-width:min(480px,100%);margin-bottom:0;font-weight:300;
 }
 
-/* Speaker photo — tall, standing, fades into bg at bottom */
+/* Speaker photo - tall, standing, fades into bg at bottom */
 .spk-img-wrap{
-  position:relative;width:280px;margin:0 auto;
+  position:relative;width:min(280px,75vw);margin:0 auto;
   flex-shrink:0;
 }
 .spk-img-wrap::after{
@@ -115,17 +115,18 @@ h1 .gw{font-style:normal;color:var(--gold);}
   border:1px solid rgba(255,255,255,.12);
   backdrop-filter:blur(8px);
   border-radius:12px;
-  padding:16px 22px;
+  padding:14px 20px;
   margin:0 12px;
   text-align:center;
   position:relative;z-index:2;
   margin-top:-4px;
+  word-break:break-word;
 }
 .nameplate-name{font-family:var(--ffd);font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:4px;}
 .nameplate-role{font-size:.74rem;color:rgba(255,255,255,.58);line-height:1.5;}
 
 /* Date + Duration pills */
-.meta-pills{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.meta-pills{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap;}
 .meta-pill{
   display:inline-flex;align-items:center;gap:7px;
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
@@ -138,30 +139,19 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .hero-cta{
   display:inline-block;
   background:var(--gold);color:var(--navy);
-  font-family:var(--ff);font-weight:700;font-size:.95rem;
-  padding:14px 36px;border-radius:8px;border:none;cursor:pointer;
-  text-decoration:none;margin-top:20px;
+  font-family:var(--ff);font-weight:700;font-size:.93rem;
+  padding:13px 34px;border-radius:8px;border:none;cursor:pointer;
+  text-decoration:none;margin-top:18px;
   transition:all .2s;
-  box-shadow:0 4px 32px rgba(241,200,25,.3);
+  box-shadow:0 4px 28px rgba(241,200,25,.28);
   letter-spacing:.02em;
 }
 .hero-cta:hover{background:#ffd426;transform:translateY(-1px);box-shadow:0 8px 40px rgba(241,200,25,.4);}
 
 /* Trust stats row */
-.trust-row{
-  display:flex;gap:0;justify-content:center;
-  margin-top:24px;padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.08);
-  width:100%;padding-bottom:40px;
-}
-.trust-item{padding:0 28px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
-.trust-item:last-child{border-right:none;}
-.trust-icon{font-size:1.3rem;margin-bottom:4px;}
-.trust-num{font-family:var(--ffd);font-size:1.4rem;font-weight:700;color:#fff;line-height:1;}
-.trust-lbl{font-size:.65rem;color:rgba(255,255,255,.45);margin-top:2px;}
 
-/* urgency strip — moved below form on mobile, but visible on desktop via hero left bottom */
-.urgency{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1.5px solid #fbbf24;border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin-top:16px;}
+/* urgency strip - moved below form on mobile, but visible on desktop via hero left bottom */
+.urgency{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1.5px solid #fbbf24;border-radius:10px;padding:12px 16px;display:flex;align-items:flex-start;gap:12px;margin-top:16px;flex-wrap:wrap;}
 .urgency-icon{font-size:1.1rem;flex-shrink:0;}
 .urgency-body{flex:1;}
 .urgency-title{font-size:.78rem;font-weight:600;color:#92400e;margin-bottom:1px;}
@@ -176,15 +166,15 @@ h1 .gw{font-style:normal;color:var(--gold);}
 /* fshell removed - form is now a popup modal */
 
 /* ── WHO SHOULD ATTEND ── */
-.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
-.who-card{background:#fff;border:1.5px solid rgba(37,92,193,.18);border-radius:14px;padding:24px 20px;transition:box-shadow .2s,border-color .2s;box-shadow:0 2px 12px rgba(0,33,92,.06);}
+.who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
+.who-card{background:#fff;border:1.5px solid rgba(37,92,193,.16);border-radius:12px;padding:22px 20px;transition:box-shadow .2s,border-color .2s;box-shadow:0 2px 12px rgba(0,33,92,.06);}
 .who-card:hover{box-shadow:0 4px 24px rgba(0,33,92,.08);border-color:rgba(37,92,193,.25);}
 .who-icon{font-size:1.8rem;margin-bottom:10px;}
 .who-h{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.35;}
 .who-p{font-size:.77rem;color:var(--muted);line-height:1.62;}
 
 /* ── WHY DIFFERENT ── */
-.sec-dark{background:var(--navy);border-radius:20px;padding:56px 48px;margin:0;border-top:none !important;}
+.sec-dark{background:var(--navy);border-radius:16px;padding:48px 44px;margin:0;border-top:none !important;overflow:hidden;}
 .sec-dark + .sec{border-top:none;padding-top:72px;}
 .diff-grid{display:flex;flex-direction:column;gap:12px;margin-top:36px;}
 .diff-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:12px;align-items:center;}
@@ -268,19 +258,19 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .stag.open{background:rgba(37,92,193,.08);color:var(--blue);}
 
 /* ── BELOW HERO ── */
-.below{max-width:1160px;margin:0 auto;padding:0 5vw 100px;background:transparent;}
+.below{max-width:1160px;margin:0 auto;padding:0 5vw 80px;background:transparent;overflow-x:hidden;}
 
 /* section wrapper */
-.sec{padding:72px 0;border-top:1px solid rgba(37,92,193,.09);}
-.below .sec:nth-child(even){background:rgba(255,255,255,.55);border-radius:16px;padding:72px 40px;margin:0 -40px;}
+.sec{padding:64px 0;border-top:1px solid rgba(37,92,193,.1);}
+.below .sec:nth-child(even){background:rgba(255,255,255,.6);border-radius:16px;padding:64px 40px;margin:0 -40px;}
 .sec-tag{display:inline-block;background:rgba(37,92,193,.07);border:1px solid rgba(37,92,193,.14);color:var(--blue);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 11px;border-radius:100px;margin-bottom:12px;}
-.sec-h{font-family:var(--ffd);font-size:clamp(1.55rem,2.7vw,2.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--navy);margin-bottom:12px;}
+.sec-h{font-family:var(--ffd);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--navy);margin-bottom:10px;}
 .sec-h em{font-style:italic;color:var(--blue);}
-.sec-sub{font-size:.9rem;color:var(--muted);max-width:540px;line-height:1.72;font-weight:300;}
+.sec-sub{font-size:.88rem;color:var(--muted);max-width:520px;line-height:1.7;font-weight:300;margin-top:6px;}
 
 /* ── WHAT'S INSIDE ── */
-.inside-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
-.ic{background:#fff;border:1.5px solid rgba(37,92,193,.18);border-radius:14px;padding:24px 20px;transition:box-shadow .2s,border-color .2s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,33,92,.06);}
+.inside-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+.ic{background:#fff;border:1.5px solid rgba(37,92,193,.16);border-radius:12px;padding:22px 20px;transition:box-shadow .2s,border-color .2s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,33,92,.06);}
 .ic::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .ic:hover{box-shadow:0 4px 24px rgba(0,33,92,.08);border-color:rgba(37,92,193,.22);}
 .ic:hover::after{transform:scaleX(1);}
@@ -291,8 +281,8 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .ic-tag{display:inline-block;margin-top:9px;font-size:.62rem;font-weight:700;background:rgba(37,92,193,.08);color:var(--blue);border-radius:4px;padding:2px 8px;letter-spacing:.04em;}
 
 /* ── WHY GERMANY ── */
-.wg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
-.wc{background:#fff;border:1.5px solid rgba(37,92,193,.18);border-radius:14px;padding:22px 20px;transition:box-shadow .2s,border-color .2s;box-shadow:0 2px 12px rgba(0,33,92,.06);}
+.wg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+.wc{background:#fff;border:1.5px solid rgba(37,92,193,.16);border-radius:12px;padding:22px 20px;transition:box-shadow .2s,border-color .2s;box-shadow:0 2px 12px rgba(0,33,92,.06);}
 .wc:hover{box-shadow:0 4px 24px rgba(0,33,92,.08);border-color:rgba(37,92,193,.22);}
 .wc.hero{grid-column:span 2;background:var(--navy);border-color:transparent;}
 .wc-big{font-family:var(--ffd);font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px;}
@@ -303,8 +293,8 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .wc-icon{font-size:1.5rem;margin-bottom:9px;}
 
 /* ── FAQ ── */
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:36px;}
-.fqi{background:#fff;border:1.5px solid rgba(37,92,193,.18);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,33,92,.05);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
+.fqi{background:#fff;border:1.5px solid rgba(37,92,193,.14);border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,33,92,.04);}
 .fqq{width:100%;background:none;border:none;color:var(--navy);font-family:var(--ff);font-size:.83rem;font-weight:500;text-align:left;padding:15px 17px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .2s;}
 .fqq:hover{background:rgba(240,246,255,.9);}
 .fqa-arr{width:19px;height:19px;border-radius:50%;background:rgba(37,92,193,.08);display:flex;align-items:center;justify-content:center;font-size:.68rem;color:var(--blue);flex-shrink:0;transition:transform .28s,background .2s;font-weight:700;}
@@ -313,7 +303,7 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .fqi.open .fqa{max-height:260px;padding:0 17px 15px;}
 
 /* ── BOTTOM CTA BOX ── */
-.cta-box{background:var(--navy);border-radius:18px;padding:52px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:52px;position:relative;overflow:hidden;}
+.cta-box{background:var(--navy);border-radius:16px;padding:44px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:52px;position:relative;overflow:hidden;}
 .cta-box::before{content:'';position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(154,203,253,.09) 0%,transparent 65%);pointer-events:none;}
 .cta-box::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));}
 .cta-l{}
@@ -329,13 +319,20 @@ h1 .gw{font-style:normal;color:var(--gold);}
 .cta-links a:hover{color:var(--sky);}
 
 /* ── FOOTER ── */
-footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:#fff;}
-.ft-brand{font-weight:700;font-size:.9rem;color:var(--text);}
+footer{background:#fff;border-top:1px solid var(--border);padding:32px 5vw 24px;}
+.ft-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:20px;flex-wrap:wrap;}
+.ft-left{display:flex;flex-direction:column;gap:8px;}
+.ft-brand{font-weight:700;font-size:.95rem;color:var(--text);}
 .ft-brand span{color:var(--gold-d);}
-.ft-copy{font-size:.67rem;color:var(--muted);}
+.ft-address{font-size:.7rem;color:var(--muted);line-height:1.6;max-width:340px;}
+.ft-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.ft-phone{font-size:.88rem;font-weight:600;color:var(--navy);text-decoration:none;transition:color .2s;}
+.ft-phone:hover{color:var(--blue);}
 .ft-links{display:flex;gap:16px;}
-.ft-links a{font-size:.67rem;color:var(--muted);text-decoration:none;}
+.ft-links a{font-size:.7rem;color:var(--muted);text-decoration:none;}
 .ft-links a:hover{color:var(--blue);}
+.ft-bottom{border-top:1px solid var(--border);padding-top:16px;}
+.ft-copy{font-size:.67rem;color:var(--muted);}
 
 /* ── SCROLL TOP ── */
 .stb{position:fixed;bottom:26px;right:26px;width:37px;height:37px;border-radius:50%;background:var(--blue);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:all .28s;z-index:100;font-size:.95rem;box-shadow:0 4px 12px rgba(37,92,193,.3);}
@@ -391,41 +388,138 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
 .fu{opacity:1;transform:none;}
 
 /* ── RESPONSIVE ── */
+
+/* Tablet: 600px - 960px */
 @media(max-width:960px){
-  .hero{padding:36px 5vw 0;}
+  nav{padding:0 20px;}
+  .hero{padding:32px 4vw 0;}
+  .spk-img-wrap{width:240px;}
+  h1{font-size:clamp(1.7rem,4vw,2.4rem);}
   .inside-grid{grid-template-columns:1fr 1fr;}
   .wg-grid{grid-template-columns:1fr 1fr;}
   .wc.hero{grid-column:span 2;}
+  .who-grid{grid-template-columns:1fr 1fr;}
   .faq-grid{grid-template-columns:1fr;}
+  .diff-row{grid-template-columns:1fr 32px 1fr;}
+  .sec-dark{padding:40px 32px;}
   .cta-box{flex-direction:column;align-items:flex-start;padding:36px 28px;}
   .cta-r{align-items:flex-start;}
-  nav{padding:0 20px;}
-  .spk-img-wrap{width:220px;}
-  .trust-row{padding-bottom:32px;}
-}
-@media(max-width:600px){
-  .hero{padding:28px 16px 0;gap:24px;}
-  .below{padding:0 16px 64px;}
-  h1{font-size:1.75rem;}
-  .spk-img-wrap{width:180px;}
-  .trust-item{padding:0 16px;}
-  .meta-pills{gap:7px;}
-  .meta-pill{font-size:.7rem;padding:7px 12px;}
-  .inside-grid,.wg-grid{grid-template-columns:1fr;}
-  .wc.hero{grid-column:span 1;}
-  .cta-box{border-radius:12px;padding:24px 18px;}
-  footer{flex-direction:column;gap:10px;padding:22px 16px;}
-  .ft-links{flex-wrap:wrap;gap:10px;}
-  .tyb{padding:30px 22px;}
-  .ep-body{padding:18px 20px;}
-  nav .nav-r a:not(.nav-pill){display:none;}
+  .below .sec:nth-child(even){padding:64px 24px;margin:0 -24px;}
 }
 
+/* Mobile: up to 600px */
+@media(max-width:600px){
+  /* Nav */
+  nav{padding:0 16px;height:60px;}
+  nav .nav-r a:not(.nav-pill){display:none;}
+  .nav-pill{font-size:.75rem;padding:7px 14px;}
+
+  /* Hero */
+  .hero{padding:28px 16px 0;}
+  .hero-left{align-items:center;}
+  .badge-live{font-size:.6rem;padding:4px 12px;letter-spacing:.07em;text-align:center;}
+  h1{font-size:1.6rem;line-height:1.1;margin-bottom:12px;}
+  .hero-sub{font-size:.84rem;margin-bottom:0;}
+  .spk-img-wrap{width:200px;}
+  .nameplate{margin:0 8px;padding:12px 16px;}
+  .nameplate-name{font-size:1.05rem;}
+  .nameplate-role{font-size:.68rem;}
+  .meta-pills{gap:7px;margin-top:12px;}
+  .meta-pill{font-size:.68rem;padding:7px 12px;gap:5px;}
+  .hero-cta{width:100%;text-align:center;padding:13px 20px;font-size:.9rem;margin-top:16px;}
+  .cta-value-line{flex-wrap:wrap;justify-content:center;}
+  .urgency{flex-wrap:wrap;gap:10px;padding:12px 14px;margin-top:14px;}
+  .timer{justify-content:flex-start;}
+
+  /* Below sections */
+  .below{padding:0 14px 56px;}
+  .sec{padding:48px 0;}
+  .below .sec:nth-child(even){padding:48px 16px;margin:0 -14px;border-radius:0;}
+  .sec-h{font-size:1.4rem;}
+  .sec-sub{font-size:.84rem;}
+  .sec-tag{font-size:.6rem;}
+
+  /* Cards - single column */
+  .inside-grid{grid-template-columns:1fr;gap:12px;margin-top:24px;}
+  .ic{padding:18px 16px;}
+  .ic-num{font-size:1.8rem;}
+
+  .wg-grid{grid-template-columns:1fr;gap:12px;margin-top:24px;}
+  .wc.hero{grid-column:span 1;}
+  .wc{padding:18px 16px;}
+  .wc-big{font-size:1.8rem;}
+
+  .who-grid{grid-template-columns:1fr;gap:12px;margin-top:24px;}
+  .who-card{padding:18px 16px;}
+  .who-icon{font-size:1.5rem;margin-bottom:8px;}
+
+  /* Why different */
+  .sec-dark{padding:32px 16px;border-radius:12px;}
+  .diff-grid{gap:10px;margin-top:24px;}
+  .diff-row{grid-template-columns:1fr;gap:0;}
+  .diff-vs{display:none;}
+  .diff-other{border-radius:8px 8px 0 0;border-bottom:none;padding:12px 14px;}
+  .diff-us{border-radius:0 0 8px 8px;padding:12px 14px;}
+  .diff-other,.diff-us{font-size:.78rem;}
+
+  /* FAQ */
+  .faq-grid{grid-template-columns:1fr;gap:8px;margin-top:24px;}
+  .fqq{font-size:.8rem;padding:14px 15px;}
+  .fqa{font-size:.77rem;}
+
+  /* CTA box */
+  .cta-box{border-radius:12px;padding:28px 20px;gap:20px;margin-top:36px;}
+  .cta-h{font-size:1.3rem;}
+  .cta-p{font-size:.78rem;}
+  .cta-btn{width:100%;text-align:center;padding:13px 20px;font-size:.88rem;}
+  .cta-r{width:100%;}
+  .cta-links{justify-content:flex-start;}
+
+  /* Footer */
+  footer{padding:28px 16px 20px;}
+  .ft-top{flex-direction:column;gap:16px;}
+  .ft-right{align-items:flex-start;}
+  .ft-links{flex-wrap:wrap;gap:10px;}
+
+  /* Popups */
+  .tyb{padding:28px 18px;}
+  .ty-h{font-size:1.3rem;}
+  .ep-body{padding:16px 18px;}
+  .epfg{margin-bottom:9px;}
+  .fpm{border-radius:14px;}
+  .fpm-top{padding:16px 18px 14px;}
+  .prog-row{padding:12px 18px 0;}
+  .fsteps{padding:16px 18px 20px;}
+  .step-hd{font-size:.97rem;}
+  .sc{flex-wrap:wrap;gap:6px;padding:10px 12px;}
+  .scal{margin-right:8px;}
+
+  /* Form fields touch targets */
+  .fg input,.fg select,.prow{min-height:44px;}
+  .fbtn,.fbtn.navy{min-height:46px;font-size:.9rem;}
+}
+
+/* Small phones: up to 380px */
+@media(max-width:380px){
+  h1{font-size:1.45rem;}
+  .spk-img-wrap{width:170px;}
+  .meta-pill{font-size:.64rem;padding:6px 10px;}
+  .nameplate-name{font-size:.97rem;}
+}
+
+
+/* value anchor below hero CTA */
+.cta-value-line{display:flex;align-items:center;gap:8px;margin-top:10px;justify-content:center;}
+.cta-value-free{font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;}
+.cta-value-sep{color:rgba(255,255,255,.25);font-size:.75rem;}
+.cta-value-paid{font-size:.72rem;color:rgba(255,255,255,.4);}
+.cta-value-paid s{text-decoration-color:rgba(255,255,255,.35);}
+
 /* ── FORM POPUP MODAL ── */
-.fpo{position:fixed;inset:0;z-index:5000;background:rgba(0,20,60,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.fpo{position:fixed;inset:0;z-index:5000;background:rgba(0,20,60,.55);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;padding:0;opacity:0;pointer-events:none;transition:opacity .3s;}@media(min-width:481px){.fpo{align-items:center;padding:16px;}}
 .fpo.on{opacity:1;pointer-events:all;}
-.fpm{background:#fff;border-radius:18px;overflow:hidden;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,33,92,.22);transform:translateY(20px) scale(.97);transition:transform .32s;border:1.5px solid var(--border);position:relative;}
-.fpo.on .fpm{transform:translateY(0) scale(1);}
+.fpm{background:#fff;border-radius:18px;overflow:hidden;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,33,92,.22);transform:translateY(20px) scale(.97);transition:transform .32s;border:1.5px solid var(--border);position:relative;-webkit-overflow-scrolling:touch;}
+.fpo.on .fpm{transform:translateY(0) scale(1);}@media(max-width:480px){.fpm{border-radius:18px 18px 0 0;max-height:94vh;width:100%;max-width:100%;}}
 .fpm-top{background:var(--navy);padding:20px 24px 16px;position:relative;}
 .fpm-top::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));}
 .fpm-title{font-family:var(--ffd);font-size:1.1rem;font-weight:700;color:#fff;line-height:1.2;}
@@ -441,15 +535,11 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
 <nav>
   <span class="nav-brand">Terra<span>Tern</span></span>
   <div class="nav-r">
-    <a href="tel:+917094956963">
+    <a href="tel:+918064124242">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
-      +91 70949 56963
+      +91 80641 24242
     </a>
-    <a href="https://wa.me/917094956963" target="_blank">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-      WhatsApp
-    </a>
-    <button class="nav-pill" onclick="openForm()">Book Free Seat</button>
+    <button class="nav-pill" onclick="openForm()">Register Free</button>
   </div>
 </nav>
 
@@ -460,61 +550,49 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
 
     <!-- LEFT: Centered speaker hero -->
     <div class="hero-left">
-      <div class="badge-live"><span class="badge-dot"></span>Free 90-Minute Live Webinar &bull; Germany Opportunity Card</div>
+      <div class="badge-live"><span class="badge-dot"></span>Free Live Session &bull; Germany Opportunity Card</div>
 
-      <h1>Everything you need to know<br>to move to <span class="gw">Germany</span> — in one<br><em>free session.</em></h1>
+      <h1>Everything you need to know<br>to move to <span class="gw">Germany</span> in one<br><em>free session.</em></h1>
 
-      <p class="hero-sub">The Opportunity Card is Germany's open invitation to skilled Indians. Ritika covers eligibility, documents, job search, and salaries — live, in 90 minutes, at zero cost.</p>
+      <p class="hero-sub">The Opportunity Card is Germany's open invitation to skilled Indians. Ritika covers eligibility, documents, job search, and salaries. Live, in 45 minutes, at zero cost.</p>
 
       <!-- Speaker photo -->
       <div class="spk-img-wrap">
         <img
           class="spk-img"
           src="assets/images/experts/expert-ritika.jpg"
-          alt="Ritika — Certified Immigration Expert"
+          alt="Ritika - Certified Immigration Expert"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="spk-initials" style="display:none;">RI</div>
       </div>
 
       <!-- Nameplate -->
       <div class="nameplate">
-        <div class="nameplate-name">Ritika</div>
-        <div class="nameplate-role">Certified Immigration Expert &bull; Germany Visa Specialist &bull; TerraTern<br>500+ Successful Placements &bull; Featured in Times of India &amp; NDTV</div>
+        <div class="nameplate-name">Ritika Dogra</div>
+        <div class="nameplate-role">Certified Immigration Expert</div>
       </div>
 
       <!-- Date + Duration pills -->
       <div class="meta-pills">
         <span class="meta-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Multiple batches — June 7, 12, 14, 19
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Live Session
         </span>
         <span class="meta-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          90 Minutes Live on Zoom
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0121 8.868v6.264a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          45 Minutes on Google Meet
         </span>
       </div>
 
       <!-- CTA -->
-      <button class="hero-cta" onclick="openForm()">Register for Free Webinar &rarr;</button>
-
-      <!-- Trust stats -->
-      <div class="trust-row">
-        <div class="trust-item">
-          <div class="trust-icon">✅</div>
-          <div class="trust-num">500+</div>
-          <div class="trust-lbl">Candidates Placed</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">⭐</div>
-          <div class="trust-num">4.9/5</div>
-          <div class="trust-lbl">Expert Rating</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">👥</div>
-          <div class="trust-num">10K+</div>
-          <div class="trust-lbl">TerraTern Alumni</div>
-        </div>
+      <button class="hero-cta" onclick="openForm()">Register Free &rarr;</button>
+      <div class="cta-value-line">
+        <span class="cta-value-free">Free today</span>
+        <span class="cta-value-sep">&#183;</span>
+        <span class="cta-value-paid"><s>&#8377;2,499</s> after this batch</span>
       </div>
+
+
     </div>
 
   </div>
@@ -526,7 +604,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
   <!-- WHAT'S INSIDE -->
   <div class="sec fu">
     <div class="sec-tag">What's Inside</div>
-    <h2 class="sec-h">90 minutes. <em>Every one earns its place.</em></h2>
+    <h2 class="sec-h">45 minutes. <em>Every one earns its place.</em></h2>
     <p class="sec-sub">Ritika runs this like a consultant session, not a presentation. Sharp, specific, and anchored in real cases from 500+ successful placements.</p>
 
     <div class="inside-grid">
@@ -534,7 +612,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
         <div class="ic-num">01</div>
         <div class="ic-icon">🇩🇪</div>
         <div class="ic-h">The Opportunity Card explained from scratch</div>
-        <div class="ic-p">What the Chancenkarte actually is, why Germany introduced it in 2024, and how it differs from a standard work visa or EU Blue Card — no jargon, no assumed knowledge.</div>
+        <div class="ic-p">What the Chancenkarte actually is, why Germany introduced it in 2024, and how it differs from a standard work visa or EU Blue Card - no jargon, no assumed knowledge.</div>
         <span class="ic-tag">15 mins</span>
       </div>
       <div class="ic">
@@ -568,8 +646,8 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
       <div class="ic">
         <div class="ic-num">06</div>
         <div class="ic-icon">🎙️</div>
-        <div class="ic-h">Live Q&amp;A — your questions, honest answers</div>
-        <div class="ic-p">The final 10 minutes are entirely yours. Gaps in employment, non-IT backgrounds, family moves, unusual qualifications — Ritika takes it all on, live.</div>
+        <div class="ic-h">Live Q&amp;A - your questions, honest answers</div>
+        <div class="ic-p">The final 10 minutes are entirely yours. Gaps in employment, non-IT backgrounds, family moves, unusual qualifications - Ritika takes it all on, live.</div>
         <span class="ic-tag">10 mins</span>
       </div>
     </div>
@@ -583,34 +661,24 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
 
     <div class="who-grid">
       <div class="who-card">
-        <div class="who-icon">👨‍💻</div>
-        <div class="who-h">You're in IT, engineering, or healthcare</div>
-        <div class="who-p">Software engineers, network professionals, nurses, doctors, mechanical engineers, finance professionals — Germany's demand spans almost every skilled sector.</div>
+        <div class="who-icon">🎓</div>
+        <div class="who-h">Graduates with a recognised degree</div>
+        <div class="who-p">You hold a bachelor's degree or higher from a recognised institution. The Opportunity Card rewards educational qualifications directly in its points system.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">🤔</div>
-        <div class="who-h">You've Googled Germany visas and felt confused</div>
-        <div class="who-p">You've hit paywalled content, contradictory blog posts, and consultants who don't give straight answers. This session cuts through all of it.</div>
+        <div class="who-icon">💼</div>
+        <div class="who-h">Professionals with 2 or more years of work experience</div>
+        <div class="who-p">Full-time, freelance, or startup experience counts. If you have at least two years in any skilled role, you are already in the qualifying bracket.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">💰</div>
-        <div class="who-h">You want to earn more than you ever could in India</div>
-        <div class="who-p">€45,000 to €90,000 per year. Converted to INR, that's a number that changes your family's trajectory permanently. You deserve to understand how to get there.</div>
+        <div class="who-icon">📅</div>
+        <div class="who-h">Under 44 years of age</div>
+        <div class="who-p">The Opportunity Card scoring matrix favours candidates under 44. Younger applicants earn additional bonus points, making this the right time to act.</div>
       </div>
       <div class="who-card">
-        <div class="who-icon">🏠</div>
-        <div class="who-h">You want to move with your family</div>
-        <div class="who-p">Spouse who can work independently, free university for children, statutory healthcare from Day 1, and 26 Schengen countries to explore together.</div>
-      </div>
-      <div class="who-card">
-        <div class="who-icon">📋</div>
-        <div class="who-h">You want to know if you actually qualify</div>
-        <div class="who-p">Not a guess, not a vague "it depends." You want your actual points score on the Chancenkarte matrix. Ritika runs this live, in 20 minutes, for every attendee.</div>
-      </div>
-      <div class="who-card">
-        <div class="who-icon">🚀</div>
-        <div class="who-h">You're ready to take the first real step</div>
-        <div class="who-p">You've been thinking about this for months. This is not another YouTube video. It's a live expert session with a plan that comes out the other side.</div>
+        <div class="who-icon">✈️</div>
+        <div class="who-h">Ready to relocate within 30 days</div>
+        <div class="who-p">You are not just exploring. You are willing to move within 30 days of getting your visa. This session is built to turn that readiness into a concrete plan.</div>
       </div>
     </div>
   </div>
@@ -644,17 +712,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
           <div class="diff-text">Live Q&amp;A where Ritika addresses your actual profile, gaps, and circumstances</div>
         </div>
       </div>
-      <div class="diff-row">
-        <div class="diff-other">
-          <div class="diff-label-bad">Others</div>
-          <div class="diff-text">Figures from 2022 blog posts and outdated policy information</div>
-        </div>
-        <div class="diff-vs">VS</div>
-        <div class="diff-us">
-          <div class="diff-label-good">This Webinar</div>
-          <div class="diff-text">2025 salary data, updated visa timelines, and the most current Chancenkarte scoring matrix</div>
-        </div>
-      </div>
+
       <div class="diff-row">
         <div class="diff-other">
           <div class="diff-label-bad">Others</div>
@@ -674,7 +732,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
         <div class="diff-vs">VS</div>
         <div class="diff-us">
           <div class="diff-label-good">This Webinar</div>
-          <div class="diff-text">Fully live on Zoom with Ritika, plus 7-day replay access afterwards</div>
+          <div class="diff-text">Fully live on Google Meet with Ritika. Book your seat, show up, get clarity.</div>
         </div>
       </div>
     </div>
@@ -684,7 +742,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
   <div class="sec fu">
     <div class="sec-tag">Why Germany</div>
     <h2 class="sec-h">A government that <em>built a visa</em><br>to bring skilled Indians in.</h2>
-    <p class="sec-sub">Germany has over 340,000 unfilled skilled roles and a labour shortage that isn't going away. The Opportunity Card is the government's answer — and your window.</p>
+    <p class="sec-sub">Germany has over 340,000 unfilled skilled roles and a labour shortage that isn't going away. The Opportunity Card is the government's answer - and your window.</p>
 
     <div class="wg-grid">
       <div class="wc hero">
@@ -728,7 +786,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
     <div class="faq-grid">
       <div class="fqi">
         <button class="fqq">Is this webinar actually free? <span class="fqa-arr">+</span></button>
-        <div class="fqa">Yes, completely. No course fee, no hidden charge, no credit card needed. Register, show up, and learn. Every attendee also receives a free participation certificate and 7-day replay access at zero cost.</div>
+        <div class="fqa">Yes, completely. No course fee, no hidden charge, no credit card needed. Register, show up, and learn. Every attendee receives a free participation certificate.</div>
       </div>
       <div class="fqi">
         <button class="fqq">Do I need prior knowledge about German visas? <span class="fqa-arr">+</span></button>
@@ -742,10 +800,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
         <button class="fqq">Can I ask about my specific profile? <span class="fqa-arr">+</span></button>
         <div class="fqa">Yes. The last 10 minutes of every session is a live open Q&amp;A where Ritika answers profile-specific questions directly. For deeper one-on-one assessment, attendees get priority access to book a free 1:1 consultation after the webinar.</div>
       </div>
-      <div class="fqi">
-        <button class="fqq">Will it be recorded if I can't attend live? <span class="fqa-arr">+</span></button>
-        <div class="fqa">Yes. All registered attendees receive a 7-day replay link after the session. Attending live is recommended since the open Q&amp;A is exclusive to live participants.</div>
-      </div>
+      
       <div class="fqi">
         <button class="fqq">Which session date should I pick? <span class="fqa-arr">+</span></button>
         <div class="fqa">All four sessions cover identical content. Saturday morning batches at 11 AM suit professionals with weekday commitments. Thursday evening batches at 7 PM are flexible for most schedules. Pick what fits your calendar.</div>
@@ -756,7 +811,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
       </div>
       <div class="fqi">
         <button class="fqq">What happens after the webinar? <span class="fqa-arr">+</span></button>
-        <div class="fqa">All attendees get priority access to book a free 1:1 eligibility consultation with a TerraTern advisor. There is no obligation to take anything further — but if you decide you want help with your application, the option is there.</div>
+        <div class="fqa">All attendees get priority access to book a free 1:1 eligibility consultation with a TerraTern advisor. There is no obligation to take anything further - but if you decide you want help with your application, the option is there.</div>
       </div>
     </div>
   </div>
@@ -765,33 +820,38 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
   <div class="cta-box fu">
     <div class="cta-l">
       <div class="cta-ey">Still thinking about it?</div>
-      <div class="cta-h">90 minutes. <span>Zero cost.</span><br>Complete clarity on Germany.</div>
-      <div class="cta-p">500+ Indians have already moved to Germany with TerraTern. This webinar is the sharpest, most honest first step you can take — and it costs you nothing.</div>
+      <div class="cta-h">45 minutes. <span>Zero cost.</span><br>Complete clarity on Germany.</div>
+      <div class="cta-p">500+ Indians have already moved to Germany with TerraTern. This webinar is the sharpest, most honest first step you can take - and it costs you nothing.</div>
     </div>
     <div class="cta-r">
-      <button class="cta-btn" onclick="openForm()">Reserve My Free Seat &rarr;</button>
+      <button class="cta-btn" onclick="openForm()">Register Free &rarr;</button>
       <div class="cta-links">
-        <a href="tel:+917094956963">
+        <a href="tel:+918064124242">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
-          +91 70949 56963
+          +91 80641 24242
         </a>
-        <a href="https://wa.me/917094956963" target="_blank">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          WhatsApp us
-        </a>
-      </div>
+    </div>
     </div>
   </div>
 
 </div>
 <!-- ── FOOTER ── -->
 <footer>
-  <span class="ft-brand">Terra<span>Tern</span></span>
-  <span class="ft-copy">TerraTern Pvt Ltd &bull; HSR Layout, Bangalore 560102 &bull; &copy; 2025 TerraTern. All rights reserved.</span>
-  <div class="ft-links">
-    <a href="tel:+917094956963">+91 70949 56963</a>
-    <a href="mailto:v.aswinraaju@gmail.com">Email</a>
-    <a href="#">Privacy Policy</a>
+  <div class="ft-top">
+    <div class="ft-left">
+      <span class="ft-brand">Terra<span>Tern</span></span>
+      <div class="ft-address">HQ - Bangalore, India<br>4th Floor, HustleHub 1901, 19th Main Road, HSR Layout Sector 1, Bangalore, Karnataka 560102</div>
+    </div>
+    <div class="ft-right">
+      <a href="tel:+918064124242" class="ft-phone">+91 80641 24242</a>
+      <div class="ft-links">
+        <a href="https://terratern.com/privacy-policy/" target="_blank">Privacy Policy</a>
+        <a href="https://terratern.com/terms-and-condition/" target="_blank">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="ft-copy">&copy; 2026 TERRATERN PRIVATE LIMITED. All rights reserved.</span>
   </div>
 </footer>
 
@@ -802,7 +862,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
   <div class="tyb">
     <div class="ty-ico">🎉</div>
     <div class="ty-h">You're confirmed!</div>
-    <p class="ty-m">Your Zoom link has been sent to your <strong>email and WhatsApp</strong>. See you at the session.</p>
+    <p class="ty-m">Your Google Meet link has been sent to your <strong>email and WhatsApp</strong>. See you at the session.</p>
     <a href="https://cutt.ly/VtVIWef3" target="_blank" class="ty-cta" id="tyCta">Check Your Free Eligibility &rarr;</a>
     <div class="ty-tm">Taking you to the eligibility checker in <strong><span id="tyC">10</span>s</strong></div>
   </div>
@@ -857,7 +917,7 @@ footer{border-top:1px solid var(--border);padding:26px 5vw;display:flex;align-it
           </select>
         </div>
       </div>
-      <button class="epsub" id="epSub">Reserve My Free Seat &rarr;</button>
+      <button class="epsub" id="epSub">Register Free &rarr;</button>
       <div class="epskip" id="epSkip">I'll figure out Germany on my own</div>
     </div>
   </div>
@@ -964,7 +1024,7 @@ document.querySelectorAll('.fqq').forEach(b=>{
   };
 });
 
-// fade-up disabled — content always visible
+// fade-up disabled - content always visible
 
 // ── EXIT POPUP ──
 const ep=document.getElementById('epo');
@@ -1000,7 +1060,7 @@ document.getElementById('epSub').onclick=()=>{
   <div class="fpm">
     <div class="fpm-top">
       <div class="fpm-title">Reserve your <em>free seat</em></div>
-      <div class="fpm-sub">Free webinar &bull; Zoom &bull; 90 mins &bull; Zoom link sent instantly</div>
+      <div class="fpm-sub">Free webinar &bull; Zoom &bull; 45 mins &bull; Zoom link sent instantly</div>
       <button class="fpm-close" onclick="closeForm()">✕</button>
     </div>
 
@@ -1078,8 +1138,8 @@ document.getElementById('epSub').onclick=()=>{
 
       <!-- STEP 3 -->
       <div class="fstep" id="st3">
-        <div class="step-hd">Choose your session</div>
-        <div class="step-sub">Same content across all batches. Pick what fits your schedule.</div>
+        <div class="step-hd">Your available slots</div>
+        <div class="step-sub">Pick a session that works for you. Same content across all batches.</div>
         <div class="serr" id="serr">Please select a session date to continue.</div>
         <div class="slots">
           <div class="sopt">
@@ -1087,7 +1147,7 @@ document.getElementById('epSub').onclick=()=>{
             <label class="sc" for="ws1">
               <div style="display:flex;align-items:center;">
                 <div class="scal"><div class="scal-d">Sat</div><div class="scal-n">7</div></div>
-                <div><div class="sname">Saturday, 7 June</div><div class="stime">11:00 AM IST &bull; 90 mins on Zoom</div></div>
+                <div><div class="sname">Saturday, 7 June</div><div class="stime">11:00 AM IST &bull; 45 mins on Zoom</div></div>
               </div>
               <span class="stag few">Few Seats</span>
             </label>
@@ -1097,7 +1157,7 @@ document.getElementById('epSub').onclick=()=>{
             <label class="sc" for="ws2">
               <div style="display:flex;align-items:center;">
                 <div class="scal"><div class="scal-d">Thu</div><div class="scal-n">12</div></div>
-                <div><div class="sname">Thursday, 12 June</div><div class="stime">7:00 PM IST &bull; 90 mins on Zoom</div></div>
+                <div><div class="sname">Thursday, 12 June</div><div class="stime">7:00 PM IST &bull; 45 mins on Zoom</div></div>
               </div>
               <span class="stag fast">Filling Fast</span>
             </label>
@@ -1107,7 +1167,7 @@ document.getElementById('epSub').onclick=()=>{
             <label class="sc" for="ws3">
               <div style="display:flex;align-items:center;">
                 <div class="scal"><div class="scal-d">Sat</div><div class="scal-n">14</div></div>
-                <div><div class="sname">Saturday, 14 June</div><div class="stime">11:00 AM IST &bull; 90 mins on Zoom</div></div>
+                <div><div class="sname">Saturday, 14 June</div><div class="stime">11:00 AM IST &bull; 45 mins on Zoom</div></div>
               </div>
               <span class="stag open">Open</span>
             </label>
@@ -1117,7 +1177,7 @@ document.getElementById('epSub').onclick=()=>{
             <label class="sc" for="ws4">
               <div style="display:flex;align-items:center;">
                 <div class="scal"><div class="scal-d">Thu</div><div class="scal-n">19</div></div>
-                <div><div class="sname">Thursday, 19 June</div><div class="stime">7:00 PM IST &bull; 90 mins on Zoom</div></div>
+                <div><div class="sname">Thursday, 19 June</div><div class="stime">7:00 PM IST &bull; 45 mins on Zoom</div></div>
               </div>
               <span class="stag open">Open</span>
             </label>

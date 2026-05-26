@@ -788,4 +788,104 @@ window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', 
 scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
 // ── FAQ ──
-document.querySelectorAl
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement, isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── FADE UP ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// ── THANK YOU POPUP ──
+const tyPopup = document.getElementById('tyPopup');
+let tyTimer = null;
+let formSubmitted = false;
+
+function showThankYou() {
+  closePopup();
+  formSubmitted = true;
+  tyPopup.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  let secs = 10;
+  document.getElementById('tyCountdown').textContent = secs;
+  tyTimer = setInterval(() => {
+    secs--;
+    document.getElementById('tyCountdown').textContent = secs;
+    if (secs <= 0) { clearInterval(tyTimer); window.location.href = 'https://cutt.ly/VtVIWef3'; }
+  }, 1000);
+}
+document.getElementById('tyCtaBtn').addEventListener('click', () => clearInterval(tyTimer));
+
+// ── MAIN FORM SUBMIT ──
+document.getElementById('submit-btn').addEventListener('click', () => {
+  const name = document.getElementById('f-name'), email = document.getElementById('f-email'),
+        mobile = document.getElementById('f-mobile'), edu = document.getElementById('f-education'),
+        exp = document.getElementById('f-exp');
+  let valid = true;
+  [name, email, edu, exp].forEach(el => el.style.borderColor = '');
+  mobile.closest('.phone-wrap').style.borderColor = '';
+  [name, edu, exp].forEach(el => { if (!el.value.trim()) { el.style.borderColor='#dc2626'; valid=false; } });
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.value.trim() || !emailRe.test(email.value.trim())) { email.style.borderColor='#dc2626'; valid=false; }
+  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) { mobile.closest('.phone-wrap').style.borderColor='#dc2626'; valid=false; }
+  if (valid) {
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = '✓ Submitted!';
+    btn.style.background = '#16a34a';
+    submitLead({ name:name.value.trim(), email:email.value.trim(), mobile:mobile.value.trim(), education:edu.value, work_experience:exp.value });
+    setTimeout(showThankYou, 600);
+  }
+});
+
+// ── POPUP ──
+const popup = document.getElementById('exitPopup');
+let popupShown = false;
+
+function showPopup(isMobileTimer) {
+  if (popupShown || formSubmitted) return;
+  popupShown = true;
+  if (isMobileTimer) {
+    document.getElementById('popupHeading').innerHTML = 'One Quick Step<br>Before You Scroll Away';
+    document.getElementById('popupSubtext').textContent = 'Check your eligibility in 30 seconds. Free, no commitment.';
+  }
+  popup.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() { popup.classList.remove('active'); document.body.style.overflow = ''; }
+
+const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+if (!isMobile) {
+  document.addEventListener('mouseleave', e => { if (e.clientY <= 8) showPopup(false); });
+} else {
+  setTimeout(() => showPopup(true), 20000);
+}
+document.getElementById('popupClose').addEventListener('click', closePopup);
+document.getElementById('popupSkip').addEventListener('click', closePopup);
+popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
+document.getElementById('popup-submit-btn').addEventListener('click', () => {
+  const fields = ['p-name','p-phone','p-email','popup-education','popup-experience'].map(id => document.getElementById(id));
+  let valid = true;
+  fields.forEach(f => { if (!f.value) { f.style.borderColor='#dc2626'; valid=false; } else { f.style.borderColor=''; } });
+  if (valid) {
+    const btn = document.getElementById('popup-submit-btn');
+    btn.textContent = '✓ Got it!';
+    btn.style.background = '#16a34a';
+    submitLead({
+      name:            document.getElementById('p-name').value.trim(),
+      email:           document.getElementById('p-email').value.trim(),
+      mobile:          document.getElementById('p-phone').value.trim(),
+      education:       document.getElementById('popup-education').value,
+      work_experience: document.getElementById('popup-experience').value,
+    });
+    setTimeout(showThankYou, 600);
+  }
+});
+</script>
+</body>
+</html>

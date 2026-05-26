@@ -106,8 +106,8 @@ main{display:block;}
 .er-badge{position:absolute;bottom:-4px;right:-4px;background:var(--gold);color:var(--navy);font-size:.48rem;font-weight:800;letter-spacing:.04em;padding:2px 5px;border-radius:100px;white-space:nowrap;}
 .er-info{flex:1;min-width:0;}
 .er-sup{font-size:.6rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1px;}
-.er-name{font-size:.9rem;font-weight:800;color:var(--navy);margin-bottom:1px;transition:opacity .4s;}
-.er-spec{font-size:.67rem;color:var(--muted);line-height:1.4;transition:opacity .4s;}
+.er-name{font-size:.9rem;font-weight:800;color:var(--navy);margin-bottom:1px;}
+.er-spec{font-size:.67rem;color:var(--muted);line-height:1.4;}
 .er-dots{display:flex;gap:4px;margin-top:5px;}
 .er-dot{width:5px;height:5px;border-radius:50%;background:rgba(37,92,193,.2);transition:background .3s;cursor:pointer;}
 .er-dot.active{background:var(--blue);}
@@ -148,7 +148,7 @@ section{padding:80px 0;}
 .elig-card p{font-size:0.8rem;color:var(--muted);line-height:1.58;}
 .elig-pts{display:inline-block;margin-top:9px;font-size:0.66rem;font-weight:700;background:rgba(37,92,193,0.09);color:var(--blue);border-radius:4px;padding:3px 9px;letter-spacing:0.04em;}
 
-/* WHY GERMANY — combined with IT stats */
+/* WHY GERMANY */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
 .why-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:22px;transition:all 0.2s;}
 .why-card:hover{box-shadow:var(--shadow);border-color:rgba(37,92,193,0.28);}
@@ -159,12 +159,6 @@ section{padding:80px 0;}
 .why-card p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
 .why-card.hero-card p{color:rgba(255,255,255,0.73);}
 .why-big{font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:6px;}
-
-/* IT stats row — sits inside the combined section */
-.it-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
-.it-stat-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
-.it-stat-num{font-size:1.8rem;font-weight:800;color:var(--blue);line-height:1;}
-.it-stat-label{font-size:0.72rem;color:var(--muted);margin-top:4px;font-weight:500;}
 
 /* WOW */
 .wow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;}
@@ -270,7 +264,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
   .elig-grid,.why-grid,.timeline-grid{grid-template-columns:1fr 1fr;}
   .wow-grid{grid-template-columns:1fr 1fr;}
-  .it-stats{grid-template-columns:1fr 1fr;}
   .faq-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 2;}
   nav{padding:0 20px;}
@@ -281,7 +274,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 }
 
 @media(max-width:600px){
-  .elig-grid,.why-grid,.timeline-grid,.wow-grid,.it-stats,.testimonial-grid{grid-template-columns:1fr;}
+  .elig-grid,.why-grid,.timeline-grid,.wow-grid,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
   nav{padding:0 16px;height:60px;}
   .nav-logo img{height:36px;}
@@ -312,7 +305,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .footer-text{text-align:left;}
   .footer-links{justify-content:flex-start;}
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
-  /* Popup mobile */
   .popup-box{grid-template-columns:1fr;max-width:420px;max-height:92vh;overflow-y:auto;}
   .popup-left{display:none;}
   .popup-close{background:rgba(0,0,0,0.25);}
@@ -387,9 +379,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
           <div class="er-sup">Your expert today</div>
           <div class="er-name" id="erName">Ritika</div>
           <div class="er-spec" id="erSpec">Certified Immigration Advisor, 4 yrs</div>
-          <div class="er-dots" style="display:none;">
-            <span class="er-dot active" data-i="0"></span>
-          </div>
+          <div class="er-dots" style="display:none;"><span class="er-dot active" data-i="0"></span></div>
         </div>
       </div>
       <h3>Register for a Free Expert Consultation</h3>
@@ -453,7 +443,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-ananya-m.jpg" alt="Ananya M." onerror="this.parentElement.textContent='AM';this.parentElement.style.background='linear-gradient(135deg,#fb923c,#9a3412)'"></div><div class="person-name">Ananya M.</div><div class="person-dest">📍 Cologne</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-vaishnavi-p.jpg" alt="Vaishnavi P." onerror="this.parentElement.textContent='VP';this.parentElement.style.background='linear-gradient(135deg,#38bdf8,#0369a1)'"></div><div class="person-name">Vaishnavi P.</div><div class="person-dest">📍 Düsseldorf</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-sophia-p.jpg" alt="Sophia P." onerror="this.parentElement.textContent='SP';this.parentElement.style.background='linear-gradient(135deg,#f472b6,#9d174d)'"></div><div class="person-name">Sophia P.</div><div class="person-dest">📍 Frankfurt</div></div>
-    <!-- Set B -->
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-arjun-k.jpg" alt="Arjun K." onerror="this.parentElement.textContent='AK';this.parentElement.style.background='linear-gradient(135deg,#4f8ef7,#255cc1)'"></div><div class="person-name">Arjun K.</div><div class="person-dest">📍 Berlin</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-priya-r.jpg" alt="Priya R." onerror="this.parentElement.textContent='PR';this.parentElement.style.background='linear-gradient(135deg,#f97b6b,#c0392b)'"></div><div class="person-name">Priya R.</div><div class="person-dest">📍 Munich</div></div>
     <div class="person-card"><div class="person-avatar"><img src="assets/images/alumni/alumni-siddharth-k.jpg" alt="Siddharth K." onerror="this.parentElement.textContent='SK';this.parentElement.style.background='linear-gradient(135deg,#43c6ac,#1a7a5e)'"></div><div class="person-name">Siddharth K.</div><div class="person-dest">📍 Frankfurt</div></div>
@@ -498,7 +487,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <h2 class="section-title">Europe's Tech Powerhouse.<br><em>Built for IT Talent from India.</em></h2>
     <p class="section-sub">Germany isn't just a visa destination it's a career launchpad with strong worker protections, free healthcare, and a booming tech sector. The German government created the Opportunity Card specifically to fast-track international IT talent into a market with 350,000+ open vacancies, €63B in tech industry revenue, and IT hiring that has grown 3× since 2020.</p>
   </div>
-
   <div class="why-grid fade-up">
     <div class="why-card hero-card"><div class="why-big">€45K – €120K</div><h4>IT Salary Range Across Experience Levels</h4><p>Entry-level IT roles in Germany start at €45,000/year, scaling to €80,000–€120,000 for senior and specialist profiles. Combine that with 30 mandatory paid leave days, statutory health insurance from Day 1, and strong employment law the long-term financial value of this move is transformational for Indian IT professionals.</p></div>
     <div class="why-card"><div class="why-icon">🌍</div><h4>World's 4th Largest Economy</h4><p>Home to SAP, Siemens, BMW, Bosch, and Deutsche Telekom global giants with massive, ongoing IT hiring pipelines across all tech stacks.</p></div>
@@ -544,7 +532,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="tl-card"><div class="tl-week">Week 4–8 (Parallel)</div><h4>German Language Training + 100+ Mock Tests</h4><p>While documents are prepared, you begin A1 German training online or at our Bangalore centre. 100+ mock tests fast-track your language certification in parallel.</p></div>
     <div class="tl-card"><div class="tl-week">Week 7–10</div><h4>Blocked Account Setup + Visa Filing + Job Search Begins</h4><p>We walk you through opening your Sperrkonto and transferring funds via RBI-compliant channels. Your visa package is filed at the consulate — and job search support kicks in immediately. CV builds, recruiter introductions, and application support start in parallel. Average visa approval: 7 days.</p></div>
     <div class="tl-card"><div class="tl-week">Week 12–20</div><h4>Visa in Hand — Land in Germany</h4><p>With visa approved, you land in Germany and continue your active job search on the ground. Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you.</p></div>
-    <div class="tl-card"><div class="tl-week">Month 4–6</div><h4>Land in Germany · Start Your IT Career</h4><p>Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you. You never navigate Germany alone.</p></div>
+    <div class="tl-card"><div class="tl-week">Month 4–6</div><h4>Start Your IT Career in Germany</h4><p>Job search support continues for up to 6 months after landing. Recruiter network, CV support, and job portal guidance until you have a signed employment contract. We consider the job done only when you're employed.</p></div>
   </div>
 </div>
 </section>
@@ -695,42 +683,45 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 const API_URL    = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
 const SERVICE_ID = '2';
 
+// ── UTM DEFAULTS ──
 const UTM_DEFAULTS = {
   utm_source:   'Paid',
   utm_medium:   'fb_landing_page',
   utm_adset:    'GOC_IT_LP',
   utm_campaign: 'GOC_IT_LP',
-  utm_placement: 'GOC_IT_LP',
 };
 
-// Set UTM cookies on first visit from URL params, fallback to defaults
-(function setUTMCookies() {
-  const params = new URLSearchParams(window.location.search);
-  const keys = ['utm_source','utm_medium','utm_adset','utm_campaign'];
-  keys.forEach(key => {
-    const val = params.get(key) || UTM_DEFAULTS[key] || '';
-    // Only set if not already cookied (preserve first-touch)
-    if (!getCookie(key)) {
-      setCookie(key, val, 30);
-    }
-  });
-})();
-
+// ── COOKIE HELPERS ──
 function setCookie(name, value, days) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires + ';path=/';
 }
-
 function getCookie(name) {
   return decodeURIComponent(
     document.cookie.split('; ').find(r => r.startsWith(name + '='))?.split('=')[1] || ''
   );
 }
-
 function getUTM(key) {
   return getCookie(key) || UTM_DEFAULTS[key] || '';
 }
 
+// ── SET UTM COOKIES ON PAGE LOAD (first-touch, 30-day) ──
+(function setUTMCookies() {
+  const params = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_adset','utm_campaign'].forEach(key => {
+    const val = params.get(key) || UTM_DEFAULTS[key] || '';
+    if (!getCookie(key)) setCookie(key, val, 30);
+  });
+})();
+
+// ── FETCH VISITOR IP (non-blocking) ──
+let visitorIP = '';
+fetch('https://api.ipify.org?format=json')
+  .then(r => r.json())
+  .then(d => { visitorIP = d.ip || ''; })
+  .catch(() => { visitorIP = ''; });
+
+// ── SUBMIT LEAD ──
 async function submitLead(data) {
   const payload = {
     form_data: {
@@ -743,9 +734,9 @@ async function submitLead(data) {
       utm_medium:             getUTM('utm_medium'),
       utm_adset:              getUTM('utm_adset'),
       utm_campaign:           getUTM('utm_campaign'),
-      utm_placement:           getUTM('utm_placement'),
       work_experience:        data.work_experience,
       education:              data.education,
+      ip_address:             visitorIP,
     }
   };
   console.log('Submitting lead:', JSON.stringify(payload));
@@ -770,17 +761,11 @@ let ei = 0;
 function switchExpert(idx) {
   const p = document.getElementById('erPhoto'), ini = document.getElementById('erInitials'),
         nm = document.getElementById('erName'), sp = document.getElementById('erSpec'), ex = experts[idx];
-  nm.style.opacity = '0'; sp.style.opacity = '0';
-  setTimeout(() => {
-    nm.textContent = ex.name; sp.textContent = ex.spec;
-    p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
-    p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
-    nm.style.opacity = '1'; sp.style.opacity = '1';
-    document.querySelectorAll('.er-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
-  }, 280);
+  nm.textContent = ex.name; sp.textContent = ex.spec;
+  p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
+  p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
 }
-setInterval(() => { if(experts.length > 1) { ei=(ei+1)%experts.length; switchExpert(ei); } }, 10000);
-document.querySelectorAll('.er-dot').forEach(d => d.addEventListener('click', () => { ei=+d.dataset.i; switchExpert(ei); }));
+// No interval — single expert, no rotation needed
 
 // ── SLOTS ──
 const slots = Math.floor(Math.random() * 15) + 4;
@@ -803,129 +788,4 @@ window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', 
 scrollTopBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
 // ── FAQ ──
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement, isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-
-// ── FADE UP ──
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-// ── THANK YOU POPUP ──
-const tyPopup = document.getElementById('tyPopup');
-let tyTimer = null;
-let formSubmitted = false;
-
-function showThankYou() {
-  closePopup();
-  formSubmitted = true;
-  tyPopup.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  let secs = 10;
-  document.getElementById('tyCountdown').textContent = secs;
-  tyTimer = setInterval(() => {
-    secs--;
-    document.getElementById('tyCountdown').textContent = secs;
-    if (secs <= 0) { clearInterval(tyTimer); window.location.href = 'https://cutt.ly/VtVIWef3'; }
-  }, 1000);
-}
-
-document.getElementById('tyCtaBtn').addEventListener('click', () => clearInterval(tyTimer));
-
-// ── MAIN FORM SUBMIT ──
-document.getElementById('submit-btn').addEventListener('click', () => {
-  const name = document.getElementById('f-name'), email = document.getElementById('f-email'),
-        mobile = document.getElementById('f-mobile'), edu = document.getElementById('f-education'),
-        exp = document.getElementById('f-exp');
-  let valid = true;
-  [name, email, mobile, edu, exp].forEach(el => el.style.borderColor = '');
-  if (mobile.closest('.phone-wrap')) mobile.closest('.phone-wrap').style.borderColor = '';
-  [name, edu, exp].forEach(el => { if (!el.value.trim()) { el.style.borderColor='#dc2626'; valid=false; } });
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email.value.trim() || !emailRe.test(email.value.trim())) { email.style.borderColor='#dc2626'; valid=false; }
-  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) { mobile.closest('.phone-wrap').style.borderColor='#dc2626'; valid=false; }
-  if (valid) {
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = '✓ Submitted!';
-    btn.style.background = '#16a34a';
-    submitLead({
-      name:            name.value.trim(),
-      email:           email.value.trim(),
-      mobile:          mobile.value.trim(),
-      education:       edu.value,
-      work_experience: exp.value,
-    });
-    setTimeout(showThankYou, 600);
-  }
-});
-
-// ── POPUP EXPERT ROTATOR ──
-function switchPopupExpert(idx) {
-  const ex = experts[idx], photo = document.getElementById('popupErPhoto'),
-        ini = document.getElementById('popupErInitials'), nm = document.getElementById('popupErName'),
-        sp = document.getElementById('popupErSpec');
-  nm.style.opacity='0'; sp.style.opacity='0';
-  setTimeout(() => {
-    nm.textContent = ex.name;
-    sp.textContent = 'Certified Immigration Advisor · ' + ex.spec.split(', ')[1];
-    photo.src=ex.img; photo.style.display='block'; ini.style.display='none';
-    photo.onerror=function(){ this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
-    nm.style.opacity='1'; sp.style.opacity='1';
-    document.querySelectorAll('.popup-er-dot').forEach((d,i) => { d.style.background = i===idx ? 'var(--gold)' : 'rgba(255,255,255,0.25)'; });
-  }, 280);
-}
-document.querySelectorAll('.popup-er-dot').forEach(d => d.addEventListener('click', () => switchPopupExpert(+d.dataset.i)));
-setInterval(() => { if(experts.length > 1) switchPopupExpert(ei); }, 10000);
-
-// ── POPUP ──
-const popup = document.getElementById('exitPopup');
-let popupShown = false;
-
-function showPopup(isMobileTimer) {
-  if (popupShown || formSubmitted) return;
-  popupShown = true;
-  if (isMobileTimer) {
-    document.getElementById('popupHeading').innerHTML = 'One Quick Step<br>Before You Scroll Away';
-    document.getElementById('popupSubtext').textContent = 'Check your eligibility in 30 seconds. Free, no commitment.';
-  }
-  popup.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePopup() { popup.classList.remove('active'); document.body.style.overflow = ''; }
-const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
-if (!isMobile) {
-  document.addEventListener('mouseleave', e => { if (e.clientY <= 8) showPopup(false); });
-} else {
-  setTimeout(() => showPopup(true), 20000);
-}
-document.getElementById('popupClose').addEventListener('click', closePopup);
-document.getElementById('popupSkip').addEventListener('click', closePopup);
-popup.addEventListener('click', e => { if (e.target === popup) closePopup(); });
-document.getElementById('popup-submit-btn').addEventListener('click', () => {
-  const fields = ['p-name','p-phone','p-email','popup-education','popup-experience'].map(id => document.getElementById(id));
-  let valid = true;
-  fields.forEach(f => { if (!f.value) { f.style.borderColor='#dc2626'; valid=false; } else { f.style.borderColor=''; } });
-  if (valid) {
-    const btn = document.getElementById('popup-submit-btn');
-    btn.textContent = '✓ Got it!';
-    btn.style.background = '#16a34a';
-    submitLead({
-      name:            document.getElementById('p-name').value.trim(),
-      email:           document.getElementById('p-email').value.trim(),
-      mobile:          document.getElementById('p-phone').value.trim(),
-      education:       document.getElementById('popup-education').value,
-      work_experience: document.getElementById('popup-experience').value,
-    });
-    setTimeout(showThankYou, 600);
-  }
-});
-</script>
-</body>
-</html>
+document.querySelectorAl

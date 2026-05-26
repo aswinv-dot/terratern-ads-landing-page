@@ -60,18 +60,90 @@ main{display:block;}
 .hero-stat-num{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;}
 .hero-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.58);margin-top:3px;font-weight:500;}
 
-/* Bonus banner */
-.hero-bonus{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;border-radius:10px;padding:12px;display:flex;gap:10px;align-items:flex-start;}
-.hero-bonus-icon{font-size:1.3rem;flex-shrink:0;}
-.hero-bonus-title{font-size:.82rem;font-weight:800;color:#92400e;margin-bottom:4px;}
-.hero-bonus-list{font-size:.74rem;color:#b45309;line-height:1.6;margin-bottom:6px;}
-.hero-bonus-timer{margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-.bonus-timer-label{font-size:0.7rem;font-weight:600;color:#92400e;opacity:0.8;}
-.bonus-timer-display{display:flex;align-items:center;gap:4px;}
-.bonus-timer-block{display:flex;flex-direction:column;align-items:center;background:#92400e;border-radius:6px;padding:5px 10px;min-width:44px;}
-.bonus-timer-block span:first-child{font-size:1.35rem;font-weight:800;color:#fff;line-height:1;letter-spacing:0.02em;}
-.bonus-timer-unit{font-size:0.52rem;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
-.bonus-timer-sep{font-size:1.3rem;font-weight:800;color:#92400e;line-height:1;margin-bottom:6px;}
+/* Bonus banner — frosted glass */
+.hero-bonus{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(241,200,25,0.45);
+  border-radius:14px;
+  padding:16px 18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bonus::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(241,200,25,0.8),rgba(255,255,255,0.6),rgba(241,200,25,0.8),transparent);
+}
+.hero-bonus-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.hero-bonus-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(241,200,25,0.12);
+  border:1px solid rgba(241,200,25,0.3);
+  border-radius:100px;
+  padding:4px 12px;
+  font-size:0.68rem;font-weight:700;
+  color:var(--gold);
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+.hero-bonus-badge-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+  animation:pulse 1.4s ease-in-out infinite;
+}
+.hero-bonus-amount{
+  font-size:1.5rem;font-weight:900;
+  color:var(--gold);
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.hero-bonus-divider{height:1px;background:rgba(255,255,255,0.12);}
+.hero-bonus-perk{
+  display:flex;align-items:center;gap:8px;
+  font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.9);
+}
+.hero-bonus-perk-icon{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(241,200,25,0.15);
+  border:1px solid rgba(241,200,25,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;flex-shrink:0;color:var(--gold);font-weight:800;
+}
+.hero-bonus-timer{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(0,0,0,0.2);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;
+  padding:8px 14px;
+}
+.bonus-timer-label{
+  font-size:0.62rem;font-weight:600;
+  color:rgba(255,255,255,0.45);
+  text-transform:uppercase;letter-spacing:0.1em;
+}
+.bonus-timer-display{
+  display:flex;align-items:baseline;gap:2px;
+}
+.bonus-timer-digits{
+  font-size:1.55rem;font-weight:900;
+  color:#ffffff;
+  letter-spacing:0.02em;
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.bonus-timer-tag{
+  font-size:0.55rem;font-weight:700;
+  color:rgba(255,255,255,0.35);
+  text-transform:uppercase;letter-spacing:0.12em;
+  margin-left:6px;
+  align-self:center;
+}
 
 /* FORM */
 .form-card{background:var(--white);border-radius:16px;padding:28px 24px 22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;}
@@ -343,17 +415,23 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   <div class="hero">
     <div>
       <div class="hero-bonus" style="margin-bottom:20px;">
-        <div class="hero-bonus-icon">🎁</div>
-        <div style="flex:1;">
-          <div class="hero-bonus-title">₹40,000 Bonus · Claim Today</div>
-          <div class="hero-bonus-list">✓ Free Flight Ticket to Germany (₹40,000)</div>
-          <div class="hero-bonus-timer">
-            <span class="bonus-timer-label">Offer expires in</span>
-            <span class="bonus-timer-display">
-              <span class="bonus-timer-block"><span id="timerMins">07</span><span class="bonus-timer-unit">min</span></span>
-              <span class="bonus-timer-sep">:</span>
-              <span class="bonus-timer-block"><span id="timerSecs">00</span><span class="bonus-timer-unit">sec</span></span>
-            </span>
+        <div class="hero-bonus-top">
+          <div class="hero-bonus-badge">
+            <span class="hero-bonus-badge-dot"></span>
+            Limited Offer
+          </div>
+          <div class="hero-bonus-amount">₹40,000</div>
+        </div>
+        <div class="hero-bonus-divider"></div>
+        <div class="hero-bonus-perk">
+          <div class="hero-bonus-perk-icon">✈</div>
+          Free Flight Ticket to Germany · worth ₹40,000
+        </div>
+        <div class="hero-bonus-timer">
+          <div class="bonus-timer-label">Offer expires in</div>
+          <div class="bonus-timer-display">
+            <div class="bonus-timer-digits"><span id="timerMins">07</span>:<span id="timerSecs">00</span></div>
+            <div class="bonus-timer-tag">left</div>
           </div>
         </div>
       </div>

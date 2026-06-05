@@ -416,16 +416,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div>
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-top">
+          <!-- CHANGE 1: pill text updated -->
           <div class="hero-bonus-badge">
             <span class="hero-bonus-badge-dot"></span>
-            Limited Offer
+            Current Batch · 25 Seats Only
           </div>
           <div class="hero-bonus-amount">₹40,000</div>
         </div>
         <div class="hero-bonus-divider"></div>
+        <!-- CHANGE 3: offer perk line updated -->
         <div class="hero-bonus-perk">
           <div class="hero-bonus-perk-icon">✈</div>
-          Free Flight Ticket to Germany · worth ₹40,000
+          Free Flight Ticket to Germany — yours at zero extra cost
         </div>
         <div class="hero-bonus-timer">
           <div class="bonus-timer-label">Offer expires in</div>
@@ -437,7 +439,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       </div>
       <h1 style="order:2;">Get your Germany Opportunity Card in just <em>7 Days</em></h1>
       <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte enter without a job offer, search on arrival, and build your future from Day 1.</p>
-      <p class="hero-mobile-hook" style="order:3;">No job offer needed · €45K+ IT salaries · PR in 4 years · 99.7% visa success rate</p>
+      <!-- CHANGE 2: subheadline updated -->
+      <p class="hero-mobile-hook" style="order:3;">For IT/Engineering grads · 2+ yrs exp · Bachelor's degree required · No job offer needed</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
@@ -501,7 +504,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
         </div>
       </div>
       <button class="form-btn" id="submit-btn">📞 Book My Slot →</button>
-      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week <strong>filling fast</strong></div>
+      <!-- CHANGE 4 & 5: slots range 4-9, display shows X left · 25-X booked -->
+      <div class="form-slots">🔴 Only <span id="slotsLeft"></span> seats left · <span id="slotsBooked"></span> already booked · <strong>filling fast</strong></div>
       <div class="form-trust">🔒 Free · No spam · <strong>2,400+ Indians already in Germany via TerraTern</strong></div>
     </div>
   </div>
@@ -843,11 +847,20 @@ function switchExpert(idx) {
   p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
   p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
 }
-// No interval — single expert, no rotation needed
 
-// ── SLOTS ──
-const slots = Math.floor(Math.random() * 15) + 4;
-document.getElementById('slotsCount').textContent = slots;
+// ── SLOTS: seeded by day so same user sees same number, range 4-9 ──
+// CHANGE 4 & 5: range 4-9, show X left and 25-X booked
+(function initSlots() {
+  const TOTAL = 25;
+  const today = new Date();
+  const seed  = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  // Simple seeded pseudo-random: deterministic per day
+  const seeded = ((seed * 1103515245 + 12345) & 0x7fffffff) % 6; // 0-5
+  const slotsLeft   = seeded + 4; // 4-9
+  const slotsBooked = TOTAL - slotsLeft;
+  document.getElementById('slotsLeft').textContent   = slotsLeft;
+  document.getElementById('slotsBooked').textContent = slotsBooked;
+})();
 
 // ── BONUS TIMER ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;

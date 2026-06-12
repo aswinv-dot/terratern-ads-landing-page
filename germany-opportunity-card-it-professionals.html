@@ -68,12 +68,13 @@ main{display:block;}
 .hero-bonus-badge-dot{display:none;}
 .hero-bonus-amount{display:none;}
 .hero-bonus-divider{display:none;}
-.hero-bonus-left{display:flex;flex-direction:column;gap:3px;}
-.hero-bonus-title{font-size:0.82rem;font-weight:800;color:#92400e;}
-.hero-bonus-perk{font-size:0.72rem;font-weight:600;color:#78350f;display:flex;align-items:center;gap:5px;}
-.hero-bonus-perk-icon{display:none;}
-.hero-bonus-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
-.hero-bonus-timer{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,0.12);border-radius:20px;padding:4px 10px;}
+.hero-bonus-left{display:flex;flex-direction:column;gap:8px;}
+.hero-bonus-title{font-size:1rem;font-weight:900;color:#78350f;letter-spacing:-0.01em;line-height:1.2;}
+.hero-bonus-bottom{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.hero-bonus-amount-bold{display:none;}
+.hero-bonus-pill{display:inline-flex;align-items:center;background:#92400e;color:#fef3c7;font-size:0.6rem;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
+.hero-bonus-perk{display:none;}
+.hero-bonus-timer{display:none;}
 .bonus-timer-label{font-size:0.58rem;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:0.08em;}
 .bonus-timer-display{display:flex;align-items:center;}
 .bonus-timer-digits{font-size:1rem;font-weight:900;color:#1a0800;letter-spacing:0.04em;font-variant-numeric:tabular-nums;}
@@ -265,6 +266,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 .popup-skip{text-align:center;font-size:0.68rem;color:var(--muted);margin-top:10px;cursor:pointer;text-decoration:underline;}
 .popup-skip:hover{color:var(--navy);}
 
+/* Popup mobile expert row — hidden on desktop */
+.popup-mobile-expert{display:none;}
+
 /* RESPONSIVE */
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;padding:44px 24px 52px;}
@@ -282,23 +286,26 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 @media(max-width:600px){
   .elig-grid,.why-grid,.timeline-grid,.wow-grid,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
-  nav{padding:0 16px;height:60px;}
+  nav{padding:0 16px;height:60px;justify-content:center;}
   .nav-logo img{height:36px;}
-  .nav-right{gap:10px;}
-  .nav-phone{font-size:0.78rem;}
+  .nav-right{display:none;}
+  .nav-links{display:none;}
   .hero-wrap{padding-top:60px;padding-bottom:0;}
   .hero{padding:28px 16px 40px;gap:24px;}
   .hero-sub-desktop{display:none;}
-  .hero > div:first-child{display:flex;flex-direction:column;}
-  .hero > div:first-child .hero-bonus{order:1;}
+  .hero > div:first-child{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .hero > div:first-child .hero-bonus{order:1;width:100%;}
   .hero > div:first-child h1{order:2;}
   .hero > div:first-child .hero-mobile-hook{order:3;}
   .hero > div:first-child .hero-stats{order:4;}
   .hero-stats{display:none;}
-  .hero h1{font-size:1.55rem;line-height:1.2;}
+  .hero h1{font-size:1.55rem;line-height:1.2;text-align:center;}
   .hero-sub{font-size:0.88rem;margin-bottom:20px;}
-  .hero-bonus{margin-top:20px;}
-  .hero-mobile-hook{display:block;font-size:0.78rem;color:rgba(255,255,255,0.72);font-weight:500;line-height:1.7;margin-bottom:14px;}
+  .hero-bonus{margin-top:20px;padding:10px 14px;}
+  .hero-bonus-title{font-size:0.75rem;}
+  .hero-bonus-perk{font-size:0.66rem;}
+  .hero-bonus-timer{display:none;}
+  .hero-mobile-hook{display:block;font-size:0.78rem;color:rgba(255,255,255,0.72);font-weight:500;line-height:1.7;margin-bottom:14px;text-align:center;}
   .form-card{padding:20px 16px 16px;}
   .form-card h3{font-size:0.95rem;}
   .form-group{margin-bottom:9px;}
@@ -313,9 +320,35 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   .scroll-to-top{bottom:20px;right:20px;width:36px;height:36px;font-size:1rem;}
   .popup-overlay{align-items:flex-start;padding:16px;}
   .popup-box{grid-template-columns:1fr;max-width:420px;max-height:none;overflow-y:auto;margin:auto;}
-  .popup-left{display:none;}
+  .popup-left{display:none!important;}
   .popup-close{background:rgba(0,0,0,0.25);}
   .popup-right{border-radius:20px;padding:48px 20px 36px;}
+  .popup-what-you-get{display:none;}
+  .popup-mobile-expert{
+    display:flex;align-items:center;gap:12px;
+    background:linear-gradient(135deg,var(--navy),#0a3080);
+    border-radius:12px;padding:12px 14px;margin-bottom:16px;
+  }
+  .popup-mobile-avatar-wrap{position:relative;flex-shrink:0;width:48px;height:48px;}
+  .popup-mobile-photo{
+    width:48px;height:48px;border-radius:50%;
+    object-fit:cover;object-position:top;
+    border:2px solid rgba(255,255,255,0.25);
+    display:block;
+  }
+  .popup-mobile-initials{
+    display:none;
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,#be185d,#831843);
+    align-items:center;justify-content:center;
+    font-size:1rem;font-weight:800;color:#fff;
+    border:2px solid rgba(255,255,255,0.25);
+  }
+  .popup-mobile-info{display:flex;flex-direction:column;gap:2px;}
+  .popup-mobile-name{font-size:0.92rem;font-weight:800;color:#fff;}
+  .popup-mobile-spec{font-size:0.66rem;color:rgba(255,255,255,0.65);}
+  .popup-mobile-rating{font-size:0.66rem;color:var(--gold);margin-top:2px;}
+  .popup-mobile-rating span{color:rgba(255,255,255,0.45);font-size:0.6rem;}
 }
 </style>
 </head>
@@ -350,15 +383,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div>
       <div class="hero-bonus" style="margin-bottom:20px;">
         <div class="hero-bonus-left">
-          <div class="hero-bonus-title">🎁 Free Flight Ticket to Germany</div>
-          <div class="hero-bonus-perk">Worth ₹40,000 · Claim before offer expires</div>
-        </div>
-        <div class="hero-bonus-right">
-          <div class="hero-bonus-timer">
-            <span class="bonus-timer-label">Expires in</span>
-            <span class="bonus-timer-display">
-              <span class="bonus-timer-digits"><span id="timerMins">07</span>:<span id="timerSecs">00</span></span>
-            </span>
+          <div class="hero-bonus-title">🎁 Free Flight Ticket to Germany &nbsp;·&nbsp; Worth ₹40,000*</div>
+          <div class="hero-bonus-bottom">
+            <div class="hero-bonus-pill">Offer expires today</div>
           </div>
         </div>
       </div>
@@ -628,6 +655,17 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       </div>
     </div>
     <div class="popup-right">
+      <div class="popup-mobile-expert">
+        <div class="popup-mobile-avatar-wrap">
+          <img src="assets/images/experts/expert-ritika.jpg" alt="Ritika" class="popup-mobile-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="popup-mobile-initials">RI</div>
+        </div>
+        <div class="popup-mobile-info">
+          <div class="popup-mobile-name">Ritika</div>
+          <div class="popup-mobile-spec">Certified Immigration Advisor · 4 yrs</div>
+          <div class="popup-mobile-rating">★★★★★ <span>4.9/5 · 1,000+ Reviews</span></div>
+        </div>
+      </div>
       <h3 id="popupHeading">Wait Check If You Qualify<br>Before You Go</h3>
       <p id="popupSubtext">Takes 30 seconds. Our expert will call you back within 24 hours.</p>
       <div class="popup-form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar" id="p-name"></div>
@@ -780,9 +818,12 @@ document.getElementById('slotsCount').textContent = slots;
 let bonusEnd = Date.now() + 7 * 60 * 1000;
 function updateBonusTimer() {
   const dist = bonusEnd - Date.now();
-  if (dist <= 0) { document.getElementById('timerMins').textContent='00'; document.getElementById('timerSecs').textContent='00'; return; }
-  document.getElementById('timerMins').textContent = String(Math.floor(dist/60000)).padStart(2,'0');
-  document.getElementById('timerSecs').textContent = String(Math.floor((dist%60000)/1000)).padStart(2,'0');
+  const m = document.getElementById('timerMins');
+  const s = document.getElementById('timerSecs');
+  if (!m || !s) return;
+  if (dist <= 0) { m.textContent='00'; s.textContent='00'; return; }
+  m.textContent = String(Math.floor(dist/60000)).padStart(2,'0');
+  s.textContent = String(Math.floor((dist%60000)/1000)).padStart(2,'0');
 }
 updateBonusTimer();
 setInterval(updateBonusTimer, 1000);
@@ -832,13 +873,15 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   const name = document.getElementById('f-name'), email = document.getElementById('f-email'),
         mobile = document.getElementById('f-mobile'), edu = document.getElementById('f-education'),
         exp = document.getElementById('f-exp');
+  if (!name || !email || !mobile || !edu || !exp) return;
   let valid = true;
   [name, email, edu, exp].forEach(el => el.style.borderColor = '');
-  mobile.closest('.phone-wrap').style.borderColor = '';
+  const phoneWrap = mobile.closest('.phone-wrap');
+  if (phoneWrap) phoneWrap.style.borderColor = '';
   [name, edu, exp].forEach(el => { if (!el.value.trim()) { el.style.borderColor='#dc2626'; valid=false; } });
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email.value.trim() || !emailRe.test(email.value.trim())) { email.style.borderColor='#dc2626'; valid=false; }
-  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) { mobile.closest('.phone-wrap').style.borderColor='#dc2626'; valid=false; }
+  if (!mobile.value.trim() || mobile.value.replace(/\D/g,'').length !== 10) { if (phoneWrap) phoneWrap.style.borderColor='#dc2626'; valid=false; }
   if (valid) {
     const btn = document.getElementById('submit-btn');
     btn.textContent = '✓ Submitted!';

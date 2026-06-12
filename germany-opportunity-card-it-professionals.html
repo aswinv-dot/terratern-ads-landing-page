@@ -25,8 +25,9 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--ff);line-height:1.65;overflow-x:hidden;padding-top:0;margin-top:0;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);padding:0 var(--px);display:flex;align-items:center;justify-content:space-between;height:100px;box-shadow:0 2px 20px rgba(0,0,0,0.18);max-width:100%;}
-.nav-logo img{height:50px;width:auto;display:block;object-fit:contain;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);height:100px;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 var(--px);height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:90px;width:auto;display:block;object-fit:contain;}
 .nav-logo-text{color:#fff;font-weight:800;font-size:1.1rem;}
 .nav-logo-text span{color:var(--gold);}
 .nav-links{display:flex;gap:28px;list-style:none;}
@@ -286,8 +287,10 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 @media(max-width:600px){
   .elig-grid,.why-grid,.timeline-grid,.wow-grid,.testimonial-grid{grid-template-columns:1fr;}
   .why-card.hero-card{grid-column:span 1;}
-  nav{padding:0 16px;height:100px;justify-content:center;}
+  nav{height:100px;}
+  .nav-inner{justify-content:center;padding:0 16px;}
   .nav-phone{display:none;}
+  .nav-logo img{height:90px;}
   .hero-wrap{padding-top:100px;padding-bottom:0;}
   .hero{padding:28px 16px 40px;gap:24px;}
   .hero-sub-desktop{display:none;}
@@ -353,14 +356,16 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
 <body>
 
 <nav>
-  <div class="nav-logo">
-    <img src="assets/images/logo.png" alt="TerraTern" onerror="this.style.display='none';document.getElementById('nav-text-logo').style.display='block'">
-    <span id="nav-text-logo" style="display:none;" class="nav-logo-text">Terra<span>Tern</span></span>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="assets/images/logo.png" alt="TerraTern" onerror="this.style.display='none';document.getElementById('nav-text-logo').style.display='block'">
+      <span id="nav-text-logo" style="display:none;" class="nav-logo-text">Terra<span>Tern</span></span>
+    </div>
+    <a class="nav-phone" href="tel:+918064124242">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
+      <span>+91 80641 24242</span>
+    </a>
   </div>
-  <a class="nav-phone" href="tel:+918064124242">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14z"/></svg>
-    <span>+91 80641 24242</span>
-  </a>
 </nav>
 
 <main>

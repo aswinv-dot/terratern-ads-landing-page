@@ -748,8 +748,12 @@ function getUTM(key) {
 (function setUTMCookies() {
   const params = new URLSearchParams(window.location.search);
   ['utm_source','utm_medium','utm_adset','utm_campaign','utm_placement'].forEach(key => {
-    const val = params.get(key) || UTM_DEFAULTS[key] || '';
-    if (!getCookie(key)) setCookie(key, val, 30);
+    const urlVal = params.get(key);
+    if (urlVal) {
+      setCookie(key, urlVal, 30); // URL param always wins
+    } else if (!getCookie(key)) {
+      setCookie(key, UTM_DEFAULTS[key] || '', 30); // fallback only if no cookie
+    }
   });
 })();
 

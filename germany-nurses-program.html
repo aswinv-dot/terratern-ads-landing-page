@@ -712,6 +712,21 @@
     .hero { padding: 90px 20px 60px; }
     .popup-card { padding: 28px 20px; }
   }
+
+  /* THANK YOU POPUP */
+  .tyo{position:fixed;inset:0;z-index:10000;background:rgba(15,82,72,.6);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+  .tyo.on{opacity:1;pointer-events:all;}
+  .tyb{background:#fff;border-radius:18px;padding:42px 38px;max-width:420px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,33,92,.18);transform:translateY(18px) scale(.97);transition:transform .3s;border:1.5px solid var(--border);}
+  .tyo.on .tyb{transform:translateY(0) scale(1);}
+  .ty-ico{font-size:2.6rem;margin-bottom:12px;}
+  .ty-h{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;color:var(--teal-dark);margin-bottom:8px;}
+  .ty-m{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:20px;font-family:'Hind',sans-serif;}
+  .ty-m strong{color:var(--teal-dark);}
+  .ty-cta{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Baloo 2',cursive;font-weight:700;font-size:.95rem;padding:14px 28px;border-radius:50px;text-decoration:none;transition:background .2s;margin-bottom:14px;}
+  .ty-cta:hover{background:#1ebe5d;}
+  .ty-tm{font-size:.65rem;color:var(--muted);font-family:'Hind',sans-serif;}
+  .ty-tm strong{color:var(--teal);}
+
 </style>
 </head>
 <body>
@@ -720,7 +735,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <img src="assets/images/logo.png" alt="TerraTern" style="height:32px;object-fit:contain;">
-    <a href="tel:+918064124242" class="nav-cta">📞 +91 80641 24242</a>
+    <a href="tel:+918064124242" class="nav-cta">📞 அழைக்கவும்</a>
   </div>
 </nav>
 
@@ -878,20 +893,20 @@
 
 <script>
 // FORM SUBMIT
-const API = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
-const UTM_DEFAULTS = {utm_source:'Paid',utm_medium:'fb_landing_page',utm_adset:'GHC_LP_Green',utm_campaign:'GHC_LP_Green',utm_placement:'GHC_LP_Green'};
-(function(){
-  const p = new URLSearchParams(location.search);
-  ['utm_source','utm_medium','utm_adset','utm_campaign'].forEach(k => {
-    if (!getCookie(k)) setCookie(k, p.get(k) || UTM_DEFAULTS[k] || '', 30);
-  });
-})();
-function setCookie(n,v,d){document.cookie=n+'='+encodeURIComponent(v)+';expires='+new Date(Date.now()+d*864e5).toUTCString()+';path=/';}
-function getCookie(n){return decodeURIComponent(document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||'');}
-function getUtm(k){return getCookie(k)||UTM_DEFAULTS[k]||'';}
+const API='https://pages.terratern.com/api/submit', SID='15';
+const UD={utm_source:'Paid',utm_medium:'fb_landing_page',utm_adset:'GHC_LP_Green',utm_campaign:'GHC_LP_Green',utm_placement:'GHC_LP_Green'};
+(function(){const p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_adset','utm_campaign'].forEach(k=>{if(!gc(k))sc(k,p.get(k)||UD[k]||'',30);});})();
+function sc(n,v,d){document.cookie=n+'='+encodeURIComponent(v)+';expires='+new Date(Date.now()+d*864e5).toUTCString()+';path=/';}
+function gc(n){return decodeURIComponent(document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||'');}
+function utm(k){return gc(k)||UD[k]||'';}
+async function send(data){
+  const pl={form_data:{full_name:data.name,email:data.email,phone_number:data.mobile,country_code:'+91',service_application_id:SID,utm_source:utm('utm_source'),utm_medium:utm('utm_medium'),utm_adset:utm('utm_adset'),utm_campaign:utm('utm_campaign'),utm_placement:utm('utm_placement'),work_experience:data.we,highest_education:data.edu}};
+  console.log('Lead:',JSON.stringify(pl));
+  try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(pl)});console.log(r.status,await r.text());}catch(e){console.error(e);}
+}
 
 (function(){
-  const n = Math.floor(Math.random() * 6) + 1; // 1-6
+  const n = Math.floor(Math.random() * 6) + 1;
   const el = document.getElementById('slotNum');
   if(el) el.textContent = n;
 })();
@@ -921,35 +936,41 @@ async function submitForm() {
   btn.disabled = true;
   btnText.textContent = 'Submitting...';
 
-  const payload = {
-    form_data: {
-      full_name: name,
-      email: email,
-      phone_number: phone,
-      country_code: '+91',
-      service_application_id: '15',
-      utm_source: getUtm('utm_source'),
-      utm_medium: getUtm('utm_medium'),
-      utm_adset: getUtm('utm_adset'),
-      utm_campaign: getUtm('utm_campaign'),
-      utm_placement: getUtm('utm_placement'),
-      work_experience: exp,
-      highest_education: degree
-    }
-  };
+  send({name, email, mobile:phone, edu:degree, we:exp});
+  setTimeout(showTY, 700);
+}
 
-  try {
-    const r = await fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
-    console.log(r.status);
-  } catch(e) { console.error(e); }
-
-  document.getElementById('leadForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+function showTY(){
+  const tyo=document.getElementById('tyo');
+  tyo.classList.add('on');
+  document.body.style.overflow='hidden';
+  let s=5;
+  document.getElementById('tyC').textContent=s;
+  const t=setInterval(()=>{
+    s--;
+    document.getElementById('tyC').textContent=s;
+    if(s<=0){clearInterval(t);window.location.href='https://whatsapp.com/channel/0029VaeBLup47XeJIpdQRe1C';}
+  },1000);
+  document.getElementById('tyCta').onclick=()=>{clearInterval(t);};
 }
 
 document.getElementById('f_phone').addEventListener('input', function() {
   this.value = this.value.replace(/\D/g, '').slice(0, 10);
 });
 </script>
+
+<!-- THANK YOU POPUP -->
+<div class="tyo" id="tyo">
+  <div class="tyb">
+    <div class="ty-ico">🎉</div>
+    <div class="ty-h">Thank you! You're registered.</div>
+    <p class="ty-m">Our expert will contact you within <strong>24 hours</strong>. Join our WhatsApp channel for Germany nursing updates.</p>
+    <a href="https://whatsapp.com/channel/0029VaeBLup47XeJIpdQRe1C" target="_blank" class="ty-cta" id="tyCta">
+      💬 Join WhatsApp Channel →
+    </a>
+    <div class="ty-tm">Taking you there in <strong><span id="tyC">5</span>s</strong></div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ta-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraTern – Germany Nurse Program | 100% Job Guaranteed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ceil: #7BAFD4;
+    --teal: #1A7A6E;
+    --teal-dark: #0F5248;
+    --yellow: #F5C842;
+    --white: #FFFFFF;
+    --off-white: #F5F7F6;
+    --charcoal: #1C1C1E;
+    --muted: #5A6872;
+    --scrub-light: #E8F4F8;
+    --border: #E2ECEA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--teal-dark);
+    color: var(--white);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 999;
+    background: rgba(15, 82, 72, 0.97);
+    backdrop-filter: blur(10px);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--white);
+  }
+  .nav-logo span { color: var(--yellow); }
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--charcoal);
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--teal-dark);
+    position: relative;
+    padding: 100px 24px 80px;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: repeating-linear-gradient(45deg, var(--ceil) 0, var(--ceil) 1px, transparent 0, transparent 50%);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* EYEBROW */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,200,66,0.12);
+    border: 1px solid rgba(245,200,66,0.35);
+    color: var(--yellow);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 28px;
+  }
+  .eyebrow-dot {
+    width: 7px; height: 7px;
+    background: var(--yellow);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.4; transform:scale(1.5); }
+  }
+
+  /* HEADLINE */
+  .hero-headline {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+  .hero-headline .yl { color: var(--yellow); }
+  .hero-headline .cl { color: var(--ceil); }
+
+  .hero-sub {
+    font-family: 'Hind', sans-serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 560px;
+  }
+
+  /* SINGLE COLUMN FORM */
+  .hero-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 520px);
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* LEAD FORM */
+  .lead-form-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    color: var(--charcoal);
+  }
+  .form-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--teal-dark);
+    margin-bottom: 4px;
+  }
+  .form-sub {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 22px;
+    line-height: 1.5;
+  }
+  .form-sub span {
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .field label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .field input,
+  .field select {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+    min-height: 46px;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  .field input:focus,
+  .field select:focus { border-color: var(--teal); background: var(--white); }
+  .field input::placeholder { color: #B0BEC5; }
+
+  .phone-wrap {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .phone-prefix {
+    background: var(--scrub-light);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 12px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--teal-dark);
+    white-space: nowrap;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .phone-wrap .field { flex: 1; }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--teal);
+    color: var(--white);
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    min-height: 52px;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .submit-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .form-disclaimer {
+    font-size: 0.7rem;
+    color: #B0BEC5;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.5;
+    font-family: 'Hind', sans-serif;
+  }
+
+  /* SUCCESS STATE */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .form-success .success-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .form-success .success-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .form-success .success-sub {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIAL CARDS */
+  .testimonial-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 22px 20px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .testi-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(245,200,66,0.4);
+    transform: translateY(-2px);
+  }
+  .testi-card::before {
+    content: 'TAP TO READ STORY';
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 600;
+  }
+
+  .testi-top {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .testi-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--ceil) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+  .testi-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+  .testi-info .t-name {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .testi-info .t-degree {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+  .testi-info .t-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(245,200,66,0.15);
+    border: 1px solid rgba(245,200,66,0.3);
+    color: var(--yellow);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .testi-salary {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    background: rgba(245,200,66,0.1);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+  }
+  .testi-salary .ts-amount {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .testi-salary .ts-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.3;
+    font-family: 'Hind', sans-serif;
+  }
+
+  .testi-quote {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .testi-quote::before { content: '"'; color: var(--yellow); font-size: 1.2rem; font-style: normal; }
+  .testi-quote::after  { content: '"'; color: var(--yellow); font-size: 1.2rem; font-style: normal; }
+
+  /* POPUP */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .popup-overlay.open { display: flex; }
+
+  .popup-card {
+    background: var(--teal-dark);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 32px 28px;
+    position: relative;
+    animation: popIn 0.25s ease;
+  }
+  @keyframes popIn {
+    from { opacity:0; transform: scale(0.94) translateY(12px); }
+    to   { opacity:1; transform: scale(1) translateY(0); }
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    transition: background 0.2s;
+    border: none;
+  }
+  .popup-close:hover { background: rgba(255,255,255,0.18); }
+
+  .popup-avatar-big {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--ceil) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 20px;
+    border: 3px solid rgba(245,200,66,0.4);
+    overflow: hidden;
+    position: relative;
+  }
+  .popup-avatar-big img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute; inset: 0;
+  }
+
+  .popup-name {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .popup-meta {
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+    font-family: 'Hind', sans-serif;
+  }
+  .popup-location {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .popup-location span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(245,200,66,0.15);
+    border: 1px solid rgba(245,200,66,0.3);
+    color: var(--yellow);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  .popup-salary-strip {
+    background: rgba(245,200,66,0.1);
+    border: 1px solid rgba(245,200,66,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .popup-salary-strip .pss-amount {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .popup-salary-strip .pss-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    font-family: 'Hind', sans-serif;
+  }
+
+  .popup-story {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .popup-cta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .popup-cta a {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 50px;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 48px;
+  }
+  .popup-cta .wa { background: #25D366; color: white; }
+  .popup-cta .call { background: var(--yellow); color: var(--charcoal); }
+
+  /* FOOTER */
+  footer {
+    background: rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 24px 90px;
+    text-align: center;
+  }
+  footer .f-brand {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  footer .f-brand span { color: var(--yellow); }
+  footer p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.6;
+    font-family: 'Hind', sans-serif;
+  }
+
+  /* STICKY BAR */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 998;
+    background: var(--charcoal);
+    border-top: 2px solid var(--teal);
+    padding: 12px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .sticky-bar-text {
+    flex: 1;
+    font-family: 'Hind', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.3;
+  }
+  .sticky-bar-text strong {
+    display: block;
+    color: var(--yellow);
+    font-family: 'Baloo 2', cursive;
+    font-size: 0.88rem;
+  }
+  .sticky-bar a {
+    background: var(--yellow);
+    color: var(--charcoal);
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* EXPERT TOPPER */
+  .expert-topper {
+    background: var(--yellow);
+    border-radius: 20px 20px 0 0;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .expert-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    border: 2px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 700; color: white;
+    overflow: hidden; flex-shrink: 0;
+    font-family: 'Baloo 2', cursive;
+  }
+  .expert-avatar img { width:100%; height:100%; object-fit:cover; object-position:top; }
+  .expert-info { flex: 1; }
+  .expert-eyebrow {
+    font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2px;
+  }
+  .expert-name {
+    font-family: 'Baloo 2', cursive; font-weight: 700;
+    font-size: 1rem; color: var(--charcoal); margin-bottom: 4px;
+  }
+  .expert-badge-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .expert-certified {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--teal-dark); color: var(--white);
+    font-size: 0.62rem; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px;
+  }
+  .expert-role { font-size: 0.72rem; color: rgba(28,28,30,0.55); }
+  .value-strip {
+    background: rgba(26,122,110,0.07);
+    border: 1px solid rgba(26,122,110,0.18);
+    border-radius: 8px; padding: 10px 14px; margin-bottom: 16px;
+    font-size: 0.8rem; color: var(--teal); font-weight: 600;
+    display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+  }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    .hero-cols {
+      grid-template-columns: 1fr;
+    }
+    .testimonial-col {
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 14px;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .testi-card {
+      min-width: 78vw;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+    .field-row { grid-template-columns: 1fr; }
+    .hero { padding: 90px 20px 60px; }
+    .popup-card { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">Terra<span>Tern</span></div>
+  <a href="tel:+918064124242" class="nav-cta">📞 அழைக்கவும்</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      🇩🇪 100% Job Guaranteed Program
+    </div>
+
+    <h1 class="hero-headline">
+      GNM / BSc Nursing graduates-க்கு<br>
+      Germany-ல் maadham<br>
+      <span class="yl">₹3 லட்சம்</span> <span class="cl">வரை சம்பளம்.</span>
+    </h1>
+
+    <p class="hero-sub">
+      ✈️ Free Flight Tickets &amp; Accommodation. German Language Training included.
+    </p>
+    <p class="hero-sub" style="margin-top:-20px; font-size:0.88rem; color:rgba(255,255,255,0.5);">
+      Only for those willing to migrate to Germany within 6 months.
+    </p>
+
+    <div class="hero-cols">
+
+      <!-- LEAD FORM -->
+      <div class="lead-form-card">
+
+        <!-- EXPERT TOPPER -->
+        <div class="expert-topper">
+          <div class="expert-avatar">
+            <img src="assets/images/experts/expert-ritika.jpg" alt="Ritika" onerror="this.style.display='none';this.parentElement.textContent='RI'">
+          </div>
+          <div class="expert-info">
+            <div class="expert-eyebrow">Your Expert Today</div>
+            <div class="expert-name">Ritika</div>
+            <div class="expert-badge-row">
+              <span class="expert-certified">✓ Certified</span>
+              <span class="expert-role">Certified Immigration Advisor, 4 yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 20px 24px 24px;">
+          <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:1.15rem;color:var(--teal-dark);margin-bottom:18px;line-height:1.25;">Register for a Free Expert Consultation</div>
+
+          <div id="leadForm">
+            <div class="field-group">
+              <div class="field-row">
+                <div class="field">
+                  <label>Full Name</label>
+                  <input type="text" id="f_name" placeholder="Your full name" autocomplete="name">
+                </div>
+                <div class="field">
+                  <label>Email Address</label>
+                  <input type="email" id="f_email" placeholder="you@gmail.com" autocomplete="email">
+                </div>
+              </div>
+
+              <div class="field">
+                <label>WhatsApp Number</label>
+                <div class="phone-wrap">
+                  <div class="phone-prefix">🇮🇳 +91</div>
+                  <div class="field" style="margin:0;">
+                    <input type="tel" id="f_phone" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel-national" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Degree</label>
+                <select id="f_degree">
+                  <option value="" disabled selected>Select your degree</option>
+                  <option value="GNM">GNM — General Nursing &amp; Midwifery</option>
+                  <option value="BSc Nursing">BSc Nursing</option>
+                  <option value="MSc Nursing">MSc Nursing</option>
+                  <option value="BPT">Bachelor of Physiotherapy (BPT)</option>
+                  <option value="MPT">Master of Physiotherapy (MPT)</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>Total Work Experience</label>
+                <select id="f_exp">
+                  <option value="" disabled selected>Select total work experience</option>
+                  <option value="Less than 1 year">Less than 1 year</option>
+                  <option value="1 year">1 year</option>
+                  <option value="2 years">2 years</option>
+                  <option value="3 years">3 years</option>
+                  <option value="4 years">4 years</option>
+                  <option value="5 years">5 years</option>
+                  <option value="6 years">6 years</option>
+                  <option value="7 years or more">7 years or more</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+              <span id="btnText">Check My Eligibility →</span>
+            </button>
+            <div class="form-disclaimer" id="slotsLeft" style="color:#D94F3D;font-weight:700;font-family:'Baloo 2',cursive;font-size:0.8rem;text-align:center;margin-top:10px;">
+              🔴 Only <span id="slotNum"></span> slots left for this week.
+            </div>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <span class="success-icon">🎉</span>
+            <div class="success-title">நன்றி! We'll call you soon.</div>
+            <div class="success-sub">
+              Our team will contact you within 24 hours.<br><br>Meanwhile:
+            </div>
+            <a href="https://wa.me/918064124242?text=Hi%2C%20I%20just%20applied%20for%20the%20Germany%20Nurse%20Program" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:#25D366;color:white;padding:14px 22px;border-radius:50px;font-family:'Baloo 2',cursive;font-weight:700;font-size:0.95rem;text-decoration:none;">
+              💬 WhatsApp us
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end hero-cols -->
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">Terra<span>Tern</span> · Germany Nurse Program</div>
+  <p>TerraTern Pvt Ltd, Bangalore · +91 80641 24242 · Authorized Germany Immigration Consultancy</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <div class="sticky-bar-text">
+    <strong>🇩🇪 2026 Batch — Seats Filling</strong>
+    Free eligibility check · No commitment
+  </div>
+  <a href="#leadForm" onclick="document.getElementById('f_name').focus()">Book My Slot →</a>
+</div>
+
+<script>
+// FORM SUBMIT
+const API = 'https://backend.terratern.com/landing-page-api/vercel-webhook';
+const UTM_DEFAULTS = {utm_source:'Paid',utm_medium:'fb_landing_page',utm_adset:'Nurse_Program_LP',utm_campaign:'Nurse_Program_LP',utm_placement:'Nurse_Program_LP'};
+(function(){
+  const p = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_adset','utm_campaign'].forEach(k => {
+    if (!getCookie(k)) setCookie(k, p.get(k) || UTM_DEFAULTS[k] || '', 30);
+  });
+})();
+function setCookie(n,v,d){document.cookie=n+'='+encodeURIComponent(v)+';expires='+new Date(Date.now()+d*864e5).toUTCString()+';path=/';}
+function getCookie(n){return decodeURIComponent(document.cookie.split('; ').find(r=>r.startsWith(n+'='))?.split('=')[1]||'');}
+function getUtm(k){return getCookie(k)||UTM_DEFAULTS[k]||'';}
+
+(function(){
+  const n = Math.floor(Math.random() * 6) + 1; // 1-6
+  const el = document.getElementById('slotNum');
+  if(el) el.textContent = n;
+})();
+
+async function submitForm() {
+  const name   = document.getElementById('f_name').value.trim();
+  const email  = document.getElementById('f_email').value.trim();
+  const phone  = document.getElementById('f_phone').value.trim();
+  const degree = document.getElementById('f_degree').value;
+  const exp    = document.getElementById('f_exp').value;
+
+  if (!name || !email || !phone || !degree || !exp) {
+    alert('Please fill in all fields.');
+    return;
+  }
+  if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  if (!/^\d{10}$/.test(phone)) {
+    alert('Please enter a valid 10-digit mobile number.');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  btn.disabled = true;
+  btnText.textContent = 'Submitting...';
+
+  const payload = {
+    form_data: {
+      name: name,
+      email: email,
+      mobile: phone,
+      country_code: '+91',
+      service_application_id: '15',
+      utm_source: getUtm('utm_source'),
+      utm_medium: getUtm('utm_medium'),
+      utm_adset: getUtm('utm_adset'),
+      utm_campaign: getUtm('utm_campaign'),
+      utm_placement: getUtm('utm_placement'),
+      work_experience: exp,
+      education: degree
+    }
+  };
+
+  try {
+    const r = await fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    console.log(r.status);
+  } catch(e) { console.error(e); }
+
+  document.getElementById('leadForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+document.getElementById('f_phone').addEventListener('input', function() {
+  this.value = this.value.replace(/\D/g, '').slice(0, 10);
+});
+</script>
+</body>
+</html>

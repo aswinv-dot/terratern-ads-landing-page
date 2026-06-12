@@ -60,90 +60,24 @@ main{display:block;}
 .hero-stat-num{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1;}
 .hero-stat-label{font-size:0.7rem;color:rgba(255,255,255,0.58);margin-top:3px;font-weight:500;}
 
-/* Bonus banner — frosted glass */
-.hero-bonus{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(241,200,25,0.45);
-  border-radius:14px;
-  padding:16px 18px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  position:relative;
-  overflow:hidden;
-}
-.hero-bonus::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(241,200,25,0.8),rgba(255,255,255,0.6),rgba(241,200,25,0.8),transparent);
-}
-.hero-bonus-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.hero-bonus-badge{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(241,200,25,0.12);
-  border:1px solid rgba(241,200,25,0.3);
-  border-radius:100px;
-  padding:4px 12px;
-  font-size:0.68rem;font-weight:700;
-  color:var(--gold);
-  letter-spacing:0.06em;text-transform:uppercase;
-}
-.hero-bonus-badge-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--gold);
-  animation:pulse 1.4s ease-in-out infinite;
-}
-.hero-bonus-amount{
-  font-size:1.5rem;font-weight:900;
-  color:var(--gold);
-  line-height:1;
-  letter-spacing:-0.02em;
-}
-.hero-bonus-divider{height:1px;background:rgba(255,255,255,0.12);}
-.hero-bonus-perk{
-  display:flex;align-items:center;gap:8px;
-  font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.9);
-}
-.hero-bonus-perk-icon{
-  width:22px;height:22px;border-radius:50%;
-  background:rgba(241,200,25,0.15);
-  border:1px solid rgba(241,200,25,0.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.7rem;flex-shrink:0;color:var(--gold);font-weight:800;
-}
-.hero-bonus-timer{
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(0,0,0,0.2);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:10px;
-  padding:8px 14px;
-}
-.bonus-timer-label{
-  font-size:0.62rem;font-weight:600;
-  color:rgba(255,255,255,0.45);
-  text-transform:uppercase;letter-spacing:0.1em;
-}
-.bonus-timer-display{
-  display:flex;align-items:baseline;gap:2px;
-}
-.bonus-timer-digits{
-  font-size:1.55rem;font-weight:900;
-  color:#ffffff;
-  letter-spacing:0.02em;
-  font-variant-numeric:tabular-nums;
-  line-height:1;
-}
-.bonus-timer-tag{
-  font-size:0.55rem;font-weight:700;
-  color:rgba(255,255,255,0.35);
-  text-transform:uppercase;letter-spacing:0.12em;
-  margin-left:6px;
-  align-self:center;
-}
+/* Bonus banner — yellow simplified */
+.hero-bonus{background:var(--gold);border:none;border-radius:14px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;overflow:hidden;}
+.hero-bonus::before{display:none;}
+.hero-bonus-top{display:none;}
+.hero-bonus-badge{display:none;}
+.hero-bonus-badge-dot{display:none;}
+.hero-bonus-amount{display:none;}
+.hero-bonus-divider{display:none;}
+.hero-bonus-left{display:flex;flex-direction:column;gap:3px;}
+.hero-bonus-title{font-size:0.82rem;font-weight:800;color:#92400e;}
+.hero-bonus-perk{font-size:0.72rem;font-weight:600;color:#78350f;display:flex;align-items:center;gap:5px;}
+.hero-bonus-perk-icon{display:none;}
+.hero-bonus-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.hero-bonus-timer{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,0.12);border-radius:20px;padding:4px 10px;}
+.bonus-timer-label{font-size:0.58rem;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:0.08em;}
+.bonus-timer-display{display:flex;align-items:center;}
+.bonus-timer-digits{font-size:1rem;font-weight:900;color:#1a0800;letter-spacing:0.04em;font-variant-numeric:tabular-nums;}
+.bonus-timer-tag{display:none;}
 
 /* FORM */
 .form-card{background:var(--white);border-radius:16px;padding:28px 24px 22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;}
@@ -415,32 +349,22 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   <div class="hero">
     <div>
       <div class="hero-bonus" style="margin-bottom:20px;">
-        <div class="hero-bonus-top">
-          <!-- CHANGE 1: pill text updated -->
-          <div class="hero-bonus-badge">
-            <span class="hero-bonus-badge-dot"></span>
-            Current Batch · 25 Seats Only
-          </div>
-          <div class="hero-bonus-amount">₹40,000</div>
+        <div class="hero-bonus-left">
+          <div class="hero-bonus-title">🎁 Free Flight Ticket to Germany</div>
+          <div class="hero-bonus-perk">Worth ₹40,000 · Claim before offer expires</div>
         </div>
-        <div class="hero-bonus-divider"></div>
-        <!-- CHANGE 3: offer perk line updated -->
-        <div class="hero-bonus-perk">
-          <div class="hero-bonus-perk-icon">✈</div>
-          Free Flight Ticket to Germany — yours at zero extra cost
-        </div>
-        <div class="hero-bonus-timer">
-          <div class="bonus-timer-label">Offer expires in</div>
-          <div class="bonus-timer-display">
-            <div class="bonus-timer-digits"><span id="timerMins">07</span>:<span id="timerSecs">00</span></div>
-            <div class="bonus-timer-tag">left</div>
+        <div class="hero-bonus-right">
+          <div class="hero-bonus-timer">
+            <span class="bonus-timer-label">Expires in</span>
+            <span class="bonus-timer-display">
+              <span class="bonus-timer-digits"><span id="timerMins">07</span>:<span id="timerSecs">00</span></span>
+            </span>
           </div>
         </div>
       </div>
       <h1 style="order:2;">Get your Germany Opportunity Card in just <em>7 Days</em></h1>
       <p class="hero-sub hero-sub-desktop">India's most trusted immigration partner helps IT professionals migrate to Germany via the Chancenkarte enter without a job offer, search on arrival, and build your future from Day 1.</p>
-      <!-- CHANGE 2: subheadline updated -->
-      <p class="hero-mobile-hook" style="order:3;">For IT/Engineering grads · 2+ yrs exp · Bachelor's degree required · No job offer needed</p>
+      <p class="hero-mobile-hook" style="order:3;">83+ IT professionals received their Visa last month</p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-num">99.7%</div><div class="hero-stat-label">Visa approval rate</div></div>
         <div class="hero-stat"><div class="hero-stat-num">7 Days</div><div class="hero-stat-label">Avg. visa timeline</div></div>
@@ -504,8 +428,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
         </div>
       </div>
       <button class="form-btn" id="submit-btn">📞 Book My Slot →</button>
-      <!-- CHANGE 4 & 5: slots range 4-9, display shows X left · 25-X booked -->
-      <div class="form-slots">🔴 Only <span id="slotsLeft"></span> seats left · <span id="slotsBooked"></span> already booked · <strong>filling fast</strong></div>
+      <div class="form-slots">🔴 Only <span id="slotsCount"></span> slots left this week <strong>filling fast</strong></div>
       <div class="form-trust">🔒 Free · No spam · <strong>2,400+ Indians already in Germany via TerraTern</strong></div>
     </div>
   </div>
@@ -554,7 +477,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="elig-card fade-up"><div class="elig-icon">🎓</div><h4>Recognised IT Degree</h4><p>B.Tech, BE, BCA, BSc CS, MCA, or equivalent IT degree from a recognised Indian institution qualifies. We handle credential evaluation and recognition.</p><span class="elig-pts">+2 Points</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">💼</div><h4>Minimum 2 Years Work Experience</h4><p>Full-time, freelance, or startup IT experience earned in the last 7 years counts. We help you document and present it correctly for the German consulate.</p><span class="elig-pts">+1 to +2 Points</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">🌐</div><h4>English or German Proficiency</h4><p>B2 English or A1 German strengthens your application significantly. Our 100+ mock tests help you achieve the required certification online or in-person.</p><span class="elig-pts">+1 Point</span></div>
-    <div class="elig-card fade-up"><div class="elig-icon">📅</div><h4>Age Under 44</h4><p>Applicants under 44 are eligible under the Opportunity Card scoring matrix. Younger applicants earn additional bonus points — if you're under 35, you're in one of the strongest eligibility brackets.</p><span class="elig-pts">+1 Point</span></div>
+    <div class="elig-card fade-up"><div class="elig-icon">📅</div><h4>Age Under 44</h4><p>Applicants under 44 are eligible under the Opportunity Card scoring matrix. Younger applicants earn additional bonus points if you're under 35, you're in one of the strongest eligibility brackets.</p><span class="elig-pts">+1 Point</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">🏦</div><h4>Blocked Account Proof of Funds</h4><p>~€12,500 in a German blocked account (Sperrkonto) is required to show financial stability. TerraTern guides you through the entire setup and transfer process.</p><span class="elig-pts">Mandatory</span></div>
     <div class="elig-card fade-up"><div class="elig-icon">✅</div><h4>Clean Background &amp; Health Insurance</h4><p>A clean police clearance certificate and valid travel insurance are baseline requirements both standard for the vast majority of applicants we work with.</p><span class="elig-pts">Mandatory</span></div>
   </div>
@@ -591,7 +514,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="wow-card"><div class="wow-emoji">🚂</div><h4>World-Class Public Transport</h4><p>No traffic jams, no autos. Deutsche Bahn connects every city. Most IT pros ditch car ownership entirely.</p></div>
     <div class="wow-card"><div class="wow-emoji">🏥</div><h4>Free Healthcare From Day 1</h4><p>Employed in Germany? You're covered under statutory health insurance zero bills for routine and specialist care.</p></div>
     <div class="wow-card"><div class="wow-emoji">🕔</div><h4>Work-Life Balance Actually Real</h4><p>30 mandatory paid leave days. No messages after 5 PM. Weekends are genuinely yours. This is German culture, not just policy.</p></div>
-    <div class="wow-card"><div class="wow-emoji">💸</div><h4>Savings That Stack Rapidly</h4><p>Most IT professionals save ₹6–10L equivalent per month even after all living expenses. The INR-to-EUR conversion is life-changing.</p></div>
+    <div class="wow-card"><div class="wow-emoji">💸</div><h4>Savings That Stack Rapidly</h4><p>Most IT professionals save ₹4–8L equivalent per month even after all living expenses. The INR-to-EUR conversion is life-changing.</p></div>
     <div class="wow-card"><div class="wow-emoji">🌍</div><h4>Travel 26 Schengen Countries</h4><p>Weekend trips to Paris, Prague, Amsterdam, Vienna. With a German residence permit, Europe is your backyard.</p></div>
     <div class="wow-card"><div class="wow-emoji">🍛</div><h4>Thriving Indian Community</h4><p>Indian restaurants, Diwali celebrations, cricket clubs, and WhatsApp groups in every major German city.</p></div>
     <div class="wow-card"><div class="wow-emoji">📚</div><h4>Free Education for Your Kids</h4><p>Public schools are free, safe, and world-ranked. German public university tuition? €0. Your children's future is secured.</p></div>
@@ -612,9 +535,9 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
     <div class="tl-card"><div class="tl-week">Week 1–2</div><h4>Free Eligibility Consult + Points Assessment</h4><p>Meet your certified immigration expert. We calculate your exact points score, identify gaps, and build your personalised roadmap. No fees just complete clarity on where you stand.</p></div>
     <div class="tl-card"><div class="tl-week">Week 3–6</div><h4>Document Collection &amp; Credential Evaluation</h4><p>We guide you through gathering degrees, experience letters, translations, and notarised copies. Our exhaustive checklist ensures nothing is missing before filing.</p></div>
     <div class="tl-card"><div class="tl-week">Week 4–8 (Parallel)</div><h4>German Language Training + 100+ Mock Tests</h4><p>While documents are prepared, you begin A1 German training online or at our Bangalore centre. 100+ mock tests fast-track your language certification in parallel.</p></div>
-    <div class="tl-card"><div class="tl-week">Week 7–10</div><h4>Blocked Account Setup + Visa Filing + Job Search Begins</h4><p>We walk you through opening your Sperrkonto and transferring funds via RBI-compliant channels. Your visa package is filed at the consulate — and job search support kicks in immediately. CV builds, recruiter introductions, and application support start in parallel. Average visa approval: 7 days.</p></div>
-    <div class="tl-card"><div class="tl-week">Week 12–20</div><h4>Visa in Hand — Land in Germany</h4><p>With visa approved, you land in Germany and continue your active job search on the ground. Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you.</p></div>
-    <div class="tl-card"><div class="tl-week">Month 4–6</div><h4>Start Your IT Career in Germany</h4><p>Job search support continues for up to 6 months after landing. Recruiter network, CV support, and job portal guidance until you have a signed employment contract. We consider the job done only when you're employed.</p></div>
+    <div class="tl-card"><div class="tl-week">Week 7–10</div><h4>Blocked Account Setup + Visa Filing + Job Search Begins</h4><p>We walk you through opening your Sperrkonto and transferring funds via RBI-compliant channels. Your visa package is filed at the consulate and job search support kicks in immediately. CV builds, recruiter introductions, and application support start in parallel. Average visa approval: 7 days.</p></div>
+    <div class="tl-card"><div class="tl-week">Week 12–20</div><h4>Visa in Hand Land in Germany</h4><p>With visa approved, you land in Germany and continue your active job search on the ground. Our post-landing team is on WhatsApp from Day 1. Anmeldung, bank, health insurance, accommodation every step handled with you.</p></div>
+    <div class="tl-card"><div class="tl-week">Month 4–6</div><h4>Start Your IT Career in Germany</h4><p>Job search support continues for up to 6 months from enrolling. Recruiter network, CV support, and job portal guidance throughout.</p></div>
   </div>
 </div>
 </section>
@@ -625,7 +548,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
   <div class="fade-up">
     <div class="section-tag">Frequently Asked Questions</div>
     <h2 class="section-title">Questions IT Professionals<br><em>Ask Us Most</em></h2>
-    <p class="section-sub">Can't find your question? Our immigration experts respond within 24 hours reach us on WhatsApp at <strong>+91 80641 24242</strong>.</p>
+    <p class="section-sub">Can't find your question? Our immigration experts respond within 24 hours reach us at <strong>+91 80641 24242</strong>.</p>
   </div>
   <div class="faq-grid fade-up">
     <div class="faq-item"><button class="faq-q">Do I need a job offer to apply for the Opportunity Card? <span class="faq-arrow">+</span></button><div class="faq-a">No this is the biggest advantage of the Chancenkarte. Unlike a traditional work visa, it allows you to enter Germany without a prior job offer. You get up to 1 year after arrival to find employment. Our job search assistance starts even before you land.</div></div>
@@ -705,7 +628,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:28px v
       </div>
     </div>
     <div class="popup-right">
-      <h3 id="popupHeading">Wait — Check If You Qualify<br>Before You Go</h3>
+      <h3 id="popupHeading">Wait Check If You Qualify<br>Before You Go</h3>
       <p id="popupSubtext">Takes 30 seconds. Our expert will call you back within 24 hours.</p>
       <div class="popup-form-group"><label>Full Name</label><input type="text" placeholder="Rajesh Kumar" id="p-name"></div>
       <div class="popup-form-group">
@@ -847,20 +770,11 @@ function switchExpert(idx) {
   p.src = ex.img; p.style.display = 'block'; ini.style.display = 'none';
   p.onerror = function() { this.style.display='none'; ini.style.display='flex'; ini.textContent=ex.initials; ini.style.background=ex.bg; };
 }
+// No interval single expert, no rotation needed
 
-// ── SLOTS: seeded by day so same user sees same number, range 4-9 ──
-// CHANGE 4 & 5: range 4-9, show X left and 25-X booked
-(function initSlots() {
-  const TOTAL = 25;
-  const today = new Date();
-  const seed  = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-  // Simple seeded pseudo-random: deterministic per day
-  const seeded = ((seed * 1103515245 + 12345) & 0x7fffffff) % 6; // 0-5
-  const slotsLeft   = seeded + 4; // 4-9
-  const slotsBooked = TOTAL - slotsLeft;
-  document.getElementById('slotsLeft').textContent   = slotsLeft;
-  document.getElementById('slotsBooked').textContent = slotsBooked;
-})();
+// ── SLOTS ──
+const slots = Math.floor(Math.random() * 15) + 4;
+document.getElementById('slotsCount').textContent = slots;
 
 // ── BONUS TIMER ──
 let bonusEnd = Date.now() + 7 * 60 * 1000;

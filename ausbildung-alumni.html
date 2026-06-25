@@ -777,31 +777,64 @@
 <!-- SCRIPT -->
 <script src="config.js"></script>
 <script>
-  // ---- Inject config into DOM ----
-  document.addEventListener('DOMContentLoaded', () => {
-    // Nav logo is now an SVG image. No injection needed
+  const SUPABASE_URL = 'https://otzmitwvvetdzheogtkr.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90em1pdHd2dmV0ZHpoZW9ndGtyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNjAzNTUsImV4cCI6MjA5NjgzNjM1NX0.YQwCTN7cxq0Zo0e66_Kl2yAmN0okWyqpTq-ktgexlig';
 
-    // Hero
+  // ---- Load config from Supabase, fallback to config.js ----
+  async function loadConfig() {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/webinar_config?id=eq.1&select=*`, {
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`
+        }
+      });
+      const data = await res.json();
+      if (data && data.length > 0) {
+        const r = data[0];
+        return {
+          speakerName:     r.speaker_name     || CONFIG.speakerName,
+          speakerRole:     r.speaker_role     || CONFIG.speakerRole,
+          speakerImage:    r.speaker_image    || CONFIG.speakerImage,
+          webinarTitle:    r.webinar_title    || CONFIG.webinarTitle,
+          webinarDate:     r.webinar_date     || CONFIG.webinarDate,
+          webinarTime:     r.webinar_time     || CONFIG.webinarTime,
+          webinarPlatform: r.webinar_platform || CONFIG.webinarPlatform,
+          programName:     r.program_name     || CONFIG.programName,
+          whatsappChannel: r.whatsapp_channel || CONFIG.whatsappChannel,
+          redirectURL:     r.redirect_url     || CONFIG.redirectURL,
+          googleScriptURL: r.google_script_url|| CONFIG.googleScriptURL,
+          companyName:     CONFIG.companyName,
+        };
+      }
+    } catch(e) {
+      console.warn('Supabase fetch failed, using config.js fallback', e);
+    }
+    return CONFIG;
+  }
+
+  // ---- Inject config into DOM ----
+  loadConfig().then(cfg => {
+    window._CFG = cfg;
+
     document.getElementById('hero-title').innerHTML =
-      CONFIG.webinarTitle.replace('Germany', '<span class="accent">Germany</span>');
+      cfg.webinarTitle.replace('Germany', '<span class="accent">Germany</span>');
     document.getElementById('hero-sub').textContent =
-      `Join ${CONFIG.speakerName} live on ${CONFIG.webinarDate} at ${CONFIG.webinarTime}`;
-    document.getElementById('speaker-img').src  = CONFIG.speakerImage;
-    document.getElementById('speaker-img').alt  = CONFIG.speakerName;
-    document.getElementById('speaker-name').textContent = CONFIG.speakerName;
-    document.getElementById('speaker-role').textContent = CONFIG.speakerRole;
-    document.getElementById('webinar-date').textContent = CONFIG.webinarDate;
-    document.getElementById('webinar-time').textContent = CONFIG.webinarTime;
-    document.getElementById('webinar-platform').textContent = CONFIG.webinarPlatform;
+      `Join ${cfg.speakerName} live on ${cfg.webinarDate} at ${cfg.webinarTime}`;
+    document.getElementById('speaker-img').src  = cfg.speakerImage;
+    document.getElementById('speaker-img').alt  = cfg.speakerName;
+    document.getElementById('speaker-name').textContent = cfg.speakerName;
+    document.getElementById('speaker-role').textContent = cfg.speakerRole;
+    document.getElementById('webinar-date').textContent = cfg.webinarDate;
+    document.getElementById('webinar-time').textContent = cfg.webinarTime;
+    document.getElementById('webinar-platform').textContent = cfg.webinarPlatform;
 
     // Footer
     document.getElementById('footer-text').textContent =
-      `© ${new Date().getFullYear()} ${CONFIG.companyName}. All rights reserved.`;
-    document.getElementById('wa-support').href =
-      `https://wa.me/${CONFIG.whatsappSupport}`;
+      `© ${new Date().getFullYear()} ${cfg.companyName}. All rights reserved.`;
 
     // Page title
-    document.title = `Alumni Webinar | ${CONFIG.companyName}`;
+    document.title = `Alumni Webinar | ${cfg.companyName}`;
   });
 
   // ---- Digits only for WA inputs ----
@@ -815,39 +848,37 @@
   // ---- Form submission ----
   async function submitForm(e, formId) {
     e.preventDefault();
+    const cfg    = window._CFG || CONFIG;
     const isHero = formId === 'hero';
     const btn    = document.getElementById(isHero ? 'hero-btn' : 'bottom-btn');
     const form   = document.getElementById(isHero ? 'hero-form' : 'bottom-form');
-    const succ   = document.getElementById(isHero ? 'hero-success' : 'bottom-success');
 
     const name  = document.getElementById(isHero ? 'h-name'  : 'b-name').value.trim();
     const email = document.getElementById(isHero ? 'h-email' : 'b-email').value.trim();
     const wa    = document.getElementById(isHero ? 'h-wa'    : 'b-wa').value.trim();
 
-    btn.textContent = 'Submitting…';
+    btn.textContent = 'Submitting...';
     btn.disabled = true;
 
     const payload = new URLSearchParams({
       name,
       email,
       whatsapp: '91' + wa,
-      speaker: CONFIG.speakerName,
-      program: CONFIG.programName,
-      date: CONFIG.webinarDate,
-      time: CONFIG.webinarTime
+      speaker: cfg.speakerName,
+      program: cfg.programName,
+      date: cfg.webinarDate,
+      time: cfg.webinarTime
     });
 
     try {
-      await fetch(CONFIG.googleScriptURL, {
+      await fetch(cfg.googleScriptURL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: payload.toString()
       });
-      // Fire Meta Pixel Lead event
       if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-      // Show thank you popup
-      showPopup(name);
+      showPopup(name, cfg);
     } catch (err) {
       btn.textContent = 'Try Again';
       btn.disabled = false;
@@ -856,15 +887,16 @@
   }
 
   // ---- Popup ----
-  function showPopup(name) {
+  function showPopup(name, cfg) {
     document.getElementById('popup-name').textContent = name.split(' ')[0];
-    document.getElementById('popup-wa-btn').href = CONFIG.whatsappChannel;
+    document.getElementById('popup-wa-btn').href = cfg.whatsappChannel;
     document.getElementById('thankyou-popup').style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
 
   function closePopup() {
-    window.location.href = CONFIG.whatsappChannel;
+    const cfg = window._CFG || CONFIG;
+    window.location.href = cfg.whatsappChannel;
   }
 </script>
 

@@ -14,7 +14,7 @@ const CONFIG = {
 
   // ---------- WEBINAR DETAILS ----------
   webinarTitle: "How I Moved to Germany & Earn ₹3L/Month — Live Alumni Session",
-  webinarDate: "Sunday, 6th July 2025",
+  webinarDate: "Friday, 26th June 2026",
   webinarTime: "7:00 PM IST",
   webinarPlatform: "Zoom (Link sent after registration)",
 

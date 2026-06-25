@@ -372,10 +372,6 @@
         <input type="url" id="f-redirect-url" placeholder="https://..." />
       </div>
       <div class="field">
-        <label>Google Apps Script URL <span>form submissions endpoint</span></label>
-        <input type="url" id="f-google-script" placeholder="https://script.google.com/macros/s/..." />
-      </div>
-      <div class="field">
         <label>Program Name</label>
         <input type="text" id="f-program-name" placeholder="e.g. Ausbildung" />
       </div>
@@ -464,7 +460,6 @@
         setField('f-webinar-platform', data.webinar_platform);
         setField('f-whatsapp-channel', data.whatsapp_channel);
         setField('f-redirect-url',     data.redirect_url);
-        setField('f-google-script',    data.google_script_url);
         setField('f-program-name',     data.program_name);
         if (data.speaker_image) {
           document.getElementById('img-preview').src = data.speaker_image;
@@ -532,20 +527,25 @@
     btn.textContent = 'Saving...';
     setStatus('Saving...', '');
 
-    const payload = {
-      speaker_name:      v('f-speaker-name'),
-      speaker_role:      v('f-speaker-role'),
-      speaker_image:     window._imgUrl || null,
-      webinar_title:     v('f-webinar-title'),
-      webinar_date:      v('f-webinar-date'),
-      webinar_time:      v('f-webinar-time'),
-      webinar_platform:  v('f-webinar-platform'),
-      whatsapp_channel:  v('f-whatsapp-channel'),
-      redirect_url:      v('f-redirect-url'),
-      google_script_url: v('f-google-script'),
-      program_name:      v('f-program-name'),
-      updated_at:        new Date().toISOString()
+    // Only include fields that have a value — never overwrite with null
+    const raw = {
+      speaker_name:     v('f-speaker-name'),
+      speaker_role:     v('f-speaker-role'),
+      speaker_image:    window._imgUrl || null,
+      webinar_title:    v('f-webinar-title'),
+      webinar_date:     v('f-webinar-date'),
+      webinar_time:     v('f-webinar-time'),
+      webinar_platform: v('f-webinar-platform'),
+      whatsapp_channel: v('f-whatsapp-channel'),
+      redirect_url:     v('f-redirect-url'),
+      program_name:     v('f-program-name'),
+      updated_at:       new Date().toISOString()
     };
+
+    // Strip out null/undefined so existing DB values are preserved
+    const payload = Object.fromEntries(
+      Object.entries(raw).filter(([_, val]) => val !== null && val !== undefined)
+    );
 
     const { error } = await sb
       .from('webinar_config')

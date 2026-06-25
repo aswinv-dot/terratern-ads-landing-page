@@ -54,7 +54,6 @@
       height: 32px;
       width: auto;
       display: block;
-      filter: brightness(0);
     }
     .nav-cta {
       background: var(--gold);
@@ -70,7 +69,7 @@
     .hero {
       background: linear-gradient(160deg, var(--navy) 0%, #0a3278 100%);
       color: var(--white);
-      padding: 36px var(--gutter) 0;
+      padding: 36px var(--gutter) 36px;
       position: relative;
       overflow: hidden;
     }
@@ -176,9 +175,9 @@
     /* ===== FORM (hero + standalone) ===== */
     .form-card {
       background: var(--white);
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 24px var(--gutter);
-      margin: 0 calc(var(--gutter) * -1);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      margin: 0;
       box-shadow: 0 -8px 32px rgba(0,33,92,0.18);
     }
     .form-label-top {
@@ -343,8 +342,9 @@
 
     /* ===== EARNINGS ===== */
     .earnings-section { background: var(--navy); color: var(--white); }
-    .earnings-section .section-eyebrow { color: var(--sky); }
-    .earnings-section .section-title   { color: var(--white); }
+    .earnings-section .section-eyebrow { color: var(--sky) !important; }
+    .earnings-section .section-title   { color: var(--white) !important; }
+    .earnings-section .section-body    { color: rgba(255,255,255,0.65) !important; }
 
     .earn-grid {
       display: grid;
@@ -428,8 +428,8 @@
       background: linear-gradient(135deg, var(--navy), #0a3278);
       padding: 48px var(--gutter);
     }
-    .register-section .section-eyebrow { color: var(--sky); }
-    .register-section .section-title   { color: var(--white); margin-bottom: 24px; }
+    .register-section .section-eyebrow { color: var(--sky) !important; }
+    .register-section .section-title   { color: var(--white) !important; margin-bottom: 24px; }
     .register-section .form-card {
       border-radius: var(--radius);
       margin: 0;
@@ -448,22 +448,22 @@
 
     /* ===== DESKTOP ===== */
     @media (min-width: 768px) {
-      .hero { padding: 60px var(--gutter) 0; }
+      :root { --gutter: 40px; }
+      .hero { padding: 60px var(--gutter) 60px; }
       .hero-inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 48px;
         align-items: end;
-        max-width: 1100px;
+        max-width: 960px;
         margin: 0 auto;
       }
-      .hero-left { padding-bottom: 48px; }
+      .hero-left { padding-bottom: 0; }
       .hero-right { position: relative; }
       .form-card {
         border-radius: var(--radius);
         margin: 0;
         box-shadow: var(--shadow);
-        margin-bottom: -30px;
       }
       section { padding: 72px var(--gutter); }
       .section-inner { max-width: 960px; margin: 0 auto; }
@@ -471,7 +471,6 @@
       .earn-grid { grid-template-columns: repeat(4, 1fr); }
       .earn-card.gold-card { grid-column: auto; }
       .learn-list { display: grid; grid-template-columns: 1fr 1fr; }
-      --gutter: 40px;
       nav { padding: 16px var(--gutter); }
       .register-section { padding: 80px var(--gutter); }
       .register-form-wrap { max-width: 520px; margin: 0 auto; }

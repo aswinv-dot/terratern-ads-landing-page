@@ -277,8 +277,8 @@
     /* ===== SECTIONS ===== */
     section {
       padding: 48px var(--gutter);
+      background: var(--white);
     }
-    section:nth-child(even) { background: var(--off); }
 
     .section-eyebrow {
       font-size: 0.72rem;
@@ -341,7 +341,7 @@
     }
 
     /* ===== EARNINGS ===== */
-    .earnings-section { background: var(--navy); color: var(--white); }
+    .earnings-section { background: var(--navy) !important; color: var(--white); }
     .earnings-section .section-eyebrow { color: var(--sky) !important; }
     .earnings-section .section-title   { color: var(--white) !important; }
     .earnings-section .section-body    { color: rgba(255,255,255,0.65) !important; }
@@ -425,7 +425,7 @@
 
     /* ===== BOTTOM FORM SECTION ===== */
     .register-section {
-      background: linear-gradient(135deg, var(--navy), #0a3278);
+      background: linear-gradient(135deg, var(--navy), #0a3278) !important;
       padding: 48px var(--gutter);
     }
     .register-section .section-eyebrow { color: var(--sky) !important; }
@@ -552,7 +552,7 @@
 </div>
 
 <!-- WHAT IS AUSBILDUNG -->
-<section>
+<section style="background: var(--off)">
   <div class="section-inner">
     <div class="section-eyebrow">Programme Overview</div>
     <h2 class="section-title">What is Ausbildung?</h2>
@@ -639,7 +639,7 @@
 </section>
 
 <!-- WHAT YOU'LL LEARN -->
-<section>
+<section style="background: var(--white)">
   <div class="section-inner">
     <div class="section-eyebrow">Webinar Agenda</div>
     <h2 class="section-title">What You'll Learn in This Session</h2>

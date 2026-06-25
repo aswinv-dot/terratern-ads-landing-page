@@ -22,6 +22,7 @@
       --border: #d6e3f8;
       --radius: 16px;
       --shadow: 0 4px 24px rgba(0,33,92,0.10);
+      --gutter: 20px;
     }
 
     /* ===== RESET ===== */
@@ -39,8 +40,9 @@
 
     /* ===== NAV ===== */
     nav {
-      background: var(--navy);
-      padding: 14px 20px;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      padding: 14px var(--gutter);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -52,6 +54,7 @@
       height: 32px;
       width: auto;
       display: block;
+      filter: brightness(0);
     }
     .nav-cta {
       background: var(--gold);
@@ -67,7 +70,7 @@
     .hero {
       background: linear-gradient(160deg, var(--navy) 0%, #0a3278 100%);
       color: var(--white);
-      padding: 36px 20px 0;
+      padding: 36px var(--gutter) 0;
       position: relative;
       overflow: hidden;
     }
@@ -133,7 +136,7 @@
       margin-bottom: 24px;
     }
     .speaker-avatar {
-      width: 60px; height: 60px;
+      width: 80px; height: 80px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--gold);
@@ -174,8 +177,8 @@
     .form-card {
       background: var(--white);
       border-radius: var(--radius) var(--radius) 0 0;
-      padding: 24px 20px;
-      margin: 0 -20px;
+      padding: 24px var(--gutter);
+      margin: 0 calc(var(--gutter) * -1);
       box-shadow: 0 -8px 32px rgba(0,33,92,0.18);
     }
     .form-label-top {
@@ -274,7 +277,7 @@
 
     /* ===== SECTIONS ===== */
     section {
-      padding: 48px 20px;
+      padding: 48px var(--gutter);
     }
     section:nth-child(even) { background: var(--off); }
 
@@ -423,7 +426,7 @@
     /* ===== BOTTOM FORM SECTION ===== */
     .register-section {
       background: linear-gradient(135deg, var(--navy), #0a3278);
-      padding: 48px 20px;
+      padding: 48px var(--gutter);
     }
     .register-section .section-eyebrow { color: var(--sky); }
     .register-section .section-title   { color: var(--white); margin-bottom: 24px; }
@@ -438,14 +441,14 @@
       background: #000d26;
       color: rgba(255,255,255,0.5);
       text-align: center;
-      padding: 24px 20px;
+      padding: 24px var(--gutter);
       font-size: 0.78rem;
     }
     footer a { color: var(--sky); }
 
     /* ===== DESKTOP ===== */
     @media (min-width: 768px) {
-      .hero { padding: 60px 40px 0; }
+      .hero { padding: 60px var(--gutter) 0; }
       .hero-inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -462,14 +465,15 @@
         box-shadow: var(--shadow);
         margin-bottom: -30px;
       }
-      section { padding: 72px 40px; }
+      section { padding: 72px var(--gutter); }
       .section-inner { max-width: 960px; margin: 0 auto; }
       .aus-grid { grid-template-columns: 1fr 1fr 1fr; }
       .earn-grid { grid-template-columns: repeat(4, 1fr); }
       .earn-card.gold-card { grid-column: auto; }
       .learn-list { display: grid; grid-template-columns: 1fr 1fr; }
-      nav { padding: 16px 40px; }
-      .register-section { padding: 80px 40px; }
+      --gutter: 40px;
+      nav { padding: 16px var(--gutter); }
+      .register-section { padding: 80px var(--gutter); }
       .register-form-wrap { max-width: 520px; margin: 0 auto; }
       .register-section .form-card { box-shadow: var(--shadow); }
     }

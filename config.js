@@ -6,9 +6,9 @@
 const CONFIG = {
 
   // ---------- SPEAKER ----------
-  speakerName: "Priya Sharma",
+  speakerName: "Rushikesh Jadhav",
   speakerRole: "Ausbildung Graduate · Working in Germany 🇩🇪",
-  speakerLocation: "Hamburg, Germany",
+  speakerLocation: "Germany",
   speakerImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
   // Replace with your actual image URL ↑
 
@@ -23,7 +23,7 @@ const CONFIG = {
   googleScriptURL: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
 
   // Where to send the user after successful form submission
-  redirectURL: "https://terratern.com/thank-you",
+  redirectURL: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",
 
   // ---------- PROGRAM (Ausbildung) ----------
   programName: "Ausbildung",
@@ -32,6 +32,6 @@ const CONFIG = {
   // ---------- FOOTER ----------
   companyName: "TerraTern",
   companyWebsite: "https://terratern.com",
-  whatsappSupport: "917094956963", // without +
+  whatsappSupport: "919036304400", // without +
 
 };

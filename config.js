@@ -20,7 +20,7 @@ const CONFIG = {
 
   // ---------- FORM ----------
   // Paste your Google Apps Script Web App URL here
-  googleScriptURL: "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+  googleScriptURL: "https://script.google.com/macros/s/AKfycbwQvdvdo4xnvCwn525COTPdSbwOierOUE0Lc-PztpMQE_nkkzPT56pUpstP1rVW_P9EUg/exec",
 
   // Where to send the user after successful form submission
   redirectURL: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",

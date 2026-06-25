@@ -9,8 +9,7 @@ const CONFIG = {
   speakerName: "Rushikesh Jadhav",
   speakerRole: "Ausbildung Graduate · Working in Germany 🇩🇪",
   speakerLocation: "Germany",
-  speakerImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
-  // Replace with your actual image URL ↑
+  speakerImage: "https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png",
 
   // ---------- WEBINAR DETAILS ----------
   webinarTitle: "How I Moved to Germany and Earn 3L/Month. Live Alumni Session",

@@ -6,15 +6,15 @@
 const CONFIG = {
 
   // ---------- SPEAKER ----------
-  speakerName: "Rushikesh Jadhav",
+  speakerName: "Priya Sharma",
   speakerRole: "Ausbildung Graduate · Working in Germany 🇩🇪",
-  speakerLocation: "Germany",
+  speakerLocation: "Hamburg, Germany",
   speakerImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
   // Replace with your actual image URL ↑
 
   // ---------- WEBINAR DETAILS ----------
   webinarTitle: "How I Moved to Germany & Earn ₹3L/Month — Live Alumni Session",
-  webinarDate: "Friday, 26th June 2026",
+  webinarDate: "Sunday, 6th July 2025",
   webinarTime: "7:00 PM IST",
   webinarPlatform: "Zoom (Link sent after registration)",
 
@@ -23,7 +23,7 @@ const CONFIG = {
   googleScriptURL: "https://script.google.com/macros/s/AKfycbwQvdvdo4xnvCwn525COTPdSbwOierOUE0Lc-PztpMQE_nkkzPT56pUpstP1rVW_P9EUg/exec",
 
   // Where to send the user after successful form submission
-  redirectURL: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",
+  redirectURL: "https://terratern.com/thank-you",
 
   // ---------- PROGRAM (Ausbildung) ----------
   programName: "Ausbildung",
@@ -32,6 +32,6 @@ const CONFIG = {
   // ---------- FOOTER ----------
   companyName: "TerraTern",
   companyWebsite: "https://terratern.com",
-  whatsappSupport: "919036304400", // without +
+  whatsappSupport: "917094956963", // without +
 
 };

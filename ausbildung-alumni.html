@@ -69,7 +69,7 @@
     .hero {
       background: linear-gradient(160deg, var(--navy) 0%, #0a3278 100%);
       color: var(--white);
-      padding: 36px var(--gutter) 36px;
+      padding: 28px var(--gutter) 32px;
       position: relative;
       overflow: hidden;
     }
@@ -165,10 +165,11 @@
       gap: 6px;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.15);
-      padding: 7px 13px;
+      padding: 7px 12px;
       border-radius: 100px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
+      white-space: nowrap;
     }
     .pill svg { flex-shrink: 0; }
 
@@ -176,9 +177,10 @@
     .form-card {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 24px 20px;
+      padding: 22px 18px;
       margin: 0;
       box-shadow: 0 -8px 32px rgba(0,33,92,0.18);
+      width: 100%;
     }
     .form-label-top {
       font-family: 'Inter', sans-serif;
@@ -207,7 +209,7 @@
       padding: 13px 14px;
       border: 1.5px solid var(--border);
       border-radius: 10px;
-      font-size: 0.95rem;
+      font-size: 16px;
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background: var(--off);
@@ -238,7 +240,7 @@
     }
     .phone-prefix {
       padding: 13px 10px 13px 14px;
-      font-size: 0.95rem;
+      font-size: 16px;
       font-weight: 600;
       color: var(--text);
       background: transparent;
@@ -259,6 +261,7 @@
       border: none !important;
       box-shadow: none !important;
     }
+    .btn-submit {
       width: 100%;
       background: var(--gold);
       color: var(--navy);
@@ -342,7 +345,7 @@
     .aus-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
       margin-top: 24px;
     }
     .aus-card {

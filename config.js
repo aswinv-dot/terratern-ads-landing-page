@@ -18,7 +18,7 @@ const CONFIG = {
   webinarPlatform: "Zoom (Link sent after registration)",
 
   // ---------- FORM ----------
-  googleScriptURL: "https://script.google.com/macros/s/AKfycbyRUHtwj56_BW9HpHAoRpuq_TyGoI5yeNHwuDQPq6phM06SezWkUERSSYHksTAlkWDrxA/exec",
+  googleScriptURL: "https://script.google.com/macros/s/AKfycbzNATa2m5P-lbYC7PxxCky51wFWq9hNt6_32JRZCevYCUXctNJF7V8jsjFCHN9Eg9QfQA/exec",
 
   // Where to send the user after successful form submission
   redirectURL: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",

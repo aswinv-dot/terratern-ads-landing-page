@@ -837,6 +837,18 @@
     document.title = `Alumni Webinar | ${cfg.companyName}`;
   });
 
+  // ---- Capture UTM params from URL ----
+  const _utm = (() => {
+    const p = new URLSearchParams(window.location.search);
+    return {
+      utm_source:   p.get('utm_source')   || '',
+      utm_medium:   p.get('utm_medium')   || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_adset:    p.get('utm_adset')    || '',
+      utm_placement:p.get('utm_placement')|| ''
+    };
+  })();
+
   // ---- Digits only for WA inputs ----
   ['h-wa','b-wa'].forEach(id => {
     const el = document.getElementById(id);
@@ -867,7 +879,12 @@
       speaker: cfg.speakerName,
       program: cfg.programName,
       date: cfg.webinarDate,
-      time: cfg.webinarTime
+      time: cfg.webinarTime,
+      utm_source:    _utm.utm_source,
+      utm_medium:    _utm.utm_medium,
+      utm_campaign:  _utm.utm_campaign,
+      utm_adset:     _utm.utm_adset,
+      utm_placement: _utm.utm_placement
     });
 
     try {

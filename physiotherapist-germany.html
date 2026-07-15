@@ -98,7 +98,6 @@
       font-weight: 800;
       line-height: 1.22;
       margin-bottom: 14px;
-      min-height: 3em;
     }
     .hero-title .gold { color: var(--gold); }
 
@@ -445,10 +444,9 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hiring-pill"><span class="pulse-dot"></span> Hiring Immediately</div>
-      <h1 class="hero-title" id="hero-headline">Loading...</h1>
-      <div class="b2-notice">⚠️ Looking for German B2 Certified candidates only</div>
-      <p class="problem-stmt">You studied for years, work long hours, and still take home less than ₹30,000. Your skills are in demand — just not here. Germany needs qualified physiotherapists now, and they pay what you deserve.</p>
+      <div class="hiring-pill"><span class="pulse-dot"></span> Interviews Happening Every Week</div>
+      <h1 class="hero-title" id="hero-headline">Hiring Physiotherapists for <span class="gold">Germany.</span></h1>
+      <div class="b2-notice">⚠️ Looking for German B1/B2 Certified candidates only</div>
       <div class="benefits">
         <div class="benefit-item"><div class="benefit-icon">💶</div>Earn up to €3,500/month* (approx. ₹3.2L)</div>
         <div class="benefit-item"><div class="benefit-icon">⏰</div>Only 35 hours per week</div>
@@ -460,8 +458,8 @@
     <!-- FORM -->
     <div class="hero-right" id="apply">
       <div class="form-card">
-        <div class="form-head">Apply Now — Limited Seats</div>
-        <div class="form-sub">Our team will reach out within 24 hours</div>
+        <div class="form-head">Submit Your Application</div>
+        <div class="form-sub">Hiring is open now. Our team will reach out within 24 hours</div>
         <form id="lead-form" novalidate onsubmit="submitForm(event,'lead-form','submit-btn')">
           <div class="field">
             <label for="f-name">Full Name</label>
@@ -547,28 +545,28 @@
         <div class="why-icon">💰</div>
         <div>
           <div class="why-title">Earn in Euros</div>
-          <div class="why-text">Up to €3,500/month* — that's approximately ₹3.2L. A salary that matches your qualification.</div>
+          <div class="why-text">Up to €3,500/month* — that's approximately ₹3.2L.</div>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">⏰</div>
         <div>
           <div class="why-title">Work Life Balance</div>
-          <div class="why-text">Only 35 hours per week. No overworking. Germany values your time as much as your skill.</div>
+          <div class="why-text">Only 35 hours per week. More time for yourself and your family.</div>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🛂</div>
         <div>
           <div class="why-title">Full Visa Support</div>
-          <div class="why-text">TerraTern handles your work visa end-to-end. No hidden costs, no agency fees.</div>
+          <div class="why-text">TerraTern handles your work visa end-to-end.</div>
         </div>
       </div>
       <div class="why-card">
         <div class="why-icon">🏠</div>
         <div>
           <div class="why-title">Relocation Covered</div>
-          <div class="why-text">Flight and initial accommodation arranged. You land in Germany without stress.</div>
+          <div class="why-text">Flight and initial accommodation arranged by TerraTern.</div>
         </div>
       </div>
       <div class="why-card">
@@ -605,7 +603,7 @@
       </li>
       <li class="elig-item">
         <div class="elig-check">✓</div>
-        <div class="elig-text">German B2 language certification (mandatory)</div>
+        <div class="elig-text">German B1/B2 language certification (mandatory)</div>
       </li>
       <li class="elig-item">
         <div class="elig-check">✓</div>
@@ -613,11 +611,7 @@
       </li>
       <li class="elig-item">
         <div class="elig-check">✓</div>
-        <div class="elig-text">Valid passport or willingness to apply for one</div>
-      </li>
-      <li class="elig-item">
-        <div class="elig-check">✓</div>
-        <div class="elig-text">Age between 21 and 40 years preferred</div>
+        <div class="elig-text">Age between 22 and 38 years preferred</div>
       </li>
     </ul>
   </div>
@@ -731,19 +725,6 @@
 </div>
 
 <script>
-  // ---- Rotating headlines ----
-  const HEADLINES = [
-    'Earning ₹25,000/month after a BPT degree? Physiotherapists in Germany earn up to <span class="gold">€3,500/month.</span>',
-    'You spent 4 years earning your BPT. Isn\'t it time your salary reflected that? Work in Germany for up to <span class="gold">€3,500/month.</span>',
-    'Your skills are worth more than ₹25,000. Germany pays physiotherapists up to <span class="gold">€3,500/month</span> — and they need you now.',
-    'Germany has an urgent shortage of physiotherapists. Your BPT qualifies you to earn up to <span class="gold">€3,500/month.</span> Apply now.',
-    '35 hours a week. <span class="gold">€3,500/month.</span> Full visa support. Germany is hiring physiotherapists — and your BPT gets you in.'
-  ];
-
-  const idx = (parseInt(localStorage.getItem('physio_hl') || '0') + 1) % HEADLINES.length;
-  localStorage.setItem('physio_hl', idx);
-  document.getElementById('hero-headline').innerHTML = HEADLINES[idx];
-
   // ---- UTM capture ----
   const _utm = (() => {
     const p = new URLSearchParams(window.location.search);

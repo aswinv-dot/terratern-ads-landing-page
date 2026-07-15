@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physiotherapist Jobs in Germany | TerraTern</title>
+  <link rel="icon" type="image/png" href="https://terratern.com/images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #00215c;
+      --blue:   #255cc1;
+      --sky:    #9acbfd;
+      --gold:   #f1c819;
+      --gold-d: #c9a40f;
+      --white:  #ffffff;
+      --off:    #f5f8ff;
+      --muted:  #6b80a8;
+      --text:   #0d1b3e;
+      --border: #d6e3f8;
+      --red:    #dc2626;
+      --green:  #16a34a;
+      --radius: 14px;
+      --gutter: 20px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      padding: 14px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo img { height: 30px; width: auto; }
+    .nav-flag { font-size: 1.4rem; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, #0a3278 100%);
+      color: var(--white);
+      padding: 36px var(--gutter) 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 10%, rgba(145,203,253,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* HIRING PILL */
+    .hiring-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(22,163,74,0.15);
+      border: 1px solid rgba(22,163,74,0.4);
+      color: #4ade80;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 1.4s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      50% { opacity:0.7; transform:scale(1.2); box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    }
+
+    .hero-title {
+      font-size: clamp(1.45rem, 5.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.22;
+      margin-bottom: 14px;
+      min-height: 3em;
+    }
+    .hero-title .gold { color: var(--gold); }
+
+    .problem-stmt {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.68);
+      margin-bottom: 24px;
+      line-height: 1.7;
+      max-width: 500px;
+      border-left: 3px solid var(--gold);
+      padding-left: 14px;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+    .benefit-icon {
+      width: 32px; height: 32px;
+      background: rgba(241,200,25,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* B2 NOTICE */
+    .b2-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(241,200,25,0.12);
+      border: 1px solid rgba(241,200,25,0.3);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 10px;
+      margin-bottom: 28px;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: 0 8px 40px rgba(0,33,92,0.22);
+    }
+    .form-head {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .form-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .field { margin-bottom: 14px; }
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--off);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field input:focus, .field select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,92,193,0.1);
+      background: var(--white);
+    }
+    .field input::placeholder { color: #a0b0cc; }
+    .field input.error, .field select.error { border-color: var(--red); }
+    .field-err {
+      font-size: 0.73rem;
+      color: var(--red);
+      margin-top: 4px;
+      display: none;
+    }
+    .field-err.show { display: block; }
+
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--muted);
+      pointer-events: none;
+    }
+
+    /* PHONE */
+    .phone-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--off);
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .phone-wrap:focus-within {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37,92,193,0.1);
+      background: var(--white);
+    }
+    .phone-wrap.error { border-color: var(--red); }
+    .phone-prefix {
+      padding: 12px 10px 12px 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      background: transparent;
+      white-space: nowrap;
+      border-right: 1.5px solid var(--border);
+      user-select: none;
+    }
+    .phone-wrap input {
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      padding: 12px 14px !important;
+      flex: 1;
+      min-width: 0;
+    }
+    .phone-wrap input:focus { border: none !important; box-shadow: none !important; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-submit:hover  { background: var(--gold-d); }
+    .btn-submit:active { transform: scale(0.98); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-trust {
+      text-align: center;
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* SECTIONS */
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.25rem, 4vw, 1.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+
+    /* WHY GERMANY */
+    .why-section { background: var(--off); padding: 48px var(--gutter); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .why-icon {
+      width: 40px; height: 40px;
+      background: rgba(37,92,193,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .why-title { font-weight: 700; font-size: 0.88rem; color: var(--navy); margin-bottom: 3px; }
+    .why-text  { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+    /* ELIGIBILITY */
+    .elig-section { padding: 48px var(--gutter); background: var(--navy); }
+    .elig-section .section-eyebrow { color: var(--sky); }
+    .elig-section .section-title   { color: var(--white); }
+    .elig-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .elig-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .elig-check {
+      width: 24px; height: 24px;
+      background: var(--gold);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .elig-text { font-size: 0.88rem; color: rgba(255,255,255,0.88); font-weight: 500; line-height: 1.4; }
+
+    /* FOOTER */
+    footer {
+      background: #000d26;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 24px var(--gutter);
+      font-size: 0.76rem;
+    }
+
+    /* POPUP */
+    .popup-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 28px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .popup-icon {
+      width: 68px; height: 68px;
+      background: #e6f9f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 1.8rem;
+    }
+    .popup-title { font-size: 1.25rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .popup-body  { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+    .popup-close {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* DESKTOP */
+    @media (min-width: 768px) {
+      :root { --gutter: 48px; }
+      .hero { padding: 64px var(--gutter); }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+        max-width: 1040px;
+        margin: 0 auto;
+      }
+      .why-section, .elig-section { padding: 72px var(--gutter); }
+      .why-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .elig-list { display: grid; grid-template-columns: 1fr 1fr; }
+      nav { padding: 16px var(--gutter); }
+    }
+  </style>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1023879372044510');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1023879372044510&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="https://terratern.com/images/logo.svg" alt="TerraTern" /></div>
+  <div class="nav-flag">🇩🇪</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hiring-pill"><span class="pulse-dot"></span> Hiring Immediately</div>
+      <h1 class="hero-title" id="hero-headline">Loading...</h1>
+      <div class="b2-notice">⚠️ Looking for German B2 Certified candidates only</div>
+      <p class="problem-stmt">You studied for years, work long hours, and still take home less than ₹30,000. Your skills are in demand — just not here. Germany needs qualified physiotherapists now, and they pay what you deserve.</p>
+      <div class="benefits">
+        <div class="benefit-item"><div class="benefit-icon">💶</div>Earn up to €3,500/month* (approx. ₹3.2L)</div>
+        <div class="benefit-item"><div class="benefit-icon">⏰</div>Only 35 hours per week</div>
+        <div class="benefit-item"><div class="benefit-icon">🚨</div>Immediate requirement — limited seats</div>
+        <div class="benefit-item"><div class="benefit-icon">✈️</div>Visa and relocation fully covered</div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="hero-right" id="apply">
+      <div class="form-card">
+        <div class="form-head">Apply Now — Limited Seats</div>
+        <div class="form-sub">Our team will reach out within 24 hours</div>
+        <form id="lead-form" novalidate onsubmit="submitForm(event,'lead-form','submit-btn')">
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" placeholder="Your full name" />
+            <div class="field-err" id="err-name">Please enter your full name</div>
+          </div>
+          <div class="field">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" placeholder="you@email.com" />
+            <div class="field-err" id="err-email">Please enter a valid email address</div>
+          </div>
+          <div class="field">
+            <label for="f-wa">WhatsApp Number</label>
+            <div class="phone-wrap" id="wa-wrap">
+              <span class="phone-prefix">+91</span>
+              <input type="tel" id="f-wa" placeholder="98765 43210" maxlength="10" />
+            </div>
+            <div class="field-err" id="err-wa">Please enter a valid 10-digit number</div>
+          </div>
+          <div class="field">
+            <label for="f-exp">Total Work Experience</label>
+            <div class="select-wrap">
+              <select id="f-exp">
+                <option value="">Select work experience</option>
+                <option>Less than 1 year</option>
+                <option>1 year</option>
+                <option>2 years</option>
+                <option>3 years</option>
+                <option>4 years</option>
+                <option>5 years</option>
+                <option>6 years</option>
+                <option>7 years or more</option>
+              </select>
+            </div>
+            <div class="field-err" id="err-exp">Please select your work experience</div>
+          </div>
+          <div class="field">
+            <label for="f-edu">Highest Education Qualification</label>
+            <div class="select-wrap">
+              <select id="f-edu">
+                <option value="">Select qualification</option>
+                <option>BPT</option>
+                <option>MPT</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field-err" id="err-edu">Please select your qualification</div>
+          </div>
+          <div class="field">
+            <label for="f-german">German Language Proficiency</label>
+            <div class="select-wrap">
+              <select id="f-german">
+                <option value="">Select proficiency level</option>
+                <option>German Training Required</option>
+                <option>A1 — Completed</option>
+                <option>A1 — Pursuing</option>
+                <option>A2 — Completed</option>
+                <option>A2 — Pursuing</option>
+                <option>B1 — Completed</option>
+                <option>B1 — Pursuing</option>
+                <option>B2 — Completed</option>
+                <option>B2 — Pursuing</option>
+                <option>Above B2</option>
+              </select>
+            </div>
+            <div class="field-err" id="err-german">Please select your German proficiency</div>
+          </div>
+          <button type="submit" class="btn-submit" id="submit-btn">Submit Application</button>
+        </form>
+        <div class="form-trust">🔒 Your details are safe with us. No spam.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY GERMANY -->
+<div class="why-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Germany</div>
+    <h2 class="section-title">Built for Physiotherapy Professionals</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div>
+          <div class="why-title">Earn in Euros</div>
+          <div class="why-text">Up to €3,500/month* — that's approximately ₹3.2L. A salary that matches your qualification.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⏰</div>
+        <div>
+          <div class="why-title">Work Life Balance</div>
+          <div class="why-text">Only 35 hours per week. No overworking. Germany values your time as much as your skill.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛂</div>
+        <div>
+          <div class="why-title">Full Visa Support</div>
+          <div class="why-text">TerraTern handles your work visa end-to-end. No hidden costs, no agency fees.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏠</div>
+        <div>
+          <div class="why-title">Relocation Covered</div>
+          <div class="why-text">Flight and initial accommodation arranged. You land in Germany without stress.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <div>
+          <div class="why-title">PR Pathway</div>
+          <div class="why-text">Build an international career with a clear path to German permanent residency.</div>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚨</div>
+        <div>
+          <div class="why-title">Immediate Requirement</div>
+          <div class="why-text">Germany faces a critical physiotherapy shortage. Hiring is open now — seats are limited.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="elig-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who Can Apply</div>
+    <h2 class="section-title">Eligibility Criteria</h2>
+    <ul class="elig-list">
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">BPT or MPT qualification from a recognised institution</div>
+      </li>
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">Minimum 1 year of work experience as a physiotherapist</div>
+      </li>
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">German B2 language certification (mandatory)</div>
+      </li>
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">Willing to relocate to Germany</div>
+      </li>
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">Valid passport or willingness to apply for one</div>
+      </li>
+      <li class="elig-item">
+        <div class="elig-check">✓</div>
+        <div class="elig-text">Age between 21 and 40 years preferred</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- BOTTOM FORM -->
+<div style="background: linear-gradient(135deg, var(--navy), #0a3278); padding: 48px var(--gutter);">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:var(--sky);">Apply Now</div>
+    <h2 class="section-title" style="color:var(--white); margin-bottom:24px;">Limited Seats. Apply Before They Fill Up.</h2>
+    <div style="max-width:560px; margin:0 auto;">
+      <div class="form-card">
+        <div class="form-head">Submit Your Application</div>
+        <div class="form-sub">Hiring is open now. Our team will reach out within 24 hours</div>
+        <form id="lead-form-2" novalidate onsubmit="submitForm(event,'lead-form-2','submit-btn-2')">
+          <div class="field">
+            <label for="b-name">Full Name</label>
+            <input type="text" id="b-name" placeholder="Your full name" />
+            <div class="field-err" id="b-err-name">Please enter your full name</div>
+          </div>
+          <div class="field">
+            <label for="b-email">Email Address</label>
+            <input type="email" id="b-email" placeholder="you@email.com" />
+            <div class="field-err" id="b-err-email">Please enter a valid email address</div>
+          </div>
+          <div class="field">
+            <label for="b-wa">WhatsApp Number</label>
+            <div class="phone-wrap" id="b-wa-wrap">
+              <span class="phone-prefix">+91</span>
+              <input type="tel" id="b-wa" placeholder="98765 43210" maxlength="10" />
+            </div>
+            <div class="field-err" id="b-err-wa">Please enter a valid 10-digit number</div>
+          </div>
+          <div class="field">
+            <label for="b-exp">Total Work Experience</label>
+            <div class="select-wrap">
+              <select id="b-exp">
+                <option value="">Select work experience</option>
+                <option>Less than 1 year</option>
+                <option>1 year</option>
+                <option>2 years</option>
+                <option>3 years</option>
+                <option>4 years</option>
+                <option>5 years</option>
+                <option>6 years</option>
+                <option>7 years or more</option>
+              </select>
+            </div>
+            <div class="field-err" id="b-err-exp">Please select your work experience</div>
+          </div>
+          <div class="field">
+            <label for="b-edu">Highest Education Qualification</label>
+            <div class="select-wrap">
+              <select id="b-edu">
+                <option value="">Select qualification</option>
+                <option>BPT</option>
+                <option>MPT</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field-err" id="b-err-edu">Please select your qualification</div>
+          </div>
+          <div class="field">
+            <label for="b-german">German Language Proficiency</label>
+            <div class="select-wrap">
+              <select id="b-german">
+                <option value="">Select proficiency level</option>
+                <option>German Training Required</option>
+                <option>A1 — Completed</option>
+                <option>A1 — Pursuing</option>
+                <option>A2 — Completed</option>
+                <option>A2 — Pursuing</option>
+                <option>B1 — Completed</option>
+                <option>B1 — Pursuing</option>
+                <option>B2 — Completed</option>
+                <option>B2 — Pursuing</option>
+                <option>Above B2</option>
+              </select>
+            </div>
+            <div class="field-err" id="b-err-german">Please select your German proficiency</div>
+          </div>
+          <button type="submit" class="btn-submit" id="submit-btn-2">Submit Application</button>
+        </form>
+        <div class="form-trust">🔒 Your details are safe with us. No spam.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://terratern.com/images/logo.svg" alt="TerraTern"
+    style="height:28px;width:auto;margin:0 auto 16px;filter:brightness(0) invert(1);opacity:0.7;" />
+  <p style="margin-bottom:10px;">
+    <a href="https://terratern.com/privacy-policy/" style="color:var(--sky);margin:0 8px;">Privacy Policy</a>
+    <a href="https://terratern.com/refund-policy/" style="color:var(--sky);margin:0 8px;">Refund Policy</a>
+    <a href="https://terratern.com/terms-and-condition/" style="color:var(--sky);margin:0 8px;">Terms and Conditions</a>
+  </p>
+  <p>© 2026 TerraTern Private Limited. All rights reserved.</p>
+  <p style="margin-top:8px;">* Approximate INR conversion. Subject to exchange rates.</p>
+</footer>
+
+<!-- POPUP -->
+<div id="thankyou-popup" style="display:none; position:fixed; inset:0; background:rgba(0,33,92,0.75); z-index:999; align-items:center; justify-content:center; padding:20px;">
+  <div class="popup-card">
+    <div class="popup-icon">🎉</div>
+    <div class="popup-title">Application Received!</div>
+    <p class="popup-body">Thank you for applying. Our team will review your profile and reach out to you on WhatsApp within 24 hours.</p>
+    <button class="popup-close" onclick="closePopup()">Done</button>
+  </div>
+</div>
+
+<script>
+  // ---- Rotating headlines ----
+  const HEADLINES = [
+    'Earning ₹25,000/month after a BPT degree? Physiotherapists in Germany earn up to <span class="gold">€3,500/month.</span>',
+    'You spent 4 years earning your BPT. Isn\'t it time your salary reflected that? Work in Germany for up to <span class="gold">€3,500/month.</span>',
+    'Your skills are worth more than ₹25,000. Germany pays physiotherapists up to <span class="gold">€3,500/month</span> — and they need you now.',
+    'Germany has an urgent shortage of physiotherapists. Your BPT qualifies you to earn up to <span class="gold">€3,500/month.</span> Apply now.',
+    '35 hours a week. <span class="gold">€3,500/month.</span> Full visa support. Germany is hiring physiotherapists — and your BPT gets you in.'
+  ];
+
+  const idx = (parseInt(localStorage.getItem('physio_hl') || '0') + 1) % HEADLINES.length;
+  localStorage.setItem('physio_hl', idx);
+  document.getElementById('hero-headline').innerHTML = HEADLINES[idx];
+
+  // ---- UTM capture ----
+  const _utm = (() => {
+    const p = new URLSearchParams(window.location.search);
+    return {
+      utm_source:    p.get('utm_source')    || '',
+      utm_medium:    p.get('utm_medium')    || '',
+      utm_campaign:  p.get('utm_campaign')  || '',
+      utm_adset:     p.get('utm_adset')     || '',
+      utm_placement: p.get('utm_placement') || ''
+    };
+  })();
+
+  // ---- Digits only for WA ----
+  ['f-wa','b-wa'].forEach(id => {
+    document.getElementById(id).addEventListener('input', function() {
+      this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    });
+  });
+
+  // ---- Validate + submit (shared for both forms) ----
+  async function submitForm(e, formId, btnId) {
+    e.preventDefault();
+    const isTop = formId === 'lead-form';
+    const p = isTop ? '' : 'b-';
+    let ok = true;
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function chk(fieldId, errId, condition) {
+      const el  = document.getElementById(fieldId);
+      const err = document.getElementById(errId);
+      const wrap = (fieldId === 'f-wa' || fieldId === 'b-wa')
+        ? document.getElementById(fieldId === 'f-wa' ? 'wa-wrap' : 'b-wa-wrap') : null;
+      if (condition) {
+        el.classList.remove('error');
+        if (wrap) wrap.classList.remove('error');
+        err.classList.remove('show');
+      } else {
+        el.classList.add('error');
+        if (wrap) wrap.classList.add('error');
+        err.classList.add('show');
+        ok = false;
+      }
+    }
+
+    const name   = document.getElementById(p + 'name' in document.getElementById(p + 'f-name') ? p + 'f-name' : (isTop ? 'f-name' : 'b-name')).value.trim();
+
+    const nameEl   = document.getElementById(isTop ? 'f-name'   : 'b-name');
+    const emailEl  = document.getElementById(isTop ? 'f-email'  : 'b-email');
+    const waEl     = document.getElementById(isTop ? 'f-wa'     : 'b-wa');
+    const expEl    = document.getElementById(isTop ? 'f-exp'    : 'b-exp');
+    const eduEl    = document.getElementById(isTop ? 'f-edu'    : 'b-edu');
+    const germanEl = document.getElementById(isTop ? 'f-german' : 'b-german');
+
+    const nameV   = nameEl.value.trim();
+    const emailV  = emailEl.value.trim();
+    const waV     = waEl.value.trim();
+    const expV    = expEl.value;
+    const eduV    = eduEl.value;
+    const germanV = germanEl.value;
+
+    chk(isTop ? 'f-name'   : 'b-name',   isTop ? 'err-name'   : 'b-err-name',   nameV.length > 1);
+    chk(isTop ? 'f-email'  : 'b-email',  isTop ? 'err-email'  : 'b-err-email',  emailRe.test(emailV));
+    chk(isTop ? 'f-wa'     : 'b-wa',     isTop ? 'err-wa'     : 'b-err-wa',     waV.length === 10);
+    chk(isTop ? 'f-exp'    : 'b-exp',    isTop ? 'err-exp'    : 'b-err-exp',    expV !== '');
+    chk(isTop ? 'f-edu'    : 'b-edu',    isTop ? 'err-edu'    : 'b-err-edu',    eduV !== '');
+    chk(isTop ? 'f-german' : 'b-german', isTop ? 'err-german' : 'b-err-german', germanV !== '');
+
+    if (!ok) return;
+
+    const btn = document.getElementById(btnId);
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    const payload = new URLSearchParams({
+      name: nameV, email: emailV,
+      whatsapp: '91' + waV,
+      experience: expV,
+      education: eduV,
+      german_proficiency: germanV,
+      utm_source:    _utm.utm_source,
+      utm_medium:    _utm.utm_medium,
+      utm_campaign:  _utm.utm_campaign,
+      utm_adset:     _utm.utm_adset,
+      utm_placement: _utm.utm_placement
+    });
+
+    try {
+      const res = await fetch('/api/submit-physio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString()
+      });
+      if (!res.ok) throw new Error('Failed');
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+      document.getElementById('thankyou-popup').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    } catch(err) {
+      btn.textContent = 'Try Again';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  }
+
+  function closePopup() {
+    document.getElementById('thankyou-popup').style.display = 'none';
+    document.body.style.overflow = '';
+    ['lead-form','lead-form-2'].forEach(id => document.getElementById(id).reset());
+    ['submit-btn','submit-btn-2'].forEach(id => {
+      document.getElementById(id).textContent = 'Submit Application';
+      document.getElementById(id).disabled = false;
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GHC Nurses – Work in Germany | TerraTern</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #2D7D5A;
+    --green-dark: #1F5C41;
+    --green-light: #E8F5F0;
+    --navy: #0B2545;
+    --amber: #F5A623;
+    --amber-dark: #D4891A;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --white: #FFFFFF;
+    --border: #D1E8DF;
+  }
+
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { color: var(--white); font-family: 'Fraunces', serif; font-size: 1.3rem; letter-spacing: -0.5px; }
+  .logo span { color: var(--amber); }
+  .rating-badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .star { color: var(--amber); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #163B6E 100%);
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '✚';
+    position: absolute; top: -10px; right: -10px;
+    font-size: 160px; color: rgba(45,125,90,0.12);
+    line-height: 1;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    color: var(--white);
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    line-height: 1.2;
+    max-width: 560px;
+    margin: 0 auto 14px;
+  }
+  .hero h1 em {
+    color: var(--amber);
+    font-style: normal;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--amber-dark); }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--green);
+    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 6px 20px;
+    color: var(--white);
+    border-right: 1px solid rgba(255,255,255,0.25);
+    flex: 1; min-width: 100px;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: block;
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.7rem; opacity: 0.88; margin-top: 3px; display: block; }
+
+  /* FORM SECTION */
+  .form-section {
+    background: var(--green-light);
+    padding: 40px 20px;
+  }
+  .form-wrap {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(11,37,69,0.10);
+    overflow: hidden;
+  }
+  .form-header {
+    background: var(--green);
+    padding: 20px 24px;
+    color: var(--white);
+  }
+  .form-header h2 { font-family: 'Fraunces', serif; font-size: 1.2rem; margin-bottom: 4px; }
+  .form-header p { font-size: 0.82rem; opacity: 0.85; }
+
+  /* STEPPER */
+  .stepper {
+    display: flex;
+    background: #f0f9f5;
+    border-bottom: 1px solid var(--border);
+  }
+  .step-tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    border-bottom: 3px solid transparent;
+    cursor: default;
+    transition: all 0.2s;
+  }
+  .step-tab.active {
+    color: var(--green);
+    border-bottom-color: var(--green);
+    background: var(--white);
+  }
+  .step-tab.done {
+    color: var(--green-dark);
+    border-bottom-color: var(--green-dark);
+  }
+  .step-num {
+    display: block;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--border);
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin: 0 auto 4px;
+    line-height: 22px;
+  }
+  .step-tab.active .step-num { background: var(--green); color: white; }
+  .step-tab.done .step-num { background: var(--green-dark); color: white; }
+
+  /* FORM BODY */
+  .form-body { padding: 24px; }
+  .step-panel { display: none; }
+  .step-panel.active { display: block; }
+
+  .field-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .field-group { margin-bottom: 20px; }
+
+  /* PILL BUTTONS */
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 24px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--white);
+    color: var(--text);
+    transition: all 0.18s;
+    user-select: none;
+  }
+  .pill input { display: none; }
+  .pill:hover { border-color: var(--green); color: var(--green); }
+  .pill input:checked + span,
+  .pill.selected { color: var(--white) !important; background: var(--green) !important; border-color: var(--green) !important; }
+  label.pill input:checked ~ span { color: var(--white); }
+
+  /* INPUT FIELDS */
+  .text-input, .select-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+    transition: border 0.18s;
+    appearance: none;
+    background: var(--white);
+  }
+  .text-input:focus, .select-input:focus { border-color: var(--green); }
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '▾';
+    position: absolute; right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted); pointer-events: none; font-size: 0.85rem;
+  }
+
+  /* NAV BUTTONS */
+  .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+  .btn-next, .btn-submit {
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s;
+    flex: 1;
+  }
+  .btn-next:hover, .btn-submit:hover { background: var(--green-dark); }
+  .btn-back {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--muted);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: border 0.18s;
+  }
+  .btn-back:hover { border-color: var(--green); color: var(--green); }
+  .step-hint { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 12px; }
+
+  /* SUCCESS */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .success-icon { font-size: 3rem; margin-bottom: 12px; }
+  .success-msg h3 { font-family: 'Fraunces', serif; color: var(--green); font-size: 1.4rem; margin-bottom: 8px; }
+  .success-msg p { color: var(--muted); font-size: 0.88rem; }
+
+  /* WHY SECTION */
+  .why-section { padding: 40px 20px; text-align: center; background: var(--white); }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .benefit-card {
+    background: var(--green-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .benefit-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .benefit-title { font-weight: 700; font-size: 0.85rem; color: var(--navy); margin-bottom: 4px; }
+  .benefit-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.75rem;
+  }
+  footer a { color: var(--amber); text-decoration: none; }
+
+  /* MOBILE STICKY CTA */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    padding: 16px;
+    z-index: 200;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    .sticky-cta { display: block; }
+    body { padding-bottom: 60px; }
+    .stat-item { min-width: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Terra<span>Tern</span></div>
+  <div class="rating-badge"><span class="star">★</span> 4.9/5 by Clients</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Germany Healthcare Program</div>
+  <h1>Earn up to <em>₹3.5L/Month</em> as a Staff Nurse in Germany</h1>
+  <p class="hero-sub">Join 348+ nurses who made the move. Check if you qualify in 60 seconds.</p>
+  <a href="#qualify" class="hero-cta">Check My Eligibility →</a>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">74</span>
+    <span class="stat-label">Partners in Germany</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">348+</span>
+    <span class="stat-label">Nurses Placed (3 months)</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">99.7%</span>
+    <span class="stat-label">Completion Rate</span>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="form-section" id="qualify">
+  <div class="form-wrap">
+    <div class="form-header">
+      <h2>Check Your Eligibility</h2>
+      <p>Takes less than a minute — no commitment needed</p>
+    </div>
+
+    <!-- STEPPER -->
+    <div class="stepper">
+      <div class="step-tab active" id="tab1">
+        <span class="step-num">1</span>Qualification
+      </div>
+      <div class="step-tab" id="tab2">
+        <span class="step-num">2</span>Preferences
+      </div>
+      <div class="step-tab" id="tab3">
+        <span class="step-num">3</span>Contact
+      </div>
+    </div>
+
+    <!-- FORM BODY -->
+    <div class="form-body">
+
+      <!-- STEP 1 -->
+      <div class="step-panel active" id="step1">
+        <div class="field-group">
+          <span class="field-label">Your Nursing Degree</span>
+          <div class="pill-group" id="degree-group">
+            <label class="pill"><input type="radio" name="degree" value="ANM"/><span>ANM</span></label>
+            <label class="pill"><input type="radio" name="degree" value="GNM"/><span>GNM</span></label>
+            <label class="pill"><input type="radio" name="degree" value="B.Sc Nursing"/><span>B.Sc Nursing</span></label>
+            <label class="pill"><input type="radio" name="degree" value="M.Sc Nursing"/><span>M.Sc Nursing</span></label>
+            <label class="pill"><input type="radio" name="degree" value="BPT"/><span>BPT</span></label>
+            <label class="pill"><input type="radio" name="degree" value="MPT"/><span>MPT</span></label>
+          </div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Your Current Role</span>
+          <div class="select-wrap">
+            <select class="select-input" id="role">
+              <option value="">Select your role</option>
+              <option>Staff Nurse</option>
+              <option>Senior Nurse / Ward In-Charge</option>
+              <option>ICU / Critical Care Nurse</option>
+              <option>OT Technician</option>
+              <option>Physiotherapist</option>
+              <option>Nursing Student (Final Year)</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Current Hospital / Employer</span>
+          <input type="text" class="text-input" id="hospital" placeholder="e.g. Apollo Hospitals, Bangalore"/>
+        </div>
+        <div class="form-nav">
+          <button class="btn-next" onclick="goStep(2)">Next: Preferences →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-panel" id="step2">
+        <div class="field-group">
+          <span class="field-label">German Language Proficiency</span>
+          <div class="pill-group">
+            <label class="pill"><input type="radio" name="german" value="None"/><span>None</span></label>
+            <label class="pill"><input type="radio" name="german" value="A1"/><span>A1</span></label>
+            <label class="pill"><input type="radio" name="german" value="A2"/><span>A2</span></label>
+            <label class="pill"><input type="radio" name="german" value="B1"/><span>B1</span></label>
+            <label class="pill"><input type="radio" name="german" value="B2+"/><span>B2+</span></label>
+          </div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">How soon can you migrate?</span>
+          <div class="pill-group">
+            <label class="pill"><input type="radio" name="timeline" value="0-3M"/><span>Within 3 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="3-6M"/><span>3-6 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="6-12M"/><span>6-12 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="Exploring"/><span>Just Exploring</span></label>
+          </div>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Preferred Language for Communication</span>
+          <div class="pill-group">
+            <label class="pill"><input type="radio" name="lang" value="English"/><span>English</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Hindi"/><span>Hindi</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Tamil"/><span>Tamil</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Telugu"/><span>Telugu</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Malayalam"/><span>Malayalam</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Kannada"/><span>Kannada</span></label>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="goStep(1)">← Back</button>
+          <button class="btn-next" onclick="goStep(3)">Next: Contact →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-panel" id="step3">
+        <div class="field-group">
+          <span class="field-label">Full Name</span>
+          <input type="text" class="text-input" id="name" placeholder="Your full name"/>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Mobile Number</span>
+          <input type="tel" class="text-input" id="mobile" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="field-group">
+          <span class="field-label">Email Address</span>
+          <input type="email" class="text-input" id="email" placeholder="you@email.com"/>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back" onclick="goStep(2)">← Back</button>
+          <button class="btn-submit" onclick="submitForm()">Check Eligibility ✓</button>
+        </div>
+        <p class="step-hint">Your data is 100% private. No spam, ever.</p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-msg" id="success">
+        <div class="success-icon">🎉</div>
+        <h3>You're Eligible!</h3>
+        <p>Our team will reach out within 24 hours to walk you through your Germany journey.</p>
+      </div>
+
+    </div><!-- end form-body -->
+  </div><!-- end form-wrap -->
+</section>
+
+<!-- WHY TERRATERN -->
+<section class="why-section">
+  <div class="section-eyebrow">Why TerraTern</div>
+  <div class="section-title">Everything you need, handled for you.</div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <div class="benefit-title">FREE Visa & Relocation</div>
+      <div class="benefit-desc">We handle paperwork, visa, and flight arrangements</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🏦</div>
+      <div class="benefit-title">Loan Assistance</div>
+      <div class="benefit-desc">Zero upfront cost with financing support</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">💰</div>
+      <div class="benefit-title">Upto ₹1L Refund</div>
+      <div class="benefit-desc">Cash refund on successful program completion</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🏥</div>
+      <div class="benefit-title">74 Hospital Partners</div>
+      <div class="benefit-desc">Placed in top German hospitals across all states</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 TerraTern Private Limited · Bangalore, India</p>
+  <p style="margin-top:6px;">Questions? <a href="tel:+917094956963">+91 70949 56963</a> · <a href="mailto:v.aswinraaju@gmail.com">v.aswinraaju@gmail.com</a></p>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<button class="sticky-cta" onclick="document.getElementById('qualify').scrollIntoView({behavior:'smooth'})">
+  Check My Eligibility — Free →
+</button>
+
+<script>
+  function goStep(n) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.step-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    const tab = document.getElementById('tab' + n);
+    tab.classList.add('active');
+    // mark previous tabs as done
+    for (let i = 1; i < n; i++) {
+      document.getElementById('tab' + i).classList.add('done');
+    }
+    document.getElementById('qualify').scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+
+  function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!name || !mobile || !email) {
+      alert('Please fill in all contact details.');
+      return;
+    }
+    document.getElementById('step3').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+    document.querySelectorAll('.step-tab').forEach(t => { t.classList.remove('active'); t.classList.add('done'); });
+  }
+
+  // Radio pill highlight fix
+  document.querySelectorAll('.pill input[type=radio]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const group = radio.closest('.pill-group');
+      group.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
+      radio.closest('.pill').classList.add('selected');
+    });
+  });
+</script>
+</body>
+</html>

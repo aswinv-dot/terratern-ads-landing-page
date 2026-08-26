@@ -62,6 +62,7 @@
     grid-template-columns: 1fr 420px;
     flex: 1;
     min-height: 0;
+    align-items: stretch;
   }
 
   /* LEFT PANEL */
@@ -73,6 +74,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    min-height: 100%;
   }
   .left-panel::before {
     content: '✚';
@@ -174,6 +176,7 @@
     flex-direction: column;
     box-shadow: -8px 0 40px rgba(0,0,0,0.18);
     overflow-y: auto;
+    min-height: 100%;
   }
   .form-header {
     background: var(--green);
@@ -437,21 +440,7 @@
 
         <div class="field-group">
           <span class="field-label">Your Current Role</span>
-          <div class="select-wrap">
-            <select class="select-input" id="role" onchange="handleRoleChange(this.value)">
-              <option value="">Select your role</option>
-              <option>Staff Nurse</option>
-              <option>Senior Nurse / Ward In-Charge</option>
-              <option>ICU / Critical Care Nurse</option>
-              <option>OT Technician</option>
-              <option>Physiotherapist</option>
-              <option>Nursing Student (Final Year)</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div id="role-other-wrap" class="hidden" style="margin-top:10px;">
-            <input type="text" class="text-input" id="role-other" placeholder="Please specify your role"/>
-          </div>
+          <input type="text" class="text-input" id="role" placeholder="e.g. Staff Nurse, OT Technician, ICU Nurse..."/>
         </div>
 
         <div class="field-group">
@@ -557,11 +546,6 @@
       }
     });
   });
-
-  function handleRoleChange(val) {
-    const wrap = document.getElementById('role-other-wrap');
-    wrap.classList.toggle('hidden', val !== 'Other');
-  }
 
   function goStep(n) {
     document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));

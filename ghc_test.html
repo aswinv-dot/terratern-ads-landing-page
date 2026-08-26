@@ -4,27 +4,28 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>GHC Nurses – Work in Germany | TerraTern</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --green: #2D7D5A;
-    --green-dark: #1F5C41;
-    --green-light: #E8F5F0;
-    --navy: #0B2545;
-    --amber: #F5A623;
-    --amber-dark: #D4891A;
-    --text: #1A1A2E;
-    --muted: #6B7280;
-    --white: #FFFFFF;
-    --border: #D1E8DF;
+    --green: #1a4d3a;
+    --green-mid: #235c46;
+    --green-light: #e8f2ee;
+    --black: #111111;
+    --dark: #1c1c1c;
+    --mid: #444444;
+    --muted: #888888;
+    --border: #e0e0e0;
+    --bg: #f7f7f7;
+    --white: #ffffff;
   }
 
   html, body { height: 100%; }
   body {
     font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    background: var(--navy);
+    color: var(--black);
+    background: #c8d4ce;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -33,211 +34,225 @@
 
   /* HEADER */
   header {
-    background: var(--navy);
-    padding: 14px 32px;
+    background: var(--white);
+    padding: 14px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid var(--border);
     flex-shrink: 0;
     z-index: 10;
   }
-  .logo { color: var(--white); font-family: 'Fraunces', serif; font-size: 1.3rem; }
-  .logo span { color: var(--amber); }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--black); letter-spacing: -0.02em; }
+  .logo span { color: var(--green); }
   .rating-badge {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
+    background: var(--green);
     color: var(--white);
     border-radius: 20px;
     padding: 5px 14px;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
     display: flex; align-items: center; gap: 5px;
   }
-  .star { color: var(--amber); }
 
-  /* MAIN LAYOUT — fills remaining height */
+  /* PAGE WRAPPER */
   .page-layout {
     display: grid;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 400px;
     flex: 1;
-    min-height: 0;
     align-items: stretch;
+    max-width: 1160px;
+    width: 100%;
+    margin: 32px auto;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   /* LEFT PANEL */
   .left-panel {
-    background: linear-gradient(160deg, #0B2545 60%, #0f3460 100%);
-    padding: 52px 56px 48px 56px;
+    background: var(--green);
+    padding: 48px 44px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 36px;
     position: relative;
     overflow: hidden;
-    min-height: 100%;
   }
-  .left-panel::before {
-    content: '✚';
-    position: absolute; bottom: -30px; right: -20px;
-    font-size: 260px; color: rgba(45,125,90,0.08);
-    line-height: 1; pointer-events: none;
+  .left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
   }
 
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: var(--green);
-    color: var(--white);
-    font-size: 0.72rem;
+    gap: 7px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
-    padding: 5px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
-    margin-bottom: 20px;
     width: fit-content;
   }
+
   .hero h1 {
     font-family: 'Fraunces', serif;
     color: var(--white);
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    line-height: 1.18;
-    max-width: 520px;
-    margin-bottom: 14px;
+    font-size: clamp(1.9rem, 2.8vw, 2.9rem);
+    line-height: 1.15;
+    max-width: 480px;
   }
-  .hero h1 em { color: var(--amber); font-style: normal; }
+  .hero h1 em { font-style: italic; color: rgba(255,255,255,0.6); }
   .hero-sub {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.95rem;
-    max-width: 440px;
-    line-height: 1.6;
-    margin-bottom: 36px;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.92rem;
+    max-width: 400px;
+    line-height: 1.65;
+    margin-top: 14px;
   }
 
+  /* STATS */
   .stats-row {
     display: flex;
     gap: 0;
-    margin-bottom: 40px;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
     overflow: hidden;
-    max-width: 480px;
+    max-width: 440px;
   }
   .stat-item {
     flex: 1;
     text-align: center;
-    padding: 16px 10px;
+    padding: 18px 10px;
     color: var(--white);
-    border-right: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
+    border-right: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
   }
   .stat-item:last-child { border-right: none; }
   .stat-num {
     font-family: 'Fraunces', serif;
-    font-size: 1.7rem;
+    font-size: 1.75rem;
     font-weight: 900;
     display: block;
-    color: var(--amber);
     line-height: 1;
   }
-  .stat-label { font-size: 0.67rem; opacity: 0.75; margin-top: 4px; display: block; line-height: 1.3; }
+  .stat-label { font-size: 0.64rem; color: rgba(255,255,255,0.5); margin-top: 5px; display: block; line-height: 1.35; }
 
-  .why-block { max-width: 480px; }
+  /* BENEFITS */
   .why-title {
     font-family: 'Fraunces', serif;
     color: var(--white);
-    font-size: 1.15rem;
-    margin-bottom: 16px;
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    opacity: 0.9;
   }
-  .why-title span { color: var(--amber); }
   .benefits-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
   }
   .benefit-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 10px;
-    padding: 15px 15px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 14px;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
-  .benefit-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
-  .benefit-title { font-weight: 600; font-size: 0.8rem; color: var(--white); margin-bottom: 2px; }
-  .benefit-desc { font-size: 0.7rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+  .benefit-icon { font-size: 1.1rem; flex-shrink: 0; }
+  .benefit-title { font-weight: 600; font-size: 0.78rem; color: var(--white); margin-bottom: 2px; }
+  .benefit-desc { font-size: 0.68rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
 
   /* RIGHT PANEL */
   .right-panel {
     background: var(--white);
     display: flex;
     flex-direction: column;
-    box-shadow: -8px 0 40px rgba(0,0,0,0.18);
-    overflow-y: auto;
-    min-height: 100%;
+    border-left: 1px solid var(--border);
   }
-  .form-header {
-    background: var(--green);
-    padding: 24px 32px 20px;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-  .form-header h2 { font-family: 'Fraunces', serif; font-size: 1.2rem; margin-bottom: 3px; }
-  .form-header p { font-size: 0.79rem; opacity: 0.82; }
 
-  .stepper {
-    display: flex;
-    background: #f0f9f5;
+  .form-header {
+    background: var(--white);
+    padding: 28px 28px 0;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
-    padding: 0 8px;
+  }
+  .form-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  .form-header p { font-size: 0.78rem; color: var(--muted); padding-bottom: 20px; }
+
+  /* STEPPER */
+  .stepper {
+    display: flex;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
   }
   .step-tab {
     flex: 1; text-align: center;
-    padding: 11px 4px;
-    font-size: 0.69rem; font-weight: 600;
+    padding: 12px 4px;
+    font-size: 0.68rem; font-weight: 600;
     color: var(--muted);
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
     transition: all 0.2s;
+    cursor: default;
   }
   .step-tab.active { color: var(--green); border-bottom-color: var(--green); background: var(--white); }
-  .step-tab.done { color: var(--green-dark); border-bottom-color: var(--green-dark); }
+  .step-tab.done { color: var(--mid); border-bottom-color: var(--mid); }
   .step-num {
     display: block;
-    width: 21px; height: 21px;
+    width: 20px; height: 20px;
     border-radius: 50%;
     background: var(--border);
     color: var(--muted);
-    font-size: 0.69rem; font-weight: 700;
+    font-size: 0.65rem; font-weight: 700;
     margin: 0 auto 4px;
-    line-height: 21px;
+    line-height: 20px;
   }
-  .step-tab.active .step-num { background: var(--green); color: white; }
-  .step-tab.done .step-num { background: var(--green-dark); color: white; }
+  .step-tab.active .step-num { background: var(--green); color: var(--white); }
+  .step-tab.done .step-num { background: var(--mid); color: var(--white); }
 
-  .form-body { padding: 28px 32px 32px; flex: 1; }
+  /* FORM BODY */
+  .form-body { padding: 24px 28px 28px; flex: 1; overflow-y: auto; }
   .step-panel { display: none; }
   .step-panel.active { display: block; }
 
   .field-label {
     display: block;
-    font-size: 0.8rem; font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--mid);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
   }
   .field-group { margin-bottom: 20px; }
 
-  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+  /* PILLS */
+  .pill-group { display: flex; flex-wrap: wrap; gap: 7px; }
   .pill {
     display: inline-flex; align-items: center;
-    padding: 6px 12px;
+    padding: 6px 13px;
     border: 1.5px solid var(--border);
-    border-radius: 24px;
-    font-size: 0.79rem; font-weight: 500;
+    border-radius: 6px;
+    font-size: 0.78rem; font-weight: 500;
     cursor: pointer;
-    background: var(--white); color: var(--text);
+    background: var(--white);
+    color: var(--dark);
     transition: all 0.15s;
     user-select: none;
   }
@@ -245,78 +260,92 @@
   .pill:hover { border-color: var(--green); color: var(--green); }
   .pill.selected { color: var(--white) !important; background: var(--green) !important; border-color: var(--green) !important; }
 
+  /* INPUTS */
   .text-input, .select-input {
     width: 100%;
-    padding: 10px 13px;
+    padding: 10px 12px;
     border: 1.5px solid var(--border);
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.87rem; color: var(--text);
+    font-size: 0.85rem;
+    color: var(--dark);
     outline: none;
     transition: border 0.15s;
-    appearance: none;
     background: var(--white);
+    appearance: none;
   }
   .text-input:focus, .select-input:focus { border-color: var(--green); }
   .select-wrap { position: relative; }
   .select-wrap::after {
     content: '▾';
-    position: absolute; right: 13px; top: 50%;
+    position: absolute; right: 12px; top: 50%;
     transform: translateY(-50%);
-    color: var(--muted); pointer-events: none; font-size: 0.8rem;
+    color: var(--muted); pointer-events: none; font-size: 0.78rem;
   }
 
-  .hidden { display: none !important; }
+  /* SUB-DROPDOWNS — hidden by default */
+  .sub-select { display: none; margin-top: 10px; }
+  .sub-select.visible { display: block; }
 
-  .form-nav { display: flex; align-items: center; margin-top: 16px; gap: 10px; }
+  /* NAV BUTTONS */
+  .form-nav { display: flex; align-items: center; margin-top: 24px; gap: 8px; }
   .btn-next, .btn-submit {
-    background: var(--green); color: var(--white);
-    border: none; padding: 12px 20px;
-    border-radius: 8px;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem; font-weight: 700;
-    cursor: pointer; transition: background 0.15s; flex: 1;
+    font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex: 1;
   }
-  .btn-next:hover, .btn-submit:hover { background: var(--green-dark); }
+  .btn-next:hover, .btn-submit:hover { background: var(--green-mid); }
   .btn-back {
-    background: none; border: 1.5px solid var(--border);
-    color: var(--muted); padding: 12px 16px;
-    border-radius: 8px;
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--muted);
+    padding: 12px 16px;
+    border-radius: 6px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.84rem; cursor: pointer;
-    transition: border 0.15s; white-space: nowrap;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border 0.15s;
+    white-space: nowrap;
   }
   .btn-back:hover { border-color: var(--green); color: var(--green); }
-  .step-hint { font-size: 0.71rem; color: var(--muted); text-align: center; margin-top: 10px; }
 
-  .success-msg { display: none; text-align: center; padding: 40px 20px; }
-  .success-icon { font-size: 3rem; margin-bottom: 12px; }
+  .step-hint { font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 16px; }
+
+  /* SUCCESS */
+  .success-msg { display: none; text-align: center; padding: 48px 20px; }
+  .success-icon { font-size: 2.8rem; margin-bottom: 14px; }
   .success-msg h3 { font-family: 'Fraunces', serif; color: var(--green); font-size: 1.4rem; margin-bottom: 8px; }
-  .success-msg p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+  .success-msg p { color: var(--muted); font-size: 0.86rem; line-height: 1.6; }
 
   /* FOOTER */
   footer {
-    background: #091d38;
-    padding: 14px 32px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    padding: 14px 40px;
     text-align: center;
-    color: rgba(255,255,255,0.45);
-    font-size: 0.72rem;
+    color: var(--muted);
+    font-size: 0.71rem;
     flex-shrink: 0;
   }
-  footer a { color: var(--amber); text-decoration: none; }
+  footer a { color: var(--green); text-decoration: none; }
 
   /* MOBILE */
   @media (max-width: 768px) {
-    body { overflow-x: hidden; }
-    .page-layout { grid-template-columns: 1fr; flex: none; }
-    .left-panel { padding: 36px 24px 32px; }
-    .left-panel::before { font-size: 140px; }
-    .right-panel { box-shadow: none; overflow-y: visible; }
-    .form-body { padding: 24px 20px 28px; }
-    .form-header { padding: 20px 20px 16px; }
-    .stats-row { max-width: 100%; }
+    .page-layout { grid-template-columns: 1fr; margin: 0; border-radius: 0; box-shadow: none; }
+    .left-panel { padding: 36px 24px; }
+    .right-panel { border-left: none; border-top: 1px solid var(--border); }
+    .form-header { padding: 24px 20px 0; }
+    .form-body { padding: 20px 20px 28px; }
     .benefits-grid { grid-template-columns: 1fr 1fr; }
-    footer { grid-column: 1; }
+    footer { padding: 14px 20px; }
+    header { padding: 14px 20px; }
   }
   @media (max-width: 420px) {
     .benefits-grid { grid-template-columns: 1fr; }
@@ -327,42 +356,44 @@
 
 <header>
   <div class="logo">Terra<span>Tern</span></div>
-  <div class="rating-badge"><span class="star">★</span> 4.9/5 by Clients</div>
+  <div class="rating-badge">★ 4.9 / 5 Rating</div>
 </header>
 
 <div class="page-layout">
 
   <!-- LEFT -->
   <div class="left-panel">
-    <div class="hero-content">
+    <div>
       <div class="hero-eyebrow">🏥 Germany Healthcare Program</div>
       <div class="hero">
-        <h1>Earn up to <em>₹3.5L/Month</em> as a Staff Nurse in Germany</h1>
-        <p class="hero-sub">Join 348+ nurses who made the move with TerraTern. Check if you qualify — takes less than 60 seconds.</p>
-      </div>
-      <div class="stats-row">
-        <div class="stat-item">
-          <span class="stat-num">74</span>
-          <span class="stat-label">Partners in Germany</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">348+</span>
-          <span class="stat-label">Nurses Placed (3 months)</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">99.7%</span>
-          <span class="stat-label">Completion Rate</span>
-        </div>
+        <h1>Earn up to <em>₹3.5L/Month</em> as a Nurse in Germany</h1>
+        <p class="hero-sub">Join 348+ nurses who made the move with TerraTern. Check if you qualify in under 60 seconds.</p>
       </div>
     </div>
-    <div class="why-block">
-      <div class="why-title">Why <span>TerraTern?</span></div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-num">74</span>
+        <span class="stat-label">Hospital Partners in Germany</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">348+</span>
+        <span class="stat-label">Nurses Placed (3 months)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">99.7%</span>
+        <span class="stat-label">Completion Rate</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="why-title">Why TerraTern?</div>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">✈️</div>
           <div>
             <div class="benefit-title">FREE Visa & Relocation</div>
-            <div class="benefit-desc">We handle all paperwork and travel</div>
+            <div class="benefit-desc">All paperwork and travel covered</div>
           </div>
         </div>
         <div class="benefit-card">
@@ -394,12 +425,12 @@
   <div class="right-panel">
     <div class="form-header">
       <h2>Check Your Eligibility</h2>
-      <p>No commitment needed — free consultation on approval</p>
+      <p>Free consultation — no commitment needed</p>
     </div>
 
     <div class="stepper">
-      <div class="step-tab active" id="tab1"><span class="step-num">1</span>Qualification</div>
-      <div class="step-tab" id="tab2"><span class="step-num">2</span>Preferences</div>
+      <div class="step-tab active" id="tab1"><span class="step-num">1</span>Background</div>
+      <div class="step-tab" id="tab2"><span class="step-num">2</span>Readiness</div>
       <div class="step-tab" id="tab3"><span class="step-num">3</span>Contact</div>
     </div>
 
@@ -409,41 +440,61 @@
       <div class="step-panel active" id="step1">
 
         <div class="field-group">
-          <span class="field-label">Your Nursing Degree</span>
+          <span class="field-label">Nursing Qualification</span>
           <div class="pill-group" id="degree-group">
-            <label class="pill" data-val="ANM"><input type="radio" name="degree" value="ANM"/><span>ANM</span></label>
-            <label class="pill" data-val="GNM"><input type="radio" name="degree" value="GNM"/><span>GNM</span></label>
-            <label class="pill" data-val="B.Sc Nursing"><input type="radio" name="degree" value="B.Sc Nursing"/><span>B.Sc Nursing</span></label>
-            <label class="pill" data-val="M.Sc Nursing"><input type="radio" name="degree" value="M.Sc Nursing"/><span>M.Sc Nursing</span></label>
-            <label class="pill" data-val="BPT"><input type="radio" name="degree" value="BPT"/><span>BPT</span></label>
-            <label class="pill" data-val="MPT"><input type="radio" name="degree" value="MPT"/><span>MPT</span></label>
-            <label class="pill" data-val="Others"><input type="radio" name="degree" value="Others"/><span>Others</span></label>
+            <label class="pill"><input type="radio" name="degree" value="ANM"/><span>ANM</span></label>
+            <label class="pill"><input type="radio" name="degree" value="GNM"/><span>GNM</span></label>
+            <label class="pill"><input type="radio" name="degree" value="B.Sc Nursing"/><span>B.Sc Nursing</span></label>
+            <label class="pill"><input type="radio" name="degree" value="M.Sc Nursing"/><span>M.Sc Nursing</span></label>
+            <label class="pill"><input type="radio" name="degree" value="BPT"/><span>BPT</span></label>
+            <label class="pill"><input type="radio" name="degree" value="MPT"/><span>MPT</span></label>
+            <label class="pill"><input type="radio" name="degree" value="UG"/><span>Under Graduate</span></label>
+            <label class="pill"><input type="radio" name="degree" value="PG"/><span>Post Graduate</span></label>
+            <label class="pill"><input type="radio" name="degree" value="Other"/><span>Other</span></label>
           </div>
-          <!-- Others dropdown -->
-          <div id="degree-others-wrap" class="hidden" style="margin-top:10px;">
+
+          <!-- UG sub-dropdown -->
+          <div class="sub-select" id="ug-wrap">
             <div class="select-wrap">
-              <select class="select-input" id="degree-others">
-                <option value="">Select qualification</option>
-                <option>10th (SSLC)</option>
-                <option>12th (HSC / PUC)</option>
-                <option>Diploma</option>
-                <option>Under Graduate — B.Tech / BE</option>
-                <option>Under Graduate — BBA</option>
-                <option>Under Graduate — BCA</option>
-                <option>Under Graduate — B.Com</option>
-                <option>Post Graduate — M.Tech / ME</option>
-                <option>Post Graduate — MBA</option>
-                <option>Post Graduate — MCA</option>
-                <option>Post Graduate — M.Com</option>
-                <option>Doctorate (PhD)</option>
+              <select class="select-input" id="ug-select">
+                <option value="">Select UG degree</option>
+                <option>B.Tech / BE</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>B.Com</option>
+                <option>BA</option>
+                <option>B.Sc (Non-Nursing)</option>
+                <option>Other UG</option>
               </select>
             </div>
+          </div>
+
+          <!-- PG sub-dropdown -->
+          <div class="sub-select" id="pg-wrap">
+            <div class="select-wrap">
+              <select class="select-input" id="pg-select">
+                <option value="">Select PG degree</option>
+                <option>M.Tech / ME</option>
+                <option>MBA</option>
+                <option>MCA</option>
+                <option>M.Com</option>
+                <option>MA</option>
+                <option>M.Sc (Non-Nursing)</option>
+                <option>Doctorate (PhD)</option>
+                <option>Other PG</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Other text -->
+          <div class="sub-select" id="other-wrap">
+            <input type="text" class="text-input" id="other-input" placeholder="Please specify your qualification"/>
           </div>
         </div>
 
         <div class="field-group">
-          <span class="field-label">Your Current Role</span>
-          <input type="text" class="text-input" id="role" placeholder="e.g. Staff Nurse, OT Technician, ICU Nurse..."/>
+          <span class="field-label">Current Role</span>
+          <input type="text" class="text-input" id="role" placeholder="e.g. Staff Nurse, ICU Nurse, OT Technician"/>
         </div>
 
         <div class="field-group">
@@ -452,40 +503,40 @@
         </div>
 
         <div class="form-nav">
-          <button class="btn-next" onclick="goStep(2)">Next: Preferences →</button>
+          <button class="btn-next" onclick="goStep(2)">Next: Readiness →</button>
         </div>
       </div>
 
       <!-- STEP 2 -->
       <div class="step-panel" id="step2">
         <div class="field-group">
-          <span class="field-label">German Language Proficiency</span>
+          <span class="field-label">German Language Level</span>
           <div class="pill-group">
-            <label class="pill" data-val="None"><input type="radio" name="german" value="None"/><span>None</span></label>
-            <label class="pill" data-val="A1"><input type="radio" name="german" value="A1"/><span>A1</span></label>
-            <label class="pill" data-val="A2"><input type="radio" name="german" value="A2"/><span>A2</span></label>
-            <label class="pill" data-val="B1"><input type="radio" name="german" value="B1"/><span>B1</span></label>
-            <label class="pill" data-val="B2+"><input type="radio" name="german" value="B2+"/><span>B2+</span></label>
+            <label class="pill"><input type="radio" name="german" value="None"/><span>None</span></label>
+            <label class="pill"><input type="radio" name="german" value="A1"/><span>A1</span></label>
+            <label class="pill"><input type="radio" name="german" value="A2"/><span>A2</span></label>
+            <label class="pill"><input type="radio" name="german" value="B1"/><span>B1</span></label>
+            <label class="pill"><input type="radio" name="german" value="B2+"/><span>B2+</span></label>
           </div>
         </div>
         <div class="field-group">
-          <span class="field-label">How soon can you migrate?</span>
+          <span class="field-label">Migration Timeline</span>
           <div class="pill-group">
-            <label class="pill" data-val="0-3M"><input type="radio" name="timeline" value="0-3M"/><span>Within 3 months</span></label>
-            <label class="pill" data-val="3-6M"><input type="radio" name="timeline" value="3-6M"/><span>3–6 months</span></label>
-            <label class="pill" data-val="6-12M"><input type="radio" name="timeline" value="6-12M"/><span>6–12 months</span></label>
-            <label class="pill" data-val="Exploring"><input type="radio" name="timeline" value="Exploring"/><span>Just Exploring</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="0-3M"/><span>Within 3 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="3-6M"/><span>3–6 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="6-12M"/><span>6–12 months</span></label>
+            <label class="pill"><input type="radio" name="timeline" value="Exploring"/><span>Just Exploring</span></label>
           </div>
         </div>
         <div class="field-group">
-          <span class="field-label">Preferred Language</span>
+          <span class="field-label">Preferred Consultation Language</span>
           <div class="pill-group">
-            <label class="pill" data-val="English"><input type="radio" name="lang" value="English"/><span>English</span></label>
-            <label class="pill" data-val="Hindi"><input type="radio" name="lang" value="Hindi"/><span>Hindi</span></label>
-            <label class="pill" data-val="Tamil"><input type="radio" name="lang" value="Tamil"/><span>Tamil</span></label>
-            <label class="pill" data-val="Telugu"><input type="radio" name="lang" value="Telugu"/><span>Telugu</span></label>
-            <label class="pill" data-val="Malayalam"><input type="radio" name="lang" value="Malayalam"/><span>Malayalam</span></label>
-            <label class="pill" data-val="Kannada"><input type="radio" name="lang" value="Kannada"/><span>Kannada</span></label>
+            <label class="pill"><input type="radio" name="lang" value="English"/><span>English</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Hindi"/><span>Hindi</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Tamil"/><span>Tamil</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Telugu"/><span>Telugu</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Malayalam"/><span>Malayalam</span></label>
+            <label class="pill"><input type="radio" name="lang" value="Kannada"/><span>Kannada</span></label>
           </div>
         </div>
         <div class="form-nav">
@@ -510,9 +561,9 @@
         </div>
         <div class="form-nav">
           <button class="btn-back" onclick="goStep(2)">← Back</button>
-          <button class="btn-submit" onclick="submitForm()">Check Eligibility ✓</button>
+          <button class="btn-submit" onclick="submitForm()">Check My Eligibility →</button>
         </div>
-        <p class="step-hint">🔒 Your data is 100% private. No spam, ever.</p>
+        <p class="step-hint">🔒 100% private — no spam, ever.</p>
       </div>
 
       <!-- SUCCESS -->
@@ -525,7 +576,7 @@
     </div>
   </div>
 
-</div><!-- end page-layout -->
+</div>
 
 <footer>
   © 2025 TerraTern Private Limited · Bangalore &nbsp;|&nbsp;
@@ -534,28 +585,39 @@
 </footer>
 
 <script>
-  // Pill selection
+  // Pill selection + sub-dropdown logic
   document.querySelectorAll('.pill input[type=radio]').forEach(radio => {
     radio.addEventListener('change', () => {
       const group = radio.closest('.pill-group');
       group.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
-      const pill = radio.closest('.pill');
-      pill.classList.add('selected');
+      radio.closest('.pill').classList.add('selected');
 
-      // Degree "Others" toggle
       if (radio.name === 'degree') {
-        const wrap = document.getElementById('degree-others-wrap');
-        wrap.classList.toggle('hidden', radio.value !== 'Others');
+        // Hide all sub-selects first
+        ['ug-wrap','pg-wrap','other-wrap'].forEach(id => {
+          document.getElementById(id).classList.remove('visible');
+        });
+        // Reset sub values
+        document.getElementById('ug-select').value = '';
+        document.getElementById('pg-select').value = '';
+        document.getElementById('other-input').value = '';
+        // Show relevant one
+        if (radio.value === 'UG') document.getElementById('ug-wrap').classList.add('visible');
+        if (radio.value === 'PG') document.getElementById('pg-wrap').classList.add('visible');
+        if (radio.value === 'Other') document.getElementById('other-wrap').classList.add('visible');
       }
     });
   });
 
   function goStep(n) {
     document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.step-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.step-tab').forEach(t => { t.classList.remove('active'); });
     document.getElementById('step' + n).classList.add('active');
     document.getElementById('tab' + n).classList.add('active');
-    for (let i = 1; i < n; i++) document.getElementById('tab' + i).classList.add('done');
+    for (let i = 1; i < n; i++) {
+      document.getElementById('tab' + i).classList.remove('active');
+      document.getElementById('tab' + i).classList.add('done');
+    }
   }
 
   function submitForm() {

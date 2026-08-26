@@ -68,7 +68,7 @@
   /* LEFT PANEL */
   .left-panel {
     background: linear-gradient(160deg, #0B2545 60%, #0f3460 100%);
-    padding: 48px 48px 40px;
+    padding: 52px 56px 48px 56px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -112,13 +112,13 @@
     font-size: 0.95rem;
     max-width: 440px;
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
 
   .stats-row {
     display: flex;
     gap: 0;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 12px;
     overflow: hidden;
@@ -147,8 +147,8 @@
   .why-title {
     font-family: 'Fraunces', serif;
     color: var(--white);
-    font-size: 1.1rem;
-    margin-bottom: 14px;
+    font-size: 1.15rem;
+    margin-bottom: 16px;
   }
   .why-title span { color: var(--amber); }
   .benefits-grid {
@@ -160,10 +160,10 @@
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: 10px;
-    padding: 13px 13px;
+    padding: 15px 15px;
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
   }
   .benefit-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
   .benefit-title { font-weight: 600; font-size: 0.8rem; color: var(--white); margin-bottom: 2px; }
@@ -180,7 +180,7 @@
   }
   .form-header {
     background: var(--green);
-    padding: 22px 28px 18px;
+    padding: 24px 32px 20px;
     color: var(--white);
     flex-shrink: 0;
   }
@@ -192,6 +192,7 @@
     background: #f0f9f5;
     border-bottom: 1px solid var(--border);
     flex-shrink: 0;
+    padding: 0 8px;
   }
   .step-tab {
     flex: 1; text-align: center;
@@ -216,19 +217,19 @@
   .step-tab.active .step-num { background: var(--green); color: white; }
   .step-tab.done .step-num { background: var(--green-dark); color: white; }
 
-  .form-body { padding: 22px 28px; flex: 1; }
+  .form-body { padding: 28px 32px 32px; flex: 1; }
   .step-panel { display: none; }
   .step-panel.active { display: block; }
 
   .field-label {
     display: block;
-    font-size: 0.79rem; font-weight: 600;
+    font-size: 0.8rem; font-weight: 600;
     color: var(--navy);
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
-  .field-group { margin-bottom: 16px; }
+  .field-group { margin-bottom: 20px; }
 
-  .pill-group { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
   .pill {
     display: inline-flex; align-items: center;
     padding: 6px 12px;
@@ -267,7 +268,7 @@
 
   .hidden { display: none !important; }
 
-  .form-nav { display: flex; align-items: center; margin-top: 12px; gap: 10px; }
+  .form-nav { display: flex; align-items: center; margin-top: 16px; gap: 10px; }
   .btn-next, .btn-submit {
     background: var(--green); color: var(--white);
     border: none; padding: 12px 20px;
@@ -308,9 +309,11 @@
   @media (max-width: 768px) {
     body { overflow-x: hidden; }
     .page-layout { grid-template-columns: 1fr; flex: none; }
-    .left-panel { padding: 32px 20px 28px; }
+    .left-panel { padding: 36px 24px 32px; }
     .left-panel::before { font-size: 140px; }
     .right-panel { box-shadow: none; overflow-y: visible; }
+    .form-body { padding: 24px 20px 28px; }
+    .form-header { padding: 20px 20px 16px; }
     .stats-row { max-width: 100%; }
     .benefits-grid { grid-template-columns: 1fr 1fr; }
     footer { grid-column: 1; }

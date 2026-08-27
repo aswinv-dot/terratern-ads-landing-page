@@ -277,45 +277,169 @@ function extractPhone(text) {
   if (!m) return '';
   return m.find(p => p.replace(/\D/g,'').length >= 10) || '';
 }
+
 function extractName(text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-  for (const line of lines.slice(0, 6)) {
-    if (line.length < 5 || line.length > 50) continue;
-    if (/[0-9@]/.test(line)) continue;
-    if (/resume|curriculum|vitae|cv\b/i.test(line)) continue;
-    return line;
+  const skipPattern = /resume|curriculum|vitae|\bcv\b|summary|profile|objective|linkedin|github|portfolio|http/i;
+  const noiseChars = /[@\/\\|,;:_\d]/;
+
+  // Strategy 1: "Name | phone | email" — extract before first pipe on first few lines
+  for (const line of lines.slice(0, 5)) {
+    if (line.includes('|')) {
+      const part = line.split('|')[0].trim();
+      if (part.length >= 3 && part.length <= 50 && !noiseChars.test(part) && !skipPattern.test(part)) {
+        // must look like a name: 2-4 words, mostly letters
+        if (/^[A-Za-z]+([\s][A-Za-z]+){1,3}$/.test(part)) return part;
+      }
+    }
   }
+
+  // Strategy 2: First clean short line (classic format — Preeti, Swikriti)
+  for (const line of lines.slice(0, 8)) {
+    if (line.length < 4 || line.length > 55) continue;
+    if (noiseChars.test(line)) continue;
+    if (skipPattern.test(line)) continue;
+    // looks like a name: 1-4 words, title/upper case, letters only
+    if (/^[A-Z][a-zA-Z]+([\s][A-Z][a-zA-Z]+){0,3}$/.test(line)) return line;
+  }
+
+  // Strategy 3: ALL CAPS name (Chaithra style: "CHAITHRA L")
+  for (const line of lines.slice(0, 10)) {
+    if (/^[A-Z][A-Z\s]{2,30}$/.test(line.trim()) && line.trim().split(' ').length <= 4) {
+      return line.trim();
+    }
+  }
+
   return '';
 }
+
 function extractEducation(text) {
   if (/ph\.?d|doctorate/i.test(text)) return 'phd';
-  if (/master|m\.?s\b|m\.?tech|mba|m\.?e\b/i.test(text)) return 'masters';
+  if (/m\.?tech|m\.?e\b|master|mba|m\.?s\b/i.test(text)) return 'masters';
   if (/bachelor|b\.?tech|b\.?e\b|b\.?sc|b\.?com|b\.?a\b/i.test(text)) return 'bachelors';
   if (/diploma|polytechnic/i.test(text)) return 'diploma';
   return 'bachelors';
 }
+
+// Convert month name/abbr to month number
+function monthToNum(m) {
+  return ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
+    .indexOf(m.toLowerCase().slice(0,3)) + 1 || 1;
+}
+
 function extractWorkExYears(text) {
-  const ranges = [...text.matchAll(/(\d{4})\s*[-–—]\s*(\d{4}|present|current|now)/gi)];
-  let total = 0;
   const cy = new Date().getFullYear();
-  for (const r of ranges) {
-    const start = parseInt(r[1]);
-    const end = /present|current|now/i.test(r[2]) ? cy : parseInt(r[2]);
-    if (end > start && start > 1990 && end <= cy + 1) total += end - start;
+  const cm = new Date().getMonth() + 1;
+  let totalMonths = 0;
+  const seen = new Set();
+
+  // Normalise text
+  const t = text.replace(/\u2013|\u2014/g, '-');
+
+  // Pattern A: "Feb. 2022 – Present" / "Feb 2022 - Mar 2024" / "Feb. 2019 – Feb. 2022"
+  const patA = /([A-Za-z]+)\.?\s+(\d{4})\s*[-–]\s*([A-Za-z]+\.?\s+(\d{4})|present|current|now)/gi;
+  for (const r of t.matchAll(patA)) {
+    const startM = monthToNum(r[1]), startY = parseInt(r[2]);
+    let endM, endY;
+    if (/present|current|now/i.test(r[3])) { endM = cm; endY = cy; }
+    else { endM = monthToNum(r[3]); endY = parseInt(r[4]); }
+    if (startY < 1990 || startY > cy) continue;
+    const key = `${startY}${startM}-${endY}${endM}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const months = (endY - startY) * 12 + (endM - startM);
+    if (months > 0 && months < 600) totalMonths += months;
   }
-  return Math.min(total, 30);
+
+  // Pattern B: "2020 Jun - 2022 Sep" / "2025 Jun - Presents"
+  const patB = /(\d{4})\s+([A-Za-z]+)\s*[-–]\s*(\d{4}\s+[A-Za-z]+|present|presents|current|now)/gi;
+  for (const r of t.matchAll(patB)) {
+    const startY = parseInt(r[1]), startM = monthToNum(r[2]);
+    let endM, endY;
+    if (/present|current|now/i.test(r[3])) { endM = cm; endY = cy; }
+    else { const parts = r[3].trim().split(/\s+/); endY = parseInt(parts[0]); endM = monthToNum(parts[1] || 'jan'); }
+    if (startY < 1990 || startY > cy) continue;
+    const key = `${startY}${startM}-${endY}${endM}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const months = (endY - startY) * 12 + (endM - startM);
+    if (months > 0 && months < 600) totalMonths += months;
+  }
+
+  // Pattern C: plain year range "2019 - 2022" (fallback, only if nothing found yet)
+  if (totalMonths === 0) {
+    const patC = /(\d{4})\s*[-–]\s*(\d{4}|present|current|now)/gi;
+    for (const r of t.matchAll(patC)) {
+      const startY = parseInt(r[1]);
+      const endY = /present|current|now/i.test(r[2]) ? cy : parseInt(r[2]);
+      if (startY < 1990 || startY > cy) continue;
+      const key = `${startY}-${endY}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const months = (endY - startY) * 12;
+      if (months > 0 && months < 600) totalMonths += months;
+    }
+  }
+
+  // Fallback: "X+ years of experience" in summary
+  if (totalMonths === 0) {
+    const m = text.match(/(\d+)\+?\s*years?\s+of\s+experience/i);
+    if (m) return parseInt(m[1]);
+  }
+
+  return Math.min(Math.round(totalMonths / 12), 40);
 }
+
 function extractRole(text) {
-  const m = text.match(/^([\w\s]+(?:engineer|developer|manager|analyst|consultant|officer|director|lead|specialist|nurse|doctor|technician)[\w\s]*)/im);
-  return m ? m[1].trim().slice(0, 60) : '';
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  const locationWords = /\b(india|bengaluru|bangalore|hyderabad|mumbai|delhi|chennai|pune|kolkata|remote|telangana|karnataka)\b/i;
+  const skipWords = /^(experience|education|skills|summary|profile|about|contact|projects|awards|tools|software)/i;
+  const datePattern = /\d{4}|\bpresent\b|\bjan\b|\bfeb\b|\bmar\b|\bapr\b|\bmay\b|\bjun\b|\bjul\b|\baug\b|\bsep\b|\boct\b|\bnov\b|\bdec\b/i;
+
+  // Strategy 1: Line 2 standalone role (Swikriti format: name line1, role line2)
+  if (lines.length >= 2) {
+    const line2 = lines[1];
+    if (line2.length > 3 && line2.length < 60 && !locationWords.test(line2) && !datePattern.test(line2) && !/[@\d|]/.test(line2) && !skipWords.test(line2)) {
+      return line2;
+    }
+  }
+
+  // Strategy 2: "Role | Company, Location Date" — pipe-separated, first part is role
+  for (const line of lines) {
+    if (line.includes('|')) {
+      const part = line.split('|')[0].trim();
+      if (part.length > 3 && part.length < 60 && !locationWords.test(part) && !datePattern.test(part) && !/[@\d]/.test(part)) {
+        return part;
+      }
+    }
+  }
+
+  // Strategy 3: Find Experience section, grab first role line below it
+  let inExp = false;
+  for (let i = 0; i < lines.length; i++) {
+    if (/^(experience|work experience|employment)/i.test(lines[i])) { inExp = true; continue; }
+    if (inExp) {
+      const line = lines[i];
+      if (skipWords.test(line)) break; // hit next section
+      if (line.length < 3 || datePattern.test(line)) continue;
+      if (locationWords.test(line)) continue;
+      // Strip trailing location: "Product Engineer  Hyderabad, India" → "Product Engineer"
+      const cleaned = line.replace(/\s{2,}.*$/, '').replace(/,?\s*(hyderabad|bangalore|bengaluru|mumbai|delhi|india|chennai|pune|remote).*$/i, '').trim();
+      if (cleaned.length > 3 && cleaned.length < 70) return cleaned;
+    }
+  }
+
+  return '';
 }
+
 function extractYearOfPassing(text) {
   const lines = text.split('\n');
+  const eduKeywords = /university|college|institute|school|academy|b\.tech|m\.tech|b\.e|m\.e|bachelor|master/i;
   for (let i = 0; i < lines.length; i++) {
-    if (/university|college|institute|school|academy/i.test(lines[i])) {
-      const ctx = lines.slice(i, i + 4).join(' ');
-      const m = ctx.match(/\b(19|20)\d{2}\b/g);
-      if (m) return m[m.length - 1];
+    if (eduKeywords.test(lines[i])) {
+      const ctx = lines.slice(i, i + 5).join(' ');
+      const m = ctx.match(/\b(20\d{2})\b/g);
+      if (m) return m[m.length - 1]; // last year = end year
     }
   }
   const m = text.match(/graduated?[:\s]+(\d{4})/i) || text.match(/batch[:\s]+(\d{4})/i);

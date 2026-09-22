@@ -564,10 +564,6 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <span id="webinar-time">...</span>
         </div>
-        <div class="pill">
-          <img src="assets/images/zoom-logo.png" alt="Zoom" width="14" height="14" style="object-fit:contain;flex-shrink:0;" />
-          <span id="webinar-platform">...</span>
-        </div>
       </div>
     </div>
 
@@ -738,7 +734,7 @@
     <div class="register-form-wrap">
       <div class="form-card">
         <div class="form-label-top">Register Now. It's Free 🙌</div>
-        <div class="form-sub" style="display:flex;align-items:center;gap:6px;">You'll receive the <img src="assets/images/zoom-logo.png" alt="Zoom" width="14" height="14" style="object-fit:contain;flex-shrink:0;vertical-align:middle;" /> Zoom link on WhatsApp before the webinar</div>
+        <div class="form-sub">You'll receive the link on WhatsApp before the webinar</div>
         <div id="bottom-form-wrap">
           <form id="bottom-form" onsubmit="submitForm(event,'bottom')">
             <div class="form-group">
@@ -828,7 +824,6 @@
     document.getElementById('speaker-role').textContent = cfg.speakerRole;
     document.getElementById('webinar-date').textContent = cfg.webinarDate;
     document.getElementById('webinar-time').textContent = cfg.webinarTime;
-    document.getElementById('webinar-platform').textContent = cfg.webinarPlatform;
 
     // Footer
     document.getElementById('footer-text').textContent =

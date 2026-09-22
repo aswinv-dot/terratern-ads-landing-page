@@ -37,7 +37,7 @@ const CONFIG = {
 };
 
 // ============================================================
-//  GHC (GERMANY OPPORTUNITY CARD) — ALUMNI WEBINAR CONFIG
+//  GHC (GERMANY HEALTHCARE) — ALUMNI WEBINAR CONFIG
 //  Used by ghc-alum.html. TODO: replace placeholder values below
 //  with real speaker/webinar details before going live.
 // ============================================================
@@ -45,12 +45,12 @@ const CONFIG_GHC = {
 
   // ---------- SPEAKER ----------
   speakerName: "TODO: GHC Speaker Name",
-  speakerRole: "Germany Opportunity Card Holder · Working in Germany 🇩🇪",
+  speakerRole: "GHC Nurse Graduate · Working in Germany 🇩🇪",
   speakerLocation: "Germany",
   speakerImage: "https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png",
 
   // ---------- WEBINAR DETAILS ----------
-  webinarTitle: "How I Got My Germany Opportunity Card. Live Alumni Session",
+  webinarTitle: "How I Moved to Germany as a Nurse via GHC. Live Alumni Session",
   webinarDate: "TODO: Webinar Date",
   webinarTime: "7:00 PM IST",
   webinarPlatform: "Zoom (Link sent after registration)",

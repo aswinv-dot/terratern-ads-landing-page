@@ -302,6 +302,18 @@
     <div class="cms-title">Webinar Page Editor</div>
     <div class="cms-sub">Changes save to Supabase and go live on the landing page instantly.</div>
 
+    <!-- PROGRAM SELECTOR -->
+    <div class="section-card">
+      <div class="section-head">Program</div>
+      <div class="field">
+        <label>Editing <span>choose which webinar page you're updating</span></label>
+        <select id="f-program-select" onchange="switchProgram()" style="width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:'Inter',sans-serif;color:var(--text);background:var(--off);outline:none;-webkit-appearance:none;">
+          <option value="1">Ausbildung (ausbildung-alumni.html)</option>
+          <option value="2">GHC (ghc-alum.html)</option>
+        </select>
+      </div>
+    </div>
+
     <!-- LIVE PREVIEW -->
     <div class="preview-strip">
       <img class="preview-avatar" id="prev-img" src="https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png" alt="Speaker" />
@@ -392,6 +404,16 @@
 
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+  // ---- Which row (program) is being edited ----
+  function currentRowId() {
+    return parseInt(document.getElementById('f-program-select').value, 10);
+  }
+
+  function switchProgram() {
+    window._imgUrl = null;
+    loadConfig();
+  }
+
   // ---- Init: check session ----
   async function init() {
     const { data: { session } } = await sb.auth.getSession();
@@ -443,12 +465,19 @@
 
   // ---- Load config ----
   async function loadConfig() {
+    // Reset fields/preview to a blank slate before loading the selected row
+    ['f-speaker-name','f-speaker-role','f-webinar-title','f-webinar-date','f-webinar-time',
+     'f-webinar-platform','f-whatsapp-channel','f-redirect-url','f-program-name'
+    ].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('img-preview').src = 'https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png';
+    document.getElementById('prev-img').src    = 'https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png';
+
     try {
       const { data, error } = await sb
         .from('webinar_config')
         .select('*')
-        .eq('id', 1)
-        .single();
+        .eq('id', currentRowId())
+        .maybeSingle();
 
       if (error) throw error;
       if (data) {
@@ -468,6 +497,10 @@
         }
         livePreview();
         setStatus('All changes saved', 'ok');
+      } else {
+        // No row yet for this program — fine, saveConfig() will create it
+        livePreview();
+        setStatus('No saved config yet for this program — fill in and save', '');
       }
     } catch(e) {
       setStatus('Could not load config', 'err');
@@ -527,8 +560,11 @@
     btn.textContent = 'Saving...';
     setStatus('Saving...', '');
 
+    const rowId = currentRowId();
+
     // Only include fields that have a value — never overwrite with null
     const raw = {
+      id:               rowId,
       speaker_name:     v('f-speaker-name'),
       speaker_role:     v('f-speaker-role'),
       speaker_image:    window._imgUrl || null,
@@ -543,14 +579,15 @@
     };
 
     // Strip out null/undefined so existing DB values are preserved
+    // (id is always kept so upsert knows which row to touch)
     const payload = Object.fromEntries(
-      Object.entries(raw).filter(([_, val]) => val !== null && val !== undefined)
+      Object.entries(raw).filter(([k, val]) => k === 'id' || (val !== null && val !== undefined))
     );
 
+    // Upsert: updates the row if it exists, creates it (e.g. GHC's id=2) if it doesn't
     const { error } = await sb
       .from('webinar_config')
-      .update(payload)
-      .eq('id', 1);
+      .upsert(payload, { onConflict: 'id' });
 
     if (error) {
       setStatus('Save failed. Try again.', 'err');

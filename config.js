@@ -35,3 +35,41 @@ const CONFIG = {
   companyWebsite: "https://terratern.com",
 
 };
+
+// ============================================================
+//  GHC (GERMANY OPPORTUNITY CARD) — ALUMNI WEBINAR CONFIG
+//  Used by ghc-alum.html. TODO: replace placeholder values below
+//  with real speaker/webinar details before going live.
+// ============================================================
+const CONFIG_GHC = {
+
+  // ---------- SPEAKER ----------
+  speakerName: "TODO: GHC Speaker Name",
+  speakerRole: "Germany Opportunity Card Holder · Working in Germany 🇩🇪",
+  speakerLocation: "Germany",
+  speakerImage: "https://i.ibb.co/xKQbBPYy/Screenshot-2026-06-25-at-3-15-19-PM.png",
+
+  // ---------- WEBINAR DETAILS ----------
+  webinarTitle: "How I Got My Germany Opportunity Card. Live Alumni Session",
+  webinarDate: "TODO: Webinar Date",
+  webinarTime: "7:00 PM IST",
+  webinarPlatform: "Zoom (Link sent after registration)",
+
+  // ---------- FORM ----------
+  googleScriptURL: "https://script.google.com/macros/s/AKfycbzNATa2m5P-lbYC7PxxCky51wFWq9hNt6_32JRZCevYCUXctNJF7V8jsjFCHN9Eg9QfQA/exec",
+
+  // Where to send the user after successful form submission
+  redirectURL: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",
+
+  // ---------- WHATSAPP CHANNEL ----------
+  whatsappChannel: "https://chat.whatsapp.com/K52sCRl6UPKJFMCFsZ4BUj?mode=gi_t",
+
+  // ---------- PROGRAM ----------
+  programName: "GHC",
+  programCountry: "Germany 🇩🇪",
+
+  // ---------- FOOTER ----------
+  companyName: "TerraTern",
+  companyWebsite: "https://terratern.com",
+
+};

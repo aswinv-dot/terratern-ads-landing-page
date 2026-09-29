@@ -2,6 +2,8 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/", "destination": "/ausbildung-alumni.html" },
-    { "source": "/linkinbio.html", "destination": "https://smartping-email.vercel.app/linktree.html" }
+    { "source": "/linkinbio.html", "destination": "https://smartping-email.vercel.app/linktree.html" },
+    { "source": "/ausbildung-alumni.html", "destination": "https://smartping-email.vercel.app/ausbildung-alumni.html" },
+    { "source": "/ghc-alum.html", "destination": "https://smartping-email.vercel.app/ghc-alum.html" }
   ]
 }
